@@ -1,0 +1,24 @@
+Designators,Qty,Value_Description,ManufacturerPart,Footprint,LCSC_Part,Side,Source_Status,Notes
+U1,1,E180-Z6907A (Telink TLSR8269 Zigbee/2.4GHz SoC Module),E180-Z6907A,Stamp-SMD-37P,C518909,Top,"Stocked (2 pcs, parts_inventory.md)",User-supplied / hand-soldered module; North antenna keepout
+U2,1,"AP63203WU-7 (3.8-32V in, 3.3V fixed 2A Sync Buck)",AP63203WU-7,TSOT-23-6,C780769,Top,"Stocked (15 pcs, parts_inventory.md)",Replaces RT9013 LDO for e-paper / high-current bursts
+L1,1,3.9uH +-20% 3A Shielded Power Inductor,SWPA4030S3R9MT,SMD 4030 (4x4mm),C96899,Top,"Stocked (14 pcs, parts_inventory.md)",Paired with AP63203WU-7 (pin-adjacent 35 mil SW bridge)
+Q1,1,"AO3401A P-Channel MOSFET (-30V, -4.2A, 54mOhm)",AO3401A,SOT-23-3,C700954,Top,"Stocked (20 pcs, parts_inventory.md)",Target PWR high-side switch controlled via Q2/PWR_EN
+Q2,1,"S8050 NPN BJT (25V, 0.5A, hFE 200-350)",S8050,SOT-23-3,C20069125,Top,"Stocked (50 pcs, parts_inventory.md)",Active-HIGH level shifter from PC4 (PWR_EN) to Q1 gate
+D1,1,SRV05-4 Low-Capacitance USB ESD Protection Array,SRV05-4,SOT-23-6,C384887,Top,Order (LCSC),"Protects USB_DP, USB_DN, +5V rail"
+F1,1,1.5A 6V Resettable PTC Polyfuse,BSMD1206-150-6V,1206,C883132,Top,Order (LCSC),Input overcurrent protection between VBUS_RAW and +5V
+USB1,1,USB Type-C 16P 2.0 Receptacle,TYPE-C16PIN,SMD 16P + 4 TH Tabs,C393939,Top,"Stocked (30 pcs, parts_inventory.md)",West board edge; SH1<->3 & SH2<->4 L2 bridged
+SW1,1,TS-1088R-02526 Side-Actuated Micro Push Button,TS-1088R-02526,SMD 4x3mm,C455281,Top,"Stocked (50 pcs, parts_inventory.md)",Manual TLSR8269 nRESET trigger on South-West edge
+LED1,1,Red SMD Indicator LED (+5V Rail),NCD0603R1,0603,C84263,Top,"Stocked (50 pcs, parts_inventory.md)",+5V input power indicator via R5 (4.7k)
+LED2,1,Yellow-Green SMD Indicator LED (Switched Target PWR),NCD0603C1,0603,C84264,Top,"Stocked (50 pcs, parts_inventory.md)",Switched Target PWR active indicator via R10 (2.2k)
+"C1,C7",2,10uF 16V X5R 0603 MLCC Capacitor,HGC0603R5106M160NTHJ,0603,C7472959,Top,"Stocked (20 pcs, parts_inventory.md)",C1 = AP63203 VIN bulk; C7 = E180 VDD bulk
+"C4,C5",2,22uF 10V X5R 0603 MLCC Capacitor,HGC0603R5226M100NTHJ,0603,C7432770,Top,"Stocked (100 pcs, parts_inventory.md)",2x 22uF AP63203 3V3 buck output filter bank
+"C2,C3,C6,C8,C9,C10",6,100nF 50V X7R 0603 MLCC Capacitor,0603X7R104K500NT,0603,C48579281,Top,"Stocked (300 pcs, parts_inventory.md)","HF bypass (U2 VIN/BST/3V3, U1 VDD, nRESET RC, Q1 gate RC)"
+"R1,R2",2,33 Ohm +-1% 0603 Resistor,FRC0603F33R0TS,0603,C2909394,Top,Stocked (0603 Resistor Sample Book),USB D-/D+ series impedance damping resistors
+"R3,R4",2,5.1k Ohm +-1% 0603 Resistor,FRC0603F5101TS,0603,C2907044,Top,"Stocked (300 pcs, parts_inventory.md)",USB-C CC1 & CC2 5V Rd sink pull-downs
+R5,1,4.7k Ohm +-1% 0603 Resistor,FRC0603F4701TS,0603,C2907034,Top,"Stocked (300 pcs, parts_inventory.md)",LED1 (+5V Red) current limiting resistor
+"R6,R8",2,10k Ohm +-1% 0603 Resistor,FRC0603F1002TS,0603,C2906982,Top,"Stocked (300 pcs, parts_inventory.md)",R6 = nRESET RC pull-up; R8 = PWR_EN -> Q2 base drive
+R7,1,47k Ohm +-1% 0603 Resistor,FRC0603F4702TS,0603,C2907042,Top,"Stocked (100 pcs, parts_inventory.md)",Q1 AO3401A VGS gate pull-up to 3V3 (Default OFF)
+R9,1,100k Ohm +-1% 0603 Resistor,FRC0603F1003TS,0603,C2906980,Top,"Stocked (200 pcs, parts_inventory.md)",Q2 base pull-down to GND (prevents floating boot glitch)
+R10,1,2.2k Ohm +-1% 0603 Resistor,FRC0603F2201TS,0603,C2907005,Top,"Stocked (100 pcs, parts_inventory.md)",LED2 (PWR Green) current limiting resistor
+H1,1,1x5P 2.54mm Male Pin Header (Target SWire),PZ254V-11-05P,HDR-TH 1x5P P2.54mm,C492404,Top,Standard 2.54mm header / LCSC,"East edge: 1:GND, 2:PWR, 3:3V3, 4:SWM (no PU), 5:EXT_RST"
+H2,1,1x4P 2.54mm Male Pin Header (Self-Program),PZ254V-11-04P,HDR-TH 1x4P P2.54mm,C2691448,Top,Standard 2.54mm header / LCSC,"South edge: 1:GND, 2:3V3, 3:SWS, 4:RST"

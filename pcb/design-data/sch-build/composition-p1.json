@@ -1,0 +1,2387 @@
+{
+  "schemaVersion": 1,
+  "connectivity": {
+    "schemaVersion": "1.4",
+    "projectId": "f91760ddb2c7418299e7752f330a761d",
+    "documentId": "48f86e153a22ba1c",
+    "components": [
+      {
+        "id": "comp-D1",
+        "ref": "D1",
+        "role": "diode",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "e5f3360875a64a2d97d70eeb098b223a",
+          "name": "SRV05-4"
+        },
+        "footprint": "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -70.5,
+            "minY": -40.5,
+            "maxX": 70.5,
+            "maxY": 40.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "IO1",
+            "noConnected": false,
+            "x": -40,
+            "y": -60
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "noConnected": false,
+            "x": 0,
+            "y": -60
+          },
+          {
+            "number": "3",
+            "name": "IO3",
+            "noConnected": false,
+            "x": 40,
+            "y": -60
+          },
+          {
+            "number": "4",
+            "name": "IO4",
+            "noConnected": false,
+            "x": 40,
+            "y": 60
+          },
+          {
+            "number": "5",
+            "name": "VCC",
+            "noConnected": false,
+            "x": 0,
+            "y": 60
+          },
+          {
+            "number": "6",
+            "name": "IO2",
+            "noConnected": false,
+            "x": -40,
+            "y": 60
+          }
+        ]
+      },
+      {
+        "id": "comp-R1",
+        "ref": "R1",
+        "role": "resistor",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "8880fde5f6d4473582cf920ed09a09aa",
+          "name": "FRC0603F33R0TS"
+        },
+        "footprint": "R0603",
+        "placement": {
+          "x": -60,
+          "y": 210,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -70.5,
+            "minY": 204.5,
+            "maxX": -49.5,
+            "maxY": 215.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": -40,
+            "y": 210
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -80,
+            "y": 210
+          }
+        ]
+      },
+      {
+        "id": "comp-R2",
+        "ref": "R2",
+        "role": "resistor",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "8880fde5f6d4473582cf920ed09a09aa",
+          "name": "FRC0603F33R0TS"
+        },
+        "footprint": "R0603",
+        "placement": {
+          "x": 180,
+          "y": 210,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 169.5,
+            "minY": 204.5,
+            "maxX": 190.5,
+            "maxY": 215.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 200,
+            "y": 210
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": 160,
+            "y": 210
+          }
+        ]
+      },
+      {
+        "id": "comp-USB1",
+        "ref": "USB1",
+        "role": "connector",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "b4de8f0f4a564327b51be4d1ed6f4b35",
+          "name": "TYPE-C16PIN"
+        },
+        "footprint": "USB-C-SMD_TYPE-C16PIN",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -25.5,
+            "minY": -85.5,
+            "maxX": 25.5,
+            "maxY": 85.5
+          }
+        },
+        "pins": [
+          {
+            "number": "A1B12",
+            "name": "GND",
+            "noConnected": false,
+            "x": -35,
+            "y": 75
+          },
+          {
+            "number": "A4B9",
+            "name": "VBUS",
+            "noConnected": false,
+            "x": -35,
+            "y": 65
+          },
+          {
+            "number": "A5",
+            "name": "CC1",
+            "noConnected": false,
+            "x": -35,
+            "y": 55
+          },
+          {
+            "number": "A6",
+            "name": "DP1",
+            "noConnected": false,
+            "x": -35,
+            "y": 45
+          },
+          {
+            "number": "A7",
+            "name": "DN1",
+            "noConnected": false,
+            "x": -35,
+            "y": 35
+          },
+          {
+            "number": "A8",
+            "name": "SBU1",
+            "noConnected": true,
+            "x": -35,
+            "y": 25
+          },
+          {
+            "number": "B5",
+            "name": "CC2",
+            "noConnected": false,
+            "x": -35,
+            "y": 15
+          },
+          {
+            "number": "B6",
+            "name": "DP2",
+            "noConnected": false,
+            "x": -35,
+            "y": 5
+          },
+          {
+            "number": "B7",
+            "name": "DN2",
+            "noConnected": false,
+            "x": -35,
+            "y": -5
+          },
+          {
+            "number": "B8",
+            "name": "SBU2",
+            "noConnected": true,
+            "x": -35,
+            "y": -15
+          },
+          {
+            "number": "B4A9",
+            "name": "VBUS",
+            "noConnected": false,
+            "x": -35,
+            "y": -25
+          },
+          {
+            "number": "B1A12",
+            "name": "GND",
+            "noConnected": false,
+            "x": -35,
+            "y": -35
+          },
+          {
+            "number": "1",
+            "name": "SHELL",
+            "noConnected": false,
+            "x": -35,
+            "y": -45
+          },
+          {
+            "number": "2",
+            "name": "SHELL",
+            "noConnected": false,
+            "x": -35,
+            "y": -55
+          },
+          {
+            "number": "3",
+            "name": "SHELL",
+            "noConnected": false,
+            "x": -35,
+            "y": -65
+          },
+          {
+            "number": "4",
+            "name": "SHELL",
+            "noConnected": false,
+            "x": -35,
+            "y": -75
+          }
+        ]
+      },
+      {
+        "id": "comp-LED1",
+        "ref": "LED1",
+        "role": "led",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "7d938e3f05d04ef7abb058b22e337109",
+          "name": "NCD0603R1"
+        },
+        "footprint": "LED0603-RD_RED",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -9.5,
+            "minY": -6.5,
+            "maxX": 5.5,
+            "maxY": 19.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "A",
+            "noConnected": false,
+            "x": 20,
+            "y": 0
+          },
+          {
+            "number": "1",
+            "name": "K",
+            "noConnected": false,
+            "x": -20,
+            "y": 0
+          }
+        ]
+      },
+      {
+        "id": "comp-R5",
+        "ref": "R5",
+        "role": "resistor",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "f564766cebdf4a748137af6d281a33c8",
+          "name": "FRC0603F4701TS"
+        },
+        "footprint": "R0603",
+        "placement": {
+          "x": -5,
+          "y": -25,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -15.5,
+            "minY": -30.5,
+            "maxX": 5.5,
+            "maxY": -19.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 15,
+            "y": -25
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -25,
+            "y": -25
+          }
+        ]
+      },
+      {
+        "id": "comp-R3",
+        "ref": "R3",
+        "role": "resistor",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "7f73bc9b909b4d519d5499acdd443b44",
+          "name": "FRC0603F5101TS"
+        },
+        "footprint": "R0603",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -5.5,
+            "maxX": 10.5,
+            "maxY": 5.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 20,
+            "y": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -20,
+            "y": 0
+          }
+        ]
+      },
+      {
+        "id": "comp-R4",
+        "ref": "R4",
+        "role": "resistor",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "7f73bc9b909b4d519d5499acdd443b44",
+          "name": "FRC0603F5101TS"
+        },
+        "footprint": "R0603",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -5.5,
+            "maxX": 10.5,
+            "maxY": 5.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 20,
+            "y": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -20,
+            "y": 0
+          }
+        ]
+      },
+      {
+        "id": "comp-F1",
+        "ref": "F1",
+        "role": "fuse",
+        "pageId": "48f86e153a22ba1c",
+        "pageName": "P1_USB_Input",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "05cd847d1763435a86da8096499ba2c9",
+          "name": "BSMD1206-150-6V"
+        },
+        "footprint": "F1206",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -4.5,
+            "maxX": 10.5,
+            "maxY": 4.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 20,
+            "y": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -20,
+            "y": 0
+          }
+        ]
+      }
+    ],
+    "nets": [
+      {
+        "id": "net-USB_DN",
+        "name": "USB_DN",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-GND",
+        "name": "GND",
+        "scope": "global",
+        "role": "ground"
+      },
+      {
+        "id": "net-USB_DP",
+        "name": "USB_DP",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-+5V",
+        "name": "+5V",
+        "scope": "global",
+        "role": "power"
+      },
+      {
+        "id": "net-DM",
+        "name": "DM",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-DP",
+        "name": "DP",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-VBUS_RAW",
+        "name": "VBUS_RAW",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-CC1",
+        "name": "CC1",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-CC2",
+        "name": "CC2",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-LED1_K",
+        "name": "LED1_K",
+        "scope": "local",
+        "role": "signal"
+      }
+    ],
+    "connections": [
+      {
+        "componentId": "comp-D1",
+        "pinNumber": "1",
+        "netId": "net-USB_DN",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-D1",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-D1",
+        "pinNumber": "3",
+        "netId": "net-USB_DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-D1",
+        "pinNumber": "4",
+        "netId": "net-USB_DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-D1",
+        "pinNumber": "5",
+        "netId": "net-+5V",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-D1",
+        "pinNumber": "6",
+        "netId": "net-USB_DN",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R1",
+        "pinNumber": "2",
+        "netId": "net-DM",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R1",
+        "pinNumber": "1",
+        "netId": "net-USB_DN",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R2",
+        "pinNumber": "2",
+        "netId": "net-DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R2",
+        "pinNumber": "1",
+        "netId": "net-USB_DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "A1B12",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "A4B9",
+        "netId": "net-VBUS_RAW",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "A5",
+        "netId": "net-CC1",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "A6",
+        "netId": "net-USB_DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "A7",
+        "netId": "net-USB_DN",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "B5",
+        "netId": "net-CC2",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "B6",
+        "netId": "net-USB_DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "B7",
+        "netId": "net-USB_DN",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "B4A9",
+        "netId": "net-VBUS_RAW",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "B1A12",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "1",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "3",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-USB1",
+        "pinNumber": "4",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-LED1",
+        "pinNumber": "2",
+        "netId": "net-+5V",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-LED1",
+        "pinNumber": "1",
+        "netId": "net-LED1_K",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R5",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R5",
+        "pinNumber": "1",
+        "netId": "net-LED1_K",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R3",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R3",
+        "pinNumber": "1",
+        "netId": "net-CC1",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R4",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R4",
+        "pinNumber": "1",
+        "netId": "net-CC2",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-F1",
+        "pinNumber": "2",
+        "netId": "net-+5V",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-F1",
+        "pinNumber": "1",
+        "netId": "net-VBUS_RAW",
+        "kind": "netlist"
+      }
+    ],
+    "modules": [
+      {
+        "id": "USB_ESD_DATA",
+        "name": "USB ESD & 33R Series (D1)",
+        "coreComponents": [
+          "comp-D1"
+        ],
+        "peripheralComponents": [
+          "comp-R1",
+          "comp-R2"
+        ],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-USB_ESD_DATA-DM",
+            "name": "DM",
+            "netId": "net-DM",
+            "pinRefs": [
+              "comp-R1:2"
+            ]
+          },
+          {
+            "id": "port-USB_ESD_DATA-DP",
+            "name": "DP",
+            "netId": "net-DP",
+            "pinRefs": [
+              "comp-R2:2"
+            ]
+          },
+          {
+            "id": "port-USB_ESD_DATA-USB_DN",
+            "name": "USB_DN",
+            "netId": "net-USB_DN",
+            "pinRefs": [
+              "comp-D1:1",
+              "comp-D1:6",
+              "comp-R1:1"
+            ]
+          },
+          {
+            "id": "port-USB_ESD_DATA-USB_DP",
+            "name": "USB_DP",
+            "netId": "net-USB_DP",
+            "pinRefs": [
+              "comp-D1:3",
+              "comp-D1:4",
+              "comp-R2:1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "USB_CONN",
+        "name": "USB-C Receptacle (USB1)",
+        "coreComponents": [
+          "comp-USB1"
+        ],
+        "peripheralComponents": [],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-USB_CONN-CC1",
+            "name": "CC1",
+            "netId": "net-CC1",
+            "pinRefs": [
+              "comp-USB1:A5"
+            ]
+          },
+          {
+            "id": "port-USB_CONN-CC2",
+            "name": "CC2",
+            "netId": "net-CC2",
+            "pinRefs": [
+              "comp-USB1:B5"
+            ]
+          },
+          {
+            "id": "port-USB_CONN-USB_DN",
+            "name": "USB_DN",
+            "netId": "net-USB_DN",
+            "pinRefs": [
+              "comp-USB1:A7",
+              "comp-USB1:B7"
+            ]
+          },
+          {
+            "id": "port-USB_CONN-USB_DP",
+            "name": "USB_DP",
+            "netId": "net-USB_DP",
+            "pinRefs": [
+              "comp-USB1:A6",
+              "comp-USB1:B6"
+            ]
+          },
+          {
+            "id": "port-USB_CONN-VBUS_RAW",
+            "name": "VBUS_RAW",
+            "netId": "net-VBUS_RAW",
+            "pinRefs": [
+              "comp-USB1:A4B9",
+              "comp-USB1:B4A9"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LED_5V",
+        "name": "+5V Power LED (LED1)",
+        "coreComponents": [
+          "comp-LED1"
+        ],
+        "peripheralComponents": [
+          "comp-R5"
+        ],
+        "internalNets": [
+          "net-LED1_K"
+        ],
+        "ports": []
+      },
+      {
+        "id": "CC1_PD",
+        "name": "CC1 5.1k Pull-Down",
+        "coreComponents": [
+          "comp-R3"
+        ],
+        "peripheralComponents": [],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-CC1_PD-CC1",
+            "name": "CC1",
+            "netId": "net-CC1",
+            "pinRefs": [
+              "comp-R3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CC2_PD",
+        "name": "CC2 5.1k Pull-Down",
+        "coreComponents": [
+          "comp-R4"
+        ],
+        "peripheralComponents": [],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-CC2_PD-CC2",
+            "name": "CC2",
+            "netId": "net-CC2",
+            "pinRefs": [
+              "comp-R4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "VBUS_FUSE",
+        "name": "1.5A Polyfuse (F1)",
+        "coreComponents": [
+          "comp-F1"
+        ],
+        "peripheralComponents": [],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-VBUS_FUSE-VBUS_RAW",
+            "name": "VBUS_RAW",
+            "netId": "net-VBUS_RAW",
+            "pinRefs": [
+              "comp-F1:1"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sheet": {
+    "minX": 0,
+    "minY": 0,
+    "maxX": 1170,
+    "maxY": 825
+  },
+  "sheetBorder": {
+    "minX": 10,
+    "minY": 10,
+    "maxX": 1160,
+    "maxY": 815
+  },
+  "keepouts": [
+    {
+      "minX": 468,
+      "minY": 0,
+      "maxX": 1170,
+      "maxY": 198
+    }
+  ],
+  "titleBlock": {
+    "Name": {
+      "value": "TLSR Flasher P1 - USB-C, CC, ESD & 1.5A Polyfuse",
+      "showTitle": false,
+      "showValue": true
+    },
+    "Description": {
+      "value": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+      "showTitle": false,
+      "showValue": true
+    },
+    "Drawed": {
+      "value": "Antigravity",
+      "showTitle": false,
+      "showValue": true
+    }
+  },
+  "modules": [
+    {
+      "id": "USB_ESD_DATA",
+      "title": "USB ESD & 33R Series (D1)",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "D1",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -70.5,
+            "minY": -40.5,
+            "maxX": 70.5,
+            "maxY": 40.5
+          },
+          "textBboxes": [
+            {
+              "minX": 75,
+              "minY": 30,
+              "maxX": 93.2861328125,
+              "maxY": 38
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "IO1",
+              "net": "USB_DN",
+              "x": -40,
+              "y": -60,
+              "rotation": 270
+            },
+            {
+              "number": "2",
+              "name": "GND",
+              "net": "GND",
+              "x": 0,
+              "y": -60,
+              "rotation": 270
+            },
+            {
+              "number": "3",
+              "name": "IO3",
+              "net": "USB_DP",
+              "x": 40,
+              "y": -60,
+              "rotation": 270
+            },
+            {
+              "number": "4",
+              "name": "IO4",
+              "net": "USB_DP",
+              "x": 40,
+              "y": 60,
+              "rotation": 90
+            },
+            {
+              "number": "5",
+              "name": "VCC",
+              "net": "+5V",
+              "x": 0,
+              "y": 60,
+              "rotation": 90
+            },
+            {
+              "number": "6",
+              "name": "IO2",
+              "net": "USB_DN",
+              "x": -40,
+              "y": 60,
+              "rotation": 90
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "R1",
+          "x": -60,
+          "y": 210,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -70.5,
+            "minY": 204.5,
+            "maxX": -49.5,
+            "maxY": 215.5
+          },
+          "textBboxes": [
+            {
+              "minX": -70,
+              "minY": 215,
+              "maxX": -47.82080078125,
+              "maxY": 223
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "2",
+              "net": "DM",
+              "x": -40,
+              "y": 210,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "1",
+              "net": "USB_DN",
+              "x": -80,
+              "y": 210,
+              "rotation": 180
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "R2",
+          "x": 180,
+          "y": 210,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 169.5,
+            "minY": 204.5,
+            "maxX": 190.5,
+            "maxY": 215.5
+          },
+          "textBboxes": [
+            {
+              "minX": 170,
+              "minY": 215,
+              "maxX": 192.17919921875,
+              "maxY": 223
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "2",
+              "net": "DP",
+              "x": 200,
+              "y": 210,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "1",
+              "net": "USB_DP",
+              "x": 160,
+              "y": 210,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -80,
+              210
+            ],
+            [
+              -85,
+              210
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -85,
+              210
+            ],
+            [
+              -85,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -85,
+              65
+            ],
+            [
+              -75,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -75,
+              65
+            ],
+            [
+              -40,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -40,
+              65
+            ],
+            [
+              -40,
+              60
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -40,
+              -60
+            ],
+            [
+              -40,
+              -65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -40,
+              -65
+            ],
+            [
+              -75,
+              -65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -75,
+              -65
+            ],
+            [
+              -75,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              160,
+              210
+            ],
+            [
+              40,
+              210
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              40,
+              210
+            ],
+            [
+              40,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              40,
+              65
+            ],
+            [
+              40,
+              60
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              40,
+              65
+            ],
+            [
+              95,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              95,
+              65
+            ],
+            [
+              95,
+              -65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              95,
+              -65
+            ],
+            [
+              40,
+              -65
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              40,
+              -65
+            ],
+            [
+              40,
+              -60
+            ]
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": 0,
+          "pinY": -60,
+          "direction": "down",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-D1",
+            "pinNumber": "2",
+            "zoneId": "USB_ESD_DATA",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "+5V",
+          "kind": "power",
+          "pinX": 0,
+          "pinY": 60,
+          "direction": "up",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-D1",
+            "pinNumber": "5",
+            "zoneId": "USB_ESD_DATA",
+            "net": "+5V"
+          }
+        },
+        {
+          "net": "USB_DN",
+          "kind": "net_port_bi",
+          "pinX": -80,
+          "pinY": 65,
+          "direction": "down",
+          "offset": 125,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "USB_ESD_DATA",
+            "net": "USB_DN",
+            "x": -80,
+            "y": 65
+          }
+        },
+        {
+          "net": "USB_DP",
+          "kind": "net_port_bi",
+          "pinX": 100,
+          "pinY": 210,
+          "direction": "up",
+          "offset": 10,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "USB_ESD_DATA",
+            "net": "USB_DP",
+            "x": 100,
+            "y": 210
+          }
+        },
+        {
+          "net": "DM",
+          "kind": "net_port_bi",
+          "pinX": -40,
+          "pinY": 210,
+          "direction": "right",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R1",
+            "pinNumber": "2",
+            "zoneId": "USB_ESD_DATA",
+            "net": "DM"
+          }
+        },
+        {
+          "net": "DP",
+          "kind": "net_port_bi",
+          "pinX": 200,
+          "pinY": 210,
+          "direction": "right",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R2",
+            "pinNumber": "2",
+            "zoneId": "USB_ESD_DATA",
+            "net": "DP"
+          }
+        }
+      ]
+    },
+    {
+      "id": "USB_CONN",
+      "title": "USB-C Receptacle (USB1)",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "USB1",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -25.5,
+            "minY": -85.5,
+            "maxX": 25.5,
+            "maxY": 85.5
+          },
+          "textBboxes": [
+            {
+              "minX": -25,
+              "minY": 85,
+              "maxX": -6.7138671875,
+              "maxY": 93
+            }
+          ],
+          "pins": [
+            {
+              "number": "A1B12",
+              "name": "GND",
+              "net": "GND",
+              "x": -35,
+              "y": 75,
+              "rotation": 180
+            },
+            {
+              "number": "A4B9",
+              "name": "VBUS",
+              "net": "VBUS_RAW",
+              "x": -35,
+              "y": 65,
+              "rotation": 180
+            },
+            {
+              "number": "A5",
+              "name": "CC1",
+              "net": "CC1",
+              "x": -35,
+              "y": 55,
+              "rotation": 180
+            },
+            {
+              "number": "A6",
+              "name": "DP1",
+              "net": "USB_DP",
+              "x": -35,
+              "y": 45,
+              "rotation": 180
+            },
+            {
+              "number": "A7",
+              "name": "DN1",
+              "net": "USB_DN",
+              "x": -35,
+              "y": 35,
+              "rotation": 180
+            },
+            {
+              "number": "A8",
+              "name": "SBU1",
+              "net": "",
+              "x": -35,
+              "y": 25,
+              "rotation": 180
+            },
+            {
+              "number": "B5",
+              "name": "CC2",
+              "net": "CC2",
+              "x": -35,
+              "y": 15,
+              "rotation": 180
+            },
+            {
+              "number": "B6",
+              "name": "DP2",
+              "net": "USB_DP",
+              "x": -35,
+              "y": 5,
+              "rotation": 180
+            },
+            {
+              "number": "B7",
+              "name": "DN2",
+              "net": "USB_DN",
+              "x": -35,
+              "y": -5,
+              "rotation": 180
+            },
+            {
+              "number": "B8",
+              "name": "SBU2",
+              "net": "",
+              "x": -35,
+              "y": -15,
+              "rotation": 180
+            },
+            {
+              "number": "B4A9",
+              "name": "VBUS",
+              "net": "VBUS_RAW",
+              "x": -35,
+              "y": -25,
+              "rotation": 180
+            },
+            {
+              "number": "B1A12",
+              "name": "GND",
+              "net": "GND",
+              "x": -35,
+              "y": -35,
+              "rotation": 180
+            },
+            {
+              "number": "1",
+              "name": "SHELL",
+              "net": "GND",
+              "x": -35,
+              "y": -45,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "SHELL",
+              "net": "GND",
+              "x": -35,
+              "y": -55,
+              "rotation": 180
+            },
+            {
+              "number": "3",
+              "name": "SHELL",
+              "net": "GND",
+              "x": -35,
+              "y": -65,
+              "rotation": 180
+            },
+            {
+              "number": "4",
+              "name": "SHELL",
+              "net": "GND",
+              "x": -35,
+              "y": -75,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              -35,
+              5
+            ],
+            [
+              -55,
+              5
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              -55,
+              5
+            ],
+            [
+              -55,
+              45
+            ]
+          ]
+        },
+        {
+          "net": "USB_DP",
+          "points": [
+            [
+              -55,
+              45
+            ],
+            [
+              -35,
+              45
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -35,
+              -5
+            ],
+            [
+              -45,
+              -5
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -45,
+              -5
+            ],
+            [
+              -45,
+              35
+            ]
+          ]
+        },
+        {
+          "net": "USB_DN",
+          "points": [
+            [
+              -45,
+              35
+            ],
+            [
+              -35,
+              35
+            ]
+          ]
+        },
+        {
+          "net": "VBUS_RAW",
+          "points": [
+            [
+              -35,
+              -25
+            ],
+            [
+              -50,
+              -25
+            ]
+          ]
+        },
+        {
+          "net": "VBUS_RAW",
+          "points": [
+            [
+              -50,
+              -25
+            ],
+            [
+              -50,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "VBUS_RAW",
+          "points": [
+            [
+              -50,
+              65
+            ],
+            [
+              -35,
+              65
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -35,
+              -45
+            ],
+            [
+              -40,
+              -45
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -40,
+              -75
+            ],
+            [
+              -35,
+              -75
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -35,
+              -65
+            ],
+            [
+              -40,
+              -65
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -35,
+              -55
+            ],
+            [
+              -40,
+              -55
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -40,
+              -35
+            ],
+            [
+              -35,
+              -35
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -40,
+              -75
+            ],
+            [
+              -40,
+              -65
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -40,
+              -65
+            ],
+            [
+              -40,
+              -55
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -40,
+              -55
+            ],
+            [
+              -40,
+              -45
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -40,
+              -45
+            ],
+            [
+              -40,
+              -35
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -40,
+              -35
+            ],
+            [
+              -40,
+              -30
+            ]
+          ]
+        },
+        {
+          "net": "CC2",
+          "points": [
+            [
+              -35,
+              15
+            ],
+            [
+              -60,
+              15
+            ]
+          ]
+        },
+        {
+          "net": "CC2",
+          "points": [
+            [
+              -60,
+              15
+            ],
+            [
+              -60,
+              0
+            ]
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -35,
+          "pinY": 75,
+          "direction": "left",
+          "offset": 35,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-USB1",
+            "pinNumber": "A1B12",
+            "zoneId": "USB_CONN",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -40,
+          "pinY": -30,
+          "direction": "left",
+          "offset": 30,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "USB_CONN",
+            "net": "GND",
+            "x": -40,
+            "y": -30
+          }
+        },
+        {
+          "net": "VBUS_RAW",
+          "kind": "net_port_bi",
+          "pinX": -50,
+          "pinY": 20,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "USB_CONN",
+            "net": "VBUS_RAW",
+            "x": -50,
+            "y": 20
+          }
+        },
+        {
+          "net": "CC1",
+          "kind": "net_port_bi",
+          "pinX": -35,
+          "pinY": 55,
+          "direction": "left",
+          "offset": 50,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-USB1",
+            "pinNumber": "A5",
+            "zoneId": "USB_CONN",
+            "net": "CC1"
+          }
+        },
+        {
+          "net": "USB_DP",
+          "kind": "net_port_bi",
+          "pinX": -45,
+          "pinY": 45,
+          "direction": "up",
+          "offset": 40,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "USB_CONN",
+            "net": "USB_DP",
+            "x": -45,
+            "y": 45
+          }
+        },
+        {
+          "net": "USB_DN",
+          "kind": "net_port_bi",
+          "pinX": -45,
+          "pinY": 35,
+          "direction": "left",
+          "offset": 110,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "USB_CONN",
+            "net": "USB_DN",
+            "x": -45,
+            "y": 35
+          }
+        },
+        {
+          "net": "CC2",
+          "kind": "net_port_bi",
+          "pinX": -60,
+          "pinY": 0,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "USB_CONN",
+            "net": "CC2",
+            "x": -60,
+            "y": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "LED_5V",
+      "title": "+5V Power LED (LED1)",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "LED1",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -9.5,
+            "minY": -6.5,
+            "maxX": 5.5,
+            "maxY": 19.5
+          },
+          "textBboxes": [
+            {
+              "minX": -10,
+              "minY": 20,
+              "maxX": 12.17919921875,
+              "maxY": 28
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "A",
+              "net": "+5V",
+              "x": 20,
+              "y": 0,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "K",
+              "net": "LED1_K",
+              "x": -20,
+              "y": 0,
+              "rotation": 180
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "R5",
+          "x": -5,
+          "y": -25,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -15.5,
+            "minY": -30.5,
+            "maxX": 5.5,
+            "maxY": -19.5
+          },
+          "textBboxes": [
+            {
+              "minX": -15,
+              "minY": -20,
+              "maxX": 7.17919921875,
+              "maxY": -12
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "2",
+              "net": "GND",
+              "x": 15,
+              "y": -25,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "1",
+              "net": "LED1_K",
+              "x": -25,
+              "y": -25,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "net": "LED1_K",
+          "points": [
+            [
+              -25,
+              -25
+            ],
+            [
+              -30,
+              -25
+            ]
+          ]
+        },
+        {
+          "net": "LED1_K",
+          "points": [
+            [
+              -30,
+              -25
+            ],
+            [
+              -30,
+              0
+            ]
+          ]
+        },
+        {
+          "net": "LED1_K",
+          "points": [
+            [
+              -30,
+              0
+            ],
+            [
+              -20,
+              0
+            ]
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": 15,
+          "pinY": -25,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R5",
+            "pinNumber": "2",
+            "zoneId": "LED_5V",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "+5V",
+          "kind": "power",
+          "pinX": 20,
+          "pinY": 0,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-LED1",
+            "pinNumber": "2",
+            "zoneId": "LED_5V",
+            "net": "+5V"
+          }
+        },
+        {
+          "net": "LED1_K",
+          "kind": "net_port_bi",
+          "pinX": -25,
+          "pinY": 0,
+          "direction": "up",
+          "offset": 10,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "LED_5V",
+            "net": "LED1_K",
+            "x": -25,
+            "y": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "CC1_PD",
+      "title": "CC1 5.1k Pull-Down",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "R3",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -5.5,
+            "maxX": 10.5,
+            "maxY": 5.5
+          },
+          "textBboxes": [
+            {
+              "minX": -10,
+              "minY": 5,
+              "maxX": 12.17919921875,
+              "maxY": 13
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "2",
+              "net": "GND",
+              "x": 20,
+              "y": 0,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "1",
+              "net": "CC1",
+              "x": -20,
+              "y": 0,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": null,
+      "flags": [
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": 20,
+          "pinY": 0,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R3",
+            "pinNumber": "2",
+            "zoneId": "CC1_PD",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "CC1",
+          "kind": "net_port_bi",
+          "pinX": -20,
+          "pinY": 0,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R3",
+            "pinNumber": "1",
+            "zoneId": "CC1_PD",
+            "net": "CC1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CC2_PD",
+      "title": "CC2 5.1k Pull-Down",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "R4",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -5.5,
+            "maxX": 10.5,
+            "maxY": 5.5
+          },
+          "textBboxes": [
+            {
+              "minX": -10,
+              "minY": 5,
+              "maxX": 12.17919921875,
+              "maxY": 13
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "2",
+              "net": "GND",
+              "x": 20,
+              "y": 0,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "1",
+              "net": "CC2",
+              "x": -20,
+              "y": 0,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": null,
+      "flags": [
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": 20,
+          "pinY": 0,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R4",
+            "pinNumber": "2",
+            "zoneId": "CC2_PD",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "CC2",
+          "kind": "net_port_bi",
+          "pinX": -20,
+          "pinY": 0,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R4",
+            "pinNumber": "1",
+            "zoneId": "CC2_PD",
+            "net": "CC2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "VBUS_FUSE",
+      "title": "1.5A Polyfuse (F1)",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "F1",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -4.5,
+            "maxX": 10.5,
+            "maxY": 4.5
+          },
+          "textBboxes": [
+            {
+              "minX": -10,
+              "minY": 5,
+              "maxX": 8.2861328125,
+              "maxY": 13
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "2",
+              "net": "+5V",
+              "x": 20,
+              "y": 0,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "1",
+              "net": "VBUS_RAW",
+              "x": -20,
+              "y": 0,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": null,
+      "flags": [
+        {
+          "net": "+5V",
+          "kind": "power",
+          "pinX": 20,
+          "pinY": 0,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-F1",
+            "pinNumber": "2",
+            "zoneId": "VBUS_FUSE",
+            "net": "+5V"
+          }
+        },
+        {
+          "net": "VBUS_RAW",
+          "kind": "net_port_bi",
+          "pinX": -20,
+          "pinY": 0,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-F1",
+            "pinNumber": "1",
+            "zoneId": "VBUS_FUSE",
+            "net": "VBUS_RAW"
+          }
+        }
+      ]
+    }
+  ]
+}

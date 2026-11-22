@@ -1,0 +1,69 @@
+{
+  "count": 2,
+  "pours": [
+    {
+      "fillMethod": "solid",
+      "geometryAvailable": true,
+      "layer": 2,
+      "lineWidth": 0.2,
+      "locked": false,
+      "net": "GND",
+      "pourName": "POUR1",
+      "primitiveId": "75b20b679c1fa951",
+      "priority": 1,
+      "source": [
+        70,
+        20,
+        "L",
+        20,
+        70,
+        20,
+        953.622,
+        70,
+        1003.622,
+        1780.394,
+        1003.622,
+        1830.394,
+        953.622,
+        1830.394,
+        70,
+        1780.394,
+        20,
+        70,
+        20
+      ]
+    },
+    {
+      "fillMethod": "solid",
+      "geometryAvailable": true,
+      "layer": 1,
+      "lineWidth": 0.2,
+      "locked": false,
+      "net": "GND",
+      "pourName": "POUR2",
+      "primitiveId": "4f86cf733418a39e",
+      "priority": 1,
+      "source": [
+        70,
+        20,
+        "L",
+        20,
+        70,
+        20,
+        953.622,
+        70,
+        1003.622,
+        1780.394,
+        1003.622,
+        1830.394,
+        953.622,
+        1830.394,
+        70,
+        1780.394,
+        20,
+        70,
+        20
+      ]
+    }
+  ]
+}

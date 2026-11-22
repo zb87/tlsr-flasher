@@ -1,0 +1,27 @@
+{
+  "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+  "documentUuid": "b045c1e614ab13da",
+  "primitiveId": "86a7fde570d09fc4",
+  "ownerType": "sheet",
+  "x": 685,
+  "y": 76,
+  "expected": {
+    "AlignMode": null,
+    "Bold": null,
+    "Color": null,
+    "FillColor": null,
+    "FontName": null,
+    "FontSize": null,
+    "Italic": null,
+    "Key": "Description",
+    "KeyVisible": false,
+    "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+    "Rotation": null,
+    "UnderLine": null,
+    "Value": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+    "ValueVisible": true,
+    "X": 0,
+    "Y": -10,
+    "primitiveId": "86a7fde570d09fc4"
+  }
+}

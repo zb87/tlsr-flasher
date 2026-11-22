@@ -1,0 +1,320 @@
+{
+  "availability": {
+    "components": "available",
+    "copper": "available",
+    "layers": "available",
+    "outline": "available",
+    "routedLines": "available",
+    "rules": "available",
+    "silk": "available"
+  },
+  "bytes": 218296,
+  "capture": {
+    "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+    "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+    "projectName": "tlsr-flasher",
+    "documentUuid": "3c00dcf5bcf1cf37",
+    "documentType": "pcb",
+    "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d",
+    "startedAt": "2026-11-22T16:44:05.438633575Z",
+    "completedAt": "2026-11-22T16:44:06.428309818Z",
+    "consistency": "sequential-response-boundaries",
+    "identityVerified": true,
+    "requests": [
+      {
+        "action": "pcb.components.list",
+        "requestId": "req_1894",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:05.438641762Z",
+        "completedAt": "2026-11-22T16:44:05.628204018Z",
+        "responseCreatedAt": "2026-11-22T16:44:05.609412969Z",
+        "resultSha256": "48a522a92015c702543c0ec8ee8315180ea526d65e3ccfbacf0ee57332cc8a74",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 983,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.outline.get",
+        "requestId": "req_1895",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:05.630206713Z",
+        "completedAt": "2026-11-22T16:44:05.664004785Z",
+        "responseCreatedAt": "2026-11-22T16:44:05.66216046Z",
+        "resultSha256": "5fd720e1b26cb8b864e9ce1c198ae80be8e359b95d207ba8236415163485a0ed",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 984,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.line.list",
+        "requestId": "req_1896",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:05.664163096Z",
+        "completedAt": "2026-11-22T16:44:05.690167839Z",
+        "responseCreatedAt": "2026-11-22T16:44:05.688841834Z",
+        "resultSha256": "3e1cbb7e2283b7c0baef63908866616c731413c4f78e606b35342f216a671364",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 985,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.silk.list",
+        "requestId": "req_1897",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:05.690213852Z",
+        "completedAt": "2026-11-22T16:44:05.911587776Z",
+        "responseCreatedAt": "2026-11-22T16:44:05.897398005Z",
+        "resultSha256": "7c28c3cfe6282aa3a40992e0554cc377a0e7c9daee48e642a035d95f2bba1333",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 986,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.drc.rules",
+        "requestId": "req_1898",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:05.913092794Z",
+        "completedAt": "2026-11-22T16:44:05.946780872Z",
+        "responseCreatedAt": "2026-11-22T16:44:05.944203161Z",
+        "resultSha256": "4e248820f8d8964a3377a36b546cc3280512155b88fb6500f34973e214af7fba",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 987,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.layers.list",
+        "requestId": "req_1899",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:05.946931876Z",
+        "completedAt": "2026-11-22T16:44:06.244891537Z",
+        "responseCreatedAt": "2026-11-22T16:44:06.225023164Z",
+        "resultSha256": "82788987d9e99a55276ecff8271586968a7ce280231693d701c7a748c4ccc9a1",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 988,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.line.list",
+        "requestId": "req_1900",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:06.246015377Z",
+        "completedAt": "2026-11-22T16:44:06.293608243Z",
+        "responseCreatedAt": "2026-11-22T16:44:06.292937754Z",
+        "resultSha256": "3e1cbb7e2283b7c0baef63908866616c731413c4f78e606b35342f216a671364",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 989,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.via.list",
+        "requestId": "req_1901",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:06.29362939Z",
+        "completedAt": "2026-11-22T16:44:06.315817169Z",
+        "responseCreatedAt": "2026-11-22T16:44:06.314998638Z",
+        "resultSha256": "3ebdd5ba8869fde231f904ec153c60513572e2fa13fe0b2f9349ca0b8ae8aece",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 990,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.pour.list",
+        "requestId": "req_1902",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:06.31584561Z",
+        "completedAt": "2026-11-22T16:44:06.35037733Z",
+        "responseCreatedAt": "2026-11-22T16:44:06.349742327Z",
+        "resultSha256": "450c1cb71382370ba8aaffcab65e3f244b157175ee7fdae5ee286b048694be4d",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 991,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.poured.list",
+        "requestId": "req_1903",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:06.350407134Z",
+        "completedAt": "2026-11-22T16:44:06.373401275Z",
+        "responseCreatedAt": "2026-11-22T16:44:06.37277491Z",
+        "resultSha256": "99bf61aee1b2bb697d7f52221cb28c641915e092d295d3aa1bbf1a59ba48b4fe",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 992,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.region.list",
+        "requestId": "req_1904",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:06.37342219Z",
+        "completedAt": "2026-11-22T16:44:06.403737382Z",
+        "responseCreatedAt": "2026-11-22T16:44:06.402668249Z",
+        "resultSha256": "8053611d83cc7f701f1a8ed4a45600a8c21ad7a846faf41aa08c38da9b2eead1",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 993,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.fill.list",
+        "requestId": "req_1905",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:44:06.403800035Z",
+        "completedAt": "2026-11-22T16:44:06.428309818Z",
+        "responseCreatedAt": "2026-11-22T16:44:06.427439534Z",
+        "resultSha256": "8947929fa2260324a05ed927349984218ae815c995ff2836f71342a31d4037e0",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 994,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      }
+    ]
+  },
+  "capturedAt": "2026-11-22T16:44:05.438633575Z",
+  "kind": "pcb-dump-file",
+  "partial": null,
+  "sha256": "ffe8135db7a51921b285bb1825754eba67a8d8901ff0cb7acb55d05afcb0d252",
+  "snapshot": "pcb_layout_r2_dump.json",
+  "version": 1
+}

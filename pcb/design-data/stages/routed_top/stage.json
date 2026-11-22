@@ -1,0 +1,228 @@
+{
+  "availability": {
+    "components.json": "available",
+    "drc.json": "available",
+    "nets.json": "available",
+    "pours.json": "available",
+    "snapshot.png": "available",
+    "tracks.json": "available",
+    "vias.json": "available"
+  },
+  "blank": false,
+  "capture": {
+    "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+    "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+    "projectName": "tlsr-flasher",
+    "documentUuid": "3c00dcf5bcf1cf37",
+    "documentType": "pcb",
+    "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d",
+    "startedAt": "2026-11-22T16:51:26.576966664Z",
+    "completedAt": "2026-11-22T16:51:33.262073786Z",
+    "consistency": "sequential-response-boundaries",
+    "identityVerified": true,
+    "requests": [
+      {
+        "action": "pcb.snapshot",
+        "requestId": "req_3284",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:51:26.576969209Z",
+        "completedAt": "2026-11-22T16:51:26.98219238Z",
+        "responseCreatedAt": "2026-11-22T16:51:26.979196899Z",
+        "resultSha256": "ad344cabca24f4c3267a27ad016a48ac8af9f48b823d785cb06bdfb89738db8c",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 1742,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.components.list",
+        "requestId": "req_3285",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:51:27.045586632Z",
+        "completedAt": "2026-11-22T16:51:27.108687881Z",
+        "responseCreatedAt": "2026-11-22T16:51:27.094624544Z",
+        "resultSha256": "48a522a92015c702543c0ec8ee8315180ea526d65e3ccfbacf0ee57332cc8a74",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 1743,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.line.list",
+        "requestId": "req_3286",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:51:27.112438376Z",
+        "completedAt": "2026-11-22T16:51:27.13102668Z",
+        "responseCreatedAt": "2026-11-22T16:51:27.125441778Z",
+        "resultSha256": "3f3174d496ab02e783e10067afcab22038fff7923bc62e0d3ee16423a3d69d95",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 1744,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.via.list",
+        "requestId": "req_3287",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:51:27.133236952Z",
+        "completedAt": "2026-11-22T16:51:27.144255852Z",
+        "responseCreatedAt": "2026-11-22T16:51:27.143176945Z",
+        "resultSha256": "6e215e15067f1367ad07eaf58c74dd2851ef76e483b236c6a3e3a792ddfbf77e",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 1745,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.pour.list",
+        "requestId": "req_3288",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:51:27.144668856Z",
+        "completedAt": "2026-11-22T16:51:27.152707842Z",
+        "responseCreatedAt": "2026-11-22T16:51:27.152196673Z",
+        "resultSha256": "b12740515b2aa99cb72ac4739b8a50ed3bef14f5f1a4a7d8d9d3631f5fbb56a5",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 1746,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.nets.list",
+        "requestId": "req_3289",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:51:27.152921643Z",
+        "completedAt": "2026-11-22T16:51:27.165704026Z",
+        "responseCreatedAt": "2026-11-22T16:51:27.164903674Z",
+        "resultSha256": "3da889994a9ab891dee8150def5a7a261a7529d1891ad9488ee6187370334f30",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 1747,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      },
+      {
+        "action": "pcb.drc.check",
+        "requestId": "req_3290",
+        "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+        "startedAt": "2026-11-22T16:51:27.165992324Z",
+        "completedAt": "2026-11-22T16:51:33.262073786Z",
+        "responseCreatedAt": "2026-11-22T16:51:33.261139008Z",
+        "resultSha256": "154d017e77ddc9ccb55157c420637a672eab22e3c2f9d362c4371698592b2b42",
+        "context": {
+          "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+          "projectName": "tlsr-flasher",
+          "documentUuid": "3c00dcf5bcf1cf37",
+          "documentType": "pcb",
+          "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d"
+        },
+        "sequence": {
+          "Known": true,
+          "Seq": 1748,
+          "SeqAbandoned": 0,
+          "Unordered": false,
+          "AbandonedIDs": null
+        },
+        "status": "available"
+      }
+    ]
+  },
+  "captureKind": "board-fitted-viewport-png",
+  "dataFiles": [
+    "components.json",
+    "tracks.json",
+    "vias.json",
+    "pours.json",
+    "nets.json",
+    "drc.json"
+  ],
+  "dir": "/home/zb/code/TLSR825x/tlsr-flasher/design-data/stages/routed_top",
+  "drcPassKnown": true,
+  "drcPassed": true,
+  "fileHashes": {
+    "components.json": "47cf13b5bbe82eb261906e0b665b98e8139af8abf9a72d9256e3219cb0eb5665",
+    "drc.json": "0adf2161214843baf9b6ed41e8cfad06e2c8474843e04ca775077787e2174b89",
+    "nets.json": "a510fe4b7d6698c99fccc28d4b1ae26f543ab7f191f9d7c153885245911f0b95",
+    "pours.json": "8a5a4d4dfea2133508854c4cca5c899d2628553b3f1c70098838af0cd626f00f",
+    "snapshot.png": "2f08ecdb9aaedf1a79bc8afb69682970e3e43f62bcfce9353819691c55f39ce6",
+    "tracks.json": "382a234140e24a25affd60baf1114dea0234af698673e791a51df1dfffbb9587",
+    "vias.json": "d661f7141e3316e9c0495e4890bcaebba60883132fbea2b942c3aefbf9a46b87"
+  },
+  "fitApi": "eda.pcb_Document.zoomToBoardOutline",
+  "fitMode": "board",
+  "frameColors": 405,
+  "frameContent": 0.9735820895522388,
+  "imageValid": true,
+  "objectLevelExport": false,
+  "partial": [],
+  "sameImageAsPrevious": false,
+  "sha256": "2f08ecdb9aaedf1a79bc8afb69682970e3e43f62bcfce9353819691c55f39ce6",
+  "sha256Source": "cli-artifact",
+  "snapshot": "/home/zb/code/TLSR825x/tlsr-flasher/design-data/stages/routed_top/snapshot.png",
+  "stage": "routed_top",
+  "stale": false
+}

@@ -1,0 +1,3355 @@
+{
+  "schemaVersion": 1,
+  "connectivity": {
+    "schemaVersion": "1.4",
+    "projectId": "f91760ddb2c7418299e7752f330a761d",
+    "documentId": "b045c1e614ab13da",
+    "components": [
+      {
+        "id": "comp-H2",
+        "ref": "H2",
+        "role": "connector",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "9b540f58c6ad4e26b03d1a299cfb1108",
+          "name": "PZ254V-11-04P"
+        },
+        "footprint": "HDR-TH_4P-P2.54-V-M",
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "x": 180,
+            "y": 710
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "x": 180,
+            "y": 700
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "x": 180,
+            "y": 690
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "x": 180,
+            "y": 680
+          }
+        ],
+        "placement": {
+          "x": 200,
+          "y": 695,
+          "bbox": {
+            "minX": 189.5,
+            "minY": 669.5,
+            "maxX": 210.5,
+            "maxY": 720.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      },
+      {
+        "id": "comp-U1",
+        "ref": "U1",
+        "role": "mcu",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "cbb003c3987643819c5e2cec9988e2cb",
+          "name": "E180-Z6907A"
+        },
+        "footprint": "WIRELM-SMD_E180-Z6907A",
+        "pins": [
+          {
+            "number": "1",
+            "name": "NC",
+            "noConnected": true,
+            "x": 610,
+            "y": 510
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "x": 610,
+            "y": 500
+          },
+          {
+            "number": "3",
+            "name": "PD2",
+            "noConnected": true,
+            "x": 610,
+            "y": 490
+          },
+          {
+            "number": "4",
+            "name": "PC4",
+            "x": 610,
+            "y": 480
+          },
+          {
+            "number": "5",
+            "name": "TX",
+            "noConnected": true,
+            "x": 610,
+            "y": 470
+          },
+          {
+            "number": "6",
+            "name": "RX",
+            "noConnected": true,
+            "x": 610,
+            "y": 460
+          },
+          {
+            "number": "7",
+            "name": "NC",
+            "noConnected": true,
+            "x": 610,
+            "y": 450
+          },
+          {
+            "number": "8",
+            "name": "NC",
+            "noConnected": true,
+            "x": 610,
+            "y": 440
+          },
+          {
+            "number": "9",
+            "name": "PD3",
+            "noConnected": true,
+            "x": 610,
+            "y": 430
+          },
+          {
+            "number": "10",
+            "name": "PE2",
+            "x": 610,
+            "y": 420
+          },
+          {
+            "number": "11",
+            "name": "PE0",
+            "x": 610,
+            "y": 410
+          },
+          {
+            "number": "12",
+            "name": "PE3(GPIO0)",
+            "noConnected": true,
+            "x": 610,
+            "y": 400
+          },
+          {
+            "number": "13",
+            "name": "VCC",
+            "x": 610,
+            "y": 390
+          },
+          {
+            "number": "14",
+            "name": "GND",
+            "x": 610,
+            "y": 380
+          },
+          {
+            "number": "15",
+            "name": "PA1",
+            "noConnected": true,
+            "x": 610,
+            "y": 370
+          },
+          {
+            "number": "16",
+            "name": "NC",
+            "noConnected": true,
+            "x": 610,
+            "y": 360
+          },
+          {
+            "number": "17",
+            "name": "NC",
+            "noConnected": true,
+            "x": 610,
+            "y": 350
+          },
+          {
+            "number": "18",
+            "name": "PA7",
+            "x": 610,
+            "y": 340
+          },
+          {
+            "number": "19",
+            "name": "PE1(GPIO2)",
+            "noConnected": true,
+            "x": 610,
+            "y": 330
+          },
+          {
+            "number": "20",
+            "name": "NC",
+            "noConnected": true,
+            "x": 770,
+            "y": 335
+          },
+          {
+            "number": "21",
+            "name": "PB1(ADC1)",
+            "x": 770,
+            "y": 345
+          },
+          {
+            "number": "22",
+            "name": "PB5(ADC2)",
+            "noConnected": true,
+            "x": 770,
+            "y": 355
+          },
+          {
+            "number": "23",
+            "name": "PB6(ADC3)",
+            "noConnected": true,
+            "x": 770,
+            "y": 365
+          },
+          {
+            "number": "24",
+            "name": "PB7(ADC4)",
+            "noConnected": true,
+            "x": 770,
+            "y": 375
+          },
+          {
+            "number": "25",
+            "name": "NC",
+            "noConnected": true,
+            "x": 770,
+            "y": 385
+          },
+          {
+            "number": "26",
+            "name": "SWS",
+            "x": 770,
+            "y": 395
+          },
+          {
+            "number": "27",
+            "name": "PB4(PWM0)",
+            "noConnected": true,
+            "x": 770,
+            "y": 405
+          },
+          {
+            "number": "28",
+            "name": "PA3(PWM2)",
+            "noConnected": true,
+            "x": 770,
+            "y": 415
+          },
+          {
+            "number": "29",
+            "name": "PC5(PWM3)",
+            "noConnected": true,
+            "x": 770,
+            "y": 425
+          },
+          {
+            "number": "30",
+            "name": "PA4",
+            "noConnected": true,
+            "x": 770,
+            "y": 435
+          },
+          {
+            "number": "31",
+            "name": "NC",
+            "noConnected": true,
+            "x": 770,
+            "y": 445
+          },
+          {
+            "number": "32",
+            "name": "PA0(PWM1)",
+            "noConnected": true,
+            "x": 770,
+            "y": 455
+          },
+          {
+            "number": "33",
+            "name": "NC",
+            "noConnected": true,
+            "x": 770,
+            "y": 465
+          },
+          {
+            "number": "34",
+            "name": "NC",
+            "noConnected": true,
+            "x": 770,
+            "y": 475
+          },
+          {
+            "number": "35",
+            "name": "NC",
+            "noConnected": true,
+            "x": 770,
+            "y": 485
+          },
+          {
+            "number": "36",
+            "name": "GND",
+            "x": 770,
+            "y": 495
+          },
+          {
+            "number": "37",
+            "name": "nRESET",
+            "x": 770,
+            "y": 505
+          }
+        ],
+        "placement": {
+          "x": 690,
+          "y": 420,
+          "bbox": {
+            "minX": 619.5,
+            "minY": 319.5,
+            "maxX": 760.5,
+            "maxY": 520.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      },
+      {
+        "id": "comp-C7",
+        "ref": "C7",
+        "role": "capacitor",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "345d8669720442d6a8747f19c9226485",
+          "name": "HGC0603R5106M160NTHJ"
+        },
+        "footprint": "C0603",
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "x": 370,
+            "y": 345
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "x": 410,
+            "y": 345
+          }
+        ],
+        "placement": {
+          "x": 390,
+          "y": 345,
+          "bbox": {
+            "minX": 379.5,
+            "minY": 336.5,
+            "maxX": 400.5,
+            "maxY": 353.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      },
+      {
+        "id": "comp-C8",
+        "ref": "C8",
+        "role": "capacitor",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "b470d7af3c48415db6a4748fa8e62805",
+          "name": "0603X7R104K500NT"
+        },
+        "footprint": "C0603",
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "x": 370,
+            "y": 465
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "x": 410,
+            "y": 465
+          }
+        ],
+        "placement": {
+          "x": 390,
+          "y": 465,
+          "bbox": {
+            "minX": 379.5,
+            "minY": 456.5,
+            "maxX": 400.5,
+            "maxY": 473.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      },
+      {
+        "id": "comp-R6",
+        "ref": "R6",
+        "role": "resistor",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "7d0a4241f13846d38eb1c0e45cc6ecf8",
+          "name": "FRC0603F1002TS"
+        },
+        "footprint": "R0603",
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "x": 905,
+            "y": 765
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "x": 865,
+            "y": 765
+          }
+        ],
+        "placement": {
+          "x": 885,
+          "y": 765,
+          "bbox": {
+            "minX": 874.5,
+            "minY": 759.5,
+            "maxX": 895.5,
+            "maxY": 770.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      },
+      {
+        "id": "comp-C9",
+        "ref": "C9",
+        "role": "capacitor",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "b470d7af3c48415db6a4748fa8e62805",
+          "name": "0603X7R104K500NT"
+        },
+        "footprint": "C0603",
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "x": 985,
+            "y": 690
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "x": 1025,
+            "y": 690
+          }
+        ],
+        "placement": {
+          "x": 1005,
+          "y": 690,
+          "bbox": {
+            "minX": 994.5,
+            "minY": 681.5,
+            "maxX": 1015.5,
+            "maxY": 698.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      },
+      {
+        "id": "comp-SW1",
+        "ref": "SW1",
+        "role": "switch",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "74bd52f1120e4bee9df6a4e8c1f72428",
+          "name": "TS-1088R-02526"
+        },
+        "footprint": "SW-SMD_L3.9-W3.0-P4.45",
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "x": 1015,
+            "y": 765
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "x": 1055,
+            "y": 765
+          }
+        ],
+        "placement": {
+          "x": 1035,
+          "y": 765,
+          "bbox": {
+            "minX": 1024.5,
+            "minY": 763,
+            "maxX": 1045.5,
+            "maxY": 772.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      },
+      {
+        "id": "comp-H1",
+        "ref": "H1",
+        "role": "connector",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "a39f9c9126e24625a6e7edb3fdff00c6",
+          "name": "PZ254V-11-05P"
+        },
+        "footprint": "HDR-TH_5P-P2.54-V-M",
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "x": 205,
+            "y": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "x": 205,
+            "y": 170
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "x": 205,
+            "y": 160
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "x": 205,
+            "y": 150
+          },
+          {
+            "number": "5",
+            "name": "5",
+            "x": 205,
+            "y": 140
+          }
+        ],
+        "placement": {
+          "x": 225,
+          "y": 160,
+          "bbox": {
+            "minX": 214.5,
+            "minY": 129.5,
+            "maxX": 235.5,
+            "maxY": 190.5
+          }
+        },
+        "pageId": "b045c1e614ab13da"
+      }
+    ],
+    "nets": [
+      {
+        "id": "net-GND",
+        "name": "GND",
+        "scope": "global",
+        "role": "ground"
+      },
+      {
+        "id": "net-3V3",
+        "name": "3V3",
+        "scope": "global",
+        "role": "power"
+      },
+      {
+        "id": "net-SWS",
+        "name": "SWS",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-RST",
+        "name": "RST",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-PWR_EN",
+        "name": "PWR_EN",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-DM",
+        "name": "DM",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-DP",
+        "name": "DP",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-SWM",
+        "name": "SWM",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-EXT_RST",
+        "name": "EXT_RST",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-PWR",
+        "name": "PWR",
+        "scope": "global",
+        "role": "power"
+      }
+    ],
+    "connections": [
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "1",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "2",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "3",
+        "netId": "net-SWS",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "4",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "4",
+        "netId": "net-PWR_EN",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "10",
+        "netId": "net-DM",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "11",
+        "netId": "net-DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "13",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "14",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "18",
+        "netId": "net-SWM",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "21",
+        "netId": "net-EXT_RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "26",
+        "netId": "net-SWS",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "36",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "37",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C7",
+        "pinNumber": "1",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C7",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C8",
+        "pinNumber": "1",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C8",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R6",
+        "pinNumber": "2",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R6",
+        "pinNumber": "1",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C9",
+        "pinNumber": "1",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C9",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-SW1",
+        "pinNumber": "1",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-SW1",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "1",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "2",
+        "netId": "net-PWR",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "3",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "4",
+        "netId": "net-SWM",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "5",
+        "netId": "net-EXT_RST",
+        "kind": "netlist"
+      }
+    ],
+    "modules": [
+      {
+        "id": "SELF_HDR",
+        "name": "Self-Prog 1x4P (H2)",
+        "coreComponents": [
+          "comp-H2"
+        ],
+        "ports": [
+          {
+            "id": "port-SELF_HDR-RST",
+            "name": "RST",
+            "netId": "net-RST",
+            "pinRefs": [
+              "comp-H2:4"
+            ]
+          },
+          {
+            "id": "port-SELF_HDR-SWS",
+            "name": "SWS",
+            "netId": "net-SWS",
+            "pinRefs": [
+              "comp-H2:3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "TLSR_CORE",
+        "name": "E180-Z6907A Core \u0026 Reset",
+        "coreComponents": [
+          "comp-U1"
+        ],
+        "peripheralComponents": [
+          "comp-C7",
+          "comp-C8",
+          "comp-R6",
+          "comp-C9",
+          "comp-SW1"
+        ],
+        "ports": [
+          {
+            "id": "port-TLSR_CORE-DM",
+            "name": "DM",
+            "netId": "net-DM",
+            "pinRefs": [
+              "comp-U1:10"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-DP",
+            "name": "DP",
+            "netId": "net-DP",
+            "pinRefs": [
+              "comp-U1:11"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-EXT_RST",
+            "name": "EXT_RST",
+            "netId": "net-EXT_RST",
+            "pinRefs": [
+              "comp-U1:21"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-PWR_EN",
+            "name": "PWR_EN",
+            "netId": "net-PWR_EN",
+            "pinRefs": [
+              "comp-U1:4"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-RST",
+            "name": "RST",
+            "netId": "net-RST",
+            "pinRefs": [
+              "comp-U1:37",
+              "comp-R6:2",
+              "comp-C9:1",
+              "comp-SW1:1"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-SWM",
+            "name": "SWM",
+            "netId": "net-SWM",
+            "pinRefs": [
+              "comp-U1:18"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-SWS",
+            "name": "SWS",
+            "netId": "net-SWS",
+            "pinRefs": [
+              "comp-U1:26"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "TARGET_HDR",
+        "name": "Target SWire 1x5P (H1)",
+        "coreComponents": [
+          "comp-H1"
+        ],
+        "ports": [
+          {
+            "id": "port-TARGET_HDR-EXT_RST",
+            "name": "EXT_RST",
+            "netId": "net-EXT_RST",
+            "pinRefs": [
+              "comp-H1:5"
+            ]
+          },
+          {
+            "id": "port-TARGET_HDR-SWM",
+            "name": "SWM",
+            "netId": "net-SWM",
+            "pinRefs": [
+              "comp-H1:4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sheet": {
+    "minX": 0,
+    "minY": 0,
+    "maxX": 1170,
+    "maxY": 825
+  },
+  "sheetBorder": {
+    "minX": 10,
+    "minY": 10,
+    "maxX": 1160,
+    "maxY": 815
+  },
+  "placementBoundarySource": "explicit-sheet-border",
+  "usableBounds": {
+    "minX": 25,
+    "minY": 25,
+    "maxX": 1145,
+    "maxY": 800
+  },
+  "keepouts": [
+    {
+      "minX": 468,
+      "minY": 0,
+      "maxX": 1170,
+      "maxY": 198
+    }
+  ],
+  "titleBlock": {
+    "Description": {
+      "value": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+      "showTitle": false,
+      "showValue": true
+    },
+    "Drawed": {
+      "value": "Antigravity",
+      "showTitle": false,
+      "showValue": true
+    },
+    "Name": {
+      "value": "TLSR Flasher P3 - E180-Z6907A Core, Reset \u0026 SWire Headers",
+      "showTitle": false,
+      "showValue": true
+    }
+  },
+  "layout": {
+    "schemaVersion": 1,
+    "documentId": "b045c1e614ab13da",
+    "placements": [
+      {
+        "primitiveId": "",
+        "designator": "H2",
+        "x": 200,
+        "y": 695,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 189.5,
+          "minY": 669.5,
+          "maxX": 210.5,
+          "maxY": 720.5
+        },
+        "textBboxes": [
+          {
+            "minX": 190,
+            "minY": 720,
+            "maxX": 211.659667969,
+            "maxY": 728
+          }
+        ],
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "GND",
+            "x": 180,
+            "y": 710,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "3V3",
+            "x": 180,
+            "y": 700,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "net": "SWS",
+            "x": 180,
+            "y": 690,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "net": "RST",
+            "x": 180,
+            "y": 680,
+            "rotation": 180
+          }
+        ]
+      },
+      {
+        "primitiveId": "",
+        "designator": "U1",
+        "x": 690,
+        "y": 420,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 619.5,
+          "minY": 319.5,
+          "maxX": 760.5,
+          "maxY": 520.5
+        },
+        "textBboxes": [
+          {
+            "minX": 620,
+            "minY": 520,
+            "maxX": 638.286132812,
+            "maxY": 528
+          }
+        ],
+        "pins": [
+          {
+            "number": "1",
+            "name": "NC",
+            "net": "",
+            "x": 610,
+            "y": 510,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "net": "GND",
+            "x": 610,
+            "y": 500,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "PD2",
+            "net": "",
+            "x": 610,
+            "y": 490,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "PC4",
+            "net": "PWR_EN",
+            "x": 610,
+            "y": 480,
+            "rotation": 180
+          },
+          {
+            "number": "5",
+            "name": "TX",
+            "net": "",
+            "x": 610,
+            "y": 470,
+            "rotation": 180
+          },
+          {
+            "number": "6",
+            "name": "RX",
+            "net": "",
+            "x": 610,
+            "y": 460,
+            "rotation": 180
+          },
+          {
+            "number": "7",
+            "name": "NC",
+            "net": "",
+            "x": 610,
+            "y": 450,
+            "rotation": 180
+          },
+          {
+            "number": "8",
+            "name": "NC",
+            "net": "",
+            "x": 610,
+            "y": 440,
+            "rotation": 180
+          },
+          {
+            "number": "9",
+            "name": "PD3",
+            "net": "",
+            "x": 610,
+            "y": 430,
+            "rotation": 180
+          },
+          {
+            "number": "10",
+            "name": "PE2",
+            "net": "DM",
+            "x": 610,
+            "y": 420,
+            "rotation": 180
+          },
+          {
+            "number": "11",
+            "name": "PE0",
+            "net": "DP",
+            "x": 610,
+            "y": 410,
+            "rotation": 180
+          },
+          {
+            "number": "12",
+            "name": "PE3(GPIO0)",
+            "net": "",
+            "x": 610,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "13",
+            "name": "VCC",
+            "net": "3V3",
+            "x": 610,
+            "y": 390,
+            "rotation": 180
+          },
+          {
+            "number": "14",
+            "name": "GND",
+            "net": "GND",
+            "x": 610,
+            "y": 380,
+            "rotation": 180
+          },
+          {
+            "number": "15",
+            "name": "PA1",
+            "net": "",
+            "x": 610,
+            "y": 370,
+            "rotation": 180
+          },
+          {
+            "number": "16",
+            "name": "NC",
+            "net": "",
+            "x": 610,
+            "y": 360,
+            "rotation": 180
+          },
+          {
+            "number": "17",
+            "name": "NC",
+            "net": "",
+            "x": 610,
+            "y": 350,
+            "rotation": 180
+          },
+          {
+            "number": "18",
+            "name": "PA7",
+            "net": "SWM",
+            "x": 610,
+            "y": 340,
+            "rotation": 180
+          },
+          {
+            "number": "19",
+            "name": "PE1(GPIO2)",
+            "net": "",
+            "x": 610,
+            "y": 330,
+            "rotation": 180
+          },
+          {
+            "number": "20",
+            "name": "NC",
+            "net": "",
+            "x": 770,
+            "y": 335,
+            "rotation": 0
+          },
+          {
+            "number": "21",
+            "name": "PB1(ADC1)",
+            "net": "EXT_RST",
+            "x": 770,
+            "y": 345,
+            "rotation": 0
+          },
+          {
+            "number": "22",
+            "name": "PB5(ADC2)",
+            "net": "",
+            "x": 770,
+            "y": 355,
+            "rotation": 0
+          },
+          {
+            "number": "23",
+            "name": "PB6(ADC3)",
+            "net": "",
+            "x": 770,
+            "y": 365,
+            "rotation": 0
+          },
+          {
+            "number": "24",
+            "name": "PB7(ADC4)",
+            "net": "",
+            "x": 770,
+            "y": 375,
+            "rotation": 0
+          },
+          {
+            "number": "25",
+            "name": "NC",
+            "net": "",
+            "x": 770,
+            "y": 385,
+            "rotation": 0
+          },
+          {
+            "number": "26",
+            "name": "SWS",
+            "net": "SWS",
+            "x": 770,
+            "y": 395,
+            "rotation": 0
+          },
+          {
+            "number": "27",
+            "name": "PB4(PWM0)",
+            "net": "",
+            "x": 770,
+            "y": 405,
+            "rotation": 0
+          },
+          {
+            "number": "28",
+            "name": "PA3(PWM2)",
+            "net": "",
+            "x": 770,
+            "y": 415,
+            "rotation": 0
+          },
+          {
+            "number": "29",
+            "name": "PC5(PWM3)",
+            "net": "",
+            "x": 770,
+            "y": 425,
+            "rotation": 0
+          },
+          {
+            "number": "30",
+            "name": "PA4",
+            "net": "",
+            "x": 770,
+            "y": 435,
+            "rotation": 0
+          },
+          {
+            "number": "31",
+            "name": "NC",
+            "net": "",
+            "x": 770,
+            "y": 445,
+            "rotation": 0
+          },
+          {
+            "number": "32",
+            "name": "PA0(PWM1)",
+            "net": "",
+            "x": 770,
+            "y": 455,
+            "rotation": 0
+          },
+          {
+            "number": "33",
+            "name": "NC",
+            "net": "",
+            "x": 770,
+            "y": 465,
+            "rotation": 0
+          },
+          {
+            "number": "34",
+            "name": "NC",
+            "net": "",
+            "x": 770,
+            "y": 475,
+            "rotation": 0
+          },
+          {
+            "number": "35",
+            "name": "NC",
+            "net": "",
+            "x": 770,
+            "y": 485,
+            "rotation": 0
+          },
+          {
+            "number": "36",
+            "name": "GND",
+            "net": "GND",
+            "x": 770,
+            "y": 495,
+            "rotation": 0
+          },
+          {
+            "number": "37",
+            "name": "nRESET",
+            "net": "RST",
+            "x": 770,
+            "y": 505,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "primitiveId": "",
+        "designator": "C7",
+        "x": 390,
+        "y": 345,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 379.5,
+          "minY": 336.5,
+          "maxX": 400.5,
+          "maxY": 353.5
+        },
+        "textBboxes": [
+          {
+            "minX": 380,
+            "minY": 355,
+            "maxX": 402.179199219,
+            "maxY": 363
+          }
+        ],
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 370,
+            "y": 345,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 410,
+            "y": 345,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "primitiveId": "",
+        "designator": "C8",
+        "x": 390,
+        "y": 465,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 379.5,
+          "minY": 456.5,
+          "maxX": 400.5,
+          "maxY": 473.5
+        },
+        "textBboxes": [
+          {
+            "minX": 380,
+            "minY": 475,
+            "maxX": 402.179199219,
+            "maxY": 483
+          }
+        ],
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 370,
+            "y": 465,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 410,
+            "y": 465,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "primitiveId": "",
+        "designator": "R6",
+        "x": 885,
+        "y": 765,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 874.5,
+          "minY": 759.5,
+          "maxX": 895.5,
+          "maxY": 770.5
+        },
+        "textBboxes": [
+          {
+            "minX": 875,
+            "minY": 770,
+            "maxX": 897.179199219,
+            "maxY": 778
+          }
+        ],
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "RST",
+            "x": 905,
+            "y": 765,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 865,
+            "y": 765,
+            "rotation": 180
+          }
+        ]
+      },
+      {
+        "primitiveId": "",
+        "designator": "C9",
+        "x": 1005,
+        "y": 690,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 994.5,
+          "minY": 681.5,
+          "maxX": 1015.5,
+          "maxY": 698.5
+        },
+        "textBboxes": [
+          {
+            "minX": 995,
+            "minY": 700,
+            "maxX": 1017.179199219,
+            "maxY": 708
+          }
+        ],
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "RST",
+            "x": 985,
+            "y": 690,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 1025,
+            "y": 690,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "primitiveId": "",
+        "designator": "SW1",
+        "x": 1035,
+        "y": 765,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 1024.5,
+          "minY": 763,
+          "maxX": 1045.5,
+          "maxY": 772.5
+        },
+        "textBboxes": [
+          {
+            "minX": 1025,
+            "minY": 775,
+            "maxX": 1043.286132812,
+            "maxY": 783
+          }
+        ],
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "RST",
+            "x": 1015,
+            "y": 765,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 1055,
+            "y": 765,
+            "rotation": 0
+          }
+        ]
+      },
+      {
+        "primitiveId": "",
+        "designator": "H1",
+        "x": 225,
+        "y": 160,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "minX": 214.5,
+          "minY": 129.5,
+          "maxX": 235.5,
+          "maxY": 190.5
+        },
+        "textBboxes": [
+          {
+            "minX": 215,
+            "minY": 190,
+            "maxX": 237.179199219,
+            "maxY": 198
+          }
+        ],
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "GND",
+            "x": 205,
+            "y": 180,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "PWR",
+            "x": 205,
+            "y": 170,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "net": "3V3",
+            "x": 205,
+            "y": 160,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "net": "SWM",
+            "x": 205,
+            "y": 150,
+            "rotation": 180
+          },
+          {
+            "number": "5",
+            "name": "5",
+            "net": "EXT_RST",
+            "x": 205,
+            "y": 140,
+            "rotation": 180
+          }
+        ]
+      }
+    ],
+    "wires": [
+      {
+        "net": "GND",
+        "points": [
+          [
+            180,
+            710
+          ],
+          [
+            175,
+            710
+          ]
+        ]
+      },
+      {
+        "net": "GND",
+        "points": [
+          [
+            175,
+            710
+          ],
+          [
+            175,
+            715
+          ]
+        ]
+      },
+      {
+        "net": "RST",
+        "points": [
+          [
+            980,
+            690
+          ],
+          [
+            985,
+            690
+          ]
+        ]
+      },
+      {
+        "net": "RST",
+        "points": [
+          [
+            770,
+            505
+          ],
+          [
+            980,
+            505
+          ]
+        ]
+      },
+      {
+        "net": "RST",
+        "points": [
+          [
+            980,
+            505
+          ],
+          [
+            980,
+            690
+          ]
+        ]
+      },
+      {
+        "net": "RST",
+        "points": [
+          [
+            980,
+            690
+          ],
+          [
+            980,
+            765
+          ]
+        ]
+      },
+      {
+        "net": "RST",
+        "points": [
+          [
+            905,
+            765
+          ],
+          [
+            980,
+            765
+          ]
+        ]
+      },
+      {
+        "net": "RST",
+        "points": [
+          [
+            980,
+            765
+          ],
+          [
+            1015,
+            765
+          ]
+        ]
+      },
+      {
+        "net": "3V3",
+        "points": [
+          [
+            370,
+            345
+          ],
+          [
+            365,
+            345
+          ]
+        ]
+      },
+      {
+        "net": "3V3",
+        "points": [
+          [
+            370,
+            465
+          ],
+          [
+            365,
+            465
+          ]
+        ]
+      },
+      {
+        "net": "3V3",
+        "points": [
+          [
+            365,
+            345
+          ],
+          [
+            365,
+            390
+          ]
+        ]
+      },
+      {
+        "net": "3V3",
+        "points": [
+          [
+            365,
+            390
+          ],
+          [
+            365,
+            465
+          ]
+        ]
+      },
+      {
+        "net": "3V3",
+        "points": [
+          [
+            365,
+            390
+          ],
+          [
+            595,
+            390
+          ]
+        ]
+      },
+      {
+        "net": "3V3",
+        "points": [
+          [
+            595,
+            390
+          ],
+          [
+            610,
+            390
+          ]
+        ]
+      },
+      {
+        "net": "3V3",
+        "points": [
+          [
+            595,
+            390
+          ],
+          [
+            595,
+            395
+          ]
+        ]
+      },
+      {
+        "net": "PWR",
+        "points": [
+          [
+            205,
+            170
+          ],
+          [
+            200,
+            170
+          ]
+        ]
+      },
+      {
+        "net": "PWR",
+        "points": [
+          [
+            200,
+            170
+          ],
+          [
+            200,
+            175
+          ]
+        ]
+      },
+      {
+        "net": "GND",
+        "points": [
+          [
+            205,
+            180
+          ],
+          [
+            200,
+            180
+          ]
+        ]
+      },
+      {
+        "net": "GND",
+        "points": [
+          [
+            200,
+            180
+          ],
+          [
+            200,
+            185
+          ]
+        ]
+      }
+    ],
+    "flags": [
+      {
+        "net": "RST",
+        "kind": "net_port_bi",
+        "pinX": 180,
+        "pinY": 680,
+        "direction": "left",
+        "offset": 10,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-H2",
+          "pinNumber": "4",
+          "zoneId": "SELF_HDR",
+          "net": "RST"
+        }
+      },
+      {
+        "net": "SWS",
+        "kind": "net_port_bi",
+        "pinX": 180,
+        "pinY": 690,
+        "direction": "left",
+        "offset": 75,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-H2",
+          "pinNumber": "3",
+          "zoneId": "SELF_HDR",
+          "net": "SWS"
+        }
+      },
+      {
+        "net": "3V3",
+        "kind": "power",
+        "pinX": 180,
+        "pinY": 700,
+        "direction": "left",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-H2",
+          "pinNumber": "2",
+          "zoneId": "SELF_HDR",
+          "net": "3V3"
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 175,
+        "pinY": 715,
+        "direction": "up",
+        "offset": 10,
+        "anchor": {
+          "type": "wire_tree",
+          "zoneId": "SELF_HDR",
+          "net": "GND",
+          "x": -25,
+          "y": 20
+        }
+      },
+      {
+        "net": "3V3",
+        "kind": "power",
+        "pinX": 865,
+        "pinY": 765,
+        "direction": "left",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-R6",
+          "pinNumber": "1",
+          "zoneId": "TLSR_CORE",
+          "net": "3V3"
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 1055,
+        "pinY": 765,
+        "direction": "right",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-SW1",
+          "pinNumber": "2",
+          "zoneId": "TLSR_CORE",
+          "net": "GND"
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 1025,
+        "pinY": 690,
+        "direction": "right",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-C9",
+          "pinNumber": "2",
+          "zoneId": "TLSR_CORE",
+          "net": "GND"
+        }
+      },
+      {
+        "net": "RST",
+        "kind": "net_port_bi",
+        "pinX": 875,
+        "pinY": 505,
+        "direction": "up",
+        "offset": 10,
+        "anchor": {
+          "type": "wire_tree",
+          "zoneId": "TLSR_CORE",
+          "net": "RST",
+          "x": 185,
+          "y": 85
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 610,
+        "pinY": 500,
+        "direction": "left",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "2",
+          "zoneId": "TLSR_CORE",
+          "net": "GND"
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 770,
+        "pinY": 495,
+        "direction": "right",
+        "offset": 230,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "36",
+          "zoneId": "TLSR_CORE",
+          "net": "GND"
+        }
+      },
+      {
+        "net": "PWR_EN",
+        "kind": "net_port_bi",
+        "pinX": 610,
+        "pinY": 480,
+        "direction": "left",
+        "offset": 40,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "4",
+          "zoneId": "TLSR_CORE",
+          "net": "PWR_EN"
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 410,
+        "pinY": 465,
+        "direction": "right",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-C8",
+          "pinNumber": "2",
+          "zoneId": "TLSR_CORE",
+          "net": "GND"
+        }
+      },
+      {
+        "net": "DM",
+        "kind": "net_port_bi",
+        "pinX": 610,
+        "pinY": 420,
+        "direction": "left",
+        "offset": 10,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "10",
+          "zoneId": "TLSR_CORE",
+          "net": "DM"
+        }
+      },
+      {
+        "net": "DP",
+        "kind": "net_port_bi",
+        "pinX": 610,
+        "pinY": 410,
+        "direction": "left",
+        "offset": 70,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "11",
+          "zoneId": "TLSR_CORE",
+          "net": "DP"
+        }
+      },
+      {
+        "net": "SWS",
+        "kind": "net_port_bi",
+        "pinX": 770,
+        "pinY": 395,
+        "direction": "right",
+        "offset": 10,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "26",
+          "zoneId": "TLSR_CORE",
+          "net": "SWS"
+        }
+      },
+      {
+        "net": "3V3",
+        "kind": "power",
+        "pinX": 595,
+        "pinY": 395,
+        "direction": "up",
+        "offset": 35,
+        "anchor": {
+          "type": "wire_tree",
+          "zoneId": "TLSR_CORE",
+          "net": "3V3",
+          "x": -95,
+          "y": -25
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 610,
+        "pinY": 380,
+        "direction": "left",
+        "offset": 265,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "14",
+          "zoneId": "TLSR_CORE",
+          "net": "GND"
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 410,
+        "pinY": 345,
+        "direction": "right",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-C7",
+          "pinNumber": "2",
+          "zoneId": "TLSR_CORE",
+          "net": "GND"
+        }
+      },
+      {
+        "net": "EXT_RST",
+        "kind": "net_port_bi",
+        "pinX": 770,
+        "pinY": 345,
+        "direction": "right",
+        "offset": 10,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "21",
+          "zoneId": "TLSR_CORE",
+          "net": "EXT_RST"
+        }
+      },
+      {
+        "net": "SWM",
+        "kind": "net_port_bi",
+        "pinX": 610,
+        "pinY": 340,
+        "direction": "left",
+        "offset": 10,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-U1",
+          "pinNumber": "18",
+          "zoneId": "TLSR_CORE",
+          "net": "SWM"
+        }
+      },
+      {
+        "net": "EXT_RST",
+        "kind": "net_port_bi",
+        "pinX": 205,
+        "pinY": 140,
+        "direction": "left",
+        "offset": 10,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-H1",
+          "pinNumber": "5",
+          "zoneId": "TARGET_HDR",
+          "net": "EXT_RST"
+        }
+      },
+      {
+        "net": "SWM",
+        "kind": "net_port_bi",
+        "pinX": 205,
+        "pinY": 150,
+        "direction": "left",
+        "offset": 100,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-H1",
+          "pinNumber": "4",
+          "zoneId": "TARGET_HDR",
+          "net": "SWM"
+        }
+      },
+      {
+        "net": "3V3",
+        "kind": "power",
+        "pinX": 205,
+        "pinY": 160,
+        "direction": "left",
+        "offset": 25,
+        "anchor": {
+          "type": "pin",
+          "componentId": "comp-H1",
+          "pinNumber": "3",
+          "zoneId": "TARGET_HDR",
+          "net": "3V3"
+        }
+      },
+      {
+        "net": "PWR",
+        "kind": "power",
+        "pinX": 200,
+        "pinY": 175,
+        "direction": "left",
+        "offset": 45,
+        "anchor": {
+          "type": "wire_tree",
+          "zoneId": "TARGET_HDR",
+          "net": "PWR",
+          "x": -25,
+          "y": 15
+        }
+      },
+      {
+        "net": "GND",
+        "kind": "ground",
+        "pinX": 200,
+        "pinY": 185,
+        "direction": "up",
+        "offset": 10,
+        "anchor": {
+          "type": "wire_tree",
+          "zoneId": "TARGET_HDR",
+          "net": "GND",
+          "x": -25,
+          "y": 25
+        }
+      }
+    ],
+    "expectedPinNets": {
+      "C7.1": "3V3",
+      "C7.2": "GND",
+      "C8.1": "3V3",
+      "C8.2": "GND",
+      "C9.1": "RST",
+      "C9.2": "GND",
+      "H1.1": "GND",
+      "H1.2": "PWR",
+      "H1.3": "3V3",
+      "H1.4": "SWM",
+      "H1.5": "EXT_RST",
+      "H2.1": "GND",
+      "H2.2": "3V3",
+      "H2.3": "SWS",
+      "H2.4": "RST",
+      "R6.1": "3V3",
+      "R6.2": "RST",
+      "SW1.1": "RST",
+      "SW1.2": "GND",
+      "U1.10": "DM",
+      "U1.11": "DP",
+      "U1.13": "3V3",
+      "U1.14": "GND",
+      "U1.18": "SWM",
+      "U1.2": "GND",
+      "U1.21": "EXT_RST",
+      "U1.26": "SWS",
+      "U1.36": "GND",
+      "U1.37": "RST",
+      "U1.4": "PWR_EN"
+    },
+    "frames": [
+      {
+        "id": "SELF_HDR",
+        "title": "Self-Prog 1x4P (H2)",
+        "rect": {
+          "minX": 25,
+          "minY": 635,
+          "maxX": 300,
+          "maxY": 800
+        },
+        "titleX": 40,
+        "titleY": 785,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 245,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": 189.5,
+              "minY": 649.5,
+              "maxX": 210.5,
+              "maxY": 735.5
+            },
+            {
+              "minX": 190,
+              "minY": 720,
+              "maxX": 211.659667969,
+              "maxY": 728
+            },
+            {
+              "minX": 179.5,
+              "minY": 709.5,
+              "maxX": 190,
+              "maxY": 710.5
+            },
+            {
+              "minX": 179.5,
+              "minY": 699.5,
+              "maxX": 190,
+              "maxY": 700.5
+            },
+            {
+              "minX": 179.5,
+              "minY": 689.5,
+              "maxX": 190,
+              "maxY": 690.5
+            },
+            {
+              "minX": 179.5,
+              "minY": 679.5,
+              "maxX": 190,
+              "maxY": 680.5
+            },
+            {
+              "minX": 174.5,
+              "minY": 709.5,
+              "maxX": 180.5,
+              "maxY": 710.5
+            },
+            {
+              "minX": 174.5,
+              "minY": 709.5,
+              "maxX": 175.5,
+              "maxY": 715.5
+            },
+            {
+              "minX": 169.5,
+              "minY": 679.5,
+              "maxX": 180.5,
+              "maxY": 680.5
+            },
+            {
+              "minX": 129.5,
+              "minY": 674.5,
+              "maxX": 160.5,
+              "maxY": 685.5
+            },
+            {
+              "minX": 103.5,
+              "minY": 674.5,
+              "maxX": 129.5,
+              "maxY": 685.5
+            },
+            {
+              "minX": 104.5,
+              "minY": 689.5,
+              "maxX": 180.5,
+              "maxY": 690.5
+            },
+            {
+              "minX": 64.5,
+              "minY": 684.5,
+              "maxX": 95.5,
+              "maxY": 695.5
+            },
+            {
+              "minX": 38.5,
+              "minY": 684.5,
+              "maxX": 64.5,
+              "maxY": 695.5
+            },
+            {
+              "minX": 154.5,
+              "minY": 699.5,
+              "maxX": 180.5,
+              "maxY": 700.5
+            },
+            {
+              "minX": 144.5,
+              "minY": 694.5,
+              "maxX": 150.5,
+              "maxY": 705.5
+            },
+            {
+              "minX": 155,
+              "minY": 700,
+              "maxX": 173,
+              "maxY": 712
+            },
+            {
+              "minX": 174.5,
+              "minY": 714.5,
+              "maxX": 175.5,
+              "maxY": 725.5
+            },
+            {
+              "minX": 164.5,
+              "minY": 734.5,
+              "maxX": 185.5,
+              "maxY": 744.5
+            },
+            {
+              "minX": 166,
+              "minY": 744.5,
+              "maxX": 184,
+              "maxY": 756.5
+            }
+          ]
+        }
+      },
+      {
+        "id": "TLSR_CORE",
+        "title": "E180-Z6907A Core \u0026 Reset",
+        "rect": {
+          "minX": 315,
+          "minY": 285,
+          "maxX": 1110,
+          "maxY": 800
+        },
+        "titleX": 330,
+        "titleY": 785,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 310,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": 619.5,
+              "minY": 299.5,
+              "maxX": 760.5,
+              "maxY": 535.5
+            },
+            {
+              "minX": 620,
+              "minY": 520,
+              "maxX": 638.286132812,
+              "maxY": 528
+            },
+            {
+              "minX": 609.5,
+              "minY": 509.5,
+              "maxX": 620,
+              "maxY": 510.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 499.5,
+              "maxX": 620,
+              "maxY": 500.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 489.5,
+              "maxX": 620,
+              "maxY": 490.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 479.5,
+              "maxX": 620,
+              "maxY": 480.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 469.5,
+              "maxX": 620,
+              "maxY": 470.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 459.5,
+              "maxX": 620,
+              "maxY": 460.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 449.5,
+              "maxX": 620,
+              "maxY": 450.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 439.5,
+              "maxX": 620,
+              "maxY": 440.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 429.5,
+              "maxX": 620,
+              "maxY": 430.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 419.5,
+              "maxX": 620,
+              "maxY": 420.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 409.5,
+              "maxX": 620,
+              "maxY": 410.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 399.5,
+              "maxX": 620,
+              "maxY": 400.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 389.5,
+              "maxX": 620,
+              "maxY": 390.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 379.5,
+              "maxX": 620,
+              "maxY": 380.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 369.5,
+              "maxX": 620,
+              "maxY": 370.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 359.5,
+              "maxX": 620,
+              "maxY": 360.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 349.5,
+              "maxX": 620,
+              "maxY": 350.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 339.5,
+              "maxX": 620,
+              "maxY": 340.5
+            },
+            {
+              "minX": 609.5,
+              "minY": 329.5,
+              "maxX": 620,
+              "maxY": 330.5
+            },
+            {
+              "minX": 760,
+              "minY": 334.5,
+              "maxX": 770.5,
+              "maxY": 335.5
+            },
+            {
+              "minX": 760,
+              "minY": 344.5,
+              "maxX": 770.5,
+              "maxY": 345.5
+            },
+            {
+              "minX": 760,
+              "minY": 354.5,
+              "maxX": 770.5,
+              "maxY": 355.5
+            },
+            {
+              "minX": 760,
+              "minY": 364.5,
+              "maxX": 770.5,
+              "maxY": 365.5
+            },
+            {
+              "minX": 760,
+              "minY": 374.5,
+              "maxX": 770.5,
+              "maxY": 375.5
+            },
+            {
+              "minX": 760,
+              "minY": 384.5,
+              "maxX": 770.5,
+              "maxY": 385.5
+            },
+            {
+              "minX": 760,
+              "minY": 394.5,
+              "maxX": 770.5,
+              "maxY": 395.5
+            },
+            {
+              "minX": 760,
+              "minY": 404.5,
+              "maxX": 770.5,
+              "maxY": 405.5
+            },
+            {
+              "minX": 760,
+              "minY": 414.5,
+              "maxX": 770.5,
+              "maxY": 415.5
+            },
+            {
+              "minX": 760,
+              "minY": 424.5,
+              "maxX": 770.5,
+              "maxY": 425.5
+            },
+            {
+              "minX": 760,
+              "minY": 434.5,
+              "maxX": 770.5,
+              "maxY": 435.5
+            },
+            {
+              "minX": 760,
+              "minY": 444.5,
+              "maxX": 770.5,
+              "maxY": 445.5
+            },
+            {
+              "minX": 760,
+              "minY": 454.5,
+              "maxX": 770.5,
+              "maxY": 455.5
+            },
+            {
+              "minX": 760,
+              "minY": 464.5,
+              "maxX": 770.5,
+              "maxY": 465.5
+            },
+            {
+              "minX": 760,
+              "minY": 474.5,
+              "maxX": 770.5,
+              "maxY": 475.5
+            },
+            {
+              "minX": 760,
+              "minY": 484.5,
+              "maxX": 770.5,
+              "maxY": 485.5
+            },
+            {
+              "minX": 760,
+              "minY": 494.5,
+              "maxX": 770.5,
+              "maxY": 495.5
+            },
+            {
+              "minX": 760,
+              "minY": 504.5,
+              "maxX": 770.5,
+              "maxY": 505.5
+            },
+            {
+              "minX": 379.5,
+              "minY": 316.5,
+              "maxX": 400.5,
+              "maxY": 368.5
+            },
+            {
+              "minX": 380,
+              "minY": 355,
+              "maxX": 402.179199219,
+              "maxY": 363
+            },
+            {
+              "minX": 369.5,
+              "minY": 344.5,
+              "maxX": 380,
+              "maxY": 345.5
+            },
+            {
+              "minX": 400,
+              "minY": 344.5,
+              "maxX": 410.5,
+              "maxY": 345.5
+            },
+            {
+              "minX": 379.5,
+              "minY": 436.5,
+              "maxX": 400.5,
+              "maxY": 488.5
+            },
+            {
+              "minX": 380,
+              "minY": 475,
+              "maxX": 402.179199219,
+              "maxY": 483
+            },
+            {
+              "minX": 369.5,
+              "minY": 464.5,
+              "maxX": 380,
+              "maxY": 465.5
+            },
+            {
+              "minX": 400,
+              "minY": 464.5,
+              "maxX": 410.5,
+              "maxY": 465.5
+            },
+            {
+              "minX": 874.5,
+              "minY": 739.5,
+              "maxX": 895.5,
+              "maxY": 785.5
+            },
+            {
+              "minX": 875,
+              "minY": 770,
+              "maxX": 897.179199219,
+              "maxY": 778
+            },
+            {
+              "minX": 895,
+              "minY": 764.5,
+              "maxX": 905.5,
+              "maxY": 765.5
+            },
+            {
+              "minX": 864.5,
+              "minY": 764.5,
+              "maxX": 875,
+              "maxY": 765.5
+            },
+            {
+              "minX": 994.5,
+              "minY": 661.5,
+              "maxX": 1015.5,
+              "maxY": 713.5
+            },
+            {
+              "minX": 995,
+              "minY": 700,
+              "maxX": 1017.179199219,
+              "maxY": 708
+            },
+            {
+              "minX": 984.5,
+              "minY": 689.5,
+              "maxX": 995,
+              "maxY": 690.5
+            },
+            {
+              "minX": 1015,
+              "minY": 689.5,
+              "maxX": 1025.5,
+              "maxY": 690.5
+            },
+            {
+              "minX": 1024.5,
+              "minY": 743,
+              "maxX": 1045.5,
+              "maxY": 787.5
+            },
+            {
+              "minX": 1025,
+              "minY": 775,
+              "maxX": 1043.286132812,
+              "maxY": 783
+            },
+            {
+              "minX": 1014.5,
+              "minY": 764.5,
+              "maxX": 1025,
+              "maxY": 765.5
+            },
+            {
+              "minX": 1045,
+              "minY": 764.5,
+              "maxX": 1055.5,
+              "maxY": 765.5
+            },
+            {
+              "minX": 979.5,
+              "minY": 689.5,
+              "maxX": 985.5,
+              "maxY": 690.5
+            },
+            {
+              "minX": 769.5,
+              "minY": 504.5,
+              "maxX": 980.5,
+              "maxY": 505.5
+            },
+            {
+              "minX": 979.5,
+              "minY": 504.5,
+              "maxX": 980.5,
+              "maxY": 690.5
+            },
+            {
+              "minX": 979.5,
+              "minY": 689.5,
+              "maxX": 980.5,
+              "maxY": 765.5
+            },
+            {
+              "minX": 904.5,
+              "minY": 764.5,
+              "maxX": 980.5,
+              "maxY": 765.5
+            },
+            {
+              "minX": 979.5,
+              "minY": 764.5,
+              "maxX": 1015.5,
+              "maxY": 765.5
+            },
+            {
+              "minX": 364.5,
+              "minY": 344.5,
+              "maxX": 370.5,
+              "maxY": 345.5
+            },
+            {
+              "minX": 364.5,
+              "minY": 464.5,
+              "maxX": 370.5,
+              "maxY": 465.5
+            },
+            {
+              "minX": 364.5,
+              "minY": 344.5,
+              "maxX": 365.5,
+              "maxY": 390.5
+            },
+            {
+              "minX": 364.5,
+              "minY": 389.5,
+              "maxX": 365.5,
+              "maxY": 465.5
+            },
+            {
+              "minX": 364.5,
+              "minY": 389.5,
+              "maxX": 595.5,
+              "maxY": 390.5
+            },
+            {
+              "minX": 594.5,
+              "minY": 389.5,
+              "maxX": 610.5,
+              "maxY": 390.5
+            },
+            {
+              "minX": 594.5,
+              "minY": 389.5,
+              "maxX": 595.5,
+              "maxY": 395.5
+            },
+            {
+              "minX": 839.5,
+              "minY": 764.5,
+              "maxX": 865.5,
+              "maxY": 765.5
+            },
+            {
+              "minX": 829.5,
+              "minY": 759.5,
+              "maxX": 835.5,
+              "maxY": 770.5
+            },
+            {
+              "minX": 840,
+              "minY": 765,
+              "maxX": 858,
+              "maxY": 777
+            },
+            {
+              "minX": 1054.5,
+              "minY": 764.5,
+              "maxX": 1080.5,
+              "maxY": 765.5
+            },
+            {
+              "minX": 1089.5,
+              "minY": 754.5,
+              "maxX": 1099.5,
+              "maxY": 775.5
+            },
+            {
+              "minX": 1062,
+              "minY": 765,
+              "maxX": 1080,
+              "maxY": 777
+            },
+            {
+              "minX": 1024.5,
+              "minY": 689.5,
+              "maxX": 1050.5,
+              "maxY": 690.5
+            },
+            {
+              "minX": 1059.5,
+              "minY": 679.5,
+              "maxX": 1069.5,
+              "maxY": 700.5
+            },
+            {
+              "minX": 1032,
+              "minY": 690,
+              "maxX": 1050,
+              "maxY": 702
+            },
+            {
+              "minX": 874.5,
+              "minY": 504.5,
+              "maxX": 875.5,
+              "maxY": 515.5
+            },
+            {
+              "minX": 869.5,
+              "minY": 524.5,
+              "maxX": 880.5,
+              "maxY": 555.5
+            },
+            {
+              "minX": 869.5,
+              "minY": 555.5,
+              "maxX": 880.5,
+              "maxY": 581.5
+            },
+            {
+              "minX": 584.5,
+              "minY": 499.5,
+              "maxX": 610.5,
+              "maxY": 500.5
+            },
+            {
+              "minX": 565.5,
+              "minY": 489.5,
+              "maxX": 575.5,
+              "maxY": 510.5
+            },
+            {
+              "minX": 585,
+              "minY": 500,
+              "maxX": 603,
+              "maxY": 512
+            },
+            {
+              "minX": 769.5,
+              "minY": 494.5,
+              "maxX": 1000.5,
+              "maxY": 495.5
+            },
+            {
+              "minX": 1009.5,
+              "minY": 484.5,
+              "maxX": 1019.5,
+              "maxY": 505.5
+            },
+            {
+              "minX": 982,
+              "minY": 495,
+              "maxX": 1000,
+              "maxY": 507
+            },
+            {
+              "minX": 569.5,
+              "minY": 479.5,
+              "maxX": 610.5,
+              "maxY": 480.5
+            },
+            {
+              "minX": 529.5,
+              "minY": 474.5,
+              "maxX": 560.5,
+              "maxY": 485.5
+            },
+            {
+              "minX": 485.5,
+              "minY": 474.5,
+              "maxX": 529.5,
+              "maxY": 485.5
+            },
+            {
+              "minX": 409.5,
+              "minY": 464.5,
+              "maxX": 435.5,
+              "maxY": 465.5
+            },
+            {
+              "minX": 444.5,
+              "minY": 454.5,
+              "maxX": 454.5,
+              "maxY": 475.5
+            },
+            {
+              "minX": 417,
+              "minY": 465,
+              "maxX": 435,
+              "maxY": 477
+            },
+            {
+              "minX": 599.5,
+              "minY": 419.5,
+              "maxX": 610.5,
+              "maxY": 420.5
+            },
+            {
+              "minX": 559.5,
+              "minY": 414.5,
+              "maxX": 590.5,
+              "maxY": 425.5
+            },
+            {
+              "minX": 539.5,
+              "minY": 414.5,
+              "maxX": 559.5,
+              "maxY": 425.5
+            },
+            {
+              "minX": 539.5,
+              "minY": 409.5,
+              "maxX": 610.5,
+              "maxY": 410.5
+            },
+            {
+              "minX": 499.5,
+              "minY": 404.5,
+              "maxX": 530.5,
+              "maxY": 415.5
+            },
+            {
+              "minX": 479.5,
+              "minY": 404.5,
+              "maxX": 499.5,
+              "maxY": 415.5
+            },
+            {
+              "minX": 769.5,
+              "minY": 394.5,
+              "maxX": 780.5,
+              "maxY": 395.5
+            },
+            {
+              "minX": 789.5,
+              "minY": 389.5,
+              "maxX": 820.5,
+              "maxY": 400.5
+            },
+            {
+              "minX": 820.5,
+              "minY": 389.5,
+              "maxX": 846.5,
+              "maxY": 400.5
+            },
+            {
+              "minX": 594.5,
+              "minY": 394.5,
+              "maxX": 595.5,
+              "maxY": 430.5
+            },
+            {
+              "minX": 589.5,
+              "minY": 434.5,
+              "maxX": 600.5,
+              "maxY": 440.5
+            },
+            {
+              "minX": 586,
+              "minY": 440.5,
+              "maxX": 604,
+              "maxY": 452.5
+            },
+            {
+              "minX": 344.5,
+              "minY": 379.5,
+              "maxX": 610.5,
+              "maxY": 380.5
+            },
+            {
+              "minX": 325.5,
+              "minY": 369.5,
+              "maxX": 335.5,
+              "maxY": 390.5
+            },
+            {
+              "minX": 345,
+              "minY": 380,
+              "maxX": 363,
+              "maxY": 392
+            },
+            {
+              "minX": 409.5,
+              "minY": 344.5,
+              "maxX": 435.5,
+              "maxY": 345.5
+            },
+            {
+              "minX": 444.5,
+              "minY": 334.5,
+              "maxX": 454.5,
+              "maxY": 355.5
+            },
+            {
+              "minX": 417,
+              "minY": 345,
+              "maxX": 435,
+              "maxY": 357
+            },
+            {
+              "minX": 769.5,
+              "minY": 344.5,
+              "maxX": 780.5,
+              "maxY": 345.5
+            },
+            {
+              "minX": 789.5,
+              "minY": 339.5,
+              "maxX": 820.5,
+              "maxY": 350.5
+            },
+            {
+              "minX": 820.5,
+              "minY": 339.5,
+              "maxX": 870.5,
+              "maxY": 350.5
+            },
+            {
+              "minX": 599.5,
+              "minY": 339.5,
+              "maxX": 610.5,
+              "maxY": 340.5
+            },
+            {
+              "minX": 559.5,
+              "minY": 334.5,
+              "maxX": 590.5,
+              "maxY": 345.5
+            },
+            {
+              "minX": 533.5,
+              "minY": 334.5,
+              "maxX": 559.5,
+              "maxY": 345.5
+            }
+          ]
+        }
+      },
+      {
+        "id": "TARGET_HDR",
+        "title": "Target SWire 1x5P (H1)",
+        "rect": {
+          "minX": 25,
+          "minY": 95,
+          "maxX": 340,
+          "maxY": 270
+        },
+        "titleX": 40,
+        "titleY": 255,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 285,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": 214.5,
+              "minY": 109.5,
+              "maxX": 235.5,
+              "maxY": 205.5
+            },
+            {
+              "minX": 215,
+              "minY": 190,
+              "maxX": 237.179199219,
+              "maxY": 198
+            },
+            {
+              "minX": 204.5,
+              "minY": 179.5,
+              "maxX": 215,
+              "maxY": 180.5
+            },
+            {
+              "minX": 204.5,
+              "minY": 169.5,
+              "maxX": 215,
+              "maxY": 170.5
+            },
+            {
+              "minX": 204.5,
+              "minY": 159.5,
+              "maxX": 215,
+              "maxY": 160.5
+            },
+            {
+              "minX": 204.5,
+              "minY": 149.5,
+              "maxX": 215,
+              "maxY": 150.5
+            },
+            {
+              "minX": 204.5,
+              "minY": 139.5,
+              "maxX": 215,
+              "maxY": 140.5
+            },
+            {
+              "minX": 199.5,
+              "minY": 169.5,
+              "maxX": 205.5,
+              "maxY": 170.5
+            },
+            {
+              "minX": 199.5,
+              "minY": 169.5,
+              "maxX": 200.5,
+              "maxY": 175.5
+            },
+            {
+              "minX": 199.5,
+              "minY": 179.5,
+              "maxX": 205.5,
+              "maxY": 180.5
+            },
+            {
+              "minX": 199.5,
+              "minY": 179.5,
+              "maxX": 200.5,
+              "maxY": 185.5
+            },
+            {
+              "minX": 194.5,
+              "minY": 139.5,
+              "maxX": 205.5,
+              "maxY": 140.5
+            },
+            {
+              "minX": 154.5,
+              "minY": 134.5,
+              "maxX": 185.5,
+              "maxY": 145.5
+            },
+            {
+              "minX": 104.5,
+              "minY": 134.5,
+              "maxX": 154.5,
+              "maxY": 145.5
+            },
+            {
+              "minX": 104.5,
+              "minY": 149.5,
+              "maxX": 205.5,
+              "maxY": 150.5
+            },
+            {
+              "minX": 64.5,
+              "minY": 144.5,
+              "maxX": 95.5,
+              "maxY": 155.5
+            },
+            {
+              "minX": 38.5,
+              "minY": 144.5,
+              "maxX": 64.5,
+              "maxY": 155.5
+            },
+            {
+              "minX": 179.5,
+              "minY": 159.5,
+              "maxX": 205.5,
+              "maxY": 160.5
+            },
+            {
+              "minX": 169.5,
+              "minY": 154.5,
+              "maxX": 175.5,
+              "maxY": 165.5
+            },
+            {
+              "minX": 180,
+              "minY": 160,
+              "maxX": 198,
+              "maxY": 172
+            },
+            {
+              "minX": 154.5,
+              "minY": 174.5,
+              "maxX": 200.5,
+              "maxY": 175.5
+            },
+            {
+              "minX": 144.5,
+              "minY": 169.5,
+              "maxX": 150.5,
+              "maxY": 180.5
+            },
+            {
+              "minX": 155,
+              "minY": 175,
+              "maxX": 173,
+              "maxY": 187
+            },
+            {
+              "minX": 199.5,
+              "minY": 184.5,
+              "maxX": 200.5,
+              "maxY": 195.5
+            },
+            {
+              "minX": 189.5,
+              "minY": 204.5,
+              "maxX": 210.5,
+              "maxY": 214.5
+            },
+            {
+              "minX": 191,
+              "minY": 214.5,
+              "maxX": 209,
+              "maxY": 226.5
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "rows": 2,
+  "rowHeight": 515,
+  "rowHeights": [
+    515,
+    175
+  ],
+  "pageMargin": 10,
+  "moduleGap": 10
+}

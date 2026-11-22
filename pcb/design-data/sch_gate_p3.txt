@@ -1,0 +1,8 @@
+sch gate: PASS
+  PASS   layout-lint    0 overlap, 0 pin-coincidence, 0 tight, 0 off-grid, 0 out-of-sheet, 0 no-bbox, 0 unchecked-pin, 0 unproven-pin, 0 nets-unproven, 0 invalid-geometry (zone-check=not-configured sheet-check=checked)
+  PASS   clusters       8 个虚拟组:0 重叠 / 0 出图纸 / 0 过近
+  PASS   check          2 finding(s): 0 error/fatal, 2 warn/info
+  PASS   bridge-check   0 bridge(short), 0 orphan-stub, 0 orphan-flag, 0 orphan-tree (25 wire tree(s))
+  PASS   drc            0 fatal, 0 error, 0 warn, 0 info (total 0); native verdict PASS
+
+告警(不阻塞): check: 2 条告警

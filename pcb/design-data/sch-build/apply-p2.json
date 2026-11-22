@@ -1,0 +1,4560 @@
+{
+  "requireFullExecution": true,
+  "version": 1,
+  "meta": {
+    "name": "Single-sheet Lib composition",
+    "project": "f91760ddb2c7418299e7752f330a761d",
+    "doc": "cbe779fb011540e7"
+  },
+  "defaults": {
+    "timeoutSec": 90,
+    "retry": 0,
+    "continueOnError": false
+  },
+  "steps": [
+    {
+      "id": "verify-project-unique-designators",
+      "action": "schematic.components.list",
+      "payload": {
+        "allPages": true,
+        "tagPages": true
+      },
+      "expectSchematic": {
+        "absentParts": [
+          "U2",
+          "C1",
+          "C2",
+          "C3",
+          "L1",
+          "C4",
+          "C5",
+          "C6",
+          "Q1",
+          "Q2",
+          "R8",
+          "R9",
+          "R7",
+          "C10",
+          "LED2",
+          "R10"
+        ],
+        "designatorsOnly": true,
+        "parts": {}
+      }
+    },
+    {
+      "id": "verify-source-before-reset",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {},
+        "sourceScene": {
+          "components": {
+            "bbf857977e107155": {
+              "addIntoBom": true,
+              "addIntoPcb": true,
+              "bbox": {
+                "maxX": 1170,
+                "maxY": 825,
+                "minX": 0,
+                "minY": 0
+              },
+              "component": {
+                "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                "name": "Drawing-Symbol_A4",
+                "uuid": "19ed40d4439db089"
+              },
+              "componentType": "sheet",
+              "device": {
+                "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                "name": "TLSR Flasher P2 - AP63203WU-7 3.3V Buck & Switched PWR",
+                "uuid": "19ed40d4439db089"
+              },
+              "mirror": false,
+              "name": "TLSR Flasher P2 - AP63203WU-7 3.3V Buck & Switched PWR",
+              "net": "",
+              "netlistAvailable": true,
+              "otherProperty": {
+                "@Assembly Variant": "Basic",
+                "@Board Name": "Board1",
+                "@Create Date": "2026-11-13",
+                "@Create Time": "04:49:37",
+                "@Page Count": "3",
+                "@Page Name": "P2_Power_Tree",
+                "@Page No": "2",
+                "@Project Name": "tlsr-flasher",
+                "@Schematic Name": "Schematic1",
+                "Blade Width": "10",
+                "Border": "1",
+                "Color": "",
+                "Company": "嘉立创EDA",
+                "Description": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+                "Drawed": "Antigravity",
+                "Height": "825",
+                "Page Size": "A4",
+                "Part Number": "",
+                "Region Start": "1",
+                "Reviewed": "",
+                "Size": "A4",
+                "Title Block": "1",
+                "Title Block Position": "3",
+                "Version": "V1.0",
+                "Width": "1170",
+                "X Region Count": "6",
+                "Y Region Count": "4"
+              },
+              "pins": [],
+              "pinsAvailable": true,
+              "primitiveId": "bbf857977e107155",
+              "rotation": 0,
+              "subPartName": "pid8a0e77bacb214e",
+              "symbol": {
+                "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                "name": "Drawing-Symbol_A4",
+                "uuid": "2badf009a15394aa"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "connectivitySummary": {
+            "buses": 0,
+            "netflags": 0,
+            "netlabels": 0,
+            "netports": 0,
+            "scope": "activePage",
+            "shortSymbols": 0,
+            "wires": 0
+          },
+          "pagePrimitives": {
+            "arcs": [],
+            "attributes": [
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Title Block",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "0353193b86830873"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Height",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "825",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "1863b28d357e2b36"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Reviewed",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "",
+                "ValueVisible": true,
+                "X": 599,
+                "Y": 57,
+                "primitiveId": "1d4abdc8c71dc4ea"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Page Count",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "3",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "26301fd32f348f0b"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Description",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+                "ValueVisible": true,
+                "X": 685,
+                "Y": 76,
+                "primitiveId": "33fb3c41ff23f213"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Name",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "TLSR Flasher P2 - AP63203WU-7 3.3V Buck & Switched PWR",
+                "ValueVisible": true,
+                "X": 685,
+                "Y": 114,
+                "primitiveId": "3b5e168aa51c888c"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "X Region Count",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "6",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "3f66ad4280496837"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Blade Width",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "10",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "417d89be895ed2b4"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 20,
+                "Italic": null,
+                "Key": "@Project Name",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "tlsr-flasher",
+                "ValueVisible": false,
+                "X": 961,
+                "Y": 57,
+                "primitiveId": "4800e7d9b0dc2954"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Region Start",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "4baf8fc9b98709a5"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Page No",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "2",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "518e0b2585db8ae0"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Size",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "A4",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "58d9b83cfa89b0a2"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Page Size",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "A4",
+                "ValueVisible": false,
+                "X": 841,
+                "Y": -13,
+                "primitiveId": "74368191485838d0"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Assembly Variant",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "Basic",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "7555641bee5c49fa"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Width",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1170",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "79f999e8e6ded7ec"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Schematic Name",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "Schematic1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "7f1b05f40000dda1"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "@Create Date",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "2026-11-13",
+                "ValueVisible": false,
+                "X": 1051,
+                "Y": 117,
+                "primitiveId": "8247bf1642b6c01c"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Title Block Position",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "3",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "8bcee52237159d25"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Y Region Count",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "4",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "a8cd2826694c950e"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 20,
+                "Italic": null,
+                "Key": "Symbol",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "2badf009a15394aa",
+                "ValueVisible": false,
+                "X": 2547,
+                "Y": -159,
+                "primitiveId": "acfe914b038e1da7"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Border",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "b00102069d9b825e"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Board Name",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "Board1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "b87932e2310b2237"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Drawed",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "Antigravity",
+                "ValueVisible": true,
+                "X": 572,
+                "Y": 76,
+                "primitiveId": "b8f40d6596ff3f08"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 20,
+                "Italic": null,
+                "Key": "Company",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "嘉立创EDA",
+                "ValueVisible": false,
+                "X": 1039,
+                "Y": -13,
+                "primitiveId": "bb6581584663b9b5"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Page Name",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "P2_Power_Tree",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "bc1fde0750d21c3d"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Create Time",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "04:49:37",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "c3066942e3fc6b4d"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Version",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "V1.0",
+                "ValueVisible": false,
+                "X": 759,
+                "Y": -13,
+                "primitiveId": "d2375dd6cfc0f542"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Update Time",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": null,
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "d2b5bc244bfaeffe"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Device",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "19ed40d4439db089",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "d444cae143ace6c3"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "@Update Date",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": null,
+                "ValueVisible": false,
+                "X": 1051,
+                "Y": 137,
+                "primitiveId": "e077341525bfb52e"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Part Number",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "",
+                "ValueVisible": true,
+                "X": 1051,
+                "Y": 97,
+                "primitiveId": "e5c4031786a9c38f"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Color",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "bbf857977e107155",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "ea57236d3ab28696"
+              }
+            ],
+            "buses": [],
+            "circles": [],
+            "components": [
+              {
+                "addIntoBom": true,
+                "addIntoPcb": true,
+                "component": {
+                  "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                  "name": "Drawing-Symbol_A4",
+                  "uuid": "19ed40d4439db089"
+                },
+                "componentType": "sheet",
+                "device": {
+                  "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                  "name": "TLSR Flasher P2 - AP63203WU-7 3.3V Buck & Switched PWR",
+                  "uuid": "19ed40d4439db089"
+                },
+                "mirror": false,
+                "name": "TLSR Flasher P2 - AP63203WU-7 3.3V Buck & Switched PWR",
+                "net": "",
+                "otherProperty": {
+                  "@Assembly Variant": "Basic",
+                  "@Board Name": "Board1",
+                  "@Create Date": "2026-11-13",
+                  "@Create Time": "04:49:37",
+                  "@Page Count": "3",
+                  "@Page Name": "P2_Power_Tree",
+                  "@Page No": "2",
+                  "@Project Name": "tlsr-flasher",
+                  "@Schematic Name": "Schematic1",
+                  "Blade Width": "10",
+                  "Border": "1",
+                  "Color": "",
+                  "Company": "嘉立创EDA",
+                  "Description": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+                  "Drawed": "Antigravity",
+                  "Height": "825",
+                  "Page Size": "A4",
+                  "Part Number": "",
+                  "Region Start": "1",
+                  "Reviewed": "",
+                  "Size": "A4",
+                  "Title Block": "1",
+                  "Title Block Position": "3",
+                  "Version": "V1.0",
+                  "Width": "1170",
+                  "X Region Count": "6",
+                  "Y Region Count": "4"
+                },
+                "primitiveId": "bbf857977e107155",
+                "rotation": 0,
+                "subPartName": "pid8a0e77bacb214e",
+                "symbol": {
+                  "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                  "name": "Drawing-Symbol_A4",
+                  "uuid": "2badf009a15394aa"
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "objects": [],
+            "pins": [],
+            "polygons": [],
+            "rectangles": [],
+            "texts": [],
+            "wires": []
+          },
+          "wires": []
+        }
+      }
+    },
+    {
+      "id": "reset-target-preserving-sheet",
+      "run": "sch clear",
+      "flags": {
+        "expect-page-primitives-b64": "eyJhcmNzIjpbXSwiYXR0cmlidXRlcyI6W3siQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiVGl0bGUgQmxvY2siLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjEiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiMDM1MzE5M2I4NjgzMDg3MyJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiSGVpZ2h0IiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiI4MjUiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiMTg2M2IyOGQzNTdlMmIzNiJ9LHsiQWxpZ25Nb2RlIjoyLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOjE1LCJJdGFsaWMiOm51bGwsIktleSI6IlJldmlld2VkIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiIiwiVmFsdWVWaXNpYmxlIjp0cnVlLCJYIjo1OTksIlkiOjU3LCJwcmltaXRpdmVJZCI6IjFkNGFiZGM4YzcxZGM0ZWEifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkBQYWdlIENvdW50IiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIzIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6IjI2MzAxZmQzMmYzNDhmMGIifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkRlc2NyaXB0aW9uIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiVExTUiBTV2lyZSBGbGFzaGVyIChFMTgwLVo2OTA3QSArIFVTQi1DICsgQVA2MzIwM1dVLTcpIiwiVmFsdWVWaXNpYmxlIjp0cnVlLCJYIjo2ODUsIlkiOjc2LCJwcmltaXRpdmVJZCI6IjMzZmIzYzQxZmYyM2YyMTMifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6Ik5hbWUiLCJLZXlWaXNpYmxlIjpmYWxzZSwiUGFyZW50UHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiJUTFNSIEZsYXNoZXIgUDIgLSBBUDYzMjAzV1UtNyAzLjNWIEJ1Y2sgXHUwMDI2IFN3aXRjaGVkIFBXUiIsIlZhbHVlVmlzaWJsZSI6dHJ1ZSwiWCI6Njg1LCJZIjoxMTQsInByaW1pdGl2ZUlkIjoiM2I1ZTE2OGFhNTFjODg4YyJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiWCBSZWdpb24gQ291bnQiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjYiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiM2Y2NmFkNDI4MDQ5NjgzNyJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQmxhZGUgV2lkdGgiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjEwIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6IjQxN2Q4OWJlODk1ZWQyYjQifSx7IkFsaWduTW9kZSI6NSwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjoyMCwiSXRhbGljIjpudWxsLCJLZXkiOiJAUHJvamVjdCBOYW1lIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoidGxzci1mbGFzaGVyIiwiVmFsdWVWaXNpYmxlIjpmYWxzZSwiWCI6OTYxLCJZIjo1NywicHJpbWl0aXZlSWQiOiI0ODAwZTdkOWIwZGMyOTU0In0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJSZWdpb24gU3RhcnQiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjEiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiNGJhZjhmYzliOTg3MDlhNSJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQFBhZ2UgTm8iLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjIiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiNTE4ZTBiMjU4NWRiOGFlMCJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiU2l6ZSIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiQTQiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiNThkOWI4M2NmYTg5YjBhMiJ9LHsiQWxpZ25Nb2RlIjo1LCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOjE1LCJJdGFsaWMiOm51bGwsIktleSI6IlBhZ2UgU2l6ZSIsIktleVZpc2libGUiOmZhbHNlLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6MCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IkE0IiwiVmFsdWVWaXNpYmxlIjpmYWxzZSwiWCI6ODQxLCJZIjotMTMsInByaW1pdGl2ZUlkIjoiNzQzNjgxOTE0ODU4MzhkMCJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQEFzc2VtYmx5IFZhcmlhbnQiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IkJhc2ljIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6Ijc1NTU2NDFiZWU1YzQ5ZmEifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IldpZHRoIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIxMTcwIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6Ijc5Zjk5OWU4ZTZkZWQ3ZWMifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkBTY2hlbWF0aWMgTmFtZSIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiU2NoZW1hdGljMSIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiI3ZjFiMDVmNDAwMDBkZGExIn0seyJBbGlnbk1vZGUiOjIsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MTUsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQENyZWF0ZSBEYXRlIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMjAyNi0xMS0xMyIsIlZhbHVlVmlzaWJsZSI6ZmFsc2UsIlgiOjEwNTEsIlkiOjExNywicHJpbWl0aXZlSWQiOiI4MjQ3YmYxNjQyYjZjMDFjIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJUaXRsZSBCbG9jayBQb3NpdGlvbiIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMyIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiI4YmNlZTUyMjM3MTU5ZDI1In0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJZIFJlZ2lvbiBDb3VudCIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiNCIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiJhOGNkMjgyNjY5NGM5NTBlIn0seyJBbGlnbk1vZGUiOjUsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MjAsIkl0YWxpYyI6bnVsbCwiS2V5IjoiU3ltYm9sIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMmJhZGYwMDlhMTUzOTRhYSIsIlZhbHVlVmlzaWJsZSI6ZmFsc2UsIlgiOjI1NDcsIlkiOi0xNTksInByaW1pdGl2ZUlkIjoiYWNmZTkxNGIwMzhlMWRhNyJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQm9yZGVyIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIxIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6ImIwMDEwMjA2OWQ5YjgyNWUifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkBCb2FyZCBOYW1lIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiJCb2FyZDEiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiYjg3OTMyZTIzMTBiMjIzNyJ9LHsiQWxpZ25Nb2RlIjoyLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOjE1LCJJdGFsaWMiOm51bGwsIktleSI6IkRyYXdlZCIsIktleVZpc2libGUiOmZhbHNlLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6MCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IkFudGlncmF2aXR5IiwiVmFsdWVWaXNpYmxlIjp0cnVlLCJYIjo1NzIsIlkiOjc2LCJwcmltaXRpdmVJZCI6ImI4ZjQwZDY1OTZmZjNmMDgifSx7IkFsaWduTW9kZSI6NSwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjoyMCwiSXRhbGljIjpudWxsLCJLZXkiOiJDb21wYW55IiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoi5ZiJ56uL5YibRURBIiwiVmFsdWVWaXNpYmxlIjpmYWxzZSwiWCI6MTAzOSwiWSI6LTEzLCJwcmltaXRpdmVJZCI6ImJiNjU4MTU4NDY2M2I5YjUifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkBQYWdlIE5hbWUiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IlAyX1Bvd2VyX1RyZWUiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiYmMxZmRlMDc1MGQyMWMzZCJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQENyZWF0ZSBUaW1lIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIwNDo0OTozNyIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiJjMzA2Njk0MmUzZmM2YjRkIn0seyJBbGlnbk1vZGUiOjUsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MTUsIkl0YWxpYyI6bnVsbCwiS2V5IjoiVmVyc2lvbiIsIktleVZpc2libGUiOmZhbHNlLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6MCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IlYxLjAiLCJWYWx1ZVZpc2libGUiOmZhbHNlLCJYIjo3NTksIlkiOi0xMywicHJpbWl0aXZlSWQiOiJkMjM3NWRkNmNmYzBmNTQyIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJAVXBkYXRlIFRpbWUiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImJiZjg1Nzk3N2UxMDcxNTUiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6bnVsbCwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6ImQyYjViYzI0NGJmYWVmZmUifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkRldmljZSIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMTllZDQwZDQ0MzlkYjA4OSIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiJkNDQ0Y2FlMTQzYWNlNmMzIn0seyJBbGlnbk1vZGUiOjIsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MTUsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQFVwZGF0ZSBEYXRlIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjpudWxsLCJWYWx1ZVZpc2libGUiOmZhbHNlLCJYIjoxMDUxLCJZIjoxMzcsInByaW1pdGl2ZUlkIjoiZTA3NzM0MTUyNWJmYjUyZSJ9LHsiQWxpZ25Nb2RlIjoyLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOjE1LCJJdGFsaWMiOm51bGwsIktleSI6IlBhcnQgTnVtYmVyIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiIiwiVmFsdWVWaXNpYmxlIjp0cnVlLCJYIjoxMDUxLCJZIjo5NywicHJpbWl0aXZlSWQiOiJlNWM0MDMxNzg2YTljMzhmIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJDb2xvciIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiYmJmODU3OTc3ZTEwNzE1NSIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6ImVhNTcyMzZkM2FiMjg2OTYifV0sImJ1c2VzIjpbXSwiY2lyY2xlcyI6W10sImNvbXBvbmVudHMiOlt7ImFkZEludG9Cb20iOnRydWUsImFkZEludG9QY2IiOnRydWUsImNvbXBvbmVudCI6eyJsaWJyYXJ5VXVpZCI6IjA4MTlmMDVjNGVlZjRjNzFhY2U5MGQ4MjJhOTkwZTg3IiwibmFtZSI6IkRyYXdpbmctU3ltYm9sX0E0IiwidXVpZCI6IjE5ZWQ0MGQ0NDM5ZGIwODkifSwiY29tcG9uZW50VHlwZSI6InNoZWV0IiwiZGV2aWNlIjp7ImxpYnJhcnlVdWlkIjoiMDgxOWYwNWM0ZWVmNGM3MWFjZTkwZDgyMmE5OTBlODciLCJuYW1lIjoiVExTUiBGbGFzaGVyIFAyIC0gQVA2MzIwM1dVLTcgMy4zViBCdWNrIFx1MDAyNiBTd2l0Y2hlZCBQV1IiLCJ1dWlkIjoiMTllZDQwZDQ0MzlkYjA4OSJ9LCJtaXJyb3IiOmZhbHNlLCJuYW1lIjoiVExTUiBGbGFzaGVyIFAyIC0gQVA2MzIwM1dVLTcgMy4zViBCdWNrIFx1MDAyNiBTd2l0Y2hlZCBQV1IiLCJuZXQiOiIiLCJvdGhlclByb3BlcnR5Ijp7IkBBc3NlbWJseSBWYXJpYW50IjoiQmFzaWMiLCJAQm9hcmQgTmFtZSI6IkJvYXJkMSIsIkBDcmVhdGUgRGF0ZSI6IjIwMjYtMTEtMTMiLCJAQ3JlYXRlIFRpbWUiOiIwNDo0OTozNyIsIkBQYWdlIENvdW50IjoiMyIsIkBQYWdlIE5hbWUiOiJQMl9Qb3dlcl9UcmVlIiwiQFBhZ2UgTm8iOiIyIiwiQFByb2plY3QgTmFtZSI6InRsc3ItZmxhc2hlciIsIkBTY2hlbWF0aWMgTmFtZSI6IlNjaGVtYXRpYzEiLCJCbGFkZSBXaWR0aCI6IjEwIiwiQm9yZGVyIjoiMSIsIkNvbG9yIjoiIiwiQ29tcGFueSI6IuWYieeri+WIm0VEQSIsIkRlc2NyaXB0aW9uIjoiVExTUiBTV2lyZSBGbGFzaGVyIChFMTgwLVo2OTA3QSArIFVTQi1DICsgQVA2MzIwM1dVLTcpIiwiRHJhd2VkIjoiQW50aWdyYXZpdHkiLCJIZWlnaHQiOiI4MjUiLCJQYWdlIFNpemUiOiJBNCIsIlBhcnQgTnVtYmVyIjoiIiwiUmVnaW9uIFN0YXJ0IjoiMSIsIlJldmlld2VkIjoiIiwiU2l6ZSI6IkE0IiwiVGl0bGUgQmxvY2siOiIxIiwiVGl0bGUgQmxvY2sgUG9zaXRpb24iOiIzIiwiVmVyc2lvbiI6IlYxLjAiLCJXaWR0aCI6IjExNzAiLCJYIFJlZ2lvbiBDb3VudCI6IjYiLCJZIFJlZ2lvbiBDb3VudCI6IjQifSwicHJpbWl0aXZlSWQiOiJiYmY4NTc5NzdlMTA3MTU1Iiwicm90YXRpb24iOjAsInN1YlBhcnROYW1lIjoicGlkOGEwZTc3YmFjYjIxNGUiLCJzeW1ib2wiOnsibGlicmFyeVV1aWQiOiIwODE5ZjA1YzRlZWY0YzcxYWNlOTBkODIyYTk5MGU4NyIsIm5hbWUiOiJEcmF3aW5nLVN5bWJvbF9BNCIsInV1aWQiOiIyYmFkZjAwOWExNTM5NGFhIn0sIngiOjAsInkiOjB9XSwib2JqZWN0cyI6W10sInBpbnMiOltdLCJwb2x5Z29ucyI6W10sInJlY3RhbmdsZXMiOltdLCJ0ZXh0cyI6W10sIndpcmVzIjpbXX0="
+      }
+    },
+    {
+      "id": "verify-no-residual-primitives",
+      "run": "sch clear",
+      "flags": {
+        "dry-run": true,
+        "expect-empty": true
+      }
+    },
+    {
+      "id": "verify-cleared-target",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "assert": {
+        "$.count": "==1"
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {}
+      }
+    },
+    {
+      "id": "place-000",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "U2",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "e25f0d003ec44bd1987511a4c8ea23ad",
+        "x": 230,
+        "y": 680
+      },
+      "capture": {
+        "part_000": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-000",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "U2",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-U2",
+            "EasyEDA Agent Role": "regulator"
+          },
+          "rotation": 0,
+          "x": 230,
+          "y": 680
+        },
+        "primitiveId": "${part_000}"
+      },
+      "assert": {
+        "$.component.designator": "==U2",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-U2",
+        "$.component.otherProperty.EasyEDA Agent Role": "==regulator"
+      }
+    },
+    {
+      "id": "place-001",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C1",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "345d8669720442d6a8747f19c9226485",
+        "x": 170,
+        "y": 545
+      },
+      "capture": {
+        "part_001": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-001",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C1",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C1",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 170,
+          "y": 545
+        },
+        "primitiveId": "${part_001}"
+      },
+      "assert": {
+        "$.component.designator": "==C1",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C1",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-002",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C2",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "b470d7af3c48415db6a4748fa8e62805",
+        "x": 65,
+        "y": 695
+      },
+      "capture": {
+        "part_002": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-002",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C2",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C2",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 65,
+          "y": 695
+        },
+        "primitiveId": "${part_002}"
+      },
+      "assert": {
+        "$.component.designator": "==C2",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C2",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-003",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C3",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "b470d7af3c48415db6a4748fa8e62805",
+        "x": 425,
+        "y": 710
+      },
+      "capture": {
+        "part_003": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-003",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C3",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C3",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 425,
+          "y": 710
+        },
+        "primitiveId": "${part_003}"
+      },
+      "assert": {
+        "$.component.designator": "==C3",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C3",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-004",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "L1",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "c311b6fc417b435394069573712ed6b5",
+        "x": 440,
+        "y": 620
+      },
+      "capture": {
+        "part_004": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-004",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "L1",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-L1",
+            "EasyEDA Agent Role": "inductor"
+          },
+          "rotation": 0,
+          "x": 440,
+          "y": 620
+        },
+        "primitiveId": "${part_004}"
+      },
+      "assert": {
+        "$.component.designator": "==L1",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-L1",
+        "$.component.otherProperty.EasyEDA Agent Role": "==inductor"
+      }
+    },
+    {
+      "id": "place-005",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C4",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "78c549e435f745ff89f256a309aff34c",
+        "x": 590,
+        "y": 620
+      },
+      "capture": {
+        "part_005": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-005",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C4",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C4",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 590,
+          "y": 620
+        },
+        "primitiveId": "${part_005}"
+      },
+      "assert": {
+        "$.component.designator": "==C4",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C4",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-006",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C5",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "78c549e435f745ff89f256a309aff34c",
+        "x": 575,
+        "y": 515
+      },
+      "capture": {
+        "part_006": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-006",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C5",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C5",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 575,
+          "y": 515
+        },
+        "primitiveId": "${part_006}"
+      },
+      "assert": {
+        "$.component.designator": "==C5",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C5",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-007",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C6",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "b470d7af3c48415db6a4748fa8e62805",
+        "x": 590,
+        "y": 725
+      },
+      "capture": {
+        "part_007": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-007",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C6",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C6",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 590,
+          "y": 725
+        },
+        "primitiveId": "${part_007}"
+      },
+      "assert": {
+        "$.component.designator": "==C6",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C6",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-008",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "Q1",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "c9c0d5c4c0f842539abe3355695d746d",
+        "x": 1030,
+        "y": 630
+      },
+      "capture": {
+        "part_008": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-008",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "Q1",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-Q1",
+            "EasyEDA Agent Role": "mosfet"
+          },
+          "rotation": 0,
+          "x": 1030,
+          "y": 630
+        },
+        "primitiveId": "${part_008}"
+      },
+      "assert": {
+        "$.component.designator": "==Q1",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-Q1",
+        "$.component.otherProperty.EasyEDA Agent Role": "==mosfet"
+      }
+    },
+    {
+      "id": "place-009",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "Q2",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "f714063fa18048f2956344f6558686ce",
+        "x": 925,
+        "y": 555
+      },
+      "capture": {
+        "part_009": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-009",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "Q2",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-Q2",
+            "EasyEDA Agent Role": "bjt"
+          },
+          "rotation": 0,
+          "x": 925,
+          "y": 555
+        },
+        "primitiveId": "${part_009}"
+      },
+      "assert": {
+        "$.component.designator": "==Q2",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-Q2",
+        "$.component.otherProperty.EasyEDA Agent Role": "==bjt"
+      }
+    },
+    {
+      "id": "place-010",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "R8",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "7d0a4241f13846d38eb1c0e45cc6ecf8",
+        "x": 805,
+        "y": 555
+      },
+      "capture": {
+        "part_010": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-010",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "R8",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-R8",
+            "EasyEDA Agent Role": "resistor"
+          },
+          "rotation": 0,
+          "x": 805,
+          "y": 555
+        },
+        "primitiveId": "${part_010}"
+      },
+      "assert": {
+        "$.component.designator": "==R8",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-R8",
+        "$.component.otherProperty.EasyEDA Agent Role": "==resistor"
+      }
+    },
+    {
+      "id": "place-011",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "R9",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "a8ced70c90564625b1939eaf737576ef",
+        "x": 910,
+        "y": 465
+      },
+      "capture": {
+        "part_011": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-011",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "R9",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-R9",
+            "EasyEDA Agent Role": "resistor"
+          },
+          "rotation": 0,
+          "x": 910,
+          "y": 465
+        },
+        "primitiveId": "${part_011}"
+      },
+      "assert": {
+        "$.component.designator": "==R9",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-R9",
+        "$.component.otherProperty.EasyEDA Agent Role": "==resistor"
+      }
+    },
+    {
+      "id": "place-012",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "R7",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "560477ba21ea4ffb9f5ac912d0dd396c",
+        "x": 880,
+        "y": 630
+      },
+      "capture": {
+        "part_012": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-012",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "R7",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-R7",
+            "EasyEDA Agent Role": "resistor"
+          },
+          "rotation": 0,
+          "x": 880,
+          "y": 630
+        },
+        "primitiveId": "${part_012}"
+      },
+      "assert": {
+        "$.component.designator": "==R7",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-R7",
+        "$.component.otherProperty.EasyEDA Agent Role": "==resistor"
+      }
+    },
+    {
+      "id": "place-013",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C10",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "b470d7af3c48415db6a4748fa8e62805",
+        "x": 1015,
+        "y": 735
+      },
+      "capture": {
+        "part_013": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-013",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C10",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C10",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 1015,
+          "y": 735
+        },
+        "primitiveId": "${part_013}"
+      },
+      "assert": {
+        "$.component.designator": "==C10",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C10",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-014",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "LED2",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "ffec3f6d6d7645debd8e107be396b5f1",
+        "x": 70,
+        "y": 275
+      },
+      "capture": {
+        "part_014": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-014",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "LED2",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-LED2",
+            "EasyEDA Agent Role": "led"
+          },
+          "rotation": 0,
+          "x": 70,
+          "y": 275
+        },
+        "primitiveId": "${part_014}"
+      },
+      "assert": {
+        "$.component.designator": "==LED2",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-LED2",
+        "$.component.otherProperty.EasyEDA Agent Role": "==led"
+      }
+    },
+    {
+      "id": "place-015",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "R10",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "f24a8f70db714104b387f51f08abca40",
+        "x": 65,
+        "y": 250
+      },
+      "capture": {
+        "part_015": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-015",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "R10",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-R10",
+            "EasyEDA Agent Role": "resistor"
+          },
+          "rotation": 0,
+          "x": 65,
+          "y": 250
+        },
+        "primitiveId": "${part_015}"
+      },
+      "assert": {
+        "$.component.designator": "==R10",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-R10",
+        "$.component.otherProperty.EasyEDA Agent Role": "==resistor"
+      }
+    },
+    {
+      "id": "verify-physical-pins-before-wiring",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {
+          "C1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "345d8669720442d6a8747f19c9226485"
+            },
+            "x": 170,
+            "y": 545,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 159.5,
+              "minY": 536.5,
+              "maxX": 180.5,
+              "maxY": 553.5
+            },
+            "pins": {
+              "1": {
+                "x": 150,
+                "y": 545
+              },
+              "2": {
+                "x": 190,
+                "y": 545
+              }
+            }
+          },
+          "C10": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 1015,
+            "y": 735,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 1004.5,
+              "minY": 726.5,
+              "maxX": 1025.5,
+              "maxY": 743.5
+            },
+            "pins": {
+              "1": {
+                "x": 995,
+                "y": 735
+              },
+              "2": {
+                "x": 1035,
+                "y": 735
+              }
+            }
+          },
+          "C2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 65,
+            "y": 695,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 54.5,
+              "minY": 686.5,
+              "maxX": 75.5,
+              "maxY": 703.5
+            },
+            "pins": {
+              "1": {
+                "x": 45,
+                "y": 695
+              },
+              "2": {
+                "x": 85,
+                "y": 695
+              }
+            }
+          },
+          "C3": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 425,
+            "y": 710,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 414.5,
+              "minY": 701.5,
+              "maxX": 435.5,
+              "maxY": 718.5
+            },
+            "pins": {
+              "1": {
+                "x": 405,
+                "y": 710
+              },
+              "2": {
+                "x": 445,
+                "y": 710
+              }
+            }
+          },
+          "C4": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "78c549e435f745ff89f256a309aff34c"
+            },
+            "x": 590,
+            "y": 620,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 579.5,
+              "minY": 611.5,
+              "maxX": 600.5,
+              "maxY": 628.5
+            },
+            "pins": {
+              "1": {
+                "x": 570,
+                "y": 620
+              },
+              "2": {
+                "x": 610,
+                "y": 620
+              }
+            }
+          },
+          "C5": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "78c549e435f745ff89f256a309aff34c"
+            },
+            "x": 575,
+            "y": 515,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 564.5,
+              "minY": 506.5,
+              "maxX": 585.5,
+              "maxY": 523.5
+            },
+            "pins": {
+              "1": {
+                "x": 555,
+                "y": 515
+              },
+              "2": {
+                "x": 595,
+                "y": 515
+              }
+            }
+          },
+          "C6": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 590,
+            "y": 725,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 579.5,
+              "minY": 716.5,
+              "maxX": 600.5,
+              "maxY": 733.5
+            },
+            "pins": {
+              "1": {
+                "x": 570,
+                "y": 725
+              },
+              "2": {
+                "x": 610,
+                "y": 725
+              }
+            }
+          },
+          "L1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "c311b6fc417b435394069573712ed6b5"
+            },
+            "x": 440,
+            "y": 620,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 423.50000625,
+              "minY": 619.977500031,
+              "maxX": 456.50005,
+              "maxY": 624.50005
+            },
+            "pins": {
+              "1": {
+                "x": 420,
+                "y": 620
+              },
+              "2": {
+                "x": 460,
+                "y": 620
+              }
+            }
+          },
+          "LED2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "ffec3f6d6d7645debd8e107be396b5f1"
+            },
+            "x": 70,
+            "y": 275,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 60.5,
+              "minY": 268.5,
+              "maxX": 75.5,
+              "maxY": 294.5
+            },
+            "pins": {
+              "1": {
+                "x": 50,
+                "y": 275
+              },
+              "2": {
+                "x": 90,
+                "y": 275
+              }
+            }
+          },
+          "Q1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "c9c0d5c4c0f842539abe3355695d746d"
+            },
+            "x": 1030,
+            "y": 630,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 1017.5,
+              "minY": 619.5,
+              "maxX": 1043.5,
+              "maxY": 640.5
+            },
+            "pins": {
+              "1": {
+                "x": 1010,
+                "y": 630
+              },
+              "2": {
+                "x": 1030,
+                "y": 610
+              },
+              "3": {
+                "x": 1030,
+                "y": 650
+              }
+            }
+          },
+          "Q2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "f714063fa18048f2956344f6558686ce"
+            },
+            "x": 925,
+            "y": 555,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 924.5,
+              "minY": 544.5,
+              "maxX": 935.5,
+              "maxY": 565.5
+            },
+            "pins": {
+              "1": {
+                "x": 915,
+                "y": 555
+              },
+              "2": {
+                "x": 935,
+                "y": 535
+              },
+              "3": {
+                "x": 935,
+                "y": 575
+              }
+            }
+          },
+          "R10": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "f24a8f70db714104b387f51f08abca40"
+            },
+            "x": 65,
+            "y": 250,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 54.5,
+              "minY": 244.5,
+              "maxX": 75.5,
+              "maxY": 255.5
+            },
+            "pins": {
+              "1": {
+                "x": 45,
+                "y": 250
+              },
+              "2": {
+                "x": 85,
+                "y": 250
+              }
+            }
+          },
+          "R7": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "560477ba21ea4ffb9f5ac912d0dd396c"
+            },
+            "x": 880,
+            "y": 630,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 869.5,
+              "minY": 624.5,
+              "maxX": 890.5,
+              "maxY": 635.5
+            },
+            "pins": {
+              "1": {
+                "x": 860,
+                "y": 630
+              },
+              "2": {
+                "x": 900,
+                "y": 630
+              }
+            }
+          },
+          "R8": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "7d0a4241f13846d38eb1c0e45cc6ecf8"
+            },
+            "x": 805,
+            "y": 555,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 794.5,
+              "minY": 549.5,
+              "maxX": 815.5,
+              "maxY": 560.5
+            },
+            "pins": {
+              "1": {
+                "x": 785,
+                "y": 555
+              },
+              "2": {
+                "x": 825,
+                "y": 555
+              }
+            }
+          },
+          "R9": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "a8ced70c90564625b1939eaf737576ef"
+            },
+            "x": 910,
+            "y": 465,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 899.5,
+              "minY": 459.5,
+              "maxX": 920.5,
+              "maxY": 470.5
+            },
+            "pins": {
+              "1": {
+                "x": 890,
+                "y": 465
+              },
+              "2": {
+                "x": 930,
+                "y": 465
+              }
+            }
+          },
+          "U2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "e25f0d003ec44bd1987511a4c8ea23ad"
+            },
+            "x": 230,
+            "y": 680,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 204.5,
+              "minY": 659.5,
+              "maxX": 255.5,
+              "maxY": 700.5
+            },
+            "pins": {
+              "1": {
+                "x": 195,
+                "y": 690
+              },
+              "2": {
+                "x": 195,
+                "y": 680
+              },
+              "3": {
+                "x": 195,
+                "y": 670
+              },
+              "4": {
+                "x": 265,
+                "y": 670
+              },
+              "5": {
+                "x": 265,
+                "y": 680
+              },
+              "6": {
+                "x": 265,
+                "y": 690
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "save-placed-parts",
+      "action": "schematic.save",
+      "assert": {
+        "$.saved": "true"
+      }
+    },
+    {
+      "id": "wire-000",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            420,
+            620
+          ],
+          [
+            415,
+            620
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-001",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            415,
+            665
+          ],
+          [
+            450,
+            665
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-002",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            450,
+            665
+          ],
+          [
+            450,
+            710
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-003",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            450,
+            710
+          ],
+          [
+            445,
+            710
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-004",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            265,
+            680
+          ],
+          [
+            415,
+            680
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-005",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            415,
+            620
+          ],
+          [
+            415,
+            665
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-006",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            415,
+            665
+          ],
+          [
+            415,
+            680
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-007",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            405,
+            710
+          ],
+          [
+            400,
+            710
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-008",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            400,
+            710
+          ],
+          [
+            400,
+            690
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-009",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            400,
+            690
+          ],
+          [
+            265,
+            690
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-010",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            150,
+            545
+          ],
+          [
+            145,
+            545
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-011",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            145,
+            545
+          ],
+          [
+            145,
+            670
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-012",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            45,
+            695
+          ],
+          [
+            40,
+            695
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-013",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            40,
+            695
+          ],
+          [
+            40,
+            670
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-014",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            40,
+            670
+          ],
+          [
+            145,
+            670
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-015",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            145,
+            670
+          ],
+          [
+            190,
+            670
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-016",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            190,
+            670
+          ],
+          [
+            195,
+            670
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-017",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            555,
+            515
+          ],
+          [
+            550,
+            515
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-018",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            550,
+            515
+          ],
+          [
+            550,
+            620
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-019",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            570,
+            725
+          ],
+          [
+            565,
+            725
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-020",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            565,
+            725
+          ],
+          [
+            565,
+            620
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-021",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            190,
+            680
+          ],
+          [
+            195,
+            680
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-022",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            190,
+            670
+          ],
+          [
+            190,
+            680
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-023",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            460,
+            620
+          ],
+          [
+            465,
+            620
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-024",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            465,
+            620
+          ],
+          [
+            550,
+            620
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-025",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            550,
+            620
+          ],
+          [
+            565,
+            620
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-026",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            565,
+            620
+          ],
+          [
+            570,
+            620
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-027",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            465,
+            620
+          ],
+          [
+            465,
+            625
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-028",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            930,
+            465
+          ],
+          [
+            935,
+            465
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-029",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            890,
+            465
+          ],
+          [
+            885,
+            465
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-030",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            885,
+            465
+          ],
+          [
+            885,
+            555
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-031",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            825,
+            555
+          ],
+          [
+            885,
+            555
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-032",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            885,
+            555
+          ],
+          [
+            915,
+            555
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-033",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            935,
+            630
+          ],
+          [
+            935,
+            575
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-034",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            900,
+            630
+          ],
+          [
+            935,
+            630
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-035",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            935,
+            630
+          ],
+          [
+            990,
+            630
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-036",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            990,
+            630
+          ],
+          [
+            1010,
+            630
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-037",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            995,
+            735
+          ],
+          [
+            990,
+            735
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-038",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            990,
+            735
+          ],
+          [
+            990,
+            630
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-039",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            935,
+            465
+          ],
+          [
+            935,
+            530
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-040",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            935,
+            530
+          ],
+          [
+            935,
+            535
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-041",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            935,
+            530
+          ],
+          [
+            940,
+            530
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-042",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            45,
+            250
+          ],
+          [
+            40,
+            250
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-043",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            40,
+            250
+          ],
+          [
+            40,
+            275
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-044",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            40,
+            275
+          ],
+          [
+            50,
+            275
+          ]
+        ]
+      }
+    },
+    {
+      "id": "marker-000",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 205,
+        "pinX": 265,
+        "pinY": 670
+      }
+    },
+    {
+      "id": "marker-001",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 190,
+        "pinY": 545
+      }
+    },
+    {
+      "id": "marker-002",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 85,
+        "pinY": 695
+      }
+    },
+    {
+      "id": "marker-003",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 610,
+        "pinY": 620
+      }
+    },
+    {
+      "id": "marker-004",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 595,
+        "pinY": 515
+      }
+    },
+    {
+      "id": "marker-005",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 610,
+        "pinY": 725
+      }
+    },
+    {
+      "id": "marker-006",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 25,
+        "pinX": 195,
+        "pinY": 690
+      }
+    },
+    {
+      "id": "marker-007",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "down",
+        "kind": "power",
+        "net": "+5V",
+        "offset": 10,
+        "pinX": 190,
+        "pinY": 670
+      }
+    },
+    {
+      "id": "marker-008",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 10,
+        "pinX": 465,
+        "pinY": 625
+      }
+    },
+    {
+      "id": "marker-009",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "net_port_bi",
+        "net": "BUCK_SW",
+        "offset": 15,
+        "pinX": 340,
+        "pinY": 680
+      }
+    },
+    {
+      "id": "marker-010",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "down",
+        "kind": "net_port_bi",
+        "net": "BUCK_BST",
+        "offset": 15,
+        "pinX": 400,
+        "pinY": 690
+      }
+    },
+    {
+      "id": "marker-011",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 20,
+        "pinX": 940,
+        "pinY": 530
+      }
+    },
+    {
+      "id": "marker-012",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 1035,
+        "pinY": 735
+      }
+    },
+    {
+      "id": "marker-013",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "down",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 10,
+        "pinX": 1030,
+        "pinY": 610
+      }
+    },
+    {
+      "id": "marker-014",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "power",
+        "net": "PWR",
+        "offset": 10,
+        "pinX": 1030,
+        "pinY": 650
+      }
+    },
+    {
+      "id": "marker-015",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 25,
+        "pinX": 860,
+        "pinY": 630
+      }
+    },
+    {
+      "id": "marker-016",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "down",
+        "kind": "net_port_bi",
+        "net": "Q1_GATE",
+        "offset": 10,
+        "pinX": 1000,
+        "pinY": 630
+      }
+    },
+    {
+      "id": "marker-017",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "down",
+        "kind": "net_port_bi",
+        "net": "Q2_BASE",
+        "offset": 10,
+        "pinX": 855,
+        "pinY": 555
+      }
+    },
+    {
+      "id": "marker-018",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "PWR_EN",
+        "offset": 10,
+        "pinX": 785,
+        "pinY": 555
+      }
+    },
+    {
+      "id": "marker-019",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 85,
+        "pinY": 250
+      }
+    },
+    {
+      "id": "marker-020",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "power",
+        "net": "PWR",
+        "offset": 25,
+        "pinX": 90,
+        "pinY": 275
+      }
+    },
+    {
+      "id": "marker-021",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "net_port_bi",
+        "net": "LED2_K",
+        "offset": 10,
+        "pinX": 45,
+        "pinY": 275
+      }
+    },
+    {
+      "id": "register-lib-000",
+      "run": "sch group create",
+      "flags": {
+        "if-absent": true,
+        "members": "U2,C1,C2,C3,L1,C4,C5,C6",
+        "name": "BUCK_3V3"
+      }
+    },
+    {
+      "id": "register-lib-001",
+      "run": "sch group create",
+      "flags": {
+        "if-absent": true,
+        "members": "Q1,Q2,R8,R9,R7,C10",
+        "name": "PWR_SWITCH"
+      }
+    },
+    {
+      "id": "register-lib-002",
+      "run": "sch group create",
+      "flags": {
+        "if-absent": true,
+        "members": "LED2,R10",
+        "name": "LED_PWR"
+      }
+    },
+    {
+      "id": "apply-module-frames",
+      "run": "sch frame apply",
+      "flags": {
+        "data": "{\"schemaVersion\":1,\"documentId\":\"cbe779fb011540e7\",\"frames\":[{\"id\":\"BUCK_3V3\",\"title\":\"AP63203WU-7 3.3V 2A Buck\",\"rect\":{\"minX\":25,\"minY\":475,\"maxX\":665,\"maxY\":800},\"titleX\":40,\"titleY\":510,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":315,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":204.5,\"minY\":639.5,\"maxX\":255.5,\"maxY\":715.5},{\"minX\":205,\"minY\":700,\"maxX\":223.286132812,\"maxY\":708},{\"minX\":194.5,\"minY\":689.5,\"maxX\":205,\"maxY\":690.5},{\"minX\":194.5,\"minY\":679.5,\"maxX\":205,\"maxY\":680.5},{\"minX\":194.5,\"minY\":669.5,\"maxX\":205,\"maxY\":670.5},{\"minX\":255,\"minY\":669.5,\"maxX\":265.5,\"maxY\":670.5},{\"minX\":255,\"minY\":679.5,\"maxX\":265.5,\"maxY\":680.5},{\"minX\":255,\"minY\":689.5,\"maxX\":265.5,\"maxY\":690.5},{\"minX\":159.5,\"minY\":516.5,\"maxX\":180.5,\"maxY\":568.5},{\"minX\":160,\"minY\":555,\"maxX\":182.179199219,\"maxY\":563},{\"minX\":149.5,\"minY\":544.5,\"maxX\":160,\"maxY\":545.5},{\"minX\":180,\"minY\":544.5,\"maxX\":190.5,\"maxY\":545.5},{\"minX\":54.5,\"minY\":666.5,\"maxX\":75.5,\"maxY\":718.5},{\"minX\":55,\"minY\":705,\"maxX\":77.179199219,\"maxY\":713},{\"minX\":44.5,\"minY\":694.5,\"maxX\":55,\"maxY\":695.5},{\"minX\":75,\"minY\":694.5,\"maxX\":85.5,\"maxY\":695.5},{\"minX\":414.5,\"minY\":681.5,\"maxX\":435.5,\"maxY\":733.5},{\"minX\":415,\"minY\":720,\"maxX\":437.179199219,\"maxY\":728},{\"minX\":404.5,\"minY\":709.5,\"maxX\":415,\"maxY\":710.5},{\"minX\":435,\"minY\":709.5,\"maxX\":445.5,\"maxY\":710.5},{\"minX\":423.50000625,\"minY\":599.977500031,\"maxX\":456.50005,\"maxY\":639.50005},{\"minX\":425,\"minY\":625,\"maxX\":443.286132812,\"maxY\":633},{\"minX\":419.5,\"minY\":619.5,\"maxX\":424.00000625,\"maxY\":620.5},{\"minX\":456.00005,\"minY\":619.5,\"maxX\":460.5,\"maxY\":620.5},{\"minX\":579.5,\"minY\":591.5,\"maxX\":600.5,\"maxY\":643.5},{\"minX\":580,\"minY\":630,\"maxX\":602.179199219,\"maxY\":638},{\"minX\":569.5,\"minY\":619.5,\"maxX\":580,\"maxY\":620.5},{\"minX\":600,\"minY\":619.5,\"maxX\":610.5,\"maxY\":620.5},{\"minX\":564.5,\"minY\":486.5,\"maxX\":585.5,\"maxY\":538.5},{\"minX\":565,\"minY\":525,\"maxX\":587.179199219,\"maxY\":533},{\"minX\":554.5,\"minY\":514.5,\"maxX\":565,\"maxY\":515.5},{\"minX\":585,\"minY\":514.5,\"maxX\":595.5,\"maxY\":515.5},{\"minX\":579.5,\"minY\":696.5,\"maxX\":600.5,\"maxY\":748.5},{\"minX\":580,\"minY\":735,\"maxX\":602.179199219,\"maxY\":743},{\"minX\":569.5,\"minY\":724.5,\"maxX\":580,\"maxY\":725.5},{\"minX\":600,\"minY\":724.5,\"maxX\":610.5,\"maxY\":725.5},{\"minX\":414.5,\"minY\":619.5,\"maxX\":420.5,\"maxY\":620.5},{\"minX\":414.5,\"minY\":664.5,\"maxX\":450.5,\"maxY\":665.5},{\"minX\":449.5,\"minY\":664.5,\"maxX\":450.5,\"maxY\":710.5},{\"minX\":444.5,\"minY\":709.5,\"maxX\":450.5,\"maxY\":710.5},{\"minX\":264.5,\"minY\":679.5,\"maxX\":415.5,\"maxY\":680.5},{\"minX\":414.5,\"minY\":619.5,\"maxX\":415.5,\"maxY\":665.5},{\"minX\":414.5,\"minY\":664.5,\"maxX\":415.5,\"maxY\":680.5},{\"minX\":399.5,\"minY\":709.5,\"maxX\":405.5,\"maxY\":710.5},{\"minX\":399.5,\"minY\":689.5,\"maxX\":400.5,\"maxY\":710.5},{\"minX\":264.5,\"minY\":689.5,\"maxX\":400.5,\"maxY\":690.5},{\"minX\":144.5,\"minY\":544.5,\"maxX\":150.5,\"maxY\":545.5},{\"minX\":144.5,\"minY\":544.5,\"maxX\":145.5,\"maxY\":670.5},{\"minX\":39.5,\"minY\":694.5,\"maxX\":45.5,\"maxY\":695.5},{\"minX\":39.5,\"minY\":669.5,\"maxX\":40.5,\"maxY\":695.5},{\"minX\":39.5,\"minY\":669.5,\"maxX\":145.5,\"maxY\":670.5},{\"minX\":144.5,\"minY\":669.5,\"maxX\":190.5,\"maxY\":670.5},{\"minX\":189.5,\"minY\":669.5,\"maxX\":195.5,\"maxY\":670.5},{\"minX\":549.5,\"minY\":514.5,\"maxX\":555.5,\"maxY\":515.5},{\"minX\":549.5,\"minY\":514.5,\"maxX\":550.5,\"maxY\":620.5},{\"minX\":564.5,\"minY\":724.5,\"maxX\":570.5,\"maxY\":725.5},{\"minX\":564.5,\"minY\":619.5,\"maxX\":565.5,\"maxY\":725.5},{\"minX\":189.5,\"minY\":679.5,\"maxX\":195.5,\"maxY\":680.5},{\"minX\":189.5,\"minY\":669.5,\"maxX\":190.5,\"maxY\":680.5},{\"minX\":459.5,\"minY\":619.5,\"maxX\":465.5,\"maxY\":620.5},{\"minX\":464.5,\"minY\":619.5,\"maxX\":550.5,\"maxY\":620.5},{\"minX\":549.5,\"minY\":619.5,\"maxX\":565.5,\"maxY\":620.5},{\"minX\":564.5,\"minY\":619.5,\"maxX\":570.5,\"maxY\":620.5},{\"minX\":464.5,\"minY\":619.5,\"maxX\":465.5,\"maxY\":625.5},{\"minX\":264.5,\"minY\":669.5,\"maxX\":470.5,\"maxY\":670.5},{\"minX\":479.5,\"minY\":659.5,\"maxX\":489.5,\"maxY\":680.5},{\"minX\":452,\"minY\":670,\"maxX\":470,\"maxY\":682},{\"minX\":189.5,\"minY\":544.5,\"maxX\":215.5,\"maxY\":545.5},{\"minX\":224.5,\"minY\":534.5,\"maxX\":234.5,\"maxY\":555.5},{\"minX\":197,\"minY\":545,\"maxX\":215,\"maxY\":557},{\"minX\":84.5,\"minY\":694.5,\"maxX\":110.5,\"maxY\":695.5},{\"minX\":119.5,\"minY\":684.5,\"maxX\":129.5,\"maxY\":705.5},{\"minX\":92,\"minY\":695,\"maxX\":110,\"maxY\":707},{\"minX\":609.5,\"minY\":619.5,\"maxX\":635.5,\"maxY\":620.5},{\"minX\":644.5,\"minY\":609.5,\"maxX\":654.5,\"maxY\":630.5},{\"minX\":617,\"minY\":620,\"maxX\":635,\"maxY\":632},{\"minX\":594.5,\"minY\":514.5,\"maxX\":620.5,\"maxY\":515.5},{\"minX\":629.5,\"minY\":504.5,\"maxX\":639.5,\"maxY\":525.5},{\"minX\":602,\"minY\":515,\"maxX\":620,\"maxY\":527},{\"minX\":609.5,\"minY\":724.5,\"maxX\":635.5,\"maxY\":725.5},{\"minX\":644.5,\"minY\":714.5,\"maxX\":654.5,\"maxY\":735.5},{\"minX\":617,\"minY\":725,\"maxX\":635,\"maxY\":737},{\"minX\":169.5,\"minY\":689.5,\"maxX\":195.5,\"maxY\":690.5},{\"minX\":159.5,\"minY\":684.5,\"maxX\":165.5,\"maxY\":695.5},{\"minX\":170,\"minY\":690,\"maxX\":188,\"maxY\":702},{\"minX\":189.5,\"minY\":659.5,\"maxX\":190.5,\"maxY\":670.5},{\"minX\":184.5,\"minY\":649.5,\"maxX\":195.5,\"maxY\":655.5},{\"minX\":181,\"minY\":637.5,\"maxX\":199,\"maxY\":649.5},{\"minX\":464.5,\"minY\":624.5,\"maxX\":465.5,\"maxY\":635.5},{\"minX\":459.5,\"minY\":639.5,\"maxX\":470.5,\"maxY\":645.5},{\"minX\":456,\"minY\":645.5,\"maxX\":474,\"maxY\":657.5},{\"minX\":339.5,\"minY\":679.5,\"maxX\":340.5,\"maxY\":695.5},{\"minX\":334.5,\"minY\":704.5,\"maxX\":345.5,\"maxY\":735.5},{\"minX\":334.5,\"minY\":735.5,\"maxX\":345.5,\"maxY\":785.5},{\"minX\":399.5,\"minY\":674.5,\"maxX\":400.5,\"maxY\":690.5},{\"minX\":394.5,\"minY\":634.5,\"maxX\":405.5,\"maxY\":665.5},{\"minX\":394.5,\"minY\":578.5,\"maxX\":405.5,\"maxY\":634.5}]}},{\"id\":\"PWR_SWITCH\",\"title\":\"Switched Target PWR (AO3401A)\",\"rect\":{\"minX\":680,\"minY\":425,\"maxX\":1100,\"maxY\":800},\"titleX\":695,\"titleY\":785,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":390,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":1017.5,\"minY\":599.5,\"maxX\":1043.5,\"maxY\":655.5},{\"minX\":1050,\"minY\":630,\"maxX\":1068.286132812,\"maxY\":638},{\"minX\":1029.5,\"minY\":609.5,\"maxX\":1030.5,\"maxY\":620},{\"minX\":1009.5,\"minY\":629.5,\"maxX\":1018,\"maxY\":630.5},{\"minX\":1029.5,\"minY\":640,\"maxX\":1030.5,\"maxY\":650.5},{\"minX\":924.5,\"minY\":524.5,\"maxX\":935.5,\"maxY\":580.5},{\"minX\":940,\"minY\":555,\"maxX\":958.286132812,\"maxY\":563},{\"minX\":914.5,\"minY\":554.5,\"maxX\":925,\"maxY\":555.5},{\"minX\":934.5,\"minY\":565,\"maxX\":935.5,\"maxY\":575.5},{\"minX\":934.5,\"minY\":534.5,\"maxX\":935.5,\"maxY\":545},{\"minX\":794.5,\"minY\":529.5,\"maxX\":815.5,\"maxY\":575.5},{\"minX\":795,\"minY\":560,\"maxX\":817.179199219,\"maxY\":568},{\"minX\":815,\"minY\":554.5,\"maxX\":825.5,\"maxY\":555.5},{\"minX\":784.5,\"minY\":554.5,\"maxX\":795,\"maxY\":555.5},{\"minX\":899.5,\"minY\":439.5,\"maxX\":920.5,\"maxY\":485.5},{\"minX\":900,\"minY\":470,\"maxX\":922.179199219,\"maxY\":478},{\"minX\":920,\"minY\":464.5,\"maxX\":930.5,\"maxY\":465.5},{\"minX\":889.5,\"minY\":464.5,\"maxX\":900,\"maxY\":465.5},{\"minX\":869.5,\"minY\":604.5,\"maxX\":890.5,\"maxY\":650.5},{\"minX\":870,\"minY\":635,\"maxX\":892.179199219,\"maxY\":643},{\"minX\":890,\"minY\":629.5,\"maxX\":900.5,\"maxY\":630.5},{\"minX\":859.5,\"minY\":629.5,\"maxX\":870,\"maxY\":630.5},{\"minX\":1004.5,\"minY\":706.5,\"maxX\":1025.5,\"maxY\":758.5},{\"minX\":1005,\"minY\":745,\"maxX\":1027.179199219,\"maxY\":753},{\"minX\":994.5,\"minY\":734.5,\"maxX\":1005,\"maxY\":735.5},{\"minX\":1025,\"minY\":734.5,\"maxX\":1035.5,\"maxY\":735.5},{\"minX\":929.5,\"minY\":464.5,\"maxX\":935.5,\"maxY\":465.5},{\"minX\":884.5,\"minY\":464.5,\"maxX\":890.5,\"maxY\":465.5},{\"minX\":884.5,\"minY\":464.5,\"maxX\":885.5,\"maxY\":555.5},{\"minX\":824.5,\"minY\":554.5,\"maxX\":885.5,\"maxY\":555.5},{\"minX\":884.5,\"minY\":554.5,\"maxX\":915.5,\"maxY\":555.5},{\"minX\":934.5,\"minY\":574.5,\"maxX\":935.5,\"maxY\":630.5},{\"minX\":899.5,\"minY\":629.5,\"maxX\":935.5,\"maxY\":630.5},{\"minX\":934.5,\"minY\":629.5,\"maxX\":990.5,\"maxY\":630.5},{\"minX\":989.5,\"minY\":629.5,\"maxX\":1010.5,\"maxY\":630.5},{\"minX\":989.5,\"minY\":734.5,\"maxX\":995.5,\"maxY\":735.5},{\"minX\":989.5,\"minY\":629.5,\"maxX\":990.5,\"maxY\":735.5},{\"minX\":934.5,\"minY\":464.5,\"maxX\":935.5,\"maxY\":530.5},{\"minX\":934.5,\"minY\":529.5,\"maxX\":935.5,\"maxY\":535.5},{\"minX\":934.5,\"minY\":529.5,\"maxX\":940.5,\"maxY\":530.5},{\"minX\":939.5,\"minY\":529.5,\"maxX\":960.5,\"maxY\":530.5},{\"minX\":969.5,\"minY\":519.5,\"maxX\":979.5,\"maxY\":540.5},{\"minX\":942,\"minY\":530,\"maxX\":960,\"maxY\":542},{\"minX\":1034.5,\"minY\":734.5,\"maxX\":1060.5,\"maxY\":735.5},{\"minX\":1069.5,\"minY\":724.5,\"maxX\":1079.5,\"maxY\":745.5},{\"minX\":1042,\"minY\":735,\"maxX\":1060,\"maxY\":747},{\"minX\":1029.5,\"minY\":599.5,\"maxX\":1030.5,\"maxY\":610.5},{\"minX\":1024.5,\"minY\":589.5,\"maxX\":1035.5,\"maxY\":595.5},{\"minX\":1021,\"minY\":577.5,\"maxX\":1039,\"maxY\":589.5},{\"minX\":1029.5,\"minY\":649.5,\"maxX\":1030.5,\"maxY\":660.5},{\"minX\":1024.5,\"minY\":664.5,\"maxX\":1035.5,\"maxY\":670.5},{\"minX\":1021,\"minY\":670.5,\"maxX\":1039,\"maxY\":682.5},{\"minX\":834.5,\"minY\":629.5,\"maxX\":860.5,\"maxY\":630.5},{\"minX\":824.5,\"minY\":624.5,\"maxX\":830.5,\"maxY\":635.5},{\"minX\":835,\"minY\":630,\"maxX\":853,\"maxY\":642},{\"minX\":999.5,\"minY\":619.5,\"maxX\":1000.5,\"maxY\":630.5},{\"minX\":994.5,\"minY\":579.5,\"maxX\":1005.5,\"maxY\":610.5},{\"minX\":994.5,\"minY\":529.5,\"maxX\":1005.5,\"maxY\":579.5},{\"minX\":854.5,\"minY\":544.5,\"maxX\":855.5,\"maxY\":555.5},{\"minX\":849.5,\"minY\":504.5,\"maxX\":860.5,\"maxY\":535.5},{\"minX\":849.5,\"minY\":454.5,\"maxX\":860.5,\"maxY\":504.5},{\"minX\":774.5,\"minY\":554.5,\"maxX\":785.5,\"maxY\":555.5},{\"minX\":734.5,\"minY\":549.5,\"maxX\":765.5,\"maxY\":560.5},{\"minX\":690.5,\"minY\":549.5,\"maxX\":734.5,\"maxY\":560.5}]}},{\"id\":\"LED_PWR\",\"title\":\"Switched PWR LED (LED2)\",\"rect\":{\"minX\":25,\"minY\":210,\"maxX\":375,\"maxY\":410},\"titleX\":40,\"titleY\":395,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":320,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":60.5,\"minY\":248.5,\"maxX\":75.5,\"maxY\":309.5},{\"minX\":60,\"minY\":295,\"maxX\":82.179199219,\"maxY\":303},{\"minX\":75,\"minY\":274.5,\"maxX\":90.5,\"maxY\":275.5},{\"minX\":49.5,\"minY\":274.5,\"maxX\":61,\"maxY\":275.5},{\"minX\":54.5,\"minY\":224.5,\"maxX\":75.5,\"maxY\":270.5},{\"minX\":55,\"minY\":255,\"maxX\":77.179199219,\"maxY\":263},{\"minX\":75,\"minY\":249.5,\"maxX\":85.5,\"maxY\":250.5},{\"minX\":44.5,\"minY\":249.5,\"maxX\":55,\"maxY\":250.5},{\"minX\":39.5,\"minY\":249.5,\"maxX\":45.5,\"maxY\":250.5},{\"minX\":39.5,\"minY\":249.5,\"maxX\":40.5,\"maxY\":275.5},{\"minX\":39.5,\"minY\":274.5,\"maxX\":50.5,\"maxY\":275.5},{\"minX\":84.5,\"minY\":249.5,\"maxX\":110.5,\"maxY\":250.5},{\"minX\":119.5,\"minY\":239.5,\"maxX\":129.5,\"maxY\":260.5},{\"minX\":92,\"minY\":250,\"maxX\":110,\"maxY\":262},{\"minX\":89.5,\"minY\":274.5,\"maxX\":115.5,\"maxY\":275.5},{\"minX\":119.5,\"minY\":269.5,\"maxX\":125.5,\"maxY\":280.5},{\"minX\":97,\"minY\":275,\"maxX\":115,\"maxY\":287},{\"minX\":44.5,\"minY\":274.5,\"maxX\":45.5,\"maxY\":285.5},{\"minX\":39.5,\"minY\":294.5,\"maxX\":50.5,\"maxY\":325.5},{\"minX\":39.5,\"minY\":325.5,\"maxX\":50.5,\"maxY\":369.5}]}}]}"
+      },
+      "assert": {
+        "$.verified": "true"
+      }
+    },
+    {
+      "id": "verify-module-frames",
+      "run": "sch frame check",
+      "flags": {
+        "data": "{\"schemaVersion\":1,\"documentId\":\"cbe779fb011540e7\",\"frames\":[{\"id\":\"BUCK_3V3\",\"title\":\"AP63203WU-7 3.3V 2A Buck\",\"rect\":{\"minX\":25,\"minY\":475,\"maxX\":665,\"maxY\":800},\"titleX\":40,\"titleY\":510,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":315,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":204.5,\"minY\":639.5,\"maxX\":255.5,\"maxY\":715.5},{\"minX\":205,\"minY\":700,\"maxX\":223.286132812,\"maxY\":708},{\"minX\":194.5,\"minY\":689.5,\"maxX\":205,\"maxY\":690.5},{\"minX\":194.5,\"minY\":679.5,\"maxX\":205,\"maxY\":680.5},{\"minX\":194.5,\"minY\":669.5,\"maxX\":205,\"maxY\":670.5},{\"minX\":255,\"minY\":669.5,\"maxX\":265.5,\"maxY\":670.5},{\"minX\":255,\"minY\":679.5,\"maxX\":265.5,\"maxY\":680.5},{\"minX\":255,\"minY\":689.5,\"maxX\":265.5,\"maxY\":690.5},{\"minX\":159.5,\"minY\":516.5,\"maxX\":180.5,\"maxY\":568.5},{\"minX\":160,\"minY\":555,\"maxX\":182.179199219,\"maxY\":563},{\"minX\":149.5,\"minY\":544.5,\"maxX\":160,\"maxY\":545.5},{\"minX\":180,\"minY\":544.5,\"maxX\":190.5,\"maxY\":545.5},{\"minX\":54.5,\"minY\":666.5,\"maxX\":75.5,\"maxY\":718.5},{\"minX\":55,\"minY\":705,\"maxX\":77.179199219,\"maxY\":713},{\"minX\":44.5,\"minY\":694.5,\"maxX\":55,\"maxY\":695.5},{\"minX\":75,\"minY\":694.5,\"maxX\":85.5,\"maxY\":695.5},{\"minX\":414.5,\"minY\":681.5,\"maxX\":435.5,\"maxY\":733.5},{\"minX\":415,\"minY\":720,\"maxX\":437.179199219,\"maxY\":728},{\"minX\":404.5,\"minY\":709.5,\"maxX\":415,\"maxY\":710.5},{\"minX\":435,\"minY\":709.5,\"maxX\":445.5,\"maxY\":710.5},{\"minX\":423.50000625,\"minY\":599.977500031,\"maxX\":456.50005,\"maxY\":639.50005},{\"minX\":425,\"minY\":625,\"maxX\":443.286132812,\"maxY\":633},{\"minX\":419.5,\"minY\":619.5,\"maxX\":424.00000625,\"maxY\":620.5},{\"minX\":456.00005,\"minY\":619.5,\"maxX\":460.5,\"maxY\":620.5},{\"minX\":579.5,\"minY\":591.5,\"maxX\":600.5,\"maxY\":643.5},{\"minX\":580,\"minY\":630,\"maxX\":602.179199219,\"maxY\":638},{\"minX\":569.5,\"minY\":619.5,\"maxX\":580,\"maxY\":620.5},{\"minX\":600,\"minY\":619.5,\"maxX\":610.5,\"maxY\":620.5},{\"minX\":564.5,\"minY\":486.5,\"maxX\":585.5,\"maxY\":538.5},{\"minX\":565,\"minY\":525,\"maxX\":587.179199219,\"maxY\":533},{\"minX\":554.5,\"minY\":514.5,\"maxX\":565,\"maxY\":515.5},{\"minX\":585,\"minY\":514.5,\"maxX\":595.5,\"maxY\":515.5},{\"minX\":579.5,\"minY\":696.5,\"maxX\":600.5,\"maxY\":748.5},{\"minX\":580,\"minY\":735,\"maxX\":602.179199219,\"maxY\":743},{\"minX\":569.5,\"minY\":724.5,\"maxX\":580,\"maxY\":725.5},{\"minX\":600,\"minY\":724.5,\"maxX\":610.5,\"maxY\":725.5},{\"minX\":414.5,\"minY\":619.5,\"maxX\":420.5,\"maxY\":620.5},{\"minX\":414.5,\"minY\":664.5,\"maxX\":450.5,\"maxY\":665.5},{\"minX\":449.5,\"minY\":664.5,\"maxX\":450.5,\"maxY\":710.5},{\"minX\":444.5,\"minY\":709.5,\"maxX\":450.5,\"maxY\":710.5},{\"minX\":264.5,\"minY\":679.5,\"maxX\":415.5,\"maxY\":680.5},{\"minX\":414.5,\"minY\":619.5,\"maxX\":415.5,\"maxY\":665.5},{\"minX\":414.5,\"minY\":664.5,\"maxX\":415.5,\"maxY\":680.5},{\"minX\":399.5,\"minY\":709.5,\"maxX\":405.5,\"maxY\":710.5},{\"minX\":399.5,\"minY\":689.5,\"maxX\":400.5,\"maxY\":710.5},{\"minX\":264.5,\"minY\":689.5,\"maxX\":400.5,\"maxY\":690.5},{\"minX\":144.5,\"minY\":544.5,\"maxX\":150.5,\"maxY\":545.5},{\"minX\":144.5,\"minY\":544.5,\"maxX\":145.5,\"maxY\":670.5},{\"minX\":39.5,\"minY\":694.5,\"maxX\":45.5,\"maxY\":695.5},{\"minX\":39.5,\"minY\":669.5,\"maxX\":40.5,\"maxY\":695.5},{\"minX\":39.5,\"minY\":669.5,\"maxX\":145.5,\"maxY\":670.5},{\"minX\":144.5,\"minY\":669.5,\"maxX\":190.5,\"maxY\":670.5},{\"minX\":189.5,\"minY\":669.5,\"maxX\":195.5,\"maxY\":670.5},{\"minX\":549.5,\"minY\":514.5,\"maxX\":555.5,\"maxY\":515.5},{\"minX\":549.5,\"minY\":514.5,\"maxX\":550.5,\"maxY\":620.5},{\"minX\":564.5,\"minY\":724.5,\"maxX\":570.5,\"maxY\":725.5},{\"minX\":564.5,\"minY\":619.5,\"maxX\":565.5,\"maxY\":725.5},{\"minX\":189.5,\"minY\":679.5,\"maxX\":195.5,\"maxY\":680.5},{\"minX\":189.5,\"minY\":669.5,\"maxX\":190.5,\"maxY\":680.5},{\"minX\":459.5,\"minY\":619.5,\"maxX\":465.5,\"maxY\":620.5},{\"minX\":464.5,\"minY\":619.5,\"maxX\":550.5,\"maxY\":620.5},{\"minX\":549.5,\"minY\":619.5,\"maxX\":565.5,\"maxY\":620.5},{\"minX\":564.5,\"minY\":619.5,\"maxX\":570.5,\"maxY\":620.5},{\"minX\":464.5,\"minY\":619.5,\"maxX\":465.5,\"maxY\":625.5},{\"minX\":264.5,\"minY\":669.5,\"maxX\":470.5,\"maxY\":670.5},{\"minX\":479.5,\"minY\":659.5,\"maxX\":489.5,\"maxY\":680.5},{\"minX\":452,\"minY\":670,\"maxX\":470,\"maxY\":682},{\"minX\":189.5,\"minY\":544.5,\"maxX\":215.5,\"maxY\":545.5},{\"minX\":224.5,\"minY\":534.5,\"maxX\":234.5,\"maxY\":555.5},{\"minX\":197,\"minY\":545,\"maxX\":215,\"maxY\":557},{\"minX\":84.5,\"minY\":694.5,\"maxX\":110.5,\"maxY\":695.5},{\"minX\":119.5,\"minY\":684.5,\"maxX\":129.5,\"maxY\":705.5},{\"minX\":92,\"minY\":695,\"maxX\":110,\"maxY\":707},{\"minX\":609.5,\"minY\":619.5,\"maxX\":635.5,\"maxY\":620.5},{\"minX\":644.5,\"minY\":609.5,\"maxX\":654.5,\"maxY\":630.5},{\"minX\":617,\"minY\":620,\"maxX\":635,\"maxY\":632},{\"minX\":594.5,\"minY\":514.5,\"maxX\":620.5,\"maxY\":515.5},{\"minX\":629.5,\"minY\":504.5,\"maxX\":639.5,\"maxY\":525.5},{\"minX\":602,\"minY\":515,\"maxX\":620,\"maxY\":527},{\"minX\":609.5,\"minY\":724.5,\"maxX\":635.5,\"maxY\":725.5},{\"minX\":644.5,\"minY\":714.5,\"maxX\":654.5,\"maxY\":735.5},{\"minX\":617,\"minY\":725,\"maxX\":635,\"maxY\":737},{\"minX\":169.5,\"minY\":689.5,\"maxX\":195.5,\"maxY\":690.5},{\"minX\":159.5,\"minY\":684.5,\"maxX\":165.5,\"maxY\":695.5},{\"minX\":170,\"minY\":690,\"maxX\":188,\"maxY\":702},{\"minX\":189.5,\"minY\":659.5,\"maxX\":190.5,\"maxY\":670.5},{\"minX\":184.5,\"minY\":649.5,\"maxX\":195.5,\"maxY\":655.5},{\"minX\":181,\"minY\":637.5,\"maxX\":199,\"maxY\":649.5},{\"minX\":464.5,\"minY\":624.5,\"maxX\":465.5,\"maxY\":635.5},{\"minX\":459.5,\"minY\":639.5,\"maxX\":470.5,\"maxY\":645.5},{\"minX\":456,\"minY\":645.5,\"maxX\":474,\"maxY\":657.5},{\"minX\":339.5,\"minY\":679.5,\"maxX\":340.5,\"maxY\":695.5},{\"minX\":334.5,\"minY\":704.5,\"maxX\":345.5,\"maxY\":735.5},{\"minX\":334.5,\"minY\":735.5,\"maxX\":345.5,\"maxY\":785.5},{\"minX\":399.5,\"minY\":674.5,\"maxX\":400.5,\"maxY\":690.5},{\"minX\":394.5,\"minY\":634.5,\"maxX\":405.5,\"maxY\":665.5},{\"minX\":394.5,\"minY\":578.5,\"maxX\":405.5,\"maxY\":634.5}]}},{\"id\":\"PWR_SWITCH\",\"title\":\"Switched Target PWR (AO3401A)\",\"rect\":{\"minX\":680,\"minY\":425,\"maxX\":1100,\"maxY\":800},\"titleX\":695,\"titleY\":785,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":390,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":1017.5,\"minY\":599.5,\"maxX\":1043.5,\"maxY\":655.5},{\"minX\":1050,\"minY\":630,\"maxX\":1068.286132812,\"maxY\":638},{\"minX\":1029.5,\"minY\":609.5,\"maxX\":1030.5,\"maxY\":620},{\"minX\":1009.5,\"minY\":629.5,\"maxX\":1018,\"maxY\":630.5},{\"minX\":1029.5,\"minY\":640,\"maxX\":1030.5,\"maxY\":650.5},{\"minX\":924.5,\"minY\":524.5,\"maxX\":935.5,\"maxY\":580.5},{\"minX\":940,\"minY\":555,\"maxX\":958.286132812,\"maxY\":563},{\"minX\":914.5,\"minY\":554.5,\"maxX\":925,\"maxY\":555.5},{\"minX\":934.5,\"minY\":565,\"maxX\":935.5,\"maxY\":575.5},{\"minX\":934.5,\"minY\":534.5,\"maxX\":935.5,\"maxY\":545},{\"minX\":794.5,\"minY\":529.5,\"maxX\":815.5,\"maxY\":575.5},{\"minX\":795,\"minY\":560,\"maxX\":817.179199219,\"maxY\":568},{\"minX\":815,\"minY\":554.5,\"maxX\":825.5,\"maxY\":555.5},{\"minX\":784.5,\"minY\":554.5,\"maxX\":795,\"maxY\":555.5},{\"minX\":899.5,\"minY\":439.5,\"maxX\":920.5,\"maxY\":485.5},{\"minX\":900,\"minY\":470,\"maxX\":922.179199219,\"maxY\":478},{\"minX\":920,\"minY\":464.5,\"maxX\":930.5,\"maxY\":465.5},{\"minX\":889.5,\"minY\":464.5,\"maxX\":900,\"maxY\":465.5},{\"minX\":869.5,\"minY\":604.5,\"maxX\":890.5,\"maxY\":650.5},{\"minX\":870,\"minY\":635,\"maxX\":892.179199219,\"maxY\":643},{\"minX\":890,\"minY\":629.5,\"maxX\":900.5,\"maxY\":630.5},{\"minX\":859.5,\"minY\":629.5,\"maxX\":870,\"maxY\":630.5},{\"minX\":1004.5,\"minY\":706.5,\"maxX\":1025.5,\"maxY\":758.5},{\"minX\":1005,\"minY\":745,\"maxX\":1027.179199219,\"maxY\":753},{\"minX\":994.5,\"minY\":734.5,\"maxX\":1005,\"maxY\":735.5},{\"minX\":1025,\"minY\":734.5,\"maxX\":1035.5,\"maxY\":735.5},{\"minX\":929.5,\"minY\":464.5,\"maxX\":935.5,\"maxY\":465.5},{\"minX\":884.5,\"minY\":464.5,\"maxX\":890.5,\"maxY\":465.5},{\"minX\":884.5,\"minY\":464.5,\"maxX\":885.5,\"maxY\":555.5},{\"minX\":824.5,\"minY\":554.5,\"maxX\":885.5,\"maxY\":555.5},{\"minX\":884.5,\"minY\":554.5,\"maxX\":915.5,\"maxY\":555.5},{\"minX\":934.5,\"minY\":574.5,\"maxX\":935.5,\"maxY\":630.5},{\"minX\":899.5,\"minY\":629.5,\"maxX\":935.5,\"maxY\":630.5},{\"minX\":934.5,\"minY\":629.5,\"maxX\":990.5,\"maxY\":630.5},{\"minX\":989.5,\"minY\":629.5,\"maxX\":1010.5,\"maxY\":630.5},{\"minX\":989.5,\"minY\":734.5,\"maxX\":995.5,\"maxY\":735.5},{\"minX\":989.5,\"minY\":629.5,\"maxX\":990.5,\"maxY\":735.5},{\"minX\":934.5,\"minY\":464.5,\"maxX\":935.5,\"maxY\":530.5},{\"minX\":934.5,\"minY\":529.5,\"maxX\":935.5,\"maxY\":535.5},{\"minX\":934.5,\"minY\":529.5,\"maxX\":940.5,\"maxY\":530.5},{\"minX\":939.5,\"minY\":529.5,\"maxX\":960.5,\"maxY\":530.5},{\"minX\":969.5,\"minY\":519.5,\"maxX\":979.5,\"maxY\":540.5},{\"minX\":942,\"minY\":530,\"maxX\":960,\"maxY\":542},{\"minX\":1034.5,\"minY\":734.5,\"maxX\":1060.5,\"maxY\":735.5},{\"minX\":1069.5,\"minY\":724.5,\"maxX\":1079.5,\"maxY\":745.5},{\"minX\":1042,\"minY\":735,\"maxX\":1060,\"maxY\":747},{\"minX\":1029.5,\"minY\":599.5,\"maxX\":1030.5,\"maxY\":610.5},{\"minX\":1024.5,\"minY\":589.5,\"maxX\":1035.5,\"maxY\":595.5},{\"minX\":1021,\"minY\":577.5,\"maxX\":1039,\"maxY\":589.5},{\"minX\":1029.5,\"minY\":649.5,\"maxX\":1030.5,\"maxY\":660.5},{\"minX\":1024.5,\"minY\":664.5,\"maxX\":1035.5,\"maxY\":670.5},{\"minX\":1021,\"minY\":670.5,\"maxX\":1039,\"maxY\":682.5},{\"minX\":834.5,\"minY\":629.5,\"maxX\":860.5,\"maxY\":630.5},{\"minX\":824.5,\"minY\":624.5,\"maxX\":830.5,\"maxY\":635.5},{\"minX\":835,\"minY\":630,\"maxX\":853,\"maxY\":642},{\"minX\":999.5,\"minY\":619.5,\"maxX\":1000.5,\"maxY\":630.5},{\"minX\":994.5,\"minY\":579.5,\"maxX\":1005.5,\"maxY\":610.5},{\"minX\":994.5,\"minY\":529.5,\"maxX\":1005.5,\"maxY\":579.5},{\"minX\":854.5,\"minY\":544.5,\"maxX\":855.5,\"maxY\":555.5},{\"minX\":849.5,\"minY\":504.5,\"maxX\":860.5,\"maxY\":535.5},{\"minX\":849.5,\"minY\":454.5,\"maxX\":860.5,\"maxY\":504.5},{\"minX\":774.5,\"minY\":554.5,\"maxX\":785.5,\"maxY\":555.5},{\"minX\":734.5,\"minY\":549.5,\"maxX\":765.5,\"maxY\":560.5},{\"minX\":690.5,\"minY\":549.5,\"maxX\":734.5,\"maxY\":560.5}]}},{\"id\":\"LED_PWR\",\"title\":\"Switched PWR LED (LED2)\",\"rect\":{\"minX\":25,\"minY\":210,\"maxX\":375,\"maxY\":410},\"titleX\":40,\"titleY\":395,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":320,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":60.5,\"minY\":248.5,\"maxX\":75.5,\"maxY\":309.5},{\"minX\":60,\"minY\":295,\"maxX\":82.179199219,\"maxY\":303},{\"minX\":75,\"minY\":274.5,\"maxX\":90.5,\"maxY\":275.5},{\"minX\":49.5,\"minY\":274.5,\"maxX\":61,\"maxY\":275.5},{\"minX\":54.5,\"minY\":224.5,\"maxX\":75.5,\"maxY\":270.5},{\"minX\":55,\"minY\":255,\"maxX\":77.179199219,\"maxY\":263},{\"minX\":75,\"minY\":249.5,\"maxX\":85.5,\"maxY\":250.5},{\"minX\":44.5,\"minY\":249.5,\"maxX\":55,\"maxY\":250.5},{\"minX\":39.5,\"minY\":249.5,\"maxX\":45.5,\"maxY\":250.5},{\"minX\":39.5,\"minY\":249.5,\"maxX\":40.5,\"maxY\":275.5},{\"minX\":39.5,\"minY\":274.5,\"maxX\":50.5,\"maxY\":275.5},{\"minX\":84.5,\"minY\":249.5,\"maxX\":110.5,\"maxY\":250.5},{\"minX\":119.5,\"minY\":239.5,\"maxX\":129.5,\"maxY\":260.5},{\"minX\":92,\"minY\":250,\"maxX\":110,\"maxY\":262},{\"minX\":89.5,\"minY\":274.5,\"maxX\":115.5,\"maxY\":275.5},{\"minX\":119.5,\"minY\":269.5,\"maxX\":125.5,\"maxY\":280.5},{\"minX\":97,\"minY\":275,\"maxX\":115,\"maxY\":287},{\"minX\":44.5,\"minY\":274.5,\"maxX\":45.5,\"maxY\":285.5},{\"minX\":39.5,\"minY\":294.5,\"maxX\":50.5,\"maxY\":325.5},{\"minX\":39.5,\"minY\":325.5,\"maxX\":50.5,\"maxY\":369.5}]}}]}"
+      },
+      "assert": {
+        "$.verified": "true"
+      }
+    },
+    {
+      "id": "apply-page-titleblock",
+      "run": "sch titleblock",
+      "flags": {
+        "data": "{\"Description\":{\"value\":\"TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)\",\"showTitle\":false,\"showValue\":true},\"Drawed\":{\"value\":\"Antigravity\",\"showTitle\":false,\"showValue\":true},\"Name\":{\"value\":\"TLSR Flasher P2 - AP63203WU-7 3.3V Buck \\u0026 Switched PWR\",\"showTitle\":false,\"showValue\":true}}"
+      }
+    },
+    {
+      "id": "verify-all-pins-nets-nc",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {
+          "C1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "345d8669720442d6a8747f19c9226485"
+            },
+            "x": 170,
+            "y": 545,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 159.5,
+              "minY": 536.5,
+              "maxX": 180.5,
+              "maxY": 553.5
+            },
+            "pins": {
+              "1": {
+                "x": 150,
+                "y": 545,
+                "net": "+5V",
+                "noConnected": false
+              },
+              "2": {
+                "x": 190,
+                "y": 545,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "C10": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 1015,
+            "y": 735,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 1004.5,
+              "minY": 726.5,
+              "maxX": 1025.5,
+              "maxY": 743.5
+            },
+            "pins": {
+              "1": {
+                "x": 995,
+                "y": 735,
+                "net": "Q1_GATE",
+                "noConnected": false
+              },
+              "2": {
+                "x": 1035,
+                "y": 735,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "C2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 65,
+            "y": 695,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 54.5,
+              "minY": 686.5,
+              "maxX": 75.5,
+              "maxY": 703.5
+            },
+            "pins": {
+              "1": {
+                "x": 45,
+                "y": 695,
+                "net": "+5V",
+                "noConnected": false
+              },
+              "2": {
+                "x": 85,
+                "y": 695,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "C3": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 425,
+            "y": 710,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 414.5,
+              "minY": 701.5,
+              "maxX": 435.5,
+              "maxY": 718.5
+            },
+            "pins": {
+              "1": {
+                "x": 405,
+                "y": 710,
+                "net": "BUCK_BST",
+                "noConnected": false
+              },
+              "2": {
+                "x": 445,
+                "y": 710,
+                "net": "BUCK_SW",
+                "noConnected": false
+              }
+            }
+          },
+          "C4": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "78c549e435f745ff89f256a309aff34c"
+            },
+            "x": 590,
+            "y": 620,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 579.5,
+              "minY": 611.5,
+              "maxX": 600.5,
+              "maxY": 628.5
+            },
+            "pins": {
+              "1": {
+                "x": 570,
+                "y": 620,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 610,
+                "y": 620,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "C5": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "78c549e435f745ff89f256a309aff34c"
+            },
+            "x": 575,
+            "y": 515,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 564.5,
+              "minY": 506.5,
+              "maxX": 585.5,
+              "maxY": 523.5
+            },
+            "pins": {
+              "1": {
+                "x": 555,
+                "y": 515,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 595,
+                "y": 515,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "C6": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 590,
+            "y": 725,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 579.5,
+              "minY": 716.5,
+              "maxX": 600.5,
+              "maxY": 733.5
+            },
+            "pins": {
+              "1": {
+                "x": 570,
+                "y": 725,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 610,
+                "y": 725,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "L1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "c311b6fc417b435394069573712ed6b5"
+            },
+            "x": 440,
+            "y": 620,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 423.50000625,
+              "minY": 619.977500031,
+              "maxX": 456.50005,
+              "maxY": 624.50005
+            },
+            "pins": {
+              "1": {
+                "x": 420,
+                "y": 620,
+                "net": "BUCK_SW",
+                "noConnected": false
+              },
+              "2": {
+                "x": 460,
+                "y": 620,
+                "net": "3V3",
+                "noConnected": false
+              }
+            }
+          },
+          "LED2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "ffec3f6d6d7645debd8e107be396b5f1"
+            },
+            "x": 70,
+            "y": 275,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 60.5,
+              "minY": 268.5,
+              "maxX": 75.5,
+              "maxY": 294.5
+            },
+            "pins": {
+              "1": {
+                "x": 50,
+                "y": 275,
+                "net": "LED2_K",
+                "noConnected": false
+              },
+              "2": {
+                "x": 90,
+                "y": 275,
+                "net": "PWR",
+                "noConnected": false
+              }
+            }
+          },
+          "Q1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "c9c0d5c4c0f842539abe3355695d746d"
+            },
+            "x": 1030,
+            "y": 630,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 1017.5,
+              "minY": 619.5,
+              "maxX": 1043.5,
+              "maxY": 640.5
+            },
+            "pins": {
+              "1": {
+                "x": 1010,
+                "y": 630,
+                "net": "Q1_GATE",
+                "noConnected": false
+              },
+              "2": {
+                "x": 1030,
+                "y": 610,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "3": {
+                "x": 1030,
+                "y": 650,
+                "net": "PWR",
+                "noConnected": false
+              }
+            }
+          },
+          "Q2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "f714063fa18048f2956344f6558686ce"
+            },
+            "x": 925,
+            "y": 555,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 924.5,
+              "minY": 544.5,
+              "maxX": 935.5,
+              "maxY": 565.5
+            },
+            "pins": {
+              "1": {
+                "x": 915,
+                "y": 555,
+                "net": "Q2_BASE",
+                "noConnected": false
+              },
+              "2": {
+                "x": 935,
+                "y": 535,
+                "net": "GND",
+                "noConnected": false
+              },
+              "3": {
+                "x": 935,
+                "y": 575,
+                "net": "Q1_GATE",
+                "noConnected": false
+              }
+            }
+          },
+          "R10": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "f24a8f70db714104b387f51f08abca40"
+            },
+            "x": 65,
+            "y": 250,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 54.5,
+              "minY": 244.5,
+              "maxX": 75.5,
+              "maxY": 255.5
+            },
+            "pins": {
+              "1": {
+                "x": 45,
+                "y": 250,
+                "net": "LED2_K",
+                "noConnected": false
+              },
+              "2": {
+                "x": 85,
+                "y": 250,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "R7": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "560477ba21ea4ffb9f5ac912d0dd396c"
+            },
+            "x": 880,
+            "y": 630,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 869.5,
+              "minY": 624.5,
+              "maxX": 890.5,
+              "maxY": 635.5
+            },
+            "pins": {
+              "1": {
+                "x": 860,
+                "y": 630,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 900,
+                "y": 630,
+                "net": "Q1_GATE",
+                "noConnected": false
+              }
+            }
+          },
+          "R8": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "7d0a4241f13846d38eb1c0e45cc6ecf8"
+            },
+            "x": 805,
+            "y": 555,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 794.5,
+              "minY": 549.5,
+              "maxX": 815.5,
+              "maxY": 560.5
+            },
+            "pins": {
+              "1": {
+                "x": 785,
+                "y": 555,
+                "net": "PWR_EN",
+                "noConnected": false
+              },
+              "2": {
+                "x": 825,
+                "y": 555,
+                "net": "Q2_BASE",
+                "noConnected": false
+              }
+            }
+          },
+          "R9": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "a8ced70c90564625b1939eaf737576ef"
+            },
+            "x": 910,
+            "y": 465,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 899.5,
+              "minY": 459.5,
+              "maxX": 920.5,
+              "maxY": 470.5
+            },
+            "pins": {
+              "1": {
+                "x": 890,
+                "y": 465,
+                "net": "Q2_BASE",
+                "noConnected": false
+              },
+              "2": {
+                "x": 930,
+                "y": 465,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "U2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "e25f0d003ec44bd1987511a4c8ea23ad"
+            },
+            "x": 230,
+            "y": 680,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 204.5,
+              "minY": 659.5,
+              "maxX": 255.5,
+              "maxY": 700.5
+            },
+            "pins": {
+              "1": {
+                "x": 195,
+                "y": 690,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 195,
+                "y": 680,
+                "net": "+5V",
+                "noConnected": false
+              },
+              "3": {
+                "x": 195,
+                "y": 670,
+                "net": "+5V",
+                "noConnected": false
+              },
+              "4": {
+                "x": 265,
+                "y": 670,
+                "net": "GND",
+                "noConnected": false
+              },
+              "5": {
+                "x": 265,
+                "y": 680,
+                "net": "BUCK_SW",
+                "noConnected": false
+              },
+              "6": {
+                "x": 265,
+                "y": 690,
+                "net": "BUCK_BST",
+                "noConnected": false
+              }
+            }
+          }
+        },
+        "drawing": {
+          "wires": [
+            {
+              "net": "BUCK_SW",
+              "points": [
+                [
+                  420,
+                  620
+                ],
+                [
+                  415,
+                  620
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_SW",
+              "points": [
+                [
+                  415,
+                  665
+                ],
+                [
+                  450,
+                  665
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_SW",
+              "points": [
+                [
+                  450,
+                  665
+                ],
+                [
+                  450,
+                  710
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_SW",
+              "points": [
+                [
+                  450,
+                  710
+                ],
+                [
+                  445,
+                  710
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_SW",
+              "points": [
+                [
+                  265,
+                  680
+                ],
+                [
+                  415,
+                  680
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_SW",
+              "points": [
+                [
+                  415,
+                  620
+                ],
+                [
+                  415,
+                  665
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_SW",
+              "points": [
+                [
+                  415,
+                  665
+                ],
+                [
+                  415,
+                  680
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_BST",
+              "points": [
+                [
+                  405,
+                  710
+                ],
+                [
+                  400,
+                  710
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_BST",
+              "points": [
+                [
+                  400,
+                  710
+                ],
+                [
+                  400,
+                  690
+                ]
+              ]
+            },
+            {
+              "net": "BUCK_BST",
+              "points": [
+                [
+                  400,
+                  690
+                ],
+                [
+                  265,
+                  690
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  150,
+                  545
+                ],
+                [
+                  145,
+                  545
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  145,
+                  545
+                ],
+                [
+                  145,
+                  670
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  45,
+                  695
+                ],
+                [
+                  40,
+                  695
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  40,
+                  695
+                ],
+                [
+                  40,
+                  670
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  40,
+                  670
+                ],
+                [
+                  145,
+                  670
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  145,
+                  670
+                ],
+                [
+                  190,
+                  670
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  190,
+                  670
+                ],
+                [
+                  195,
+                  670
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  555,
+                  515
+                ],
+                [
+                  550,
+                  515
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  550,
+                  515
+                ],
+                [
+                  550,
+                  620
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  570,
+                  725
+                ],
+                [
+                  565,
+                  725
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  565,
+                  725
+                ],
+                [
+                  565,
+                  620
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  190,
+                  680
+                ],
+                [
+                  195,
+                  680
+                ]
+              ]
+            },
+            {
+              "net": "+5V",
+              "points": [
+                [
+                  190,
+                  670
+                ],
+                [
+                  190,
+                  680
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  460,
+                  620
+                ],
+                [
+                  465,
+                  620
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  465,
+                  620
+                ],
+                [
+                  550,
+                  620
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  550,
+                  620
+                ],
+                [
+                  565,
+                  620
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  565,
+                  620
+                ],
+                [
+                  570,
+                  620
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  465,
+                  620
+                ],
+                [
+                  465,
+                  625
+                ]
+              ]
+            },
+            {
+              "net": "GND",
+              "points": [
+                [
+                  930,
+                  465
+                ],
+                [
+                  935,
+                  465
+                ]
+              ]
+            },
+            {
+              "net": "Q2_BASE",
+              "points": [
+                [
+                  890,
+                  465
+                ],
+                [
+                  885,
+                  465
+                ]
+              ]
+            },
+            {
+              "net": "Q2_BASE",
+              "points": [
+                [
+                  885,
+                  465
+                ],
+                [
+                  885,
+                  555
+                ]
+              ]
+            },
+            {
+              "net": "Q2_BASE",
+              "points": [
+                [
+                  825,
+                  555
+                ],
+                [
+                  885,
+                  555
+                ]
+              ]
+            },
+            {
+              "net": "Q2_BASE",
+              "points": [
+                [
+                  885,
+                  555
+                ],
+                [
+                  915,
+                  555
+                ]
+              ]
+            },
+            {
+              "net": "Q1_GATE",
+              "points": [
+                [
+                  935,
+                  630
+                ],
+                [
+                  935,
+                  575
+                ]
+              ]
+            },
+            {
+              "net": "Q1_GATE",
+              "points": [
+                [
+                  900,
+                  630
+                ],
+                [
+                  935,
+                  630
+                ]
+              ]
+            },
+            {
+              "net": "Q1_GATE",
+              "points": [
+                [
+                  935,
+                  630
+                ],
+                [
+                  990,
+                  630
+                ]
+              ]
+            },
+            {
+              "net": "Q1_GATE",
+              "points": [
+                [
+                  990,
+                  630
+                ],
+                [
+                  1010,
+                  630
+                ]
+              ]
+            },
+            {
+              "net": "Q1_GATE",
+              "points": [
+                [
+                  995,
+                  735
+                ],
+                [
+                  990,
+                  735
+                ]
+              ]
+            },
+            {
+              "net": "Q1_GATE",
+              "points": [
+                [
+                  990,
+                  735
+                ],
+                [
+                  990,
+                  630
+                ]
+              ]
+            },
+            {
+              "net": "GND",
+              "points": [
+                [
+                  935,
+                  465
+                ],
+                [
+                  935,
+                  530
+                ]
+              ]
+            },
+            {
+              "net": "GND",
+              "points": [
+                [
+                  935,
+                  530
+                ],
+                [
+                  935,
+                  535
+                ]
+              ]
+            },
+            {
+              "net": "GND",
+              "points": [
+                [
+                  935,
+                  530
+                ],
+                [
+                  940,
+                  530
+                ]
+              ]
+            },
+            {
+              "net": "LED2_K",
+              "points": [
+                [
+                  45,
+                  250
+                ],
+                [
+                  40,
+                  250
+                ]
+              ]
+            },
+            {
+              "net": "LED2_K",
+              "points": [
+                [
+                  40,
+                  250
+                ],
+                [
+                  40,
+                  275
+                ]
+              ]
+            },
+            {
+              "net": "LED2_K",
+              "points": [
+                [
+                  40,
+                  275
+                ],
+                [
+                  50,
+                  275
+                ]
+              ]
+            }
+          ],
+          "flags": [
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 265,
+              "pinY": 670,
+              "direction": "right",
+              "offset": 205,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U2",
+                "pinNumber": "4",
+                "zoneId": "BUCK_3V3",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 190,
+              "pinY": 545,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C1",
+                "pinNumber": "2",
+                "zoneId": "BUCK_3V3",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 85,
+              "pinY": 695,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C2",
+                "pinNumber": "2",
+                "zoneId": "BUCK_3V3",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 610,
+              "pinY": 620,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C4",
+                "pinNumber": "2",
+                "zoneId": "BUCK_3V3",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 595,
+              "pinY": 515,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C5",
+                "pinNumber": "2",
+                "zoneId": "BUCK_3V3",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 610,
+              "pinY": 725,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C6",
+                "pinNumber": "2",
+                "zoneId": "BUCK_3V3",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 195,
+              "pinY": 690,
+              "direction": "left",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U2",
+                "pinNumber": "1",
+                "zoneId": "BUCK_3V3",
+                "net": "3V3"
+              }
+            },
+            {
+              "net": "+5V",
+              "kind": "power",
+              "pinX": 190,
+              "pinY": 670,
+              "direction": "down",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "BUCK_3V3",
+                "net": "+5V",
+                "x": -40,
+                "y": -10
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 465,
+              "pinY": 625,
+              "direction": "up",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "BUCK_3V3",
+                "net": "3V3",
+                "x": 235,
+                "y": -55
+              }
+            },
+            {
+              "net": "BUCK_SW",
+              "kind": "net_port_bi",
+              "pinX": 340,
+              "pinY": 680,
+              "direction": "up",
+              "offset": 15,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "BUCK_3V3",
+                "net": "BUCK_SW",
+                "x": 110,
+                "y": 0
+              }
+            },
+            {
+              "net": "BUCK_BST",
+              "kind": "net_port_bi",
+              "pinX": 400,
+              "pinY": 690,
+              "direction": "down",
+              "offset": 15,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "BUCK_3V3",
+                "net": "BUCK_BST",
+                "x": 170,
+                "y": 10
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 940,
+              "pinY": 530,
+              "direction": "right",
+              "offset": 20,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "PWR_SWITCH",
+                "net": "GND",
+                "x": -90,
+                "y": -100
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 1035,
+              "pinY": 735,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C10",
+                "pinNumber": "2",
+                "zoneId": "PWR_SWITCH",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 1030,
+              "pinY": 610,
+              "direction": "down",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-Q1",
+                "pinNumber": "2",
+                "zoneId": "PWR_SWITCH",
+                "net": "3V3"
+              }
+            },
+            {
+              "net": "PWR",
+              "kind": "power",
+              "pinX": 1030,
+              "pinY": 650,
+              "direction": "up",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-Q1",
+                "pinNumber": "3",
+                "zoneId": "PWR_SWITCH",
+                "net": "PWR"
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 860,
+              "pinY": 630,
+              "direction": "left",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-R7",
+                "pinNumber": "1",
+                "zoneId": "PWR_SWITCH",
+                "net": "3V3"
+              }
+            },
+            {
+              "net": "Q1_GATE",
+              "kind": "net_port_bi",
+              "pinX": 1000,
+              "pinY": 630,
+              "direction": "down",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "PWR_SWITCH",
+                "net": "Q1_GATE",
+                "x": -30,
+                "y": 0
+              }
+            },
+            {
+              "net": "Q2_BASE",
+              "kind": "net_port_bi",
+              "pinX": 855,
+              "pinY": 555,
+              "direction": "down",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "PWR_SWITCH",
+                "net": "Q2_BASE",
+                "x": -175,
+                "y": -75
+              }
+            },
+            {
+              "net": "PWR_EN",
+              "kind": "net_port_bi",
+              "pinX": 785,
+              "pinY": 555,
+              "direction": "left",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-R8",
+                "pinNumber": "1",
+                "zoneId": "PWR_SWITCH",
+                "net": "PWR_EN"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 85,
+              "pinY": 250,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-R10",
+                "pinNumber": "2",
+                "zoneId": "LED_PWR",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "PWR",
+              "kind": "power",
+              "pinX": 90,
+              "pinY": 275,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-LED2",
+                "pinNumber": "2",
+                "zoneId": "LED_PWR",
+                "net": "PWR"
+              }
+            },
+            {
+              "net": "LED2_K",
+              "kind": "net_port_bi",
+              "pinX": 45,
+              "pinY": 275,
+              "direction": "up",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "LED_PWR",
+                "net": "LED2_K",
+                "x": -25,
+                "y": 0
+              }
+            }
+          ]
+        },
+        "ownership": {
+          "componentIds": {
+            "C1": "comp-C1",
+            "C10": "comp-C10",
+            "C2": "comp-C2",
+            "C3": "comp-C3",
+            "C4": "comp-C4",
+            "C5": "comp-C5",
+            "C6": "comp-C6",
+            "L1": "comp-L1",
+            "LED2": "comp-LED2",
+            "Q1": "comp-Q1",
+            "Q2": "comp-Q2",
+            "R10": "comp-R10",
+            "R7": "comp-R7",
+            "R8": "comp-R8",
+            "R9": "comp-R9",
+            "U2": "comp-U2"
+          },
+          "modules": [
+            {
+              "id": "BUCK_3V3",
+              "name": "AP63203WU-7 3.3V 2A Buck",
+              "coreComponents": [
+                "comp-U2"
+              ],
+              "peripheralComponents": [
+                "comp-C1",
+                "comp-C2",
+                "comp-C3",
+                "comp-L1",
+                "comp-C4",
+                "comp-C5",
+                "comp-C6"
+              ],
+              "internalNets": [
+                "net-BUCK_BST",
+                "net-BUCK_SW"
+              ]
+            },
+            {
+              "id": "PWR_SWITCH",
+              "name": "Switched Target PWR (AO3401A)",
+              "coreComponents": [
+                "comp-Q1"
+              ],
+              "peripheralComponents": [
+                "comp-Q2",
+                "comp-R8",
+                "comp-R9",
+                "comp-R7",
+                "comp-C10"
+              ],
+              "internalNets": [
+                "net-Q1_GATE",
+                "net-Q2_BASE"
+              ],
+              "ports": [
+                {
+                  "id": "port-PWR_SWITCH-PWR_EN",
+                  "name": "PWR_EN",
+                  "netId": "net-PWR_EN",
+                  "pinRefs": [
+                    "comp-R8:1"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "LED_PWR",
+              "name": "Switched PWR LED (LED2)",
+              "coreComponents": [
+                "comp-LED2"
+              ],
+              "peripheralComponents": [
+                "comp-R10"
+              ],
+              "internalNets": [
+                "net-LED2_K"
+              ]
+            }
+          ],
+          "netRoles": {
+            "+5V": "power",
+            "3V3": "power",
+            "BUCK_BST": "signal",
+            "BUCK_SW": "signal",
+            "GND": "ground",
+            "LED2_K": "signal",
+            "PWR": "power",
+            "PWR_EN": "signal",
+            "Q1_GATE": "signal",
+            "Q2_BASE": "signal"
+          }
+        }
+      }
+    },
+    {
+      "id": "electrical-check",
+      "action": "schematic.check",
+      "assert": {
+        "$.passed": "true"
+      }
+    },
+    {
+      "id": "wire-tree-check",
+      "action": "schematic.bridgeCheck",
+      "assert": {
+        "$.passed": "true"
+      }
+    },
+    {
+      "id": "strict-schematic-gate",
+      "run": "sch gate",
+      "flags": {
+        "json": true,
+        "strict": false
+      }
+    },
+    {
+      "id": "save-composition",
+      "action": "schematic.save",
+      "assert": {
+        "$.saved": "true"
+      }
+    }
+  ]
+}

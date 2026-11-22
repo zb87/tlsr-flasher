@@ -1,0 +1,3444 @@
+{
+  "schemaVersion": 1,
+  "spacing": 10,
+  "zones": [
+    {
+      "id": "BUCK_3V3",
+      "title": "AP63203WU-7 3.3V 2A Buck",
+      "coreComponentId": "comp-U2",
+      "contentBounds": {
+        "minX": -190.5,
+        "minY": -193.5,
+        "maxX": 424.5,
+        "maxY": 105.5
+      },
+      "frame": {
+        "id": "BUCK_3V3",
+        "title": "AP63203WU-7 3.3V 2A Buck",
+        "rect": {
+          "minX": -205,
+          "minY": -205,
+          "maxX": 435,
+          "maxY": 120
+        },
+        "titleX": -190,
+        "titleY": -170,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 315,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -25.5,
+              "minY": -40.5,
+              "maxX": 25.5,
+              "maxY": 35.5
+            },
+            {
+              "minX": -25,
+              "minY": 20,
+              "maxX": -6.7138671875,
+              "maxY": 28
+            },
+            {
+              "minX": -35.5,
+              "minY": 9.5,
+              "maxX": -25,
+              "maxY": 10.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -0.5,
+              "maxX": -25,
+              "maxY": 0.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -10.5,
+              "maxX": -25,
+              "maxY": -9.5
+            },
+            {
+              "minX": 25,
+              "minY": -10.5,
+              "maxX": 35.5,
+              "maxY": -9.5
+            },
+            {
+              "minX": 25,
+              "minY": -0.5,
+              "maxX": 35.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 25,
+              "minY": 9.5,
+              "maxX": 35.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": -70.5,
+              "minY": -163.5,
+              "maxX": -49.5,
+              "maxY": -111.5
+            },
+            {
+              "minX": -70,
+              "minY": -125,
+              "maxX": -47.82080078125,
+              "maxY": -117
+            },
+            {
+              "minX": -80.5,
+              "minY": -135.5,
+              "maxX": -70,
+              "maxY": -134.5
+            },
+            {
+              "minX": -50,
+              "minY": -135.5,
+              "maxX": -39.5,
+              "maxY": -134.5
+            },
+            {
+              "minX": -175.5,
+              "minY": -13.5,
+              "maxX": -154.5,
+              "maxY": 38.5
+            },
+            {
+              "minX": -175,
+              "minY": 25,
+              "maxX": -152.82080078125,
+              "maxY": 33
+            },
+            {
+              "minX": -185.5,
+              "minY": 14.5,
+              "maxX": -175,
+              "maxY": 15.5
+            },
+            {
+              "minX": -155,
+              "minY": 14.5,
+              "maxX": -144.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": 184.5,
+              "minY": 1.5,
+              "maxX": 205.5,
+              "maxY": 53.5
+            },
+            {
+              "minX": 185,
+              "minY": 40,
+              "maxX": 207.17919921875,
+              "maxY": 48
+            },
+            {
+              "minX": 174.5,
+              "minY": 29.5,
+              "maxX": 185,
+              "maxY": 30.5
+            },
+            {
+              "minX": 205,
+              "minY": 29.5,
+              "maxX": 215.5,
+              "maxY": 30.5
+            },
+            {
+              "minX": 193.50000624988274,
+              "minY": -80.02249996875241,
+              "maxX": 226.50004999969838,
+              "maxY": -40.499950000292415
+            },
+            {
+              "minX": 195,
+              "minY": -55,
+              "maxX": 213.2861328125,
+              "maxY": -47
+            },
+            {
+              "minX": 189.5,
+              "minY": -60.5,
+              "maxX": 194.00000624988274,
+              "maxY": -59.5
+            },
+            {
+              "minX": 226.00004999969838,
+              "minY": -60.5,
+              "maxX": 230.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 349.5,
+              "minY": -88.5,
+              "maxX": 370.5,
+              "maxY": -36.5
+            },
+            {
+              "minX": 350,
+              "minY": -50,
+              "maxX": 372.17919921875,
+              "maxY": -42
+            },
+            {
+              "minX": 339.5,
+              "minY": -60.5,
+              "maxX": 350,
+              "maxY": -59.5
+            },
+            {
+              "minX": 370,
+              "minY": -60.5,
+              "maxX": 380.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 334.5,
+              "minY": -193.5,
+              "maxX": 355.5,
+              "maxY": -141.5
+            },
+            {
+              "minX": 335,
+              "minY": -155,
+              "maxX": 357.17919921875,
+              "maxY": -147
+            },
+            {
+              "minX": 324.5,
+              "minY": -165.5,
+              "maxX": 335,
+              "maxY": -164.5
+            },
+            {
+              "minX": 355,
+              "minY": -165.5,
+              "maxX": 365.5,
+              "maxY": -164.5
+            },
+            {
+              "minX": 349.5,
+              "minY": 16.5,
+              "maxX": 370.5,
+              "maxY": 68.5
+            },
+            {
+              "minX": 350,
+              "minY": 55,
+              "maxX": 372.17919921875,
+              "maxY": 63
+            },
+            {
+              "minX": 339.5,
+              "minY": 44.5,
+              "maxX": 350,
+              "maxY": 45.5
+            },
+            {
+              "minX": 370,
+              "minY": 44.5,
+              "maxX": 380.5,
+              "maxY": 45.5
+            },
+            {
+              "minX": 184.5,
+              "minY": -60.5,
+              "maxX": 190.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 184.5,
+              "minY": -15.5,
+              "maxX": 220.5,
+              "maxY": -14.5
+            },
+            {
+              "minX": 219.5,
+              "minY": -15.5,
+              "maxX": 220.5,
+              "maxY": 30.5
+            },
+            {
+              "minX": 214.5,
+              "minY": 29.5,
+              "maxX": 220.5,
+              "maxY": 30.5
+            },
+            {
+              "minX": 34.5,
+              "minY": -0.5,
+              "maxX": 185.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 184.5,
+              "minY": -60.5,
+              "maxX": 185.5,
+              "maxY": -14.5
+            },
+            {
+              "minX": 184.5,
+              "minY": -15.5,
+              "maxX": 185.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 169.5,
+              "minY": 29.5,
+              "maxX": 175.5,
+              "maxY": 30.5
+            },
+            {
+              "minX": 169.5,
+              "minY": 9.5,
+              "maxX": 170.5,
+              "maxY": 30.5
+            },
+            {
+              "minX": 34.5,
+              "minY": 9.5,
+              "maxX": 170.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": -85.5,
+              "minY": -135.5,
+              "maxX": -79.5,
+              "maxY": -134.5
+            },
+            {
+              "minX": -85.5,
+              "minY": -135.5,
+              "maxX": -84.5,
+              "maxY": -9.5
+            },
+            {
+              "minX": -190.5,
+              "minY": 14.5,
+              "maxX": -184.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": -190.5,
+              "minY": -10.5,
+              "maxX": -189.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": -190.5,
+              "minY": -10.5,
+              "maxX": -84.5,
+              "maxY": -9.5
+            },
+            {
+              "minX": -85.5,
+              "minY": -10.5,
+              "maxX": -39.5,
+              "maxY": -9.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -10.5,
+              "maxX": -34.5,
+              "maxY": -9.5
+            },
+            {
+              "minX": 319.5,
+              "minY": -165.5,
+              "maxX": 325.5,
+              "maxY": -164.5
+            },
+            {
+              "minX": 319.5,
+              "minY": -165.5,
+              "maxX": 320.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 334.5,
+              "minY": 44.5,
+              "maxX": 340.5,
+              "maxY": 45.5
+            },
+            {
+              "minX": 334.5,
+              "minY": -60.5,
+              "maxX": 335.5,
+              "maxY": 45.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -0.5,
+              "maxX": -34.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -10.5,
+              "maxX": -39.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 229.5,
+              "minY": -60.5,
+              "maxX": 235.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 234.5,
+              "minY": -60.5,
+              "maxX": 320.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 319.5,
+              "minY": -60.5,
+              "maxX": 335.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 334.5,
+              "minY": -60.5,
+              "maxX": 340.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 234.5,
+              "minY": -60.5,
+              "maxX": 235.5,
+              "maxY": -54.5
+            },
+            {
+              "minX": 34.5,
+              "minY": -10.5,
+              "maxX": 240.5,
+              "maxY": -9.5
+            },
+            {
+              "minX": 249.5,
+              "minY": -20.5,
+              "maxX": 259.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 222,
+              "minY": -10,
+              "maxX": 240,
+              "maxY": 2
+            },
+            {
+              "minX": -40.5,
+              "minY": -135.5,
+              "maxX": -14.5,
+              "maxY": -134.5
+            },
+            {
+              "minX": -5.5,
+              "minY": -145.5,
+              "maxX": 4.5,
+              "maxY": -124.5
+            },
+            {
+              "minX": -33,
+              "minY": -135,
+              "maxX": -15,
+              "maxY": -123
+            },
+            {
+              "minX": -145.5,
+              "minY": 14.5,
+              "maxX": -119.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": -110.5,
+              "minY": 4.5,
+              "maxX": -100.5,
+              "maxY": 25.5
+            },
+            {
+              "minX": -138,
+              "minY": 15,
+              "maxX": -120,
+              "maxY": 27
+            },
+            {
+              "minX": 379.5,
+              "minY": -60.5,
+              "maxX": 405.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": 414.5,
+              "minY": -70.5,
+              "maxX": 424.5,
+              "maxY": -49.5
+            },
+            {
+              "minX": 387,
+              "minY": -60,
+              "maxX": 405,
+              "maxY": -48
+            },
+            {
+              "minX": 364.5,
+              "minY": -165.5,
+              "maxX": 390.5,
+              "maxY": -164.5
+            },
+            {
+              "minX": 399.5,
+              "minY": -175.5,
+              "maxX": 409.5,
+              "maxY": -154.5
+            },
+            {
+              "minX": 372,
+              "minY": -165,
+              "maxX": 390,
+              "maxY": -153
+            },
+            {
+              "minX": 379.5,
+              "minY": 44.5,
+              "maxX": 405.5,
+              "maxY": 45.5
+            },
+            {
+              "minX": 414.5,
+              "minY": 34.5,
+              "maxX": 424.5,
+              "maxY": 55.5
+            },
+            {
+              "minX": 387,
+              "minY": 45,
+              "maxX": 405,
+              "maxY": 57
+            },
+            {
+              "minX": -60.5,
+              "minY": 9.5,
+              "maxX": -34.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": -70.5,
+              "minY": 4.5,
+              "maxX": -64.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": -60,
+              "minY": 10,
+              "maxX": -42,
+              "maxY": 22
+            },
+            {
+              "minX": -40.5,
+              "minY": -20.5,
+              "maxX": -39.5,
+              "maxY": -9.5
+            },
+            {
+              "minX": -45.5,
+              "minY": -30.5,
+              "maxX": -34.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": -49,
+              "minY": -42.5,
+              "maxX": -31,
+              "maxY": -30.5
+            },
+            {
+              "minX": 234.5,
+              "minY": -55.5,
+              "maxX": 235.5,
+              "maxY": -44.5
+            },
+            {
+              "minX": 229.5,
+              "minY": -40.5,
+              "maxX": 240.5,
+              "maxY": -34.5
+            },
+            {
+              "minX": 226,
+              "minY": -34.5,
+              "maxX": 244,
+              "maxY": -22.5
+            },
+            {
+              "minX": 109.5,
+              "minY": -0.5,
+              "maxX": 110.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": 104.5,
+              "minY": 24.5,
+              "maxX": 115.5,
+              "maxY": 55.5
+            },
+            {
+              "minX": 104.5,
+              "minY": 55.5,
+              "maxX": 115.5,
+              "maxY": 105.5
+            },
+            {
+              "minX": 169.5,
+              "minY": -5.5,
+              "maxX": 170.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": 164.5,
+              "minY": -45.5,
+              "maxX": 175.5,
+              "maxY": -14.5
+            },
+            {
+              "minX": 164.5,
+              "minY": -101.5,
+              "maxX": 175.5,
+              "maxY": -45.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "C1": "comp-C1",
+          "C2": "comp-C2",
+          "C3": "comp-C3",
+          "C4": "comp-C4",
+          "C5": "comp-C5",
+          "C6": "comp-C6",
+          "L1": "comp-L1",
+          "U2": "comp-U2"
+        },
+        "pinStates": {
+          "comp-C1": null,
+          "comp-C2": null,
+          "comp-C3": null,
+          "comp-C4": null,
+          "comp-C5": null,
+          "comp-C6": null,
+          "comp-L1": null,
+          "comp-U2": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "U2",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -25.5,
+              "minY": -20.5,
+              "maxX": 25.5,
+              "maxY": 20.5
+            },
+            "textBboxes": [
+              {
+                "minX": -25,
+                "minY": 20,
+                "maxX": -6.7138671875,
+                "maxY": 28
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "FB",
+                "net": "3V3",
+                "x": -35,
+                "y": 10,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "EN",
+                "net": "+5V",
+                "x": -35,
+                "y": 0,
+                "rotation": 180
+              },
+              {
+                "number": "3",
+                "name": "VIN",
+                "net": "+5V",
+                "x": -35,
+                "y": -10,
+                "rotation": 180
+              },
+              {
+                "number": "4",
+                "name": "GND",
+                "net": "GND",
+                "x": 35,
+                "y": -10,
+                "rotation": 0
+              },
+              {
+                "number": "5",
+                "name": "SW",
+                "net": "BUCK_SW",
+                "x": 35,
+                "y": 0,
+                "rotation": 0
+              },
+              {
+                "number": "6",
+                "name": "BST",
+                "net": "BUCK_BST",
+                "x": 35,
+                "y": 10,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "C1",
+            "x": -60,
+            "y": -135,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -70.5,
+              "minY": -143.5,
+              "maxX": -49.5,
+              "maxY": -126.5
+            },
+            "textBboxes": [
+              {
+                "minX": -70,
+                "minY": -125,
+                "maxX": -47.82080078125,
+                "maxY": -117
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "+5V",
+                "x": -80,
+                "y": -135,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": -40,
+                "y": -135,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "C2",
+            "x": -165,
+            "y": 15,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -175.5,
+              "minY": 6.5,
+              "maxX": -154.5,
+              "maxY": 23.5
+            },
+            "textBboxes": [
+              {
+                "minX": -175,
+                "minY": 25,
+                "maxX": -152.82080078125,
+                "maxY": 33
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "+5V",
+                "x": -185,
+                "y": 15,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": -145,
+                "y": 15,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "C3",
+            "x": 195,
+            "y": 30,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 184.5,
+              "minY": 21.5,
+              "maxX": 205.5,
+              "maxY": 38.5
+            },
+            "textBboxes": [
+              {
+                "minX": 185,
+                "minY": 40,
+                "maxX": 207.17919921875,
+                "maxY": 48
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "BUCK_BST",
+                "x": 175,
+                "y": 30,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "BUCK_SW",
+                "x": 215,
+                "y": 30,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "L1",
+            "x": 210,
+            "y": -60,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 193.50000624988274,
+              "minY": -60.02249996875241,
+              "maxX": 226.50004999969838,
+              "maxY": -55.499950000292415
+            },
+            "textBboxes": [
+              {
+                "minX": 195,
+                "minY": -55,
+                "maxX": 213.2861328125,
+                "maxY": -47
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "BUCK_SW",
+                "x": 190,
+                "y": -60,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "3V3",
+                "x": 230,
+                "y": -60,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "C4",
+            "x": 360,
+            "y": -60,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 349.5,
+              "minY": -68.5,
+              "maxX": 370.5,
+              "maxY": -51.5
+            },
+            "textBboxes": [
+              {
+                "minX": 350,
+                "minY": -50,
+                "maxX": 372.17919921875,
+                "maxY": -42
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "3V3",
+                "x": 340,
+                "y": -60,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 380,
+                "y": -60,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "C5",
+            "x": 345,
+            "y": -165,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 334.5,
+              "minY": -173.5,
+              "maxX": 355.5,
+              "maxY": -156.5
+            },
+            "textBboxes": [
+              {
+                "minX": 335,
+                "minY": -155,
+                "maxX": 357.17919921875,
+                "maxY": -147
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "3V3",
+                "x": 325,
+                "y": -165,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 365,
+                "y": -165,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "C6",
+            "x": 360,
+            "y": 45,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 349.5,
+              "minY": 36.5,
+              "maxX": 370.5,
+              "maxY": 53.5
+            },
+            "textBboxes": [
+              {
+                "minX": 350,
+                "minY": 55,
+                "maxX": 372.17919921875,
+                "maxY": 63
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "3V3",
+                "x": 340,
+                "y": 45,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 380,
+                "y": 45,
+                "rotation": 0
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "net": "BUCK_SW",
+            "points": [
+              [
+                190,
+                -60
+              ],
+              [
+                185,
+                -60
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_SW",
+            "points": [
+              [
+                185,
+                -15
+              ],
+              [
+                220,
+                -15
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_SW",
+            "points": [
+              [
+                220,
+                -15
+              ],
+              [
+                220,
+                30
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_SW",
+            "points": [
+              [
+                220,
+                30
+              ],
+              [
+                215,
+                30
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_SW",
+            "points": [
+              [
+                35,
+                0
+              ],
+              [
+                185,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_SW",
+            "points": [
+              [
+                185,
+                -60
+              ],
+              [
+                185,
+                -15
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_SW",
+            "points": [
+              [
+                185,
+                -15
+              ],
+              [
+                185,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_BST",
+            "points": [
+              [
+                175,
+                30
+              ],
+              [
+                170,
+                30
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_BST",
+            "points": [
+              [
+                170,
+                30
+              ],
+              [
+                170,
+                10
+              ]
+            ]
+          },
+          {
+            "net": "BUCK_BST",
+            "points": [
+              [
+                170,
+                10
+              ],
+              [
+                35,
+                10
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -80,
+                -135
+              ],
+              [
+                -85,
+                -135
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -85,
+                -135
+              ],
+              [
+                -85,
+                -10
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -185,
+                15
+              ],
+              [
+                -190,
+                15
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -190,
+                15
+              ],
+              [
+                -190,
+                -10
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -190,
+                -10
+              ],
+              [
+                -85,
+                -10
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -85,
+                -10
+              ],
+              [
+                -40,
+                -10
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -40,
+                -10
+              ],
+              [
+                -35,
+                -10
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                325,
+                -165
+              ],
+              [
+                320,
+                -165
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                320,
+                -165
+              ],
+              [
+                320,
+                -60
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                340,
+                45
+              ],
+              [
+                335,
+                45
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                335,
+                45
+              ],
+              [
+                335,
+                -60
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -40,
+                0
+              ],
+              [
+                -35,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "+5V",
+            "points": [
+              [
+                -40,
+                -10
+              ],
+              [
+                -40,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                230,
+                -60
+              ],
+              [
+                235,
+                -60
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                235,
+                -60
+              ],
+              [
+                320,
+                -60
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                320,
+                -60
+              ],
+              [
+                335,
+                -60
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                335,
+                -60
+              ],
+              [
+                340,
+                -60
+              ]
+            ]
+          },
+          {
+            "net": "3V3",
+            "points": [
+              [
+                235,
+                -60
+              ],
+              [
+                235,
+                -55
+              ]
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 35,
+            "pinY": -10,
+            "direction": "right",
+            "offset": 205,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-U2",
+              "pinNumber": "4",
+              "zoneId": "BUCK_3V3",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": -40,
+            "pinY": -135,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-C1",
+              "pinNumber": "2",
+              "zoneId": "BUCK_3V3",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": -145,
+            "pinY": 15,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-C2",
+              "pinNumber": "2",
+              "zoneId": "BUCK_3V3",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 380,
+            "pinY": -60,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-C4",
+              "pinNumber": "2",
+              "zoneId": "BUCK_3V3",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 365,
+            "pinY": -165,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-C5",
+              "pinNumber": "2",
+              "zoneId": "BUCK_3V3",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 380,
+            "pinY": 45,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-C6",
+              "pinNumber": "2",
+              "zoneId": "BUCK_3V3",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "3V3",
+            "kind": "power",
+            "pinX": -35,
+            "pinY": 10,
+            "direction": "left",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-U2",
+              "pinNumber": "1",
+              "zoneId": "BUCK_3V3",
+              "net": "3V3"
+            }
+          },
+          {
+            "net": "+5V",
+            "kind": "power",
+            "pinX": -40,
+            "pinY": -10,
+            "direction": "down",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "BUCK_3V3",
+              "net": "+5V",
+              "x": -40,
+              "y": -10
+            }
+          },
+          {
+            "net": "3V3",
+            "kind": "power",
+            "pinX": 235,
+            "pinY": -55,
+            "direction": "up",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "BUCK_3V3",
+              "net": "3V3",
+              "x": 235,
+              "y": -55
+            }
+          },
+          {
+            "net": "BUCK_SW",
+            "kind": "net_port_bi",
+            "pinX": 110,
+            "pinY": 0,
+            "direction": "up",
+            "offset": 15,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "BUCK_3V3",
+              "net": "BUCK_SW",
+              "x": 110,
+              "y": 0
+            }
+          },
+          {
+            "net": "BUCK_BST",
+            "kind": "net_port_bi",
+            "pinX": 170,
+            "pinY": 10,
+            "direction": "down",
+            "offset": 15,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "BUCK_3V3",
+              "net": "BUCK_BST",
+              "x": 170,
+              "y": 10
+            }
+          }
+        ],
+        "score": [
+          1530,
+          39,
+          0,
+          183885
+        ],
+        "candidatesUsed": 1480,
+        "search": {
+          "spacingTrials": [
+            {
+              "factor": 3,
+              "candidateQuota": 4096,
+              "candidatesUsed": 837,
+              "expandedNodes": 792,
+              "result": "accepted"
+            }
+          ],
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [
+            "comp-C1",
+            "comp-C2",
+            "comp-C3",
+            "comp-L1",
+            "comp-C4",
+            "comp-C5",
+            "comp-C6"
+          ],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0,
+          "checkpointAlternatives": {
+            "comp-C1": 1,
+            "comp-C2": 1,
+            "comp-C3": 1,
+            "comp-C4": 1,
+            "comp-C5": 1,
+            "comp-C6": 1,
+            "comp-L1": 1
+          }
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 819,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 5,
+          "templateCacheHits": 0,
+          "boundaryAttempts": [
+            {
+              "net": "BUCK_SW",
+              "sourceIsland": "BUCK_SW:1@50,-20;5@35,0",
+              "targetIsland": "BUCK_SW:2@85,10",
+              "expansionRaw": 40,
+              "expandedNodes": 27,
+              "result": "merged"
+            },
+            {
+              "net": "BUCK_SW",
+              "sourceIsland": "BUCK_SW:1@190,-60;2@215,30",
+              "targetIsland": "BUCK_SW:5@35,0",
+              "expansionRaw": 40,
+              "expandedNodes": 390,
+              "result": "merged"
+            },
+            {
+              "net": "+5V",
+              "sourceIsland": "+5V:3@-35,-10;2@-35,0",
+              "targetIsland": "+5V:1@-80,-135",
+              "expansionRaw": 40,
+              "expandedNodes": 232,
+              "result": "merged"
+            },
+            {
+              "net": "+5V",
+              "sourceIsland": "+5V:1@-80,-135;3@-35,-10;2@-35,0",
+              "targetIsland": "+5V:1@-185,15",
+              "expansionRaw": 40,
+              "expandedNodes": 147,
+              "result": "merged"
+            },
+            {
+              "net": "3V3",
+              "sourceIsland": "3V3:1@325,-165;2@230,-60;1@340,-60",
+              "targetIsland": "3V3:1@340,45",
+              "expansionRaw": 40,
+              "expandedNodes": 23,
+              "result": "merged"
+            }
+          ],
+          "rejectedEdges": [
+            {
+              "componentId": "comp-C1",
+              "componentRef": "C1",
+              "net": "+5V",
+              "reason": "pin-exit-direction",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-C2",
+              "componentRef": "C2",
+              "net": "+5V",
+              "reason": "pin-exit-direction",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-C3",
+              "componentRef": "C3",
+              "net": "BUCK_SW",
+              "reason": "pin-exit-direction",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-U2",
+              "componentRef": "U2",
+              "net": "BUCK_SW",
+              "reason": "pin-exit-direction",
+              "count": 3,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-U2",
+              "componentRef": "U2",
+              "net": "BUCK_BST",
+              "reason": "pin-exit-foreign-wire",
+              "count": 2,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-U2",
+              "componentRef": "U2",
+              "net": "BUCK_SW",
+              "reason": "pin-exit-foreign-wire",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-U2",
+              "componentRef": "U2",
+              "net": "GND",
+              "reason": "pin-exit-foreign-wire",
+              "count": 2,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-C1",
+              "componentRef": "C1",
+              "net": "+5V",
+              "reason": "wire-body",
+              "count": 1,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-C2",
+              "componentRef": "C2",
+              "net": "+5V",
+              "reason": "wire-body",
+              "count": 6,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-C3",
+              "componentRef": "C3",
+              "net": "BUCK_SW",
+              "reason": "wire-body",
+              "count": 6,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-C1",
+              "componentRef": "C1",
+              "net": "+5V",
+              "reason": "wire-text",
+              "count": 7,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-L1",
+              "componentRef": "L1",
+              "net": "BUCK_SW",
+              "reason": "wire-text",
+              "count": 4,
+              "attributionComplete": true
+            }
+          ],
+          "candidateSummaries": [
+            {
+              "net": "BUCK_SW",
+              "sourceIsland": "BUCK_SW:1@50,-20;5@35,0",
+              "targetIsland": "BUCK_SW:2@85,10",
+              "points": [
+                [
+                  85,
+                  10
+                ],
+                [
+                  90,
+                  10
+                ],
+                [
+                  90,
+                  0
+                ],
+                [
+                  45,
+                  0
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "BUCK_SW",
+              "sourceIsland": "BUCK_SW:1@190,-60;2@215,30",
+              "targetIsland": "BUCK_SW:5@35,0",
+              "points": [
+                [
+                  35,
+                  0
+                ],
+                [
+                  185,
+                  0
+                ],
+                [
+                  185,
+                  -15
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "+5V",
+              "sourceIsland": "+5V:3@-35,-10;2@-35,0",
+              "targetIsland": "+5V:1@-80,-135",
+              "points": [
+                [
+                  -80,
+                  -135
+                ],
+                [
+                  -85,
+                  -135
+                ],
+                [
+                  -85,
+                  -10
+                ],
+                [
+                  -40,
+                  -10
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "+5V",
+              "sourceIsland": "+5V:1@-80,-135;3@-35,-10;2@-35,0",
+              "targetIsland": "+5V:1@-185,15",
+              "points": [
+                [
+                  -185,
+                  15
+                ],
+                [
+                  -190,
+                  15
+                ],
+                [
+                  -190,
+                  -10
+                ],
+                [
+                  -85,
+                  -10
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "3V3",
+              "sourceIsland": "3V3:1@325,-165;2@230,-60;1@340,-60",
+              "targetIsland": "3V3:1@340,45",
+              "points": [
+                [
+                  340,
+                  45
+                ],
+                [
+                  335,
+                  45
+                ],
+                [
+                  335,
+                  -60
+                ]
+              ],
+              "result": "merged"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "PWR_SWITCH",
+      "title": "Switched Target PWR (AO3401A)",
+      "coreComponentId": "comp-Q1",
+      "contentBounds": {
+        "minX": -339.5,
+        "minY": -190.5,
+        "maxX": 49.5,
+        "maxY": 128.5
+      },
+      "frame": {
+        "id": "PWR_SWITCH",
+        "title": "Switched Target PWR (AO3401A)",
+        "rect": {
+          "minX": -350,
+          "minY": -205,
+          "maxX": 70,
+          "maxY": 170
+        },
+        "titleX": -335,
+        "titleY": 155,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 390,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -12.5,
+              "minY": -30.5,
+              "maxX": 13.5,
+              "maxY": 25.5
+            },
+            {
+              "minX": 20,
+              "minY": 0,
+              "maxX": 38.2861328125,
+              "maxY": 8
+            },
+            {
+              "minX": -0.5,
+              "minY": -20.5,
+              "maxX": 0.5,
+              "maxY": -10
+            },
+            {
+              "minX": -20.5,
+              "minY": -0.5,
+              "maxX": -12,
+              "maxY": 0.5
+            },
+            {
+              "minX": -0.5,
+              "minY": 10,
+              "maxX": 0.5,
+              "maxY": 20.5
+            },
+            {
+              "minX": -105.5,
+              "minY": -105.5,
+              "maxX": -94.5,
+              "maxY": -49.5
+            },
+            {
+              "minX": -90,
+              "minY": -75,
+              "maxX": -71.7138671875,
+              "maxY": -67
+            },
+            {
+              "minX": -115.5,
+              "minY": -75.5,
+              "maxX": -105,
+              "maxY": -74.5
+            },
+            {
+              "minX": -95.5,
+              "minY": -65,
+              "maxX": -94.5,
+              "maxY": -54.5
+            },
+            {
+              "minX": -95.5,
+              "minY": -95.5,
+              "maxX": -94.5,
+              "maxY": -85
+            },
+            {
+              "minX": -235.5,
+              "minY": -100.5,
+              "maxX": -214.5,
+              "maxY": -54.5
+            },
+            {
+              "minX": -235,
+              "minY": -70,
+              "maxX": -212.82080078125,
+              "maxY": -62
+            },
+            {
+              "minX": -215,
+              "minY": -75.5,
+              "maxX": -204.5,
+              "maxY": -74.5
+            },
+            {
+              "minX": -245.5,
+              "minY": -75.5,
+              "maxX": -235,
+              "maxY": -74.5
+            },
+            {
+              "minX": -130.5,
+              "minY": -190.5,
+              "maxX": -109.5,
+              "maxY": -144.5
+            },
+            {
+              "minX": -130,
+              "minY": -160,
+              "maxX": -107.82080078125,
+              "maxY": -152
+            },
+            {
+              "minX": -110,
+              "minY": -165.5,
+              "maxX": -99.5,
+              "maxY": -164.5
+            },
+            {
+              "minX": -140.5,
+              "minY": -165.5,
+              "maxX": -130,
+              "maxY": -164.5
+            },
+            {
+              "minX": -160.5,
+              "minY": -25.5,
+              "maxX": -139.5,
+              "maxY": 20.5
+            },
+            {
+              "minX": -160,
+              "minY": 5,
+              "maxX": -137.82080078125,
+              "maxY": 13
+            },
+            {
+              "minX": -140,
+              "minY": -0.5,
+              "maxX": -129.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -170.5,
+              "minY": -0.5,
+              "maxX": -160,
+              "maxY": 0.5
+            },
+            {
+              "minX": -25.5,
+              "minY": 76.5,
+              "maxX": -4.5,
+              "maxY": 128.5
+            },
+            {
+              "minX": -25,
+              "minY": 115,
+              "maxX": -2.82080078125,
+              "maxY": 123
+            },
+            {
+              "minX": -35.5,
+              "minY": 104.5,
+              "maxX": -25,
+              "maxY": 105.5
+            },
+            {
+              "minX": -5,
+              "minY": 104.5,
+              "maxX": 5.5,
+              "maxY": 105.5
+            },
+            {
+              "minX": -100.5,
+              "minY": -165.5,
+              "maxX": -94.5,
+              "maxY": -164.5
+            },
+            {
+              "minX": -145.5,
+              "minY": -165.5,
+              "maxX": -139.5,
+              "maxY": -164.5
+            },
+            {
+              "minX": -145.5,
+              "minY": -165.5,
+              "maxX": -144.5,
+              "maxY": -74.5
+            },
+            {
+              "minX": -205.5,
+              "minY": -75.5,
+              "maxX": -144.5,
+              "maxY": -74.5
+            },
+            {
+              "minX": -145.5,
+              "minY": -75.5,
+              "maxX": -114.5,
+              "maxY": -74.5
+            },
+            {
+              "minX": -95.5,
+              "minY": -55.5,
+              "maxX": -94.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -130.5,
+              "minY": -0.5,
+              "maxX": -94.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -95.5,
+              "minY": -0.5,
+              "maxX": -39.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -0.5,
+              "maxX": -19.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -40.5,
+              "minY": 104.5,
+              "maxX": -34.5,
+              "maxY": 105.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -0.5,
+              "maxX": -39.5,
+              "maxY": 105.5
+            },
+            {
+              "minX": -95.5,
+              "minY": -165.5,
+              "maxX": -94.5,
+              "maxY": -99.5
+            },
+            {
+              "minX": -95.5,
+              "minY": -100.5,
+              "maxX": -94.5,
+              "maxY": -94.5
+            },
+            {
+              "minX": -95.5,
+              "minY": -100.5,
+              "maxX": -89.5,
+              "maxY": -99.5
+            },
+            {
+              "minX": -90.5,
+              "minY": -100.5,
+              "maxX": -69.5,
+              "maxY": -99.5
+            },
+            {
+              "minX": -60.5,
+              "minY": -110.5,
+              "maxX": -50.5,
+              "maxY": -89.5
+            },
+            {
+              "minX": -88,
+              "minY": -100,
+              "maxX": -70,
+              "maxY": -88
+            },
+            {
+              "minX": 4.5,
+              "minY": 104.5,
+              "maxX": 30.5,
+              "maxY": 105.5
+            },
+            {
+              "minX": 39.5,
+              "minY": 94.5,
+              "maxX": 49.5,
+              "maxY": 115.5
+            },
+            {
+              "minX": 12,
+              "minY": 105,
+              "maxX": 30,
+              "maxY": 117
+            },
+            {
+              "minX": -0.5,
+              "minY": -30.5,
+              "maxX": 0.5,
+              "maxY": -19.5
+            },
+            {
+              "minX": -5.5,
+              "minY": -40.5,
+              "maxX": 5.5,
+              "maxY": -34.5
+            },
+            {
+              "minX": -9,
+              "minY": -52.5,
+              "maxX": 9,
+              "maxY": -40.5
+            },
+            {
+              "minX": -0.5,
+              "minY": 19.5,
+              "maxX": 0.5,
+              "maxY": 30.5
+            },
+            {
+              "minX": -5.5,
+              "minY": 34.5,
+              "maxX": 5.5,
+              "maxY": 40.5
+            },
+            {
+              "minX": -9,
+              "minY": 40.5,
+              "maxX": 9,
+              "maxY": 52.5
+            },
+            {
+              "minX": -195.5,
+              "minY": -0.5,
+              "maxX": -169.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -205.5,
+              "minY": -5.5,
+              "maxX": -199.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": -195,
+              "minY": 0,
+              "maxX": -177,
+              "maxY": 12
+            },
+            {
+              "minX": -30.5,
+              "minY": -10.5,
+              "maxX": -29.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -50.5,
+              "maxX": -24.5,
+              "maxY": -19.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -100.5,
+              "maxX": -24.5,
+              "maxY": -50.5
+            },
+            {
+              "minX": -175.5,
+              "minY": -85.5,
+              "maxX": -174.5,
+              "maxY": -74.5
+            },
+            {
+              "minX": -180.5,
+              "minY": -125.5,
+              "maxX": -169.5,
+              "maxY": -94.5
+            },
+            {
+              "minX": -180.5,
+              "minY": -175.5,
+              "maxX": -169.5,
+              "maxY": -125.5
+            },
+            {
+              "minX": -255.5,
+              "minY": -75.5,
+              "maxX": -244.5,
+              "maxY": -74.5
+            },
+            {
+              "minX": -295.5,
+              "minY": -80.5,
+              "maxX": -264.5,
+              "maxY": -69.5
+            },
+            {
+              "minX": -339.5,
+              "minY": -80.5,
+              "maxX": -295.5,
+              "maxY": -69.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "C10": "comp-C10",
+          "Q1": "comp-Q1",
+          "Q2": "comp-Q2",
+          "R7": "comp-R7",
+          "R8": "comp-R8",
+          "R9": "comp-R9"
+        },
+        "pinStates": {
+          "comp-C10": null,
+          "comp-Q1": null,
+          "comp-Q2": null,
+          "comp-R7": null,
+          "comp-R8": null,
+          "comp-R9": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "Q1",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -12.5,
+              "minY": -10.5,
+              "maxX": 13.5,
+              "maxY": 10.5
+            },
+            "textBboxes": [
+              {
+                "minX": 20,
+                "minY": 0,
+                "maxX": 38.2861328125,
+                "maxY": 8
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "S",
+                "net": "3V3",
+                "x": 0,
+                "y": -20,
+                "rotation": 270
+              },
+              {
+                "number": "1",
+                "name": "G",
+                "net": "Q1_GATE",
+                "x": -20,
+                "y": 0,
+                "rotation": 180
+              },
+              {
+                "number": "3",
+                "name": "D",
+                "net": "PWR",
+                "x": 0,
+                "y": 20,
+                "rotation": 90
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "Q2",
+            "x": -105,
+            "y": -75,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -105.5,
+              "minY": -85.5,
+              "maxX": -94.5,
+              "maxY": -64.5
+            },
+            "textBboxes": [
+              {
+                "minX": -90,
+                "minY": -75,
+                "maxX": -71.7138671875,
+                "maxY": -67
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "B",
+                "net": "Q2_BASE",
+                "x": -115,
+                "y": -75,
+                "rotation": 180
+              },
+              {
+                "number": "3",
+                "name": "C",
+                "net": "Q1_GATE",
+                "x": -95,
+                "y": -55,
+                "rotation": 90
+              },
+              {
+                "number": "2",
+                "name": "E",
+                "net": "GND",
+                "x": -95,
+                "y": -95,
+                "rotation": 270
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "R8",
+            "x": -225,
+            "y": -75,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -235.5,
+              "minY": -80.5,
+              "maxX": -214.5,
+              "maxY": -69.5
+            },
+            "textBboxes": [
+              {
+                "minX": -235,
+                "minY": -70,
+                "maxX": -212.82080078125,
+                "maxY": -62
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "Q2_BASE",
+                "x": -205,
+                "y": -75,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "PWR_EN",
+                "x": -245,
+                "y": -75,
+                "rotation": 180
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "R9",
+            "x": -120,
+            "y": -165,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -130.5,
+              "minY": -170.5,
+              "maxX": -109.5,
+              "maxY": -159.5
+            },
+            "textBboxes": [
+              {
+                "minX": -130,
+                "minY": -160,
+                "maxX": -107.82080078125,
+                "maxY": -152
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": -100,
+                "y": -165,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "Q2_BASE",
+                "x": -140,
+                "y": -165,
+                "rotation": 180
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "R7",
+            "x": -150,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -160.5,
+              "minY": -5.5,
+              "maxX": -139.5,
+              "maxY": 5.5
+            },
+            "textBboxes": [
+              {
+                "minX": -160,
+                "minY": 5,
+                "maxX": -137.82080078125,
+                "maxY": 13
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "Q1_GATE",
+                "x": -130,
+                "y": 0,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "3V3",
+                "x": -170,
+                "y": 0,
+                "rotation": 180
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "C10",
+            "x": -15,
+            "y": 105,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -25.5,
+              "minY": 96.5,
+              "maxX": -4.5,
+              "maxY": 113.5
+            },
+            "textBboxes": [
+              {
+                "minX": -25,
+                "minY": 115,
+                "maxX": -2.82080078125,
+                "maxY": 123
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "1",
+                "net": "Q1_GATE",
+                "x": -35,
+                "y": 105,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 5,
+                "y": 105,
+                "rotation": 0
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "net": "GND",
+            "points": [
+              [
+                -100,
+                -165
+              ],
+              [
+                -95,
+                -165
+              ]
+            ]
+          },
+          {
+            "net": "Q2_BASE",
+            "points": [
+              [
+                -140,
+                -165
+              ],
+              [
+                -145,
+                -165
+              ]
+            ]
+          },
+          {
+            "net": "Q2_BASE",
+            "points": [
+              [
+                -145,
+                -165
+              ],
+              [
+                -145,
+                -75
+              ]
+            ]
+          },
+          {
+            "net": "Q2_BASE",
+            "points": [
+              [
+                -205,
+                -75
+              ],
+              [
+                -145,
+                -75
+              ]
+            ]
+          },
+          {
+            "net": "Q2_BASE",
+            "points": [
+              [
+                -145,
+                -75
+              ],
+              [
+                -115,
+                -75
+              ]
+            ]
+          },
+          {
+            "net": "Q1_GATE",
+            "points": [
+              [
+                -95,
+                0
+              ],
+              [
+                -95,
+                -55
+              ]
+            ]
+          },
+          {
+            "net": "Q1_GATE",
+            "points": [
+              [
+                -130,
+                0
+              ],
+              [
+                -95,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "Q1_GATE",
+            "points": [
+              [
+                -95,
+                0
+              ],
+              [
+                -40,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "Q1_GATE",
+            "points": [
+              [
+                -40,
+                0
+              ],
+              [
+                -20,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "Q1_GATE",
+            "points": [
+              [
+                -35,
+                105
+              ],
+              [
+                -40,
+                105
+              ]
+            ]
+          },
+          {
+            "net": "Q1_GATE",
+            "points": [
+              [
+                -40,
+                105
+              ],
+              [
+                -40,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -95,
+                -165
+              ],
+              [
+                -95,
+                -100
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -95,
+                -100
+              ],
+              [
+                -95,
+                -95
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -95,
+                -100
+              ],
+              [
+                -90,
+                -100
+              ]
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": -90,
+            "pinY": -100,
+            "direction": "right",
+            "offset": 20,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "PWR_SWITCH",
+              "net": "GND",
+              "x": -90,
+              "y": -100
+            }
+          },
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 5,
+            "pinY": 105,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-C10",
+              "pinNumber": "2",
+              "zoneId": "PWR_SWITCH",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "3V3",
+            "kind": "power",
+            "pinX": 0,
+            "pinY": -20,
+            "direction": "down",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-Q1",
+              "pinNumber": "2",
+              "zoneId": "PWR_SWITCH",
+              "net": "3V3"
+            }
+          },
+          {
+            "net": "PWR",
+            "kind": "power",
+            "pinX": 0,
+            "pinY": 20,
+            "direction": "up",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-Q1",
+              "pinNumber": "3",
+              "zoneId": "PWR_SWITCH",
+              "net": "PWR"
+            }
+          },
+          {
+            "net": "3V3",
+            "kind": "power",
+            "pinX": -170,
+            "pinY": 0,
+            "direction": "left",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R7",
+              "pinNumber": "1",
+              "zoneId": "PWR_SWITCH",
+              "net": "3V3"
+            }
+          },
+          {
+            "net": "Q1_GATE",
+            "kind": "net_port_bi",
+            "pinX": -30,
+            "pinY": 0,
+            "direction": "down",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "PWR_SWITCH",
+              "net": "Q1_GATE",
+              "x": -30,
+              "y": 0
+            }
+          },
+          {
+            "net": "Q2_BASE",
+            "kind": "net_port_bi",
+            "pinX": -175,
+            "pinY": -75,
+            "direction": "down",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "PWR_SWITCH",
+              "net": "Q2_BASE",
+              "x": -175,
+              "y": -75
+            }
+          },
+          {
+            "net": "PWR_EN",
+            "kind": "net_port_bi",
+            "pinX": -245,
+            "pinY": -75,
+            "direction": "left",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R8",
+              "pinNumber": "1",
+              "zoneId": "PWR_SWITCH",
+              "net": "PWR_EN"
+            }
+          }
+        ],
+        "score": [
+          660,
+          22,
+          15,
+          124091
+        ],
+        "candidatesUsed": 708,
+        "search": {
+          "spacingTrials": [
+            {
+              "factor": 3,
+              "candidateQuota": 4096,
+              "candidatesUsed": 288,
+              "expandedNodes": 23,
+              "result": "accepted"
+            }
+          ],
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [
+            "comp-R7",
+            "comp-C10",
+            "comp-Q2",
+            "comp-R8",
+            "comp-R9"
+          ],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0,
+          "checkpointAlternatives": {
+            "comp-C10": 1,
+            "comp-Q2": 1,
+            "comp-R7": 1,
+            "comp-R8": 1,
+            "comp-R9": 1
+          }
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 69,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 3,
+          "templateCacheHits": 0,
+          "boundaryAttempts": [
+            {
+              "net": "Q1_GATE",
+              "sourceIsland": "Q1_GATE:3@-25,-5;2@-30,0;1@-20,0",
+              "targetIsland": "Q1_GATE:1@-25,35",
+              "expansionRaw": 40,
+              "expandedNodes": 16,
+              "result": "merged"
+            },
+            {
+              "net": "Q2_BASE",
+              "sourceIsland": "Q2_BASE:2@-55,-25;1@-45,-25",
+              "targetIsland": "Q2_BASE:1@-60,-55",
+              "expansionRaw": 40,
+              "expandedNodes": 30,
+              "result": "merged"
+            },
+            {
+              "net": "Q1_GATE",
+              "sourceIsland": "Q1_GATE:3@-95,-55;2@-130,0;1@-20,0",
+              "targetIsland": "Q1_GATE:1@-35,105",
+              "expansionRaw": 40,
+              "expandedNodes": 23,
+              "result": "merged"
+            }
+          ],
+          "rejectedEdges": [
+            {
+              "componentId": "comp-C10",
+              "componentRef": "C10",
+              "net": "Q1_GATE",
+              "reason": "pin-exit-direction",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R7",
+              "componentRef": "R7",
+              "net": "Q1_GATE",
+              "reason": "pin-exit-direction",
+              "count": 1,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R8",
+              "componentRef": "R8",
+              "net": "Q2_BASE",
+              "reason": "pin-exit-direction",
+              "count": 3,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R9",
+              "componentRef": "R9",
+              "net": "Q2_BASE",
+              "reason": "pin-exit-direction",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R8",
+              "componentRef": "R8",
+              "net": "Q2_BASE",
+              "reason": "wire-body",
+              "count": 3,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R9",
+              "componentRef": "R9",
+              "net": "Q2_BASE",
+              "reason": "wire-body",
+              "count": 1,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R9",
+              "componentRef": "R9",
+              "net": "Q2_BASE",
+              "reason": "wire-text",
+              "count": 3,
+              "attributionComplete": true
+            }
+          ],
+          "candidateSummaries": [
+            {
+              "net": "Q1_GATE",
+              "sourceIsland": "Q1_GATE:3@-25,-5;2@-30,0;1@-20,0",
+              "targetIsland": "Q1_GATE:1@-25,35",
+              "points": [
+                [
+                  -25,
+                  35
+                ],
+                [
+                  -30,
+                  35
+                ],
+                [
+                  -30,
+                  5
+                ],
+                [
+                  -25,
+                  5
+                ],
+                [
+                  -25,
+                  0
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "Q2_BASE",
+              "sourceIsland": "Q2_BASE:2@-55,-25;1@-45,-25",
+              "targetIsland": "Q2_BASE:1@-60,-55",
+              "points": [
+                [
+                  -60,
+                  -55
+                ],
+                [
+                  -65,
+                  -55
+                ],
+                [
+                  -65,
+                  -35
+                ],
+                [
+                  -50,
+                  -35
+                ],
+                [
+                  -50,
+                  -25
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "Q1_GATE",
+              "sourceIsland": "Q1_GATE:3@-95,-55;2@-130,0;1@-20,0",
+              "targetIsland": "Q1_GATE:1@-35,105",
+              "points": [
+                [
+                  -35,
+                  105
+                ],
+                [
+                  -40,
+                  105
+                ],
+                [
+                  -40,
+                  0
+                ]
+              ],
+              "result": "merged"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "LED_PWR",
+      "title": "Switched PWR LED (LED2)",
+      "coreComponentId": "comp-LED2",
+      "contentBounds": {
+        "minX": -30.5,
+        "minY": -50.5,
+        "maxX": 59.5,
+        "maxY": 94.5
+      },
+      "frame": {
+        "id": "LED_PWR",
+        "title": "Switched PWR LED (LED2)",
+        "rect": {
+          "minX": -45,
+          "minY": -65,
+          "maxX": 305,
+          "maxY": 135
+        },
+        "titleX": -30,
+        "titleY": 120,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 320,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -9.5,
+              "minY": -26.5,
+              "maxX": 5.5,
+              "maxY": 34.5
+            },
+            {
+              "minX": -10,
+              "minY": 20,
+              "maxX": 12.17919921875,
+              "maxY": 28
+            },
+            {
+              "minX": 5,
+              "minY": -0.5,
+              "maxX": 20.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -20.5,
+              "minY": -0.5,
+              "maxX": -9,
+              "maxY": 0.5
+            },
+            {
+              "minX": -15.5,
+              "minY": -50.5,
+              "maxX": 5.5,
+              "maxY": -4.5
+            },
+            {
+              "minX": -15,
+              "minY": -20,
+              "maxX": 7.17919921875,
+              "maxY": -12
+            },
+            {
+              "minX": 5,
+              "minY": -25.5,
+              "maxX": 15.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": -25.5,
+              "minY": -25.5,
+              "maxX": -15,
+              "maxY": -24.5
+            },
+            {
+              "minX": -30.5,
+              "minY": -25.5,
+              "maxX": -24.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": -30.5,
+              "minY": -25.5,
+              "maxX": -29.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -30.5,
+              "minY": -0.5,
+              "maxX": -19.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 14.5,
+              "minY": -25.5,
+              "maxX": 40.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": 49.5,
+              "minY": -35.5,
+              "maxX": 59.5,
+              "maxY": -14.5
+            },
+            {
+              "minX": 22,
+              "minY": -25,
+              "maxX": 40,
+              "maxY": -13
+            },
+            {
+              "minX": 19.5,
+              "minY": -0.5,
+              "maxX": 45.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 49.5,
+              "minY": -5.5,
+              "maxX": 55.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": 27,
+              "minY": 0,
+              "maxX": 45,
+              "maxY": 12
+            },
+            {
+              "minX": -25.5,
+              "minY": -0.5,
+              "maxX": -24.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": -30.5,
+              "minY": 19.5,
+              "maxX": -19.5,
+              "maxY": 50.5
+            },
+            {
+              "minX": -30.5,
+              "minY": 50.5,
+              "maxX": -19.5,
+              "maxY": 94.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "LED2": "comp-LED2",
+          "R10": "comp-R10"
+        },
+        "pinStates": {
+          "comp-LED2": null,
+          "comp-R10": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "LED2",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -9.5,
+              "minY": -6.5,
+              "maxX": 5.5,
+              "maxY": 19.5
+            },
+            "textBboxes": [
+              {
+                "minX": -10,
+                "minY": 20,
+                "maxX": 12.17919921875,
+                "maxY": 28
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "+",
+                "net": "PWR",
+                "x": 20,
+                "y": 0,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "-",
+                "net": "LED2_K",
+                "x": -20,
+                "y": 0,
+                "rotation": 180
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "R10",
+            "x": -5,
+            "y": -25,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -15.5,
+              "minY": -30.5,
+              "maxX": 5.5,
+              "maxY": -19.5
+            },
+            "textBboxes": [
+              {
+                "minX": -15,
+                "minY": -20,
+                "maxX": 7.17919921875,
+                "maxY": -12
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 15,
+                "y": -25,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "LED2_K",
+                "x": -25,
+                "y": -25,
+                "rotation": 180
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "net": "LED2_K",
+            "points": [
+              [
+                -25,
+                -25
+              ],
+              [
+                -30,
+                -25
+              ]
+            ]
+          },
+          {
+            "net": "LED2_K",
+            "points": [
+              [
+                -30,
+                -25
+              ],
+              [
+                -30,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "LED2_K",
+            "points": [
+              [
+                -30,
+                0
+              ],
+              [
+                -20,
+                0
+              ]
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 15,
+            "pinY": -25,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R10",
+              "pinNumber": "2",
+              "zoneId": "LED_PWR",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "PWR",
+            "kind": "power",
+            "pinX": 20,
+            "pinY": 0,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-LED2",
+              "pinNumber": "2",
+              "zoneId": "LED_PWR",
+              "net": "PWR"
+            }
+          },
+          {
+            "net": "LED2_K",
+            "kind": "net_port_bi",
+            "pinX": -25,
+            "pinY": 0,
+            "direction": "up",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "LED_PWR",
+              "net": "LED2_K",
+              "x": -25,
+              "y": 0
+            }
+          }
+        ],
+        "score": [
+          100,
+          6,
+          5,
+          13050
+        ],
+        "candidatesUsed": 64,
+        "search": {
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0,
+          "checkpointAlternatives": {
+            "comp-R10": 1
+          }
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 0,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 0,
+          "templateCacheHits": 0
+        }
+      }
+    }
+  ],
+  "sheet": {
+    "bounds": {
+      "minX": 0,
+      "minY": 0,
+      "maxX": 1170,
+      "maxY": 825
+    },
+    "border": {
+      "minX": 10,
+      "minY": 10,
+      "maxX": 1160,
+      "maxY": 815
+    },
+    "keepouts": [
+      {
+        "minX": 468,
+        "minY": 0,
+        "maxX": 1170,
+        "maxY": 198
+      }
+    ],
+    "padding": 10,
+    "gap": 10,
+    "flow": "z"
+  }
+}

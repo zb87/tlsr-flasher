@@ -1,0 +1,2349 @@
+{
+  "schemaVersion": 1,
+  "spacing": 10,
+  "maxCandidates": 200000,
+  "components": [
+    {
+      "id": "comp-USB1",
+      "measurement": {
+        "designator": "USB1",
+        "x": 330,
+        "y": 720,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 355.5,
+          "maxY": 805.5,
+          "minX": 304.5,
+          "minY": 634.5
+        },
+        "pins": [
+          {
+            "number": "A1B12",
+            "name": "GND",
+            "net": "GND",
+            "x": 295,
+            "y": 795,
+            "rotation": 180
+          },
+          {
+            "number": "A4B9",
+            "name": "VBUS",
+            "net": "VBUS_RAW",
+            "x": 295,
+            "y": 785,
+            "rotation": 180
+          },
+          {
+            "number": "A5",
+            "name": "CC1",
+            "net": "CC1",
+            "x": 295,
+            "y": 775,
+            "rotation": 180
+          },
+          {
+            "number": "A6",
+            "name": "DP1",
+            "net": "USB_DP",
+            "x": 295,
+            "y": 765,
+            "rotation": 180
+          },
+          {
+            "number": "A7",
+            "name": "DN1",
+            "net": "USB_DN",
+            "x": 295,
+            "y": 755,
+            "rotation": 180
+          },
+          {
+            "number": "A8",
+            "name": "SBU1",
+            "net": "",
+            "x": 295,
+            "y": 745,
+            "rotation": 180
+          },
+          {
+            "number": "B5",
+            "name": "CC2",
+            "net": "CC2",
+            "x": 295,
+            "y": 735,
+            "rotation": 180
+          },
+          {
+            "number": "B6",
+            "name": "DP2",
+            "net": "USB_DP",
+            "x": 295,
+            "y": 725,
+            "rotation": 180
+          },
+          {
+            "number": "B7",
+            "name": "DN2",
+            "net": "USB_DN",
+            "x": 295,
+            "y": 715,
+            "rotation": 180
+          },
+          {
+            "number": "B8",
+            "name": "SBU2",
+            "net": "",
+            "x": 295,
+            "y": 705,
+            "rotation": 180
+          },
+          {
+            "number": "B4A9",
+            "name": "VBUS",
+            "net": "VBUS_RAW",
+            "x": 295,
+            "y": 695,
+            "rotation": 180
+          },
+          {
+            "number": "B1A12",
+            "name": "GND",
+            "net": "GND",
+            "x": 295,
+            "y": 685,
+            "rotation": 180
+          },
+          {
+            "number": "1",
+            "name": "SHELL",
+            "net": "GND",
+            "x": 295,
+            "y": 675,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "SHELL",
+            "net": "GND",
+            "x": 295,
+            "y": 665,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "SHELL",
+            "net": "GND",
+            "x": 295,
+            "y": 655,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "SHELL",
+            "net": "GND",
+            "x": 295,
+            "y": 645,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 305,
+            "minY": 805,
+            "maxX": 323.2861328125,
+            "maxY": 813
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ],
+      "pinStates": {
+        "A8": "nc",
+        "B8": "nc"
+      }
+    },
+    {
+      "id": "comp-R3",
+      "measurement": {
+        "designator": "R3",
+        "x": 330,
+        "y": 240,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 245.5,
+          "minX": 319.5,
+          "minY": 234.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 350,
+            "y": 240,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "CC1",
+            "x": 310,
+            "y": 240,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 245,
+            "maxX": 342.17919921875,
+            "maxY": 253
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R4",
+      "measurement": {
+        "designator": "R4",
+        "x": 330,
+        "y": 240,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 245.5,
+          "minX": 319.5,
+          "minY": 234.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 350,
+            "y": 240,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "CC2",
+            "x": 310,
+            "y": 240,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 245,
+            "maxX": 342.17919921875,
+            "maxY": 253
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-D1",
+      "measurement": {
+        "designator": "D1",
+        "x": 510,
+        "y": 720,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 580.5,
+          "maxY": 760.5,
+          "minX": 439.5,
+          "minY": 679.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "IO1",
+            "net": "USB_DN",
+            "x": 470,
+            "y": 660,
+            "rotation": 270
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "net": "GND",
+            "x": 510,
+            "y": 660,
+            "rotation": 270
+          },
+          {
+            "number": "3",
+            "name": "IO3",
+            "net": "USB_DP",
+            "x": 550,
+            "y": 660,
+            "rotation": 270
+          },
+          {
+            "number": "4",
+            "name": "IO4",
+            "net": "USB_DP",
+            "x": 550,
+            "y": 780,
+            "rotation": 90
+          },
+          {
+            "number": "5",
+            "name": "VCC",
+            "net": "+5V",
+            "x": 510,
+            "y": 780,
+            "rotation": 90
+          },
+          {
+            "number": "6",
+            "name": "IO2",
+            "net": "USB_DN",
+            "x": 470,
+            "y": 780,
+            "rotation": 90
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 585,
+            "minY": 750,
+            "maxX": 603.2861328125,
+            "maxY": 758
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-F1",
+      "measurement": {
+        "designator": "F1",
+        "x": 690,
+        "y": 720,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 700.5,
+          "maxY": 724.5,
+          "minX": 679.5,
+          "minY": 715.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "+5V",
+            "x": 710,
+            "y": 720,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "VBUS_RAW",
+            "x": 670,
+            "y": 720,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 680,
+            "minY": 725,
+            "maxX": 698.2861328125,
+            "maxY": 733
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R1",
+      "measurement": {
+        "designator": "R1",
+        "x": 870,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 880.5,
+          "maxY": 405.5,
+          "minX": 859.5,
+          "minY": 394.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "DM",
+            "x": 890,
+            "y": 400,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "USB_DN",
+            "x": 850,
+            "y": 400,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 860,
+            "minY": 405,
+            "maxX": 882.17919921875,
+            "maxY": 413
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R2",
+      "measurement": {
+        "designator": "R2",
+        "x": 870,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 880.5,
+          "maxY": 405.5,
+          "minX": 859.5,
+          "minY": 394.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "DP",
+            "x": 890,
+            "y": 400,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "USB_DP",
+            "x": 850,
+            "y": 400,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 860,
+            "minY": 405,
+            "maxX": 882.17919921875,
+            "maxY": 413
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-LED1",
+      "measurement": {
+        "designator": "LED1",
+        "x": 1050,
+        "y": 560,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 1055.5,
+          "maxY": 579.5,
+          "minX": 1040.5,
+          "minY": 553.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "A",
+            "net": "+5V",
+            "x": 1070,
+            "y": 560,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "K",
+            "net": "LED1_K",
+            "x": 1030,
+            "y": 560,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 1040,
+            "minY": 580,
+            "maxX": 1062.17919921875,
+            "maxY": 588
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R5",
+      "measurement": {
+        "designator": "R5",
+        "x": 150,
+        "y": 240,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 160.5,
+          "maxY": 245.5,
+          "minX": 139.5,
+          "minY": 234.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 170,
+            "y": 240,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "LED1_K",
+            "x": 130,
+            "y": 240,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 140,
+            "minY": 245,
+            "maxX": 162.17919921875,
+            "maxY": 253
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-U2",
+      "measurement": {
+        "designator": "U2",
+        "x": 870,
+        "y": 720,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 895.5,
+          "maxY": 740.5,
+          "minX": 844.5,
+          "minY": 699.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "FB",
+            "net": "3V3",
+            "x": 835,
+            "y": 730,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "EN",
+            "net": "+5V",
+            "x": 835,
+            "y": 720,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "VIN",
+            "net": "+5V",
+            "x": 835,
+            "y": 710,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "GND",
+            "net": "GND",
+            "x": 905,
+            "y": 710,
+            "rotation": 0
+          },
+          {
+            "number": "5",
+            "name": "SW",
+            "net": "BUCK_SW",
+            "x": 905,
+            "y": 720,
+            "rotation": 0
+          },
+          {
+            "number": "6",
+            "name": "BST",
+            "net": "BUCK_BST",
+            "x": 905,
+            "y": 730,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 845,
+            "minY": 740,
+            "maxX": 863.2861328125,
+            "maxY": 748
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C1",
+      "measurement": {
+        "designator": "C1",
+        "x": 510,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 520.5,
+          "maxY": 408.5,
+          "minX": 499.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "+5V",
+            "x": 490,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 530,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 500,
+            "minY": 410,
+            "maxX": 522.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C2",
+      "measurement": {
+        "designator": "C2",
+        "x": 330,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 408.5,
+          "minX": 319.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "+5V",
+            "x": 310,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 350,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 410,
+            "maxX": 342.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C3",
+      "measurement": {
+        "designator": "C3",
+        "x": 330,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 408.5,
+          "minX": 319.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "BUCK_BST",
+            "x": 310,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "BUCK_SW",
+            "x": 350,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 410,
+            "maxX": 342.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-L1",
+      "measurement": {
+        "designator": "L1",
+        "x": 1050,
+        "y": 720,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 1066.5000499996984,
+          "maxY": 724.5000499997076,
+          "minX": 1033.5000062498827,
+          "minY": 719.9775000312476
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "BUCK_SW",
+            "x": 1030,
+            "y": 720,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "3V3",
+            "x": 1070,
+            "y": 720,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 1035,
+            "minY": 725,
+            "maxX": 1053.2861328125,
+            "maxY": 733
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C4",
+      "measurement": {
+        "designator": "C4",
+        "x": 690,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 700.5,
+          "maxY": 408.5,
+          "minX": 679.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 670,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 710,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 680,
+            "minY": 410,
+            "maxX": 702.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C5",
+      "measurement": {
+        "designator": "C5",
+        "x": 690,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 700.5,
+          "maxY": 408.5,
+          "minX": 679.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 670,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 710,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 680,
+            "minY": 410,
+            "maxX": 702.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C6",
+      "measurement": {
+        "designator": "C6",
+        "x": 330,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 408.5,
+          "minX": 319.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 310,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 350,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 410,
+            "maxX": 342.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-U1",
+      "measurement": {
+        "designator": "U1",
+        "x": 150,
+        "y": 720,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 220.5,
+          "maxY": 820.5,
+          "minX": 79.5,
+          "minY": 619.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "NC",
+            "net": "",
+            "x": 70,
+            "y": 810,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "net": "GND",
+            "x": 70,
+            "y": 800,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "PD2",
+            "net": "",
+            "x": 70,
+            "y": 790,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "PC4",
+            "net": "PWR_EN",
+            "x": 70,
+            "y": 780,
+            "rotation": 180
+          },
+          {
+            "number": "5",
+            "name": "TX",
+            "net": "",
+            "x": 70,
+            "y": 770,
+            "rotation": 180
+          },
+          {
+            "number": "6",
+            "name": "RX",
+            "net": "",
+            "x": 70,
+            "y": 760,
+            "rotation": 180
+          },
+          {
+            "number": "7",
+            "name": "NC",
+            "net": "",
+            "x": 70,
+            "y": 750,
+            "rotation": 180
+          },
+          {
+            "number": "8",
+            "name": "NC",
+            "net": "",
+            "x": 70,
+            "y": 740,
+            "rotation": 180
+          },
+          {
+            "number": "9",
+            "name": "PD3",
+            "net": "",
+            "x": 70,
+            "y": 730,
+            "rotation": 180
+          },
+          {
+            "number": "10",
+            "name": "PE2",
+            "net": "DM",
+            "x": 70,
+            "y": 720,
+            "rotation": 180
+          },
+          {
+            "number": "11",
+            "name": "PE0",
+            "net": "",
+            "x": 70,
+            "y": 710,
+            "rotation": 180
+          },
+          {
+            "number": "12",
+            "name": "PE3(GPIO0)",
+            "net": "DP",
+            "x": 70,
+            "y": 700,
+            "rotation": 180
+          },
+          {
+            "number": "13",
+            "name": "VCC",
+            "net": "3V3",
+            "x": 70,
+            "y": 690,
+            "rotation": 180
+          },
+          {
+            "number": "14",
+            "name": "GND",
+            "net": "GND",
+            "x": 70,
+            "y": 680,
+            "rotation": 180
+          },
+          {
+            "number": "15",
+            "name": "PA1",
+            "net": "",
+            "x": 70,
+            "y": 670,
+            "rotation": 180
+          },
+          {
+            "number": "16",
+            "name": "NC",
+            "net": "",
+            "x": 70,
+            "y": 660,
+            "rotation": 180
+          },
+          {
+            "number": "17",
+            "name": "NC",
+            "net": "",
+            "x": 70,
+            "y": 650,
+            "rotation": 180
+          },
+          {
+            "number": "18",
+            "name": "PA7",
+            "net": "SWM",
+            "x": 70,
+            "y": 640,
+            "rotation": 180
+          },
+          {
+            "number": "19",
+            "name": "PE1(GPIO2)",
+            "net": "",
+            "x": 70,
+            "y": 630,
+            "rotation": 180
+          },
+          {
+            "number": "20",
+            "name": "NC",
+            "net": "",
+            "x": 230,
+            "y": 635,
+            "rotation": 0
+          },
+          {
+            "number": "21",
+            "name": "PB1(ADC1)",
+            "net": "EXT_RST",
+            "x": 230,
+            "y": 645,
+            "rotation": 0
+          },
+          {
+            "number": "22",
+            "name": "PB5(ADC2)",
+            "net": "",
+            "x": 230,
+            "y": 655,
+            "rotation": 0
+          },
+          {
+            "number": "23",
+            "name": "PB6(ADC3)",
+            "net": "",
+            "x": 230,
+            "y": 665,
+            "rotation": 0
+          },
+          {
+            "number": "24",
+            "name": "PB7(ADC4)",
+            "net": "",
+            "x": 230,
+            "y": 675,
+            "rotation": 0
+          },
+          {
+            "number": "25",
+            "name": "NC",
+            "net": "",
+            "x": 230,
+            "y": 685,
+            "rotation": 0
+          },
+          {
+            "number": "26",
+            "name": "SWS",
+            "net": "SWS",
+            "x": 230,
+            "y": 695,
+            "rotation": 0
+          },
+          {
+            "number": "27",
+            "name": "PB4(PWM0)",
+            "net": "",
+            "x": 230,
+            "y": 705,
+            "rotation": 0
+          },
+          {
+            "number": "28",
+            "name": "PA3(PWM2)",
+            "net": "",
+            "x": 230,
+            "y": 715,
+            "rotation": 0
+          },
+          {
+            "number": "29",
+            "name": "PC5(PWM3)",
+            "net": "",
+            "x": 230,
+            "y": 725,
+            "rotation": 0
+          },
+          {
+            "number": "30",
+            "name": "PA4",
+            "net": "",
+            "x": 230,
+            "y": 735,
+            "rotation": 0
+          },
+          {
+            "number": "31",
+            "name": "NC",
+            "net": "",
+            "x": 230,
+            "y": 745,
+            "rotation": 0
+          },
+          {
+            "number": "32",
+            "name": "PA0(PWM1)",
+            "net": "",
+            "x": 230,
+            "y": 755,
+            "rotation": 0
+          },
+          {
+            "number": "33",
+            "name": "NC",
+            "net": "",
+            "x": 230,
+            "y": 765,
+            "rotation": 0
+          },
+          {
+            "number": "34",
+            "name": "NC",
+            "net": "",
+            "x": 230,
+            "y": 775,
+            "rotation": 0
+          },
+          {
+            "number": "35",
+            "name": "NC",
+            "net": "",
+            "x": 230,
+            "y": 785,
+            "rotation": 0
+          },
+          {
+            "number": "36",
+            "name": "GND",
+            "net": "GND",
+            "x": 230,
+            "y": 795,
+            "rotation": 0
+          },
+          {
+            "number": "37",
+            "name": "nRESET",
+            "net": "RST",
+            "x": 230,
+            "y": 805,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 80,
+            "minY": 820,
+            "maxX": 98.2861328125,
+            "maxY": 828
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ],
+      "pinStates": {
+        "1": "nc",
+        "3": "nc",
+        "5": "nc",
+        "6": "nc",
+        "7": "nc",
+        "8": "nc",
+        "9": "nc",
+        "11": "nc",
+        "15": "nc",
+        "16": "nc",
+        "17": "nc",
+        "19": "nc",
+        "20": "nc",
+        "22": "nc",
+        "23": "nc",
+        "24": "nc",
+        "25": "nc",
+        "27": "nc",
+        "28": "nc",
+        "29": "nc",
+        "30": "nc",
+        "31": "nc",
+        "32": "nc",
+        "33": "nc",
+        "34": "nc",
+        "35": "nc"
+      }
+    },
+    {
+      "id": "comp-C7",
+      "measurement": {
+        "designator": "C7",
+        "x": 510,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 520.5,
+          "maxY": 408.5,
+          "minX": 499.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 490,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 530,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 500,
+            "minY": 410,
+            "maxX": 522.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C8",
+      "measurement": {
+        "designator": "C8",
+        "x": 330,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 408.5,
+          "minX": 319.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 310,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 350,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 410,
+            "maxX": 342.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R6",
+      "measurement": {
+        "designator": "R6",
+        "x": 510,
+        "y": 240,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 520.5,
+          "maxY": 245.5,
+          "minX": 499.5,
+          "minY": 234.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "RST",
+            "x": 530,
+            "y": 240,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 490,
+            "y": 240,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 500,
+            "minY": 245,
+            "maxX": 522.17919921875,
+            "maxY": 253
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C9",
+      "measurement": {
+        "designator": "C9",
+        "x": 330,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 408.5,
+          "minX": 319.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "RST",
+            "x": 310,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 350,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 410,
+            "maxX": 342.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-SW1",
+      "measurement": {
+        "designator": "SW1",
+        "x": 510,
+        "y": 560,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 520.5,
+          "maxY": 567.5,
+          "minX": 499.5,
+          "minY": 558
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "RST",
+            "x": 490,
+            "y": 560,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 530,
+            "y": 560,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 500,
+            "minY": 570,
+            "maxX": 518.2861328125,
+            "maxY": 578
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-Q1",
+      "measurement": {
+        "designator": "Q1",
+        "x": 150,
+        "y": 560,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 163.5,
+          "maxY": 570.5,
+          "minX": 137.5,
+          "minY": 549.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "S",
+            "net": "3V3",
+            "x": 150,
+            "y": 540,
+            "rotation": 270
+          },
+          {
+            "number": "1",
+            "name": "G",
+            "net": "Q1_GATE",
+            "x": 130,
+            "y": 560,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "D",
+            "net": "PWR",
+            "x": 150,
+            "y": 580,
+            "rotation": 90
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 170,
+            "minY": 560,
+            "maxX": 188.2861328125,
+            "maxY": 568
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R7",
+      "measurement": {
+        "designator": "R7",
+        "x": 690,
+        "y": 240,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 700.5,
+          "maxY": 245.5,
+          "minX": 679.5,
+          "minY": 234.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "Q1_GATE",
+            "x": 710,
+            "y": 240,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "3V3",
+            "x": 670,
+            "y": 240,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 680,
+            "minY": 245,
+            "maxX": 702.17919921875,
+            "maxY": 253
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-C10",
+      "measurement": {
+        "designator": "C10",
+        "x": 330,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 408.5,
+          "minX": 319.5,
+          "minY": 391.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "Q1_GATE",
+            "x": 310,
+            "y": 400,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 350,
+            "y": 400,
+            "rotation": 0
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 320,
+            "minY": 410,
+            "maxX": 342.17919921875,
+            "maxY": 418
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-Q2",
+      "measurement": {
+        "designator": "Q2",
+        "x": 330,
+        "y": 560,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 340.5,
+          "maxY": 570.5,
+          "minX": 329.5,
+          "minY": 549.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "B",
+            "net": "Q2_BASE",
+            "x": 320,
+            "y": 560,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "C",
+            "net": "Q1_GATE",
+            "x": 340,
+            "y": 580,
+            "rotation": 90
+          },
+          {
+            "number": "2",
+            "name": "E",
+            "net": "GND",
+            "x": 340,
+            "y": 540,
+            "rotation": 270
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 345,
+            "minY": 560,
+            "maxX": 363.2861328125,
+            "maxY": 568
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R8",
+      "measurement": {
+        "designator": "R8",
+        "x": 510,
+        "y": 240,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 520.5,
+          "maxY": 245.5,
+          "minX": 499.5,
+          "minY": 234.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "Q2_BASE",
+            "x": 530,
+            "y": 240,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "PWR_EN",
+            "x": 490,
+            "y": 240,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 500,
+            "minY": 245,
+            "maxX": 522.17919921875,
+            "maxY": 253
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R9",
+      "measurement": {
+        "designator": "R9",
+        "x": 870,
+        "y": 240,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 880.5,
+          "maxY": 245.5,
+          "minX": 859.5,
+          "minY": 234.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 890,
+            "y": 240,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "Q2_BASE",
+            "x": 850,
+            "y": 240,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 860,
+            "minY": 245,
+            "maxX": 882.17919921875,
+            "maxY": 253
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-LED2",
+      "measurement": {
+        "designator": "LED2",
+        "x": 150,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 155.5,
+          "maxY": 419.5,
+          "minX": 140.5,
+          "minY": 393.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "+",
+            "net": "PWR",
+            "x": 170,
+            "y": 400,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "-",
+            "net": "LED2_K",
+            "x": 130,
+            "y": 400,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 140,
+            "minY": 420,
+            "maxX": 162.17919921875,
+            "maxY": 428
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-R10",
+      "measurement": {
+        "designator": "R10",
+        "x": 1050,
+        "y": 400,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 1060.5,
+          "maxY": 405.5,
+          "minX": 1039.5,
+          "minY": 394.5
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "net": "GND",
+            "x": 1070,
+            "y": 400,
+            "rotation": 0
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "net": "LED2_K",
+            "x": 1030,
+            "y": 400,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 1040,
+            "minY": 405,
+            "maxX": 1062.17919921875,
+            "maxY": 413
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-H1",
+      "measurement": {
+        "designator": "H1",
+        "x": 690,
+        "y": 560,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 700.5,
+          "maxY": 590.5,
+          "minX": 679.5,
+          "minY": 529.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "GND",
+            "x": 670,
+            "y": 580,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "PWR",
+            "x": 670,
+            "y": 570,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "net": "3V3",
+            "x": 670,
+            "y": 560,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "net": "SWM",
+            "x": 670,
+            "y": 550,
+            "rotation": 180
+          },
+          {
+            "number": "5",
+            "name": "5",
+            "net": "EXT_RST",
+            "x": 670,
+            "y": 540,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 680,
+            "minY": 590,
+            "maxX": 702.17919921875,
+            "maxY": 598
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    },
+    {
+      "id": "comp-H2",
+      "measurement": {
+        "designator": "H2",
+        "x": 870,
+        "y": 560,
+        "rotation": 0,
+        "mirror": false,
+        "bbox": {
+          "maxX": 880.5,
+          "maxY": 585.5,
+          "minX": 859.5,
+          "minY": 534.5
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "net": "GND",
+            "x": 850,
+            "y": 575,
+            "rotation": 180
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "net": "3V3",
+            "x": 850,
+            "y": 565,
+            "rotation": 180
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "net": "SWS",
+            "x": 850,
+            "y": 555,
+            "rotation": 180
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "net": "RST",
+            "x": 850,
+            "y": 545,
+            "rotation": 180
+          }
+        ],
+        "textBboxes": [
+          {
+            "minX": 860,
+            "minY": 585,
+            "maxX": 881.65966796875,
+            "maxY": 593
+          }
+        ]
+      },
+      "allowedRotations": [
+        0
+      ]
+    }
+  ],
+  "netPolicies": {
+    "GND": "local_ground",
+    "+5V": "local_power",
+    "3V3": "local_power",
+    "PWR": "local_power",
+    "LED1_K": "direct",
+    "BUCK_SW": "direct",
+    "BUCK_BST": "direct",
+    "Q1_GATE": "direct",
+    "Q2_BASE": "direct",
+    "LED2_K": "direct",
+    "VBUS_RAW": "module_port",
+    "CC1": "module_port",
+    "CC2": "module_port",
+    "USB_DN": "module_port",
+    "USB_DP": "module_port",
+    "DM": "module_port",
+    "DP": "module_port",
+    "PWR_EN": "module_port",
+    "SWM": "module_port",
+    "EXT_RST": "module_port",
+    "SWS": "module_port",
+    "RST": "module_port"
+  },
+  "attachments": [
+    {
+      "componentId": "comp-R1",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-D1",
+        "pinNumber": "6"
+      }
+    },
+    {
+      "componentId": "comp-R2",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-D1",
+        "pinNumber": "4"
+      }
+    },
+    {
+      "componentId": "comp-R5",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-LED1",
+        "pinNumber": "1"
+      }
+    },
+    {
+      "componentId": "comp-C1",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U2",
+        "pinNumber": "3"
+      }
+    },
+    {
+      "componentId": "comp-C2",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U2",
+        "pinNumber": "3"
+      }
+    },
+    {
+      "componentId": "comp-C3",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U2",
+        "pinNumber": "6"
+      }
+    },
+    {
+      "componentId": "comp-L1",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U2",
+        "pinNumber": "5"
+      }
+    },
+    {
+      "componentId": "comp-C4",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-L1",
+        "pinNumber": "2"
+      }
+    },
+    {
+      "componentId": "comp-C5",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-L1",
+        "pinNumber": "2"
+      }
+    },
+    {
+      "componentId": "comp-C6",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-L1",
+        "pinNumber": "2"
+      }
+    },
+    {
+      "componentId": "comp-C7",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U1",
+        "pinNumber": "13"
+      }
+    },
+    {
+      "componentId": "comp-C8",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U1",
+        "pinNumber": "13"
+      }
+    },
+    {
+      "componentId": "comp-R6",
+      "pinNumber": "2",
+      "attachTo": {
+        "componentId": "comp-U1",
+        "pinNumber": "37"
+      }
+    },
+    {
+      "componentId": "comp-C9",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U1",
+        "pinNumber": "37"
+      }
+    },
+    {
+      "componentId": "comp-SW1",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-U1",
+        "pinNumber": "37"
+      }
+    },
+    {
+      "componentId": "comp-R7",
+      "pinNumber": "2",
+      "attachTo": {
+        "componentId": "comp-Q1",
+        "pinNumber": "1"
+      }
+    },
+    {
+      "componentId": "comp-C10",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-Q1",
+        "pinNumber": "1"
+      }
+    },
+    {
+      "componentId": "comp-Q2",
+      "pinNumber": "3",
+      "attachTo": {
+        "componentId": "comp-Q1",
+        "pinNumber": "1"
+      }
+    },
+    {
+      "componentId": "comp-R8",
+      "pinNumber": "2",
+      "attachTo": {
+        "componentId": "comp-Q2",
+        "pinNumber": "1"
+      }
+    },
+    {
+      "componentId": "comp-R9",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-Q2",
+        "pinNumber": "1"
+      }
+    },
+    {
+      "componentId": "comp-R10",
+      "pinNumber": "1",
+      "attachTo": {
+        "componentId": "comp-LED2",
+        "pinNumber": "1"
+      }
+    }
+  ],
+  "zones": [
+    {
+      "id": "USB_ESD_DATA",
+      "title": "USB ESD & 33R Series (D1)",
+      "coreComponentId": "comp-D1",
+      "componentIds": [
+        "comp-D1",
+        "comp-R1",
+        "comp-R2"
+      ]
+    },
+    {
+      "id": "USB_CONN",
+      "title": "USB-C Receptacle (USB1)",
+      "coreComponentId": "comp-USB1",
+      "componentIds": [
+        "comp-USB1"
+      ]
+    },
+    {
+      "id": "LED_5V",
+      "title": "+5V Power LED (LED1)",
+      "coreComponentId": "comp-LED1",
+      "componentIds": [
+        "comp-LED1",
+        "comp-R5"
+      ]
+    },
+    {
+      "id": "CC1_PD",
+      "title": "CC1 5.1k Pull-Down",
+      "coreComponentId": "comp-R3",
+      "componentIds": [
+        "comp-R3"
+      ]
+    },
+    {
+      "id": "CC2_PD",
+      "title": "CC2 5.1k Pull-Down",
+      "coreComponentId": "comp-R4",
+      "componentIds": [
+        "comp-R4"
+      ]
+    },
+    {
+      "id": "VBUS_FUSE",
+      "title": "1.5A Polyfuse (F1)",
+      "coreComponentId": "comp-F1",
+      "componentIds": [
+        "comp-F1"
+      ]
+    },
+    {
+      "id": "BUCK_3V3",
+      "title": "AP63203WU-7 3.3V 2A Buck",
+      "coreComponentId": "comp-U2",
+      "componentIds": [
+        "comp-U2",
+        "comp-C1",
+        "comp-C2",
+        "comp-C3",
+        "comp-L1",
+        "comp-C4",
+        "comp-C5",
+        "comp-C6"
+      ]
+    },
+    {
+      "id": "PWR_SWITCH",
+      "title": "Switched Target PWR (AO3401A)",
+      "coreComponentId": "comp-Q1",
+      "componentIds": [
+        "comp-Q1",
+        "comp-R7",
+        "comp-C10",
+        "comp-Q2",
+        "comp-R8",
+        "comp-R9"
+      ]
+    },
+    {
+      "id": "LED_PWR",
+      "title": "Switched PWR LED (LED2)",
+      "coreComponentId": "comp-LED2",
+      "componentIds": [
+        "comp-LED2",
+        "comp-R10"
+      ]
+    },
+    {
+      "id": "SELF_HDR",
+      "title": "Self-Prog 1x4P (H2)",
+      "coreComponentId": "comp-H2",
+      "componentIds": [
+        "comp-H2"
+      ]
+    },
+    {
+      "id": "TLSR_CORE",
+      "title": "E180-Z6907A Core & Reset",
+      "coreComponentId": "comp-U1",
+      "componentIds": [
+        "comp-U1",
+        "comp-C7",
+        "comp-C8",
+        "comp-R6",
+        "comp-C9",
+        "comp-SW1"
+      ]
+    },
+    {
+      "id": "TARGET_HDR",
+      "title": "Target SWire 1x5P (H1)",
+      "coreComponentId": "comp-H1",
+      "componentIds": [
+        "comp-H1"
+      ]
+    }
+  ]
+}

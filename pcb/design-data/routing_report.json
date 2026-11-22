@@ -1,0 +1,168 @@
+{
+  "id": "req_3319",
+  "type": "response",
+  "version": "v1",
+  "windowId": "a104ff8c-2afb-4a17-8111-0d1edbe874ad",
+  "createdAt": "2026-11-22T16:51:55.144544758Z",
+  "ok": true,
+  "result": {
+    "differentialPairs": [
+      {
+        "name": "USB_EXT",
+        "negativeLength": 655.013239,
+        "negativeNet": "USB_DN",
+        "positiveLength": 655.10899,
+        "positiveNet": "USB_DP",
+        "skew": 0.09575099999995018
+      },
+      {
+        "name": "USB_INT",
+        "negativeLength": 698.880108,
+        "negativeNet": "DM",
+        "positiveLength": 698.790404,
+        "positiveNet": "DP",
+        "skew": 0.08970399999998335
+      }
+    ],
+    "equalLengthNetGroups": [],
+    "netClasses": [
+      {
+        "name": "PWR_TRUNK",
+        "nets": [
+          "+5V",
+          "BUCK_SW",
+          "VBUS_RAW"
+        ],
+        "totalLength": 2063.463059
+      },
+      {
+        "name": "PWR_RAIL",
+        "nets": [
+          "3V3",
+          "PWR"
+        ],
+        "totalLength": 5061.591233
+      },
+      {
+        "name": "USB_DIFF",
+        "nets": [
+          "USB_DP",
+          "USB_DN",
+          "DM",
+          "DP"
+        ],
+        "totalLength": 2707.7927409999998
+      }
+    ],
+    "netCount": 22,
+    "nets": [
+      {
+        "length": 1350.722453,
+        "net": "GND"
+      },
+      {
+        "length": 301.123882,
+        "net": "BUCK_SW"
+      },
+      {
+        "length": 153.583174,
+        "net": "BUCK_BST"
+      },
+      {
+        "length": 672.796674,
+        "net": "VBUS_RAW"
+      },
+      {
+        "length": 1089.542503,
+        "net": "+5V"
+      },
+      {
+        "length": 963.607648,
+        "net": "CC1"
+      },
+      {
+        "length": 501.223376,
+        "net": "CC2"
+      },
+      {
+        "length": 655.013239,
+        "net": "USB_DN"
+      },
+      {
+        "length": 655.10899,
+        "net": "USB_DP"
+      },
+      {
+        "length": 698.880108,
+        "net": "DM"
+      },
+      {
+        "length": 698.790404,
+        "net": "DP"
+      },
+      {
+        "length": 3749.466588,
+        "net": "3V3"
+      },
+      {
+        "length": 315.51505,
+        "net": "Q1_GATE"
+      },
+      {
+        "length": 1062.806204,
+        "net": "SWS"
+      },
+      {
+        "length": 84.8227,
+        "net": "LED2_K"
+      },
+      {
+        "length": 530.287669,
+        "net": "EXT_RST"
+      },
+      {
+        "length": 87.6927,
+        "net": "LED1_K"
+      },
+      {
+        "length": 936.543123,
+        "net": "SWM"
+      },
+      {
+        "length": 523.233941,
+        "net": "PWR_EN"
+      },
+      {
+        "length": 1312.124645,
+        "net": "PWR"
+      },
+      {
+        "length": 204.418375,
+        "net": "Q2_BASE"
+      },
+      {
+        "length": 2157.703294,
+        "net": "RST"
+      }
+    ]
+  },
+  "context": {
+    "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+    "projectName": "tlsr-flasher",
+    "documentUuid": "3c00dcf5bcf1cf37",
+    "documentType": "pcb",
+    "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d",
+    "pageVisibility": "visible"
+  },
+  "mutationContext": {
+    "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+    "projectName": "tlsr-flasher",
+    "documentUuid": "3c00dcf5bcf1cf37",
+    "documentType": "pcb",
+    "tabId": "3c00dcf5bcf1cf37@f91760ddb2c7418299e7752f330a761d",
+    "pageVisibility": "visible"
+  },
+  "mutationContextAvailable": true,
+  "seq": 1766,
+  "seqAbandoned": 0
+}

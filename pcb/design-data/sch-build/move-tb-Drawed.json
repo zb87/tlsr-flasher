@@ -1,0 +1,27 @@
+{
+  "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+  "documentUuid": "b045c1e614ab13da",
+  "primitiveId": "657cc9772332360e",
+  "ownerType": "sheet",
+  "x": 572,
+  "y": 76,
+  "expected": {
+    "AlignMode": 2,
+    "Bold": null,
+    "Color": null,
+    "FillColor": null,
+    "FontName": null,
+    "FontSize": 15,
+    "Italic": null,
+    "Key": "Drawed",
+    "KeyVisible": false,
+    "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+    "Rotation": 0,
+    "UnderLine": null,
+    "Value": "Antigravity",
+    "ValueVisible": true,
+    "X": 599,
+    "Y": 77,
+    "primitiveId": "657cc9772332360e"
+  }
+}

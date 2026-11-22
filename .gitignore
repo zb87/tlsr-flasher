@@ -1,0 +1,15 @@
+# Firmware intermediate build outputs
+firmware/build/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+
+# Local flash dumps
+dump_*.bin
+*.part

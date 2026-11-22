@@ -1,0 +1,27 @@
+{
+  "projectUuid": "f91760ddb2c7418299e7752f330a761d",
+  "documentUuid": "b045c1e614ab13da",
+  "primitiveId": "78836a7832a5918c",
+  "ownerType": "sheet",
+  "x": 685,
+  "y": 114,
+  "expected": {
+    "AlignMode": null,
+    "Bold": null,
+    "Color": null,
+    "FillColor": null,
+    "FontName": null,
+    "FontSize": null,
+    "Italic": null,
+    "Key": "Name",
+    "KeyVisible": false,
+    "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+    "Rotation": null,
+    "UnderLine": null,
+    "Value": "TLSR Flasher P3 - E180-Z6907A Core, Reset & SWire Headers",
+    "ValueVisible": true,
+    "X": 0,
+    "Y": -18,
+    "primitiveId": "78836a7832a5918c"
+  }
+}

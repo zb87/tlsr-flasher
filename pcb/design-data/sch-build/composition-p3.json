@@ -1,0 +1,2325 @@
+{
+  "schemaVersion": 1,
+  "connectivity": {
+    "schemaVersion": "1.4",
+    "projectId": "f91760ddb2c7418299e7752f330a761d",
+    "documentId": "b045c1e614ab13da",
+    "components": [
+      {
+        "id": "comp-H2",
+        "ref": "H2",
+        "role": "connector",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "9b540f58c6ad4e26b03d1a299cfb1108",
+          "name": "PZ254V-11-04P"
+        },
+        "footprint": "HDR-TH_4P-P2.54-V-M",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -25.5,
+            "maxX": 10.5,
+            "maxY": 25.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -20,
+            "y": 15
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": -20,
+            "y": 5
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "noConnected": false,
+            "x": -20,
+            "y": -5
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "noConnected": false,
+            "x": -20,
+            "y": -15
+          }
+        ]
+      },
+      {
+        "id": "comp-U1",
+        "ref": "U1",
+        "role": "mcu",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "cbb003c3987643819c5e2cec9988e2cb",
+          "name": "E180-Z6907A"
+        },
+        "footprint": "WIRELM-SMD_E180-Z6907A",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -70.5,
+            "minY": -100.5,
+            "maxX": 70.5,
+            "maxY": 100.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "NC",
+            "noConnected": true,
+            "x": -80,
+            "y": 90
+          },
+          {
+            "number": "2",
+            "name": "GND",
+            "noConnected": false,
+            "x": -80,
+            "y": 80
+          },
+          {
+            "number": "3",
+            "name": "PD2",
+            "noConnected": true,
+            "x": -80,
+            "y": 70
+          },
+          {
+            "number": "4",
+            "name": "PC4",
+            "noConnected": false,
+            "x": -80,
+            "y": 60
+          },
+          {
+            "number": "5",
+            "name": "TX",
+            "noConnected": true,
+            "x": -80,
+            "y": 50
+          },
+          {
+            "number": "6",
+            "name": "RX",
+            "noConnected": true,
+            "x": -80,
+            "y": 40
+          },
+          {
+            "number": "7",
+            "name": "NC",
+            "noConnected": true,
+            "x": -80,
+            "y": 30
+          },
+          {
+            "number": "8",
+            "name": "NC",
+            "noConnected": true,
+            "x": -80,
+            "y": 20
+          },
+          {
+            "number": "9",
+            "name": "PD3",
+            "noConnected": true,
+            "x": -80,
+            "y": 10
+          },
+          {
+            "number": "10",
+            "name": "PE2",
+            "noConnected": false,
+            "x": -80,
+            "y": 0
+          },
+          {
+            "number": "11",
+            "name": "PE0",
+            "noConnected": true,
+            "x": -80,
+            "y": -10
+          },
+          {
+            "number": "12",
+            "name": "PE3(GPIO0)",
+            "noConnected": false,
+            "x": -80,
+            "y": -20
+          },
+          {
+            "number": "13",
+            "name": "VCC",
+            "noConnected": false,
+            "x": -80,
+            "y": -30
+          },
+          {
+            "number": "14",
+            "name": "GND",
+            "noConnected": false,
+            "x": -80,
+            "y": -40
+          },
+          {
+            "number": "15",
+            "name": "PA1",
+            "noConnected": true,
+            "x": -80,
+            "y": -50
+          },
+          {
+            "number": "16",
+            "name": "NC",
+            "noConnected": true,
+            "x": -80,
+            "y": -60
+          },
+          {
+            "number": "17",
+            "name": "NC",
+            "noConnected": true,
+            "x": -80,
+            "y": -70
+          },
+          {
+            "number": "18",
+            "name": "PA7",
+            "noConnected": false,
+            "x": -80,
+            "y": -80
+          },
+          {
+            "number": "19",
+            "name": "PE1(GPIO2)",
+            "noConnected": true,
+            "x": -80,
+            "y": -90
+          },
+          {
+            "number": "20",
+            "name": "NC",
+            "noConnected": true,
+            "x": 80,
+            "y": -85
+          },
+          {
+            "number": "21",
+            "name": "PB1(ADC1)",
+            "noConnected": false,
+            "x": 80,
+            "y": -75
+          },
+          {
+            "number": "22",
+            "name": "PB5(ADC2)",
+            "noConnected": true,
+            "x": 80,
+            "y": -65
+          },
+          {
+            "number": "23",
+            "name": "PB6(ADC3)",
+            "noConnected": true,
+            "x": 80,
+            "y": -55
+          },
+          {
+            "number": "24",
+            "name": "PB7(ADC4)",
+            "noConnected": true,
+            "x": 80,
+            "y": -45
+          },
+          {
+            "number": "25",
+            "name": "NC",
+            "noConnected": true,
+            "x": 80,
+            "y": -35
+          },
+          {
+            "number": "26",
+            "name": "SWS",
+            "noConnected": false,
+            "x": 80,
+            "y": -25
+          },
+          {
+            "number": "27",
+            "name": "PB4(PWM0)",
+            "noConnected": true,
+            "x": 80,
+            "y": -15
+          },
+          {
+            "number": "28",
+            "name": "PA3(PWM2)",
+            "noConnected": true,
+            "x": 80,
+            "y": -5
+          },
+          {
+            "number": "29",
+            "name": "PC5(PWM3)",
+            "noConnected": true,
+            "x": 80,
+            "y": 5
+          },
+          {
+            "number": "30",
+            "name": "PA4",
+            "noConnected": true,
+            "x": 80,
+            "y": 15
+          },
+          {
+            "number": "31",
+            "name": "NC",
+            "noConnected": true,
+            "x": 80,
+            "y": 25
+          },
+          {
+            "number": "32",
+            "name": "PA0(PWM1)",
+            "noConnected": true,
+            "x": 80,
+            "y": 35
+          },
+          {
+            "number": "33",
+            "name": "NC",
+            "noConnected": true,
+            "x": 80,
+            "y": 45
+          },
+          {
+            "number": "34",
+            "name": "NC",
+            "noConnected": true,
+            "x": 80,
+            "y": 55
+          },
+          {
+            "number": "35",
+            "name": "NC",
+            "noConnected": true,
+            "x": 80,
+            "y": 65
+          },
+          {
+            "number": "36",
+            "name": "GND",
+            "noConnected": false,
+            "x": 80,
+            "y": 75
+          },
+          {
+            "number": "37",
+            "name": "nRESET",
+            "noConnected": false,
+            "x": 80,
+            "y": 85
+          }
+        ]
+      },
+      {
+        "id": "comp-C7",
+        "ref": "C7",
+        "role": "capacitor",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "345d8669720442d6a8747f19c9226485",
+          "name": "HGC0603R5106M160NTHJ"
+        },
+        "footprint": "C0603",
+        "placement": {
+          "x": -300,
+          "y": -75,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -310.5,
+            "minY": -83.5,
+            "maxX": -289.5,
+            "maxY": -66.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -320,
+            "y": -75
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": -280,
+            "y": -75
+          }
+        ]
+      },
+      {
+        "id": "comp-C8",
+        "ref": "C8",
+        "role": "capacitor",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "b470d7af3c48415db6a4748fa8e62805",
+          "name": "0603X7R104K500NT"
+        },
+        "footprint": "C0603",
+        "placement": {
+          "x": -300,
+          "y": 45,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -310.5,
+            "minY": 36.5,
+            "maxX": -289.5,
+            "maxY": 53.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -320,
+            "y": 45
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": -280,
+            "y": 45
+          }
+        ]
+      },
+      {
+        "id": "comp-R6",
+        "ref": "R6",
+        "role": "resistor",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "7d0a4241f13846d38eb1c0e45cc6ecf8",
+          "name": "FRC0603F1002TS"
+        },
+        "footprint": "R0603",
+        "placement": {
+          "x": 195,
+          "y": 345,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 184.5,
+            "minY": 339.5,
+            "maxX": 205.5,
+            "maxY": 350.5
+          }
+        },
+        "pins": [
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 215,
+            "y": 345
+          },
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": 175,
+            "y": 345
+          }
+        ]
+      },
+      {
+        "id": "comp-C9",
+        "ref": "C9",
+        "role": "capacitor",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "b470d7af3c48415db6a4748fa8e62805",
+          "name": "0603X7R104K500NT"
+        },
+        "footprint": "C0603",
+        "placement": {
+          "x": 315,
+          "y": 270,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 304.5,
+            "minY": 261.5,
+            "maxX": 325.5,
+            "maxY": 278.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": 295,
+            "y": 270
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 335,
+            "y": 270
+          }
+        ]
+      },
+      {
+        "id": "comp-SW1",
+        "ref": "SW1",
+        "role": "switch",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "74bd52f1120e4bee9df6a4e8c1f72428",
+          "name": "TS-1088R-02526"
+        },
+        "footprint": "SW-SMD_L3.9-W3.0-P4.45",
+        "placement": {
+          "x": 345,
+          "y": 345,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 334.5,
+            "minY": 343,
+            "maxX": 355.5,
+            "maxY": 352.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": 325,
+            "y": 345
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": 365,
+            "y": 345
+          }
+        ]
+      },
+      {
+        "id": "comp-H1",
+        "ref": "H1",
+        "role": "connector",
+        "pageId": "b045c1e614ab13da",
+        "pageName": "P3_TLSR_Headers",
+        "device": {
+          "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+          "deviceUuid": "a39f9c9126e24625a6e7edb3fdff00c6",
+          "name": "PZ254V-11-05P"
+        },
+        "footprint": "HDR-TH_5P-P2.54-V-M",
+        "placement": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -30.5,
+            "maxX": 10.5,
+            "maxY": 30.5
+          }
+        },
+        "pins": [
+          {
+            "number": "1",
+            "name": "1",
+            "noConnected": false,
+            "x": -20,
+            "y": 20
+          },
+          {
+            "number": "2",
+            "name": "2",
+            "noConnected": false,
+            "x": -20,
+            "y": 10
+          },
+          {
+            "number": "3",
+            "name": "3",
+            "noConnected": false,
+            "x": -20,
+            "y": 0
+          },
+          {
+            "number": "4",
+            "name": "4",
+            "noConnected": false,
+            "x": -20,
+            "y": -10
+          },
+          {
+            "number": "5",
+            "name": "5",
+            "noConnected": false,
+            "x": -20,
+            "y": -20
+          }
+        ]
+      }
+    ],
+    "nets": [
+      {
+        "id": "net-GND",
+        "name": "GND",
+        "scope": "global",
+        "role": "ground"
+      },
+      {
+        "id": "net-3V3",
+        "name": "3V3",
+        "scope": "global",
+        "role": "power"
+      },
+      {
+        "id": "net-SWS",
+        "name": "SWS",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-RST",
+        "name": "RST",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-PWR_EN",
+        "name": "PWR_EN",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-DM",
+        "name": "DM",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-DP",
+        "name": "DP",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-SWM",
+        "name": "SWM",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-EXT_RST",
+        "name": "EXT_RST",
+        "scope": "global",
+        "role": "signal"
+      },
+      {
+        "id": "net-PWR",
+        "name": "PWR",
+        "scope": "global",
+        "role": "power"
+      }
+    ],
+    "connections": [
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "1",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "2",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "3",
+        "netId": "net-SWS",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H2",
+        "pinNumber": "4",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "4",
+        "netId": "net-PWR_EN",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "10",
+        "netId": "net-DM",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "12",
+        "netId": "net-DP",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "13",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "14",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "18",
+        "netId": "net-SWM",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "21",
+        "netId": "net-EXT_RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "26",
+        "netId": "net-SWS",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "36",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-U1",
+        "pinNumber": "37",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C7",
+        "pinNumber": "1",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C7",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C8",
+        "pinNumber": "1",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C8",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R6",
+        "pinNumber": "2",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-R6",
+        "pinNumber": "1",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C9",
+        "pinNumber": "1",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-C9",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-SW1",
+        "pinNumber": "1",
+        "netId": "net-RST",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-SW1",
+        "pinNumber": "2",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "1",
+        "netId": "net-GND",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "2",
+        "netId": "net-PWR",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "3",
+        "netId": "net-3V3",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "4",
+        "netId": "net-SWM",
+        "kind": "netlist"
+      },
+      {
+        "componentId": "comp-H1",
+        "pinNumber": "5",
+        "netId": "net-EXT_RST",
+        "kind": "netlist"
+      }
+    ],
+    "modules": [
+      {
+        "id": "SELF_HDR",
+        "name": "Self-Prog 1x4P (H2)",
+        "coreComponents": [
+          "comp-H2"
+        ],
+        "peripheralComponents": [],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-SELF_HDR-RST",
+            "name": "RST",
+            "netId": "net-RST",
+            "pinRefs": [
+              "comp-H2:4"
+            ]
+          },
+          {
+            "id": "port-SELF_HDR-SWS",
+            "name": "SWS",
+            "netId": "net-SWS",
+            "pinRefs": [
+              "comp-H2:3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "TLSR_CORE",
+        "name": "E180-Z6907A Core & Reset",
+        "coreComponents": [
+          "comp-U1"
+        ],
+        "peripheralComponents": [
+          "comp-C7",
+          "comp-C8",
+          "comp-R6",
+          "comp-C9",
+          "comp-SW1"
+        ],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-TLSR_CORE-DM",
+            "name": "DM",
+            "netId": "net-DM",
+            "pinRefs": [
+              "comp-U1:10"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-DP",
+            "name": "DP",
+            "netId": "net-DP",
+            "pinRefs": [
+              "comp-U1:12"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-EXT_RST",
+            "name": "EXT_RST",
+            "netId": "net-EXT_RST",
+            "pinRefs": [
+              "comp-U1:21"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-PWR_EN",
+            "name": "PWR_EN",
+            "netId": "net-PWR_EN",
+            "pinRefs": [
+              "comp-U1:4"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-RST",
+            "name": "RST",
+            "netId": "net-RST",
+            "pinRefs": [
+              "comp-U1:37",
+              "comp-R6:2",
+              "comp-C9:1",
+              "comp-SW1:1"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-SWM",
+            "name": "SWM",
+            "netId": "net-SWM",
+            "pinRefs": [
+              "comp-U1:18"
+            ]
+          },
+          {
+            "id": "port-TLSR_CORE-SWS",
+            "name": "SWS",
+            "netId": "net-SWS",
+            "pinRefs": [
+              "comp-U1:26"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "TARGET_HDR",
+        "name": "Target SWire 1x5P (H1)",
+        "coreComponents": [
+          "comp-H1"
+        ],
+        "peripheralComponents": [],
+        "internalNets": [],
+        "ports": [
+          {
+            "id": "port-TARGET_HDR-EXT_RST",
+            "name": "EXT_RST",
+            "netId": "net-EXT_RST",
+            "pinRefs": [
+              "comp-H1:5"
+            ]
+          },
+          {
+            "id": "port-TARGET_HDR-SWM",
+            "name": "SWM",
+            "netId": "net-SWM",
+            "pinRefs": [
+              "comp-H1:4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sheet": {
+    "minX": 0,
+    "minY": 0,
+    "maxX": 1170,
+    "maxY": 825
+  },
+  "sheetBorder": {
+    "minX": 10,
+    "minY": 10,
+    "maxX": 1160,
+    "maxY": 815
+  },
+  "keepouts": [
+    {
+      "minX": 468,
+      "minY": 0,
+      "maxX": 1170,
+      "maxY": 198
+    }
+  ],
+  "titleBlock": {
+    "Name": {
+      "value": "TLSR Flasher P3 - E180-Z6907A Core, Reset & SWire Headers",
+      "showTitle": false,
+      "showValue": true
+    },
+    "Description": {
+      "value": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+      "showTitle": false,
+      "showValue": true
+    },
+    "Drawed": {
+      "value": "Antigravity",
+      "showTitle": false,
+      "showValue": true
+    }
+  },
+  "modules": [
+    {
+      "id": "SELF_HDR",
+      "title": "Self-Prog 1x4P (H2)",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "H2",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -25.5,
+            "maxX": 10.5,
+            "maxY": 25.5
+          },
+          "textBboxes": [
+            {
+              "minX": -10,
+              "minY": 25,
+              "maxX": 11.65966796875,
+              "maxY": 33
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "1",
+              "net": "GND",
+              "x": -20,
+              "y": 15,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "2",
+              "net": "3V3",
+              "x": -20,
+              "y": 5,
+              "rotation": 180
+            },
+            {
+              "number": "3",
+              "name": "3",
+              "net": "SWS",
+              "x": -20,
+              "y": -5,
+              "rotation": 180
+            },
+            {
+              "number": "4",
+              "name": "4",
+              "net": "RST",
+              "x": -20,
+              "y": -15,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "net": "GND",
+          "points": [
+            [
+              -20,
+              15
+            ],
+            [
+              -25,
+              15
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -25,
+              15
+            ],
+            [
+              -25,
+              20
+            ]
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "net": "RST",
+          "kind": "net_port_bi",
+          "pinX": -20,
+          "pinY": -15,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-H2",
+            "pinNumber": "4",
+            "zoneId": "SELF_HDR",
+            "net": "RST"
+          }
+        },
+        {
+          "net": "SWS",
+          "kind": "net_port_bi",
+          "pinX": -20,
+          "pinY": -5,
+          "direction": "left",
+          "offset": 75,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-H2",
+            "pinNumber": "3",
+            "zoneId": "SELF_HDR",
+            "net": "SWS"
+          }
+        },
+        {
+          "net": "3V3",
+          "kind": "power",
+          "pinX": -20,
+          "pinY": 5,
+          "direction": "left",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-H2",
+            "pinNumber": "2",
+            "zoneId": "SELF_HDR",
+            "net": "3V3"
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -25,
+          "pinY": 20,
+          "direction": "up",
+          "offset": 10,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "SELF_HDR",
+            "net": "GND",
+            "x": -25,
+            "y": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "TLSR_CORE",
+      "title": "E180-Z6907A Core & Reset",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "U1",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -70.5,
+            "minY": -100.5,
+            "maxX": 70.5,
+            "maxY": 100.5
+          },
+          "textBboxes": [
+            {
+              "minX": -70,
+              "minY": 100,
+              "maxX": -51.7138671875,
+              "maxY": 108
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "NC",
+              "net": "",
+              "x": -80,
+              "y": 90,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "GND",
+              "net": "GND",
+              "x": -80,
+              "y": 80,
+              "rotation": 180
+            },
+            {
+              "number": "3",
+              "name": "PD2",
+              "net": "",
+              "x": -80,
+              "y": 70,
+              "rotation": 180
+            },
+            {
+              "number": "4",
+              "name": "PC4",
+              "net": "PWR_EN",
+              "x": -80,
+              "y": 60,
+              "rotation": 180
+            },
+            {
+              "number": "5",
+              "name": "TX",
+              "net": "",
+              "x": -80,
+              "y": 50,
+              "rotation": 180
+            },
+            {
+              "number": "6",
+              "name": "RX",
+              "net": "",
+              "x": -80,
+              "y": 40,
+              "rotation": 180
+            },
+            {
+              "number": "7",
+              "name": "NC",
+              "net": "",
+              "x": -80,
+              "y": 30,
+              "rotation": 180
+            },
+            {
+              "number": "8",
+              "name": "NC",
+              "net": "",
+              "x": -80,
+              "y": 20,
+              "rotation": 180
+            },
+            {
+              "number": "9",
+              "name": "PD3",
+              "net": "",
+              "x": -80,
+              "y": 10,
+              "rotation": 180
+            },
+            {
+              "number": "10",
+              "name": "PE2",
+              "net": "DM",
+              "x": -80,
+              "y": 0,
+              "rotation": 180
+            },
+            {
+              "number": "11",
+              "name": "PE0",
+              "net": "",
+              "x": -80,
+              "y": -10,
+              "rotation": 180
+            },
+            {
+              "number": "12",
+              "name": "PE3(GPIO0)",
+              "net": "DP",
+              "x": -80,
+              "y": -20,
+              "rotation": 180
+            },
+            {
+              "number": "13",
+              "name": "VCC",
+              "net": "3V3",
+              "x": -80,
+              "y": -30,
+              "rotation": 180
+            },
+            {
+              "number": "14",
+              "name": "GND",
+              "net": "GND",
+              "x": -80,
+              "y": -40,
+              "rotation": 180
+            },
+            {
+              "number": "15",
+              "name": "PA1",
+              "net": "",
+              "x": -80,
+              "y": -50,
+              "rotation": 180
+            },
+            {
+              "number": "16",
+              "name": "NC",
+              "net": "",
+              "x": -80,
+              "y": -60,
+              "rotation": 180
+            },
+            {
+              "number": "17",
+              "name": "NC",
+              "net": "",
+              "x": -80,
+              "y": -70,
+              "rotation": 180
+            },
+            {
+              "number": "18",
+              "name": "PA7",
+              "net": "SWM",
+              "x": -80,
+              "y": -80,
+              "rotation": 180
+            },
+            {
+              "number": "19",
+              "name": "PE1(GPIO2)",
+              "net": "",
+              "x": -80,
+              "y": -90,
+              "rotation": 180
+            },
+            {
+              "number": "20",
+              "name": "NC",
+              "net": "",
+              "x": 80,
+              "y": -85,
+              "rotation": 0
+            },
+            {
+              "number": "21",
+              "name": "PB1(ADC1)",
+              "net": "EXT_RST",
+              "x": 80,
+              "y": -75,
+              "rotation": 0
+            },
+            {
+              "number": "22",
+              "name": "PB5(ADC2)",
+              "net": "",
+              "x": 80,
+              "y": -65,
+              "rotation": 0
+            },
+            {
+              "number": "23",
+              "name": "PB6(ADC3)",
+              "net": "",
+              "x": 80,
+              "y": -55,
+              "rotation": 0
+            },
+            {
+              "number": "24",
+              "name": "PB7(ADC4)",
+              "net": "",
+              "x": 80,
+              "y": -45,
+              "rotation": 0
+            },
+            {
+              "number": "25",
+              "name": "NC",
+              "net": "",
+              "x": 80,
+              "y": -35,
+              "rotation": 0
+            },
+            {
+              "number": "26",
+              "name": "SWS",
+              "net": "SWS",
+              "x": 80,
+              "y": -25,
+              "rotation": 0
+            },
+            {
+              "number": "27",
+              "name": "PB4(PWM0)",
+              "net": "",
+              "x": 80,
+              "y": -15,
+              "rotation": 0
+            },
+            {
+              "number": "28",
+              "name": "PA3(PWM2)",
+              "net": "",
+              "x": 80,
+              "y": -5,
+              "rotation": 0
+            },
+            {
+              "number": "29",
+              "name": "PC5(PWM3)",
+              "net": "",
+              "x": 80,
+              "y": 5,
+              "rotation": 0
+            },
+            {
+              "number": "30",
+              "name": "PA4",
+              "net": "",
+              "x": 80,
+              "y": 15,
+              "rotation": 0
+            },
+            {
+              "number": "31",
+              "name": "NC",
+              "net": "",
+              "x": 80,
+              "y": 25,
+              "rotation": 0
+            },
+            {
+              "number": "32",
+              "name": "PA0(PWM1)",
+              "net": "",
+              "x": 80,
+              "y": 35,
+              "rotation": 0
+            },
+            {
+              "number": "33",
+              "name": "NC",
+              "net": "",
+              "x": 80,
+              "y": 45,
+              "rotation": 0
+            },
+            {
+              "number": "34",
+              "name": "NC",
+              "net": "",
+              "x": 80,
+              "y": 55,
+              "rotation": 0
+            },
+            {
+              "number": "35",
+              "name": "NC",
+              "net": "",
+              "x": 80,
+              "y": 65,
+              "rotation": 0
+            },
+            {
+              "number": "36",
+              "name": "GND",
+              "net": "GND",
+              "x": 80,
+              "y": 75,
+              "rotation": 0
+            },
+            {
+              "number": "37",
+              "name": "nRESET",
+              "net": "RST",
+              "x": 80,
+              "y": 85,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "C7",
+          "x": -300,
+          "y": -75,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -310.5,
+            "minY": -83.5,
+            "maxX": -289.5,
+            "maxY": -66.5
+          },
+          "textBboxes": [
+            {
+              "minX": -310,
+              "minY": -65,
+              "maxX": -287.82080078125,
+              "maxY": -57
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "1",
+              "net": "3V3",
+              "x": -320,
+              "y": -75,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "2",
+              "net": "GND",
+              "x": -280,
+              "y": -75,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "C8",
+          "x": -300,
+          "y": 45,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -310.5,
+            "minY": 36.5,
+            "maxX": -289.5,
+            "maxY": 53.5
+          },
+          "textBboxes": [
+            {
+              "minX": -310,
+              "minY": 55,
+              "maxX": -287.82080078125,
+              "maxY": 63
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "1",
+              "net": "3V3",
+              "x": -320,
+              "y": 45,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "2",
+              "net": "GND",
+              "x": -280,
+              "y": 45,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "R6",
+          "x": 195,
+          "y": 345,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 184.5,
+            "minY": 339.5,
+            "maxX": 205.5,
+            "maxY": 350.5
+          },
+          "textBboxes": [
+            {
+              "minX": 185,
+              "minY": 350,
+              "maxX": 207.17919921875,
+              "maxY": 358
+            }
+          ],
+          "pins": [
+            {
+              "number": "2",
+              "name": "2",
+              "net": "RST",
+              "x": 215,
+              "y": 345,
+              "rotation": 0
+            },
+            {
+              "number": "1",
+              "name": "1",
+              "net": "3V3",
+              "x": 175,
+              "y": 345,
+              "rotation": 180
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "C9",
+          "x": 315,
+          "y": 270,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 304.5,
+            "minY": 261.5,
+            "maxX": 325.5,
+            "maxY": 278.5
+          },
+          "textBboxes": [
+            {
+              "minX": 305,
+              "minY": 280,
+              "maxX": 327.17919921875,
+              "maxY": 288
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "1",
+              "net": "RST",
+              "x": 295,
+              "y": 270,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "2",
+              "net": "GND",
+              "x": 335,
+              "y": 270,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "primitiveId": "",
+          "designator": "SW1",
+          "x": 345,
+          "y": 345,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": 334.5,
+            "minY": 343,
+            "maxX": 355.5,
+            "maxY": 352.5
+          },
+          "textBboxes": [
+            {
+              "minX": 335,
+              "minY": 355,
+              "maxX": 353.2861328125,
+              "maxY": 363
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "1",
+              "net": "RST",
+              "x": 325,
+              "y": 345,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "2",
+              "net": "GND",
+              "x": 365,
+              "y": 345,
+              "rotation": 0
+            }
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "net": "RST",
+          "points": [
+            [
+              290,
+              270
+            ],
+            [
+              295,
+              270
+            ]
+          ]
+        },
+        {
+          "net": "RST",
+          "points": [
+            [
+              80,
+              85
+            ],
+            [
+              290,
+              85
+            ]
+          ]
+        },
+        {
+          "net": "RST",
+          "points": [
+            [
+              290,
+              85
+            ],
+            [
+              290,
+              270
+            ]
+          ]
+        },
+        {
+          "net": "RST",
+          "points": [
+            [
+              290,
+              270
+            ],
+            [
+              290,
+              345
+            ]
+          ]
+        },
+        {
+          "net": "RST",
+          "points": [
+            [
+              215,
+              345
+            ],
+            [
+              290,
+              345
+            ]
+          ]
+        },
+        {
+          "net": "RST",
+          "points": [
+            [
+              290,
+              345
+            ],
+            [
+              325,
+              345
+            ]
+          ]
+        },
+        {
+          "net": "3V3",
+          "points": [
+            [
+              -320,
+              -75
+            ],
+            [
+              -325,
+              -75
+            ]
+          ]
+        },
+        {
+          "net": "3V3",
+          "points": [
+            [
+              -320,
+              45
+            ],
+            [
+              -325,
+              45
+            ]
+          ]
+        },
+        {
+          "net": "3V3",
+          "points": [
+            [
+              -325,
+              -75
+            ],
+            [
+              -325,
+              -30
+            ]
+          ]
+        },
+        {
+          "net": "3V3",
+          "points": [
+            [
+              -325,
+              -30
+            ],
+            [
+              -325,
+              45
+            ]
+          ]
+        },
+        {
+          "net": "3V3",
+          "points": [
+            [
+              -325,
+              -30
+            ],
+            [
+              -95,
+              -30
+            ]
+          ]
+        },
+        {
+          "net": "3V3",
+          "points": [
+            [
+              -95,
+              -30
+            ],
+            [
+              -80,
+              -30
+            ]
+          ]
+        },
+        {
+          "net": "3V3",
+          "points": [
+            [
+              -95,
+              -30
+            ],
+            [
+              -95,
+              -25
+            ]
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "net": "3V3",
+          "kind": "power",
+          "pinX": 175,
+          "pinY": 345,
+          "direction": "left",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-R6",
+            "pinNumber": "1",
+            "zoneId": "TLSR_CORE",
+            "net": "3V3"
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": 365,
+          "pinY": 345,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-SW1",
+            "pinNumber": "2",
+            "zoneId": "TLSR_CORE",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": 335,
+          "pinY": 270,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-C9",
+            "pinNumber": "2",
+            "zoneId": "TLSR_CORE",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "RST",
+          "kind": "net_port_bi",
+          "pinX": 185,
+          "pinY": 85,
+          "direction": "up",
+          "offset": 10,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "TLSR_CORE",
+            "net": "RST",
+            "x": 185,
+            "y": 85
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -80,
+          "pinY": 80,
+          "direction": "left",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "2",
+            "zoneId": "TLSR_CORE",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": 80,
+          "pinY": 75,
+          "direction": "right",
+          "offset": 230,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "36",
+            "zoneId": "TLSR_CORE",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "PWR_EN",
+          "kind": "net_port_bi",
+          "pinX": -80,
+          "pinY": 60,
+          "direction": "left",
+          "offset": 40,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "4",
+            "zoneId": "TLSR_CORE",
+            "net": "PWR_EN"
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -280,
+          "pinY": 45,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-C8",
+            "pinNumber": "2",
+            "zoneId": "TLSR_CORE",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "DM",
+          "kind": "net_port_bi",
+          "pinX": -80,
+          "pinY": 0,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "10",
+            "zoneId": "TLSR_CORE",
+            "net": "DM"
+          }
+        },
+        {
+          "net": "DP",
+          "kind": "net_port_bi",
+          "pinX": -80,
+          "pinY": -20,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "12",
+            "zoneId": "TLSR_CORE",
+            "net": "DP"
+          }
+        },
+        {
+          "net": "SWS",
+          "kind": "net_port_bi",
+          "pinX": 80,
+          "pinY": -25,
+          "direction": "right",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "26",
+            "zoneId": "TLSR_CORE",
+            "net": "SWS"
+          }
+        },
+        {
+          "net": "3V3",
+          "kind": "power",
+          "pinX": -95,
+          "pinY": -25,
+          "direction": "up",
+          "offset": 35,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "TLSR_CORE",
+            "net": "3V3",
+            "x": -95,
+            "y": -25
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -80,
+          "pinY": -40,
+          "direction": "left",
+          "offset": 265,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "14",
+            "zoneId": "TLSR_CORE",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -280,
+          "pinY": -75,
+          "direction": "right",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-C7",
+            "pinNumber": "2",
+            "zoneId": "TLSR_CORE",
+            "net": "GND"
+          }
+        },
+        {
+          "net": "EXT_RST",
+          "kind": "net_port_bi",
+          "pinX": 80,
+          "pinY": -75,
+          "direction": "right",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "21",
+            "zoneId": "TLSR_CORE",
+            "net": "EXT_RST"
+          }
+        },
+        {
+          "net": "SWM",
+          "kind": "net_port_bi",
+          "pinX": -80,
+          "pinY": -80,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-U1",
+            "pinNumber": "18",
+            "zoneId": "TLSR_CORE",
+            "net": "SWM"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TARGET_HDR",
+      "title": "Target SWire 1x5P (H1)",
+      "placements": [
+        {
+          "primitiveId": "",
+          "designator": "H1",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "mirror": false,
+          "bbox": {
+            "minX": -10.5,
+            "minY": -30.5,
+            "maxX": 10.5,
+            "maxY": 30.5
+          },
+          "textBboxes": [
+            {
+              "minX": -10,
+              "minY": 30,
+              "maxX": 12.17919921875,
+              "maxY": 38
+            }
+          ],
+          "pins": [
+            {
+              "number": "1",
+              "name": "1",
+              "net": "GND",
+              "x": -20,
+              "y": 20,
+              "rotation": 180
+            },
+            {
+              "number": "2",
+              "name": "2",
+              "net": "PWR",
+              "x": -20,
+              "y": 10,
+              "rotation": 180
+            },
+            {
+              "number": "3",
+              "name": "3",
+              "net": "3V3",
+              "x": -20,
+              "y": 0,
+              "rotation": 180
+            },
+            {
+              "number": "4",
+              "name": "4",
+              "net": "SWM",
+              "x": -20,
+              "y": -10,
+              "rotation": 180
+            },
+            {
+              "number": "5",
+              "name": "5",
+              "net": "EXT_RST",
+              "x": -20,
+              "y": -20,
+              "rotation": 180
+            }
+          ]
+        }
+      ],
+      "wires": [
+        {
+          "net": "PWR",
+          "points": [
+            [
+              -20,
+              10
+            ],
+            [
+              -25,
+              10
+            ]
+          ]
+        },
+        {
+          "net": "PWR",
+          "points": [
+            [
+              -25,
+              10
+            ],
+            [
+              -25,
+              15
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -20,
+              20
+            ],
+            [
+              -25,
+              20
+            ]
+          ]
+        },
+        {
+          "net": "GND",
+          "points": [
+            [
+              -25,
+              20
+            ],
+            [
+              -25,
+              25
+            ]
+          ]
+        }
+      ],
+      "flags": [
+        {
+          "net": "EXT_RST",
+          "kind": "net_port_bi",
+          "pinX": -20,
+          "pinY": -20,
+          "direction": "left",
+          "offset": 10,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-H1",
+            "pinNumber": "5",
+            "zoneId": "TARGET_HDR",
+            "net": "EXT_RST"
+          }
+        },
+        {
+          "net": "SWM",
+          "kind": "net_port_bi",
+          "pinX": -20,
+          "pinY": -10,
+          "direction": "left",
+          "offset": 100,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-H1",
+            "pinNumber": "4",
+            "zoneId": "TARGET_HDR",
+            "net": "SWM"
+          }
+        },
+        {
+          "net": "3V3",
+          "kind": "power",
+          "pinX": -20,
+          "pinY": 0,
+          "direction": "left",
+          "offset": 25,
+          "anchor": {
+            "type": "pin",
+            "componentId": "comp-H1",
+            "pinNumber": "3",
+            "zoneId": "TARGET_HDR",
+            "net": "3V3"
+          }
+        },
+        {
+          "net": "PWR",
+          "kind": "power",
+          "pinX": -25,
+          "pinY": 15,
+          "direction": "left",
+          "offset": 45,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "TARGET_HDR",
+            "net": "PWR",
+            "x": -25,
+            "y": 15
+          }
+        },
+        {
+          "net": "GND",
+          "kind": "ground",
+          "pinX": -25,
+          "pinY": 25,
+          "direction": "up",
+          "offset": 10,
+          "anchor": {
+            "type": "wire_tree",
+            "zoneId": "TARGET_HDR",
+            "net": "GND",
+            "x": -25,
+            "y": 25
+          }
+        }
+      ]
+    }
+  ]
+}

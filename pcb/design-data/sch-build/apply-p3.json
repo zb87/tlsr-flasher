@@ -1,0 +1,3554 @@
+{
+  "requireFullExecution": true,
+  "version": 1,
+  "meta": {
+    "name": "Single-sheet Lib composition",
+    "project": "f91760ddb2c7418299e7752f330a761d",
+    "doc": "b045c1e614ab13da"
+  },
+  "defaults": {
+    "timeoutSec": 90,
+    "retry": 0,
+    "continueOnError": false
+  },
+  "steps": [
+    {
+      "id": "verify-project-unique-designators",
+      "action": "schematic.components.list",
+      "payload": {
+        "allPages": true,
+        "tagPages": true
+      },
+      "expectSchematic": {
+        "absentParts": [
+          "H2",
+          "U1",
+          "C7",
+          "C8",
+          "R6",
+          "C9",
+          "SW1",
+          "H1"
+        ],
+        "designatorsOnly": true,
+        "parts": {}
+      }
+    },
+    {
+      "id": "verify-source-before-reset",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {},
+        "sourceScene": {
+          "components": {
+            "e3d9d9cb5b3a55a6": {
+              "addIntoBom": true,
+              "addIntoPcb": true,
+              "bbox": {
+                "maxX": 1170,
+                "maxY": 825,
+                "minX": 0,
+                "minY": 0
+              },
+              "component": {
+                "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                "name": "Drawing-Symbol_A4",
+                "uuid": "19ed40d4439db089"
+              },
+              "componentType": "sheet",
+              "device": {
+                "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                "name": "TLSR Flasher P3 - E180-Z6907A Core, Reset \u0026 SWire Headers",
+                "uuid": "19ed40d4439db089"
+              },
+              "mirror": false,
+              "name": "TLSR Flasher P3 - E180-Z6907A Core, Reset \u0026 SWire Headers",
+              "net": "",
+              "netlistAvailable": true,
+              "otherProperty": {
+                "@Assembly Variant": "Basic",
+                "@Board Name": "Board1",
+                "@Create Date": "2026-11-13",
+                "@Create Time": "04:49:54",
+                "@Page Count": "3",
+                "@Page Name": "P3_TLSR_Headers",
+                "@Page No": "3",
+                "@Project Name": "tlsr-flasher",
+                "@Schematic Name": "Schematic1",
+                "Blade Width": "10",
+                "Border": "1",
+                "Color": "",
+                "Company": "嘉立创EDA",
+                "Description": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+                "Drawed": "Antigravity",
+                "Height": "825",
+                "Page Size": "A4",
+                "Part Number": "",
+                "Region Start": "1",
+                "Reviewed": "",
+                "Size": "A4",
+                "Title Block": "1",
+                "Title Block Position": "3",
+                "Version": "V1.0",
+                "Width": "1170",
+                "X Region Count": "6",
+                "Y Region Count": "4"
+              },
+              "pins": [],
+              "pinsAvailable": true,
+              "primitiveId": "e3d9d9cb5b3a55a6",
+              "rotation": 0,
+              "subPartName": "pid8a0e77bacb214e",
+              "symbol": {
+                "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                "name": "Drawing-Symbol_A4",
+                "uuid": "2badf009a15394aa"
+              },
+              "x": 0,
+              "y": 0
+            }
+          },
+          "connectivitySummary": {
+            "buses": 0,
+            "netflags": 0,
+            "netlabels": 0,
+            "netports": 0,
+            "scope": "activePage",
+            "shortSymbols": 0,
+            "wires": 0
+          },
+          "pagePrimitives": {
+            "arcs": [],
+            "attributes": [
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Page Count",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "3",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "031da3c9913a2545"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Border",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "1f979eae69716009"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Blade Width",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "10",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "37640b6c5da3f1f7"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Y Region Count",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "4",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "3bd562ee27ffac1f"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Page Name",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "P3_TLSR_Headers",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "45b8674ea1742f7d"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Update Time",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": null,
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "4c094acf8820c00d"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Reviewed",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "",
+                "ValueVisible": true,
+                "X": 599,
+                "Y": 57,
+                "primitiveId": "4eb2c4642a8d8694"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Part Number",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "",
+                "ValueVisible": true,
+                "X": 1051,
+                "Y": 97,
+                "primitiveId": "55b12c6c4319d283"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Drawed",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "Antigravity",
+                "ValueVisible": true,
+                "X": 572,
+                "Y": 76,
+                "primitiveId": "657cc9772332360e"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Title Block Position",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "3",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "68ca17915a2c230f"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "@Update Date",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": null,
+                "ValueVisible": false,
+                "X": 1051,
+                "Y": 137,
+                "primitiveId": "6da817b1720e6b93"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Device",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "19ed40d4439db089",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "707d1d647b1b14c9"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 20,
+                "Italic": null,
+                "Key": "Symbol",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "2badf009a15394aa",
+                "ValueVisible": false,
+                "X": 2547,
+                "Y": -159,
+                "primitiveId": "74e1ca6d6f940a9c"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Name",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "TLSR Flasher P3 - E180-Z6907A Core, Reset \u0026 SWire Headers",
+                "ValueVisible": true,
+                "X": 685,
+                "Y": 114,
+                "primitiveId": "78836a7832a5918c"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Description",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+                "ValueVisible": true,
+                "X": 685,
+                "Y": 76,
+                "primitiveId": "86a7fde570d09fc4"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Assembly Variant",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "Basic",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "8789d47cf2f001be"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "X Region Count",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "6",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "93a3c20dabbcffc5"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Schematic Name",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "Schematic1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "98a7a3742e2d1352"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Board Name",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "Board1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "9b4f82ac97e0af01"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Size",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "A4",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "9bc28eefb254f942"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 20,
+                "Italic": null,
+                "Key": "@Project Name",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "tlsr-flasher",
+                "ValueVisible": false,
+                "X": 961,
+                "Y": 57,
+                "primitiveId": "9f22677790ca7368"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Region Start",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "a980981845fbd611"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Height",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "825",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "b37021ae82034212"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Title Block",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "b4a74812cbda1a75"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Page No",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "3",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "c4252a09eb428529"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Page Size",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "A4",
+                "ValueVisible": false,
+                "X": 841,
+                "Y": -13,
+                "primitiveId": "c5b81d04ceb9dd31"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Color",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "d72f616e48b76153"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "Version",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "V1.0",
+                "ValueVisible": false,
+                "X": 759,
+                "Y": -13,
+                "primitiveId": "e0c4f5bb2da7fcff"
+              },
+              {
+                "AlignMode": 2,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 15,
+                "Italic": null,
+                "Key": "@Create Date",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "2026-11-13",
+                "ValueVisible": false,
+                "X": 1051,
+                "Y": 117,
+                "primitiveId": "ef5cf9fdb104d336"
+              },
+              {
+                "AlignMode": 5,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": 20,
+                "Italic": null,
+                "Key": "Company",
+                "KeyVisible": false,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": 0,
+                "UnderLine": null,
+                "Value": "嘉立创EDA",
+                "ValueVisible": false,
+                "X": 1039,
+                "Y": -13,
+                "primitiveId": "f3fceec6e55acaf9"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "Width",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "1170",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "fbc3c3eb02ee5ab2"
+              },
+              {
+                "AlignMode": null,
+                "Bold": null,
+                "Color": null,
+                "FillColor": null,
+                "FontName": null,
+                "FontSize": null,
+                "Italic": null,
+                "Key": "@Create Time",
+                "KeyVisible": null,
+                "ParentPrimitiveId": "e3d9d9cb5b3a55a6",
+                "Rotation": null,
+                "UnderLine": null,
+                "Value": "04:49:54",
+                "ValueVisible": null,
+                "X": null,
+                "Y": 0,
+                "primitiveId": "fe489a8c7b80b9fb"
+              }
+            ],
+            "buses": [],
+            "circles": [],
+            "components": [
+              {
+                "addIntoBom": true,
+                "addIntoPcb": true,
+                "component": {
+                  "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                  "name": "Drawing-Symbol_A4",
+                  "uuid": "19ed40d4439db089"
+                },
+                "componentType": "sheet",
+                "device": {
+                  "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                  "name": "TLSR Flasher P3 - E180-Z6907A Core, Reset \u0026 SWire Headers",
+                  "uuid": "19ed40d4439db089"
+                },
+                "mirror": false,
+                "name": "TLSR Flasher P3 - E180-Z6907A Core, Reset \u0026 SWire Headers",
+                "net": "",
+                "otherProperty": {
+                  "@Assembly Variant": "Basic",
+                  "@Board Name": "Board1",
+                  "@Create Date": "2026-11-13",
+                  "@Create Time": "04:49:54",
+                  "@Page Count": "3",
+                  "@Page Name": "P3_TLSR_Headers",
+                  "@Page No": "3",
+                  "@Project Name": "tlsr-flasher",
+                  "@Schematic Name": "Schematic1",
+                  "Blade Width": "10",
+                  "Border": "1",
+                  "Color": "",
+                  "Company": "嘉立创EDA",
+                  "Description": "TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)",
+                  "Drawed": "Antigravity",
+                  "Height": "825",
+                  "Page Size": "A4",
+                  "Part Number": "",
+                  "Region Start": "1",
+                  "Reviewed": "",
+                  "Size": "A4",
+                  "Title Block": "1",
+                  "Title Block Position": "3",
+                  "Version": "V1.0",
+                  "Width": "1170",
+                  "X Region Count": "6",
+                  "Y Region Count": "4"
+                },
+                "primitiveId": "e3d9d9cb5b3a55a6",
+                "rotation": 0,
+                "subPartName": "pid8a0e77bacb214e",
+                "symbol": {
+                  "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+                  "name": "Drawing-Symbol_A4",
+                  "uuid": "2badf009a15394aa"
+                },
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "objects": [],
+            "pins": [],
+            "polygons": [],
+            "rectangles": [],
+            "texts": [],
+            "wires": []
+          },
+          "wires": []
+        }
+      }
+    },
+    {
+      "id": "reset-target-preserving-sheet",
+      "run": "sch clear",
+      "flags": {
+        "expect-page-primitives-b64": "eyJhcmNzIjpbXSwiYXR0cmlidXRlcyI6W3siQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQFBhZ2UgQ291bnQiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImUzZDlkOWNiNWIzYTU1YTYiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjMiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiMDMxZGEzYzk5MTNhMjU0NSJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQm9yZGVyIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIxIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6IjFmOTc5ZWFlNjk3MTYwMDkifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkJsYWRlIFdpZHRoIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIxMCIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiIzNzY0MGI2YzVkYTNmMWY3In0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJZIFJlZ2lvbiBDb3VudCIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiNCIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiIzYmQ1NjJlZTI3ZmZhYzFmIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJAUGFnZSBOYW1lIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiJQM19UTFNSX0hlYWRlcnMiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiNDViODY3NGVhMTc0MmY3ZCJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQFVwZGF0ZSBUaW1lIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOm51bGwsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiI0YzA5NGFjZjg4MjBjMDBkIn0seyJBbGlnbk1vZGUiOjIsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MTUsIkl0YWxpYyI6bnVsbCwiS2V5IjoiUmV2aWV3ZWQiLCJLZXlWaXNpYmxlIjpmYWxzZSwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOjAsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIiLCJWYWx1ZVZpc2libGUiOnRydWUsIlgiOjU5OSwiWSI6NTcsInByaW1pdGl2ZUlkIjoiNGViMmM0NjQyYThkODY5NCJ9LHsiQWxpZ25Nb2RlIjoyLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOjE1LCJJdGFsaWMiOm51bGwsIktleSI6IlBhcnQgTnVtYmVyIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiIiwiVmFsdWVWaXNpYmxlIjp0cnVlLCJYIjoxMDUxLCJZIjo5NywicHJpbWl0aXZlSWQiOiI1NWIxMmM2YzQzMTlkMjgzIn0seyJBbGlnbk1vZGUiOjIsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MTUsIkl0YWxpYyI6bnVsbCwiS2V5IjoiRHJhd2VkIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiQW50aWdyYXZpdHkiLCJWYWx1ZVZpc2libGUiOnRydWUsIlgiOjU3MiwiWSI6NzYsInByaW1pdGl2ZUlkIjoiNjU3Y2M5NzcyMzMyMzYwZSJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiVGl0bGUgQmxvY2sgUG9zaXRpb24iLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImUzZDlkOWNiNWIzYTU1YTYiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjMiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiNjhjYTE3OTE1YTJjMjMwZiJ9LHsiQWxpZ25Nb2RlIjoyLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOjE1LCJJdGFsaWMiOm51bGwsIktleSI6IkBVcGRhdGUgRGF0ZSIsIktleVZpc2libGUiOmZhbHNlLCJQYXJlbnRQcmltaXRpdmVJZCI6ImUzZDlkOWNiNWIzYTU1YTYiLCJSb3RhdGlvbiI6MCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6bnVsbCwiVmFsdWVWaXNpYmxlIjpmYWxzZSwiWCI6MTA1MSwiWSI6MTM3LCJwcmltaXRpdmVJZCI6IjZkYTgxN2IxNzIwZTZiOTMifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkRldmljZSIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMTllZDQwZDQ0MzlkYjA4OSIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiI3MDdkMWQ2NDdiMWIxNGM5In0seyJBbGlnbk1vZGUiOjUsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MjAsIkl0YWxpYyI6bnVsbCwiS2V5IjoiU3ltYm9sIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMmJhZGYwMDlhMTUzOTRhYSIsIlZhbHVlVmlzaWJsZSI6ZmFsc2UsIlgiOjI1NDcsIlkiOi0xNTksInByaW1pdGl2ZUlkIjoiNzRlMWNhNmQ2Zjk0MGE5YyJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiTmFtZSIsIktleVZpc2libGUiOmZhbHNlLCJQYXJlbnRQcmltaXRpdmVJZCI6ImUzZDlkOWNiNWIzYTU1YTYiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IlRMU1IgRmxhc2hlciBQMyAtIEUxODAtWjY5MDdBIENvcmUsIFJlc2V0IFx1MDAyNiBTV2lyZSBIZWFkZXJzIiwiVmFsdWVWaXNpYmxlIjp0cnVlLCJYIjo2ODUsIlkiOjExNCwicHJpbWl0aXZlSWQiOiI3ODgzNmE3ODMyYTU5MThjIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJEZXNjcmlwdGlvbiIsIktleVZpc2libGUiOmZhbHNlLCJQYXJlbnRQcmltaXRpdmVJZCI6ImUzZDlkOWNiNWIzYTU1YTYiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IlRMU1IgU1dpcmUgRmxhc2hlciAoRTE4MC1aNjkwN0EgKyBVU0ItQyArIEFQNjMyMDNXVS03KSIsIlZhbHVlVmlzaWJsZSI6dHJ1ZSwiWCI6Njg1LCJZIjo3NiwicHJpbWl0aXZlSWQiOiI4NmE3ZmRlNTcwZDA5ZmM0In0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJAQXNzZW1ibHkgVmFyaWFudCIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiQmFzaWMiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiODc4OWQ0N2NmMmYwMDFiZSJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiWCBSZWdpb24gQ291bnQiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImUzZDlkOWNiNWIzYTU1YTYiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjYiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiOTNhM2MyMGRhYmJjZmZjNSJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiQFNjaGVtYXRpYyBOYW1lIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiJTY2hlbWF0aWMxIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6Ijk4YTdhMzc0MmUyZDEzNTIifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkBCb2FyZCBOYW1lIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiJCb2FyZDEiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiOWI0ZjgyYWM5N2UwYWYwMSJ9LHsiQWxpZ25Nb2RlIjpudWxsLCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOm51bGwsIkl0YWxpYyI6bnVsbCwiS2V5IjoiU2l6ZSIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiQTQiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiOWJjMjhlZWZiMjU0Zjk0MiJ9LHsiQWxpZ25Nb2RlIjo1LCJCb2xkIjpudWxsLCJDb2xvciI6bnVsbCwiRmlsbENvbG9yIjpudWxsLCJGb250TmFtZSI6bnVsbCwiRm9udFNpemUiOjIwLCJJdGFsaWMiOm51bGwsIktleSI6IkBQcm9qZWN0IE5hbWUiLCJLZXlWaXNpYmxlIjpmYWxzZSwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOjAsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiJ0bHNyLWZsYXNoZXIiLCJWYWx1ZVZpc2libGUiOmZhbHNlLCJYIjo5NjEsIlkiOjU3LCJwcmltaXRpdmVJZCI6IjlmMjI2Nzc3OTBjYTczNjgifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IlJlZ2lvbiBTdGFydCIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMSIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiJhOTgwOTgxODQ1ZmJkNjExIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJIZWlnaHQiLCJLZXlWaXNpYmxlIjpudWxsLCJQYXJlbnRQcmltaXRpdmVJZCI6ImUzZDlkOWNiNWIzYTU1YTYiLCJSb3RhdGlvbiI6bnVsbCwiVW5kZXJMaW5lIjpudWxsLCJWYWx1ZSI6IjgyNSIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiJiMzcwMjFhZTgyMDM0MjEyIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJUaXRsZSBCbG9jayIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMSIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiJiNGE3NDgxMmNiZGExYTc1In0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJAUGFnZSBObyIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMyIsIlZhbHVlVmlzaWJsZSI6bnVsbCwiWCI6bnVsbCwiWSI6MCwicHJpbWl0aXZlSWQiOiJjNDI1MmEwOWViNDI4NTI5In0seyJBbGlnbk1vZGUiOjUsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6MTUsIkl0YWxpYyI6bnVsbCwiS2V5IjoiUGFnZSBTaXplIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiQTQiLCJWYWx1ZVZpc2libGUiOmZhbHNlLCJYIjo4NDEsIlkiOi0xMywicHJpbWl0aXZlSWQiOiJjNWI4MWQwNGNlYjlkZDMxIn0seyJBbGlnbk1vZGUiOm51bGwsIkJvbGQiOm51bGwsIkNvbG9yIjpudWxsLCJGaWxsQ29sb3IiOm51bGwsIkZvbnROYW1lIjpudWxsLCJGb250U2l6ZSI6bnVsbCwiSXRhbGljIjpudWxsLCJLZXkiOiJDb2xvciIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6ImQ3MmY2MTZlNDhiNzYxNTMifSx7IkFsaWduTW9kZSI6NSwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjoxNSwiSXRhbGljIjpudWxsLCJLZXkiOiJWZXJzaW9uIiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiVjEuMCIsIlZhbHVlVmlzaWJsZSI6ZmFsc2UsIlgiOjc1OSwiWSI6LTEzLCJwcmltaXRpdmVJZCI6ImUwYzRmNWJiMmRhN2ZjZmYifSx7IkFsaWduTW9kZSI6MiwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjoxNSwiSXRhbGljIjpudWxsLCJLZXkiOiJAQ3JlYXRlIERhdGUiLCJLZXlWaXNpYmxlIjpmYWxzZSwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOjAsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIyMDI2LTExLTEzIiwiVmFsdWVWaXNpYmxlIjpmYWxzZSwiWCI6MTA1MSwiWSI6MTE3LCJwcmltaXRpdmVJZCI6ImVmNWNmOWZkYjEwNGQzMzYifSx7IkFsaWduTW9kZSI6NSwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjoyMCwiSXRhbGljIjpudWxsLCJLZXkiOiJDb21wYW55IiwiS2V5VmlzaWJsZSI6ZmFsc2UsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjowLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoi5ZiJ56uL5YibRURBIiwiVmFsdWVWaXNpYmxlIjpmYWxzZSwiWCI6MTAzOSwiWSI6LTEzLCJwcmltaXRpdmVJZCI6ImYzZmNlZWM2ZTU1YWNhZjkifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IldpZHRoIiwiS2V5VmlzaWJsZSI6bnVsbCwiUGFyZW50UHJpbWl0aXZlSWQiOiJlM2Q5ZDljYjViM2E1NWE2IiwiUm90YXRpb24iOm51bGwsIlVuZGVyTGluZSI6bnVsbCwiVmFsdWUiOiIxMTcwIiwiVmFsdWVWaXNpYmxlIjpudWxsLCJYIjpudWxsLCJZIjowLCJwcmltaXRpdmVJZCI6ImZiYzNjM2ViMDJlZTVhYjIifSx7IkFsaWduTW9kZSI6bnVsbCwiQm9sZCI6bnVsbCwiQ29sb3IiOm51bGwsIkZpbGxDb2xvciI6bnVsbCwiRm9udE5hbWUiOm51bGwsIkZvbnRTaXplIjpudWxsLCJJdGFsaWMiOm51bGwsIktleSI6IkBDcmVhdGUgVGltZSIsIktleVZpc2libGUiOm51bGwsIlBhcmVudFByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsIlJvdGF0aW9uIjpudWxsLCJVbmRlckxpbmUiOm51bGwsIlZhbHVlIjoiMDQ6NDk6NTQiLCJWYWx1ZVZpc2libGUiOm51bGwsIlgiOm51bGwsIlkiOjAsInByaW1pdGl2ZUlkIjoiZmU0ODlhOGM3YjgwYjlmYiJ9XSwiYnVzZXMiOltdLCJjaXJjbGVzIjpbXSwiY29tcG9uZW50cyI6W3siYWRkSW50b0JvbSI6dHJ1ZSwiYWRkSW50b1BjYiI6dHJ1ZSwiY29tcG9uZW50Ijp7ImxpYnJhcnlVdWlkIjoiMDgxOWYwNWM0ZWVmNGM3MWFjZTkwZDgyMmE5OTBlODciLCJuYW1lIjoiRHJhd2luZy1TeW1ib2xfQTQiLCJ1dWlkIjoiMTllZDQwZDQ0MzlkYjA4OSJ9LCJjb21wb25lbnRUeXBlIjoic2hlZXQiLCJkZXZpY2UiOnsibGlicmFyeVV1aWQiOiIwODE5ZjA1YzRlZWY0YzcxYWNlOTBkODIyYTk5MGU4NyIsIm5hbWUiOiJUTFNSIEZsYXNoZXIgUDMgLSBFMTgwLVo2OTA3QSBDb3JlLCBSZXNldCBcdTAwMjYgU1dpcmUgSGVhZGVycyIsInV1aWQiOiIxOWVkNDBkNDQzOWRiMDg5In0sIm1pcnJvciI6ZmFsc2UsIm5hbWUiOiJUTFNSIEZsYXNoZXIgUDMgLSBFMTgwLVo2OTA3QSBDb3JlLCBSZXNldCBcdTAwMjYgU1dpcmUgSGVhZGVycyIsIm5ldCI6IiIsIm90aGVyUHJvcGVydHkiOnsiQEFzc2VtYmx5IFZhcmlhbnQiOiJCYXNpYyIsIkBCb2FyZCBOYW1lIjoiQm9hcmQxIiwiQENyZWF0ZSBEYXRlIjoiMjAyNi0xMS0xMyIsIkBDcmVhdGUgVGltZSI6IjA0OjQ5OjU0IiwiQFBhZ2UgQ291bnQiOiIzIiwiQFBhZ2UgTmFtZSI6IlAzX1RMU1JfSGVhZGVycyIsIkBQYWdlIE5vIjoiMyIsIkBQcm9qZWN0IE5hbWUiOiJ0bHNyLWZsYXNoZXIiLCJAU2NoZW1hdGljIE5hbWUiOiJTY2hlbWF0aWMxIiwiQmxhZGUgV2lkdGgiOiIxMCIsIkJvcmRlciI6IjEiLCJDb2xvciI6IiIsIkNvbXBhbnkiOiLlmInnq4vliJtFREEiLCJEZXNjcmlwdGlvbiI6IlRMU1IgU1dpcmUgRmxhc2hlciAoRTE4MC1aNjkwN0EgKyBVU0ItQyArIEFQNjMyMDNXVS03KSIsIkRyYXdlZCI6IkFudGlncmF2aXR5IiwiSGVpZ2h0IjoiODI1IiwiUGFnZSBTaXplIjoiQTQiLCJQYXJ0IE51bWJlciI6IiIsIlJlZ2lvbiBTdGFydCI6IjEiLCJSZXZpZXdlZCI6IiIsIlNpemUiOiJBNCIsIlRpdGxlIEJsb2NrIjoiMSIsIlRpdGxlIEJsb2NrIFBvc2l0aW9uIjoiMyIsIlZlcnNpb24iOiJWMS4wIiwiV2lkdGgiOiIxMTcwIiwiWCBSZWdpb24gQ291bnQiOiI2IiwiWSBSZWdpb24gQ291bnQiOiI0In0sInByaW1pdGl2ZUlkIjoiZTNkOWQ5Y2I1YjNhNTVhNiIsInJvdGF0aW9uIjowLCJzdWJQYXJ0TmFtZSI6InBpZDhhMGU3N2JhY2IyMTRlIiwic3ltYm9sIjp7ImxpYnJhcnlVdWlkIjoiMDgxOWYwNWM0ZWVmNGM3MWFjZTkwZDgyMmE5OTBlODciLCJuYW1lIjoiRHJhd2luZy1TeW1ib2xfQTQiLCJ1dWlkIjoiMmJhZGYwMDlhMTUzOTRhYSJ9LCJ4IjowLCJ5IjowfV0sIm9iamVjdHMiOltdLCJwaW5zIjpbXSwicG9seWdvbnMiOltdLCJyZWN0YW5nbGVzIjpbXSwidGV4dHMiOltdLCJ3aXJlcyI6W119"
+      }
+    },
+    {
+      "id": "verify-no-residual-primitives",
+      "run": "sch clear",
+      "flags": {
+        "dry-run": true,
+        "expect-empty": true
+      }
+    },
+    {
+      "id": "verify-cleared-target",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "assert": {
+        "$.count": "==1"
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {}
+      }
+    },
+    {
+      "id": "place-000",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "H2",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "9b540f58c6ad4e26b03d1a299cfb1108",
+        "x": 200,
+        "y": 695
+      },
+      "capture": {
+        "part_000": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-000",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "H2",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-H2",
+            "EasyEDA Agent Role": "connector"
+          },
+          "rotation": 0,
+          "x": 200,
+          "y": 695
+        },
+        "primitiveId": "${part_000}"
+      },
+      "assert": {
+        "$.component.designator": "==H2",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-H2",
+        "$.component.otherProperty.EasyEDA Agent Role": "==connector"
+      }
+    },
+    {
+      "id": "place-001",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "U1",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "cbb003c3987643819c5e2cec9988e2cb",
+        "x": 690,
+        "y": 420
+      },
+      "capture": {
+        "part_001": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-001",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "U1",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-U1",
+            "EasyEDA Agent Role": "mcu"
+          },
+          "rotation": 0,
+          "x": 690,
+          "y": 420
+        },
+        "primitiveId": "${part_001}"
+      },
+      "assert": {
+        "$.component.designator": "==U1",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-U1",
+        "$.component.otherProperty.EasyEDA Agent Role": "==mcu"
+      }
+    },
+    {
+      "id": "place-002",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C7",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "345d8669720442d6a8747f19c9226485",
+        "x": 390,
+        "y": 345
+      },
+      "capture": {
+        "part_002": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-002",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C7",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C7",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 390,
+          "y": 345
+        },
+        "primitiveId": "${part_002}"
+      },
+      "assert": {
+        "$.component.designator": "==C7",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C7",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-003",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C8",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "b470d7af3c48415db6a4748fa8e62805",
+        "x": 390,
+        "y": 465
+      },
+      "capture": {
+        "part_003": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-003",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C8",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C8",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 390,
+          "y": 465
+        },
+        "primitiveId": "${part_003}"
+      },
+      "assert": {
+        "$.component.designator": "==C8",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C8",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-004",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "R6",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "7d0a4241f13846d38eb1c0e45cc6ecf8",
+        "x": 885,
+        "y": 765
+      },
+      "capture": {
+        "part_004": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-004",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "R6",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-R6",
+            "EasyEDA Agent Role": "resistor"
+          },
+          "rotation": 0,
+          "x": 885,
+          "y": 765
+        },
+        "primitiveId": "${part_004}"
+      },
+      "assert": {
+        "$.component.designator": "==R6",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-R6",
+        "$.component.otherProperty.EasyEDA Agent Role": "==resistor"
+      }
+    },
+    {
+      "id": "place-005",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "C9",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "b470d7af3c48415db6a4748fa8e62805",
+        "x": 1005,
+        "y": 690
+      },
+      "capture": {
+        "part_005": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-005",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "C9",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-C9",
+            "EasyEDA Agent Role": "capacitor"
+          },
+          "rotation": 0,
+          "x": 1005,
+          "y": 690
+        },
+        "primitiveId": "${part_005}"
+      },
+      "assert": {
+        "$.component.designator": "==C9",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-C9",
+        "$.component.otherProperty.EasyEDA Agent Role": "==capacitor"
+      }
+    },
+    {
+      "id": "place-006",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "SW1",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "74bd52f1120e4bee9df6a4e8c1f72428",
+        "x": 1035,
+        "y": 765
+      },
+      "capture": {
+        "part_006": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-006",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "SW1",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-SW1",
+            "EasyEDA Agent Role": "switch"
+          },
+          "rotation": 0,
+          "x": 1035,
+          "y": 765
+        },
+        "primitiveId": "${part_006}"
+      },
+      "assert": {
+        "$.component.designator": "==SW1",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-SW1",
+        "$.component.otherProperty.EasyEDA Agent Role": "==switch"
+      }
+    },
+    {
+      "id": "place-007",
+      "action": "schematic.component.place",
+      "payload": {
+        "designator": "H1",
+        "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+        "mirror": false,
+        "rotation": 0,
+        "uuid": "a39f9c9126e24625a6e7edb3fdff00c6",
+        "x": 225,
+        "y": 160
+      },
+      "capture": {
+        "part_007": "$.primitiveId"
+      }
+    },
+    {
+      "id": "orient-007",
+      "action": "schematic.component.modify",
+      "payload": {
+        "patch": {
+          "designator": "H1",
+          "mirror": false,
+          "otherProperty": {
+            "EasyEDA Agent Component ID": "comp-H1",
+            "EasyEDA Agent Role": "connector"
+          },
+          "rotation": 0,
+          "x": 225,
+          "y": 160
+        },
+        "primitiveId": "${part_007}"
+      },
+      "assert": {
+        "$.component.designator": "==H1",
+        "$.component.otherProperty.EasyEDA Agent Component ID": "==comp-H1",
+        "$.component.otherProperty.EasyEDA Agent Role": "==connector"
+      }
+    },
+    {
+      "id": "verify-physical-pins-before-wiring",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {
+          "C7": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "345d8669720442d6a8747f19c9226485"
+            },
+            "x": 390,
+            "y": 345,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 379.5,
+              "minY": 336.5,
+              "maxX": 400.5,
+              "maxY": 353.5
+            },
+            "pins": {
+              "1": {
+                "x": 370,
+                "y": 345
+              },
+              "2": {
+                "x": 410,
+                "y": 345
+              }
+            }
+          },
+          "C8": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 390,
+            "y": 465,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 379.5,
+              "minY": 456.5,
+              "maxX": 400.5,
+              "maxY": 473.5
+            },
+            "pins": {
+              "1": {
+                "x": 370,
+                "y": 465
+              },
+              "2": {
+                "x": 410,
+                "y": 465
+              }
+            }
+          },
+          "C9": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 1005,
+            "y": 690,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 994.5,
+              "minY": 681.5,
+              "maxX": 1015.5,
+              "maxY": 698.5
+            },
+            "pins": {
+              "1": {
+                "x": 985,
+                "y": 690
+              },
+              "2": {
+                "x": 1025,
+                "y": 690
+              }
+            }
+          },
+          "H1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "a39f9c9126e24625a6e7edb3fdff00c6"
+            },
+            "x": 225,
+            "y": 160,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 214.5,
+              "minY": 129.5,
+              "maxX": 235.5,
+              "maxY": 190.5
+            },
+            "pins": {
+              "1": {
+                "x": 205,
+                "y": 180
+              },
+              "2": {
+                "x": 205,
+                "y": 170
+              },
+              "3": {
+                "x": 205,
+                "y": 160
+              },
+              "4": {
+                "x": 205,
+                "y": 150
+              },
+              "5": {
+                "x": 205,
+                "y": 140
+              }
+            }
+          },
+          "H2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "9b540f58c6ad4e26b03d1a299cfb1108"
+            },
+            "x": 200,
+            "y": 695,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 189.5,
+              "minY": 669.5,
+              "maxX": 210.5,
+              "maxY": 720.5
+            },
+            "pins": {
+              "1": {
+                "x": 180,
+                "y": 710
+              },
+              "2": {
+                "x": 180,
+                "y": 700
+              },
+              "3": {
+                "x": 180,
+                "y": 690
+              },
+              "4": {
+                "x": 180,
+                "y": 680
+              }
+            }
+          },
+          "R6": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "7d0a4241f13846d38eb1c0e45cc6ecf8"
+            },
+            "x": 885,
+            "y": 765,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 874.5,
+              "minY": 759.5,
+              "maxX": 895.5,
+              "maxY": 770.5
+            },
+            "pins": {
+              "1": {
+                "x": 865,
+                "y": 765
+              },
+              "2": {
+                "x": 905,
+                "y": 765
+              }
+            }
+          },
+          "SW1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "74bd52f1120e4bee9df6a4e8c1f72428"
+            },
+            "x": 1035,
+            "y": 765,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 1024.5,
+              "minY": 763,
+              "maxX": 1045.5,
+              "maxY": 772.5
+            },
+            "pins": {
+              "1": {
+                "x": 1015,
+                "y": 765
+              },
+              "2": {
+                "x": 1055,
+                "y": 765
+              }
+            }
+          },
+          "U1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "cbb003c3987643819c5e2cec9988e2cb"
+            },
+            "x": 690,
+            "y": 420,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 619.5,
+              "minY": 319.5,
+              "maxX": 760.5,
+              "maxY": 520.5
+            },
+            "pins": {
+              "1": {
+                "x": 610,
+                "y": 510
+              },
+              "10": {
+                "x": 610,
+                "y": 420
+              },
+              "11": {
+                "x": 610,
+                "y": 410
+              },
+              "12": {
+                "x": 610,
+                "y": 400
+              },
+              "13": {
+                "x": 610,
+                "y": 390
+              },
+              "14": {
+                "x": 610,
+                "y": 380
+              },
+              "15": {
+                "x": 610,
+                "y": 370
+              },
+              "16": {
+                "x": 610,
+                "y": 360
+              },
+              "17": {
+                "x": 610,
+                "y": 350
+              },
+              "18": {
+                "x": 610,
+                "y": 340
+              },
+              "19": {
+                "x": 610,
+                "y": 330
+              },
+              "2": {
+                "x": 610,
+                "y": 500
+              },
+              "20": {
+                "x": 770,
+                "y": 335
+              },
+              "21": {
+                "x": 770,
+                "y": 345
+              },
+              "22": {
+                "x": 770,
+                "y": 355
+              },
+              "23": {
+                "x": 770,
+                "y": 365
+              },
+              "24": {
+                "x": 770,
+                "y": 375
+              },
+              "25": {
+                "x": 770,
+                "y": 385
+              },
+              "26": {
+                "x": 770,
+                "y": 395
+              },
+              "27": {
+                "x": 770,
+                "y": 405
+              },
+              "28": {
+                "x": 770,
+                "y": 415
+              },
+              "29": {
+                "x": 770,
+                "y": 425
+              },
+              "3": {
+                "x": 610,
+                "y": 490
+              },
+              "30": {
+                "x": 770,
+                "y": 435
+              },
+              "31": {
+                "x": 770,
+                "y": 445
+              },
+              "32": {
+                "x": 770,
+                "y": 455
+              },
+              "33": {
+                "x": 770,
+                "y": 465
+              },
+              "34": {
+                "x": 770,
+                "y": 475
+              },
+              "35": {
+                "x": 770,
+                "y": 485
+              },
+              "36": {
+                "x": 770,
+                "y": 495
+              },
+              "37": {
+                "x": 770,
+                "y": 505
+              },
+              "4": {
+                "x": 610,
+                "y": 480
+              },
+              "5": {
+                "x": 610,
+                "y": 470
+              },
+              "6": {
+                "x": 610,
+                "y": 460
+              },
+              "7": {
+                "x": 610,
+                "y": 450
+              },
+              "8": {
+                "x": 610,
+                "y": 440
+              },
+              "9": {
+                "x": 610,
+                "y": 430
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "save-placed-parts",
+      "action": "schematic.save",
+      "assert": {
+        "$.saved": "true"
+      }
+    },
+    {
+      "id": "nc-001",
+      "action": "schematic.pin.set_no_connect",
+      "payload": {
+        "designator": "U1",
+        "noConnected": true,
+        "pins": [
+          "1",
+          "12",
+          "15",
+          "16",
+          "17",
+          "19",
+          "20",
+          "22",
+          "23",
+          "24",
+          "25",
+          "27",
+          "28",
+          "29",
+          "3",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "assert": {
+        "$.notApplied": "len==0"
+      }
+    },
+    {
+      "id": "wire-000",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            180,
+            710
+          ],
+          [
+            175,
+            710
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-001",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            175,
+            710
+          ],
+          [
+            175,
+            715
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-002",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            980,
+            690
+          ],
+          [
+            985,
+            690
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-003",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            770,
+            505
+          ],
+          [
+            980,
+            505
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-004",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            980,
+            505
+          ],
+          [
+            980,
+            690
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-005",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            980,
+            690
+          ],
+          [
+            980,
+            765
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-006",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            905,
+            765
+          ],
+          [
+            980,
+            765
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-007",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            980,
+            765
+          ],
+          [
+            1015,
+            765
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-008",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            370,
+            345
+          ],
+          [
+            365,
+            345
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-009",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            370,
+            465
+          ],
+          [
+            365,
+            465
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-010",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            365,
+            345
+          ],
+          [
+            365,
+            390
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-011",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            365,
+            390
+          ],
+          [
+            365,
+            465
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-012",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            365,
+            390
+          ],
+          [
+            595,
+            390
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-013",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            595,
+            390
+          ],
+          [
+            610,
+            390
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-014",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            595,
+            390
+          ],
+          [
+            595,
+            395
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-015",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            205,
+            170
+          ],
+          [
+            200,
+            170
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-016",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            200,
+            170
+          ],
+          [
+            200,
+            175
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-017",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            205,
+            180
+          ],
+          [
+            200,
+            180
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wire-018",
+      "action": "schematic.wire.create",
+      "payload": {
+        "points": [
+          [
+            200,
+            180
+          ],
+          [
+            200,
+            185
+          ]
+        ]
+      }
+    },
+    {
+      "id": "marker-000",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "RST",
+        "offset": 10,
+        "pinX": 180,
+        "pinY": 680
+      }
+    },
+    {
+      "id": "marker-001",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "SWS",
+        "offset": 75,
+        "pinX": 180,
+        "pinY": 690
+      }
+    },
+    {
+      "id": "marker-002",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 25,
+        "pinX": 180,
+        "pinY": 700
+      }
+    },
+    {
+      "id": "marker-003",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 10,
+        "pinX": 175,
+        "pinY": 715
+      }
+    },
+    {
+      "id": "marker-004",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 25,
+        "pinX": 865,
+        "pinY": 765
+      }
+    },
+    {
+      "id": "marker-005",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 1055,
+        "pinY": 765
+      }
+    },
+    {
+      "id": "marker-006",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 1025,
+        "pinY": 690
+      }
+    },
+    {
+      "id": "marker-007",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "net_port_bi",
+        "net": "RST",
+        "offset": 10,
+        "pinX": 875,
+        "pinY": 505
+      }
+    },
+    {
+      "id": "marker-008",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 610,
+        "pinY": 500
+      }
+    },
+    {
+      "id": "marker-009",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 230,
+        "pinX": 770,
+        "pinY": 495
+      }
+    },
+    {
+      "id": "marker-010",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "PWR_EN",
+        "offset": 40,
+        "pinX": 610,
+        "pinY": 480
+      }
+    },
+    {
+      "id": "marker-011",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 410,
+        "pinY": 465
+      }
+    },
+    {
+      "id": "marker-012",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "DM",
+        "offset": 10,
+        "pinX": 610,
+        "pinY": 420
+      }
+    },
+    {
+      "id": "marker-013",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "DP",
+        "offset": 70,
+        "pinX": 610,
+        "pinY": 410
+      }
+    },
+    {
+      "id": "marker-014",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "net_port_bi",
+        "net": "SWS",
+        "offset": 10,
+        "pinX": 770,
+        "pinY": 395
+      }
+    },
+    {
+      "id": "marker-015",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 35,
+        "pinX": 595,
+        "pinY": 395
+      }
+    },
+    {
+      "id": "marker-016",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 265,
+        "pinX": 610,
+        "pinY": 380
+      }
+    },
+    {
+      "id": "marker-017",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 25,
+        "pinX": 410,
+        "pinY": 345
+      }
+    },
+    {
+      "id": "marker-018",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "right",
+        "kind": "net_port_bi",
+        "net": "EXT_RST",
+        "offset": 10,
+        "pinX": 770,
+        "pinY": 345
+      }
+    },
+    {
+      "id": "marker-019",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "SWM",
+        "offset": 10,
+        "pinX": 610,
+        "pinY": 340
+      }
+    },
+    {
+      "id": "marker-020",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "EXT_RST",
+        "offset": 10,
+        "pinX": 205,
+        "pinY": 140
+      }
+    },
+    {
+      "id": "marker-021",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "net_port_bi",
+        "net": "SWM",
+        "offset": 100,
+        "pinX": 205,
+        "pinY": 150
+      }
+    },
+    {
+      "id": "marker-022",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "power",
+        "net": "3V3",
+        "offset": 25,
+        "pinX": 205,
+        "pinY": 160
+      }
+    },
+    {
+      "id": "marker-023",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "left",
+        "kind": "power",
+        "net": "PWR",
+        "offset": 45,
+        "pinX": 200,
+        "pinY": 175
+      }
+    },
+    {
+      "id": "marker-024",
+      "action": "schematic.power.connect_pin",
+      "payload": {
+        "direction": "up",
+        "kind": "ground",
+        "net": "GND",
+        "offset": 10,
+        "pinX": 200,
+        "pinY": 185
+      }
+    },
+    {
+      "id": "register-lib-000",
+      "run": "sch group create",
+      "flags": {
+        "if-absent": true,
+        "members": "H2",
+        "name": "SELF_HDR"
+      }
+    },
+    {
+      "id": "register-lib-001",
+      "run": "sch group create",
+      "flags": {
+        "if-absent": true,
+        "members": "U1,C7,C8,R6,C9,SW1",
+        "name": "TLSR_CORE"
+      }
+    },
+    {
+      "id": "register-lib-002",
+      "run": "sch group create",
+      "flags": {
+        "if-absent": true,
+        "members": "H1",
+        "name": "TARGET_HDR"
+      }
+    },
+    {
+      "id": "apply-module-frames",
+      "run": "sch frame apply",
+      "flags": {
+        "data": "{\"schemaVersion\":1,\"documentId\":\"b045c1e614ab13da\",\"frames\":[{\"id\":\"SELF_HDR\",\"title\":\"Self-Prog 1x4P (H2)\",\"rect\":{\"minX\":25,\"minY\":635,\"maxX\":300,\"maxY\":800},\"titleX\":40,\"titleY\":785,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":245,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":189.5,\"minY\":649.5,\"maxX\":210.5,\"maxY\":735.5},{\"minX\":190,\"minY\":720,\"maxX\":211.659667969,\"maxY\":728},{\"minX\":179.5,\"minY\":709.5,\"maxX\":190,\"maxY\":710.5},{\"minX\":179.5,\"minY\":699.5,\"maxX\":190,\"maxY\":700.5},{\"minX\":179.5,\"minY\":689.5,\"maxX\":190,\"maxY\":690.5},{\"minX\":179.5,\"minY\":679.5,\"maxX\":190,\"maxY\":680.5},{\"minX\":174.5,\"minY\":709.5,\"maxX\":180.5,\"maxY\":710.5},{\"minX\":174.5,\"minY\":709.5,\"maxX\":175.5,\"maxY\":715.5},{\"minX\":169.5,\"minY\":679.5,\"maxX\":180.5,\"maxY\":680.5},{\"minX\":129.5,\"minY\":674.5,\"maxX\":160.5,\"maxY\":685.5},{\"minX\":103.5,\"minY\":674.5,\"maxX\":129.5,\"maxY\":685.5},{\"minX\":104.5,\"minY\":689.5,\"maxX\":180.5,\"maxY\":690.5},{\"minX\":64.5,\"minY\":684.5,\"maxX\":95.5,\"maxY\":695.5},{\"minX\":38.5,\"minY\":684.5,\"maxX\":64.5,\"maxY\":695.5},{\"minX\":154.5,\"minY\":699.5,\"maxX\":180.5,\"maxY\":700.5},{\"minX\":144.5,\"minY\":694.5,\"maxX\":150.5,\"maxY\":705.5},{\"minX\":155,\"minY\":700,\"maxX\":173,\"maxY\":712},{\"minX\":174.5,\"minY\":714.5,\"maxX\":175.5,\"maxY\":725.5},{\"minX\":164.5,\"minY\":734.5,\"maxX\":185.5,\"maxY\":744.5},{\"minX\":166,\"minY\":744.5,\"maxX\":184,\"maxY\":756.5}]}},{\"id\":\"TLSR_CORE\",\"title\":\"E180-Z6907A Core \\u0026 Reset\",\"rect\":{\"minX\":315,\"minY\":285,\"maxX\":1110,\"maxY\":800},\"titleX\":330,\"titleY\":785,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":310,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":619.5,\"minY\":299.5,\"maxX\":760.5,\"maxY\":535.5},{\"minX\":620,\"minY\":520,\"maxX\":638.286132812,\"maxY\":528},{\"minX\":609.5,\"minY\":509.5,\"maxX\":620,\"maxY\":510.5},{\"minX\":609.5,\"minY\":499.5,\"maxX\":620,\"maxY\":500.5},{\"minX\":609.5,\"minY\":489.5,\"maxX\":620,\"maxY\":490.5},{\"minX\":609.5,\"minY\":479.5,\"maxX\":620,\"maxY\":480.5},{\"minX\":609.5,\"minY\":469.5,\"maxX\":620,\"maxY\":470.5},{\"minX\":609.5,\"minY\":459.5,\"maxX\":620,\"maxY\":460.5},{\"minX\":609.5,\"minY\":449.5,\"maxX\":620,\"maxY\":450.5},{\"minX\":609.5,\"minY\":439.5,\"maxX\":620,\"maxY\":440.5},{\"minX\":609.5,\"minY\":429.5,\"maxX\":620,\"maxY\":430.5},{\"minX\":609.5,\"minY\":419.5,\"maxX\":620,\"maxY\":420.5},{\"minX\":609.5,\"minY\":409.5,\"maxX\":620,\"maxY\":410.5},{\"minX\":609.5,\"minY\":399.5,\"maxX\":620,\"maxY\":400.5},{\"minX\":609.5,\"minY\":389.5,\"maxX\":620,\"maxY\":390.5},{\"minX\":609.5,\"minY\":379.5,\"maxX\":620,\"maxY\":380.5},{\"minX\":609.5,\"minY\":369.5,\"maxX\":620,\"maxY\":370.5},{\"minX\":609.5,\"minY\":359.5,\"maxX\":620,\"maxY\":360.5},{\"minX\":609.5,\"minY\":349.5,\"maxX\":620,\"maxY\":350.5},{\"minX\":609.5,\"minY\":339.5,\"maxX\":620,\"maxY\":340.5},{\"minX\":609.5,\"minY\":329.5,\"maxX\":620,\"maxY\":330.5},{\"minX\":760,\"minY\":334.5,\"maxX\":770.5,\"maxY\":335.5},{\"minX\":760,\"minY\":344.5,\"maxX\":770.5,\"maxY\":345.5},{\"minX\":760,\"minY\":354.5,\"maxX\":770.5,\"maxY\":355.5},{\"minX\":760,\"minY\":364.5,\"maxX\":770.5,\"maxY\":365.5},{\"minX\":760,\"minY\":374.5,\"maxX\":770.5,\"maxY\":375.5},{\"minX\":760,\"minY\":384.5,\"maxX\":770.5,\"maxY\":385.5},{\"minX\":760,\"minY\":394.5,\"maxX\":770.5,\"maxY\":395.5},{\"minX\":760,\"minY\":404.5,\"maxX\":770.5,\"maxY\":405.5},{\"minX\":760,\"minY\":414.5,\"maxX\":770.5,\"maxY\":415.5},{\"minX\":760,\"minY\":424.5,\"maxX\":770.5,\"maxY\":425.5},{\"minX\":760,\"minY\":434.5,\"maxX\":770.5,\"maxY\":435.5},{\"minX\":760,\"minY\":444.5,\"maxX\":770.5,\"maxY\":445.5},{\"minX\":760,\"minY\":454.5,\"maxX\":770.5,\"maxY\":455.5},{\"minX\":760,\"minY\":464.5,\"maxX\":770.5,\"maxY\":465.5},{\"minX\":760,\"minY\":474.5,\"maxX\":770.5,\"maxY\":475.5},{\"minX\":760,\"minY\":484.5,\"maxX\":770.5,\"maxY\":485.5},{\"minX\":760,\"minY\":494.5,\"maxX\":770.5,\"maxY\":495.5},{\"minX\":760,\"minY\":504.5,\"maxX\":770.5,\"maxY\":505.5},{\"minX\":379.5,\"minY\":316.5,\"maxX\":400.5,\"maxY\":368.5},{\"minX\":380,\"minY\":355,\"maxX\":402.179199219,\"maxY\":363},{\"minX\":369.5,\"minY\":344.5,\"maxX\":380,\"maxY\":345.5},{\"minX\":400,\"minY\":344.5,\"maxX\":410.5,\"maxY\":345.5},{\"minX\":379.5,\"minY\":436.5,\"maxX\":400.5,\"maxY\":488.5},{\"minX\":380,\"minY\":475,\"maxX\":402.179199219,\"maxY\":483},{\"minX\":369.5,\"minY\":464.5,\"maxX\":380,\"maxY\":465.5},{\"minX\":400,\"minY\":464.5,\"maxX\":410.5,\"maxY\":465.5},{\"minX\":874.5,\"minY\":739.5,\"maxX\":895.5,\"maxY\":785.5},{\"minX\":875,\"minY\":770,\"maxX\":897.179199219,\"maxY\":778},{\"minX\":895,\"minY\":764.5,\"maxX\":905.5,\"maxY\":765.5},{\"minX\":864.5,\"minY\":764.5,\"maxX\":875,\"maxY\":765.5},{\"minX\":994.5,\"minY\":661.5,\"maxX\":1015.5,\"maxY\":713.5},{\"minX\":995,\"minY\":700,\"maxX\":1017.179199219,\"maxY\":708},{\"minX\":984.5,\"minY\":689.5,\"maxX\":995,\"maxY\":690.5},{\"minX\":1015,\"minY\":689.5,\"maxX\":1025.5,\"maxY\":690.5},{\"minX\":1024.5,\"minY\":743,\"maxX\":1045.5,\"maxY\":787.5},{\"minX\":1025,\"minY\":775,\"maxX\":1043.286132812,\"maxY\":783},{\"minX\":1014.5,\"minY\":764.5,\"maxX\":1025,\"maxY\":765.5},{\"minX\":1045,\"minY\":764.5,\"maxX\":1055.5,\"maxY\":765.5},{\"minX\":979.5,\"minY\":689.5,\"maxX\":985.5,\"maxY\":690.5},{\"minX\":769.5,\"minY\":504.5,\"maxX\":980.5,\"maxY\":505.5},{\"minX\":979.5,\"minY\":504.5,\"maxX\":980.5,\"maxY\":690.5},{\"minX\":979.5,\"minY\":689.5,\"maxX\":980.5,\"maxY\":765.5},{\"minX\":904.5,\"minY\":764.5,\"maxX\":980.5,\"maxY\":765.5},{\"minX\":979.5,\"minY\":764.5,\"maxX\":1015.5,\"maxY\":765.5},{\"minX\":364.5,\"minY\":344.5,\"maxX\":370.5,\"maxY\":345.5},{\"minX\":364.5,\"minY\":464.5,\"maxX\":370.5,\"maxY\":465.5},{\"minX\":364.5,\"minY\":344.5,\"maxX\":365.5,\"maxY\":390.5},{\"minX\":364.5,\"minY\":389.5,\"maxX\":365.5,\"maxY\":465.5},{\"minX\":364.5,\"minY\":389.5,\"maxX\":595.5,\"maxY\":390.5},{\"minX\":594.5,\"minY\":389.5,\"maxX\":610.5,\"maxY\":390.5},{\"minX\":594.5,\"minY\":389.5,\"maxX\":595.5,\"maxY\":395.5},{\"minX\":839.5,\"minY\":764.5,\"maxX\":865.5,\"maxY\":765.5},{\"minX\":829.5,\"minY\":759.5,\"maxX\":835.5,\"maxY\":770.5},{\"minX\":840,\"minY\":765,\"maxX\":858,\"maxY\":777},{\"minX\":1054.5,\"minY\":764.5,\"maxX\":1080.5,\"maxY\":765.5},{\"minX\":1089.5,\"minY\":754.5,\"maxX\":1099.5,\"maxY\":775.5},{\"minX\":1062,\"minY\":765,\"maxX\":1080,\"maxY\":777},{\"minX\":1024.5,\"minY\":689.5,\"maxX\":1050.5,\"maxY\":690.5},{\"minX\":1059.5,\"minY\":679.5,\"maxX\":1069.5,\"maxY\":700.5},{\"minX\":1032,\"minY\":690,\"maxX\":1050,\"maxY\":702},{\"minX\":874.5,\"minY\":504.5,\"maxX\":875.5,\"maxY\":515.5},{\"minX\":869.5,\"minY\":524.5,\"maxX\":880.5,\"maxY\":555.5},{\"minX\":869.5,\"minY\":555.5,\"maxX\":880.5,\"maxY\":581.5},{\"minX\":584.5,\"minY\":499.5,\"maxX\":610.5,\"maxY\":500.5},{\"minX\":565.5,\"minY\":489.5,\"maxX\":575.5,\"maxY\":510.5},{\"minX\":585,\"minY\":500,\"maxX\":603,\"maxY\":512},{\"minX\":769.5,\"minY\":494.5,\"maxX\":1000.5,\"maxY\":495.5},{\"minX\":1009.5,\"minY\":484.5,\"maxX\":1019.5,\"maxY\":505.5},{\"minX\":982,\"minY\":495,\"maxX\":1000,\"maxY\":507},{\"minX\":569.5,\"minY\":479.5,\"maxX\":610.5,\"maxY\":480.5},{\"minX\":529.5,\"minY\":474.5,\"maxX\":560.5,\"maxY\":485.5},{\"minX\":485.5,\"minY\":474.5,\"maxX\":529.5,\"maxY\":485.5},{\"minX\":409.5,\"minY\":464.5,\"maxX\":435.5,\"maxY\":465.5},{\"minX\":444.5,\"minY\":454.5,\"maxX\":454.5,\"maxY\":475.5},{\"minX\":417,\"minY\":465,\"maxX\":435,\"maxY\":477},{\"minX\":599.5,\"minY\":419.5,\"maxX\":610.5,\"maxY\":420.5},{\"minX\":559.5,\"minY\":414.5,\"maxX\":590.5,\"maxY\":425.5},{\"minX\":539.5,\"minY\":414.5,\"maxX\":559.5,\"maxY\":425.5},{\"minX\":539.5,\"minY\":409.5,\"maxX\":610.5,\"maxY\":410.5},{\"minX\":499.5,\"minY\":404.5,\"maxX\":530.5,\"maxY\":415.5},{\"minX\":479.5,\"minY\":404.5,\"maxX\":499.5,\"maxY\":415.5},{\"minX\":769.5,\"minY\":394.5,\"maxX\":780.5,\"maxY\":395.5},{\"minX\":789.5,\"minY\":389.5,\"maxX\":820.5,\"maxY\":400.5},{\"minX\":820.5,\"minY\":389.5,\"maxX\":846.5,\"maxY\":400.5},{\"minX\":594.5,\"minY\":394.5,\"maxX\":595.5,\"maxY\":430.5},{\"minX\":589.5,\"minY\":434.5,\"maxX\":600.5,\"maxY\":440.5},{\"minX\":586,\"minY\":440.5,\"maxX\":604,\"maxY\":452.5},{\"minX\":344.5,\"minY\":379.5,\"maxX\":610.5,\"maxY\":380.5},{\"minX\":325.5,\"minY\":369.5,\"maxX\":335.5,\"maxY\":390.5},{\"minX\":345,\"minY\":380,\"maxX\":363,\"maxY\":392},{\"minX\":409.5,\"minY\":344.5,\"maxX\":435.5,\"maxY\":345.5},{\"minX\":444.5,\"minY\":334.5,\"maxX\":454.5,\"maxY\":355.5},{\"minX\":417,\"minY\":345,\"maxX\":435,\"maxY\":357},{\"minX\":769.5,\"minY\":344.5,\"maxX\":780.5,\"maxY\":345.5},{\"minX\":789.5,\"minY\":339.5,\"maxX\":820.5,\"maxY\":350.5},{\"minX\":820.5,\"minY\":339.5,\"maxX\":870.5,\"maxY\":350.5},{\"minX\":599.5,\"minY\":339.5,\"maxX\":610.5,\"maxY\":340.5},{\"minX\":559.5,\"minY\":334.5,\"maxX\":590.5,\"maxY\":345.5},{\"minX\":533.5,\"minY\":334.5,\"maxX\":559.5,\"maxY\":345.5}]}},{\"id\":\"TARGET_HDR\",\"title\":\"Target SWire 1x5P (H1)\",\"rect\":{\"minX\":25,\"minY\":95,\"maxX\":340,\"maxY\":270},\"titleX\":40,\"titleY\":255,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":285,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":214.5,\"minY\":109.5,\"maxX\":235.5,\"maxY\":205.5},{\"minX\":215,\"minY\":190,\"maxX\":237.179199219,\"maxY\":198},{\"minX\":204.5,\"minY\":179.5,\"maxX\":215,\"maxY\":180.5},{\"minX\":204.5,\"minY\":169.5,\"maxX\":215,\"maxY\":170.5},{\"minX\":204.5,\"minY\":159.5,\"maxX\":215,\"maxY\":160.5},{\"minX\":204.5,\"minY\":149.5,\"maxX\":215,\"maxY\":150.5},{\"minX\":204.5,\"minY\":139.5,\"maxX\":215,\"maxY\":140.5},{\"minX\":199.5,\"minY\":169.5,\"maxX\":205.5,\"maxY\":170.5},{\"minX\":199.5,\"minY\":169.5,\"maxX\":200.5,\"maxY\":175.5},{\"minX\":199.5,\"minY\":179.5,\"maxX\":205.5,\"maxY\":180.5},{\"minX\":199.5,\"minY\":179.5,\"maxX\":200.5,\"maxY\":185.5},{\"minX\":194.5,\"minY\":139.5,\"maxX\":205.5,\"maxY\":140.5},{\"minX\":154.5,\"minY\":134.5,\"maxX\":185.5,\"maxY\":145.5},{\"minX\":104.5,\"minY\":134.5,\"maxX\":154.5,\"maxY\":145.5},{\"minX\":104.5,\"minY\":149.5,\"maxX\":205.5,\"maxY\":150.5},{\"minX\":64.5,\"minY\":144.5,\"maxX\":95.5,\"maxY\":155.5},{\"minX\":38.5,\"minY\":144.5,\"maxX\":64.5,\"maxY\":155.5},{\"minX\":179.5,\"minY\":159.5,\"maxX\":205.5,\"maxY\":160.5},{\"minX\":169.5,\"minY\":154.5,\"maxX\":175.5,\"maxY\":165.5},{\"minX\":180,\"minY\":160,\"maxX\":198,\"maxY\":172},{\"minX\":154.5,\"minY\":174.5,\"maxX\":200.5,\"maxY\":175.5},{\"minX\":144.5,\"minY\":169.5,\"maxX\":150.5,\"maxY\":180.5},{\"minX\":155,\"minY\":175,\"maxX\":173,\"maxY\":187},{\"minX\":199.5,\"minY\":184.5,\"maxX\":200.5,\"maxY\":195.5},{\"minX\":189.5,\"minY\":204.5,\"maxX\":210.5,\"maxY\":214.5},{\"minX\":191,\"minY\":214.5,\"maxX\":209,\"maxY\":226.5}]}}]}"
+      },
+      "assert": {
+        "$.verified": "true"
+      }
+    },
+    {
+      "id": "verify-module-frames",
+      "run": "sch frame check",
+      "flags": {
+        "data": "{\"schemaVersion\":1,\"documentId\":\"b045c1e614ab13da\",\"frames\":[{\"id\":\"SELF_HDR\",\"title\":\"Self-Prog 1x4P (H2)\",\"rect\":{\"minX\":25,\"minY\":635,\"maxX\":300,\"maxY\":800},\"titleX\":40,\"titleY\":785,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":245,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":189.5,\"minY\":649.5,\"maxX\":210.5,\"maxY\":735.5},{\"minX\":190,\"minY\":720,\"maxX\":211.659667969,\"maxY\":728},{\"minX\":179.5,\"minY\":709.5,\"maxX\":190,\"maxY\":710.5},{\"minX\":179.5,\"minY\":699.5,\"maxX\":190,\"maxY\":700.5},{\"minX\":179.5,\"minY\":689.5,\"maxX\":190,\"maxY\":690.5},{\"minX\":179.5,\"minY\":679.5,\"maxX\":190,\"maxY\":680.5},{\"minX\":174.5,\"minY\":709.5,\"maxX\":180.5,\"maxY\":710.5},{\"minX\":174.5,\"minY\":709.5,\"maxX\":175.5,\"maxY\":715.5},{\"minX\":169.5,\"minY\":679.5,\"maxX\":180.5,\"maxY\":680.5},{\"minX\":129.5,\"minY\":674.5,\"maxX\":160.5,\"maxY\":685.5},{\"minX\":103.5,\"minY\":674.5,\"maxX\":129.5,\"maxY\":685.5},{\"minX\":104.5,\"minY\":689.5,\"maxX\":180.5,\"maxY\":690.5},{\"minX\":64.5,\"minY\":684.5,\"maxX\":95.5,\"maxY\":695.5},{\"minX\":38.5,\"minY\":684.5,\"maxX\":64.5,\"maxY\":695.5},{\"minX\":154.5,\"minY\":699.5,\"maxX\":180.5,\"maxY\":700.5},{\"minX\":144.5,\"minY\":694.5,\"maxX\":150.5,\"maxY\":705.5},{\"minX\":155,\"minY\":700,\"maxX\":173,\"maxY\":712},{\"minX\":174.5,\"minY\":714.5,\"maxX\":175.5,\"maxY\":725.5},{\"minX\":164.5,\"minY\":734.5,\"maxX\":185.5,\"maxY\":744.5},{\"minX\":166,\"minY\":744.5,\"maxX\":184,\"maxY\":756.5}]}},{\"id\":\"TLSR_CORE\",\"title\":\"E180-Z6907A Core \\u0026 Reset\",\"rect\":{\"minX\":315,\"minY\":285,\"maxX\":1110,\"maxY\":800},\"titleX\":330,\"titleY\":785,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":310,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":619.5,\"minY\":299.5,\"maxX\":760.5,\"maxY\":535.5},{\"minX\":620,\"minY\":520,\"maxX\":638.286132812,\"maxY\":528},{\"minX\":609.5,\"minY\":509.5,\"maxX\":620,\"maxY\":510.5},{\"minX\":609.5,\"minY\":499.5,\"maxX\":620,\"maxY\":500.5},{\"minX\":609.5,\"minY\":489.5,\"maxX\":620,\"maxY\":490.5},{\"minX\":609.5,\"minY\":479.5,\"maxX\":620,\"maxY\":480.5},{\"minX\":609.5,\"minY\":469.5,\"maxX\":620,\"maxY\":470.5},{\"minX\":609.5,\"minY\":459.5,\"maxX\":620,\"maxY\":460.5},{\"minX\":609.5,\"minY\":449.5,\"maxX\":620,\"maxY\":450.5},{\"minX\":609.5,\"minY\":439.5,\"maxX\":620,\"maxY\":440.5},{\"minX\":609.5,\"minY\":429.5,\"maxX\":620,\"maxY\":430.5},{\"minX\":609.5,\"minY\":419.5,\"maxX\":620,\"maxY\":420.5},{\"minX\":609.5,\"minY\":409.5,\"maxX\":620,\"maxY\":410.5},{\"minX\":609.5,\"minY\":399.5,\"maxX\":620,\"maxY\":400.5},{\"minX\":609.5,\"minY\":389.5,\"maxX\":620,\"maxY\":390.5},{\"minX\":609.5,\"minY\":379.5,\"maxX\":620,\"maxY\":380.5},{\"minX\":609.5,\"minY\":369.5,\"maxX\":620,\"maxY\":370.5},{\"minX\":609.5,\"minY\":359.5,\"maxX\":620,\"maxY\":360.5},{\"minX\":609.5,\"minY\":349.5,\"maxX\":620,\"maxY\":350.5},{\"minX\":609.5,\"minY\":339.5,\"maxX\":620,\"maxY\":340.5},{\"minX\":609.5,\"minY\":329.5,\"maxX\":620,\"maxY\":330.5},{\"minX\":760,\"minY\":334.5,\"maxX\":770.5,\"maxY\":335.5},{\"minX\":760,\"minY\":344.5,\"maxX\":770.5,\"maxY\":345.5},{\"minX\":760,\"minY\":354.5,\"maxX\":770.5,\"maxY\":355.5},{\"minX\":760,\"minY\":364.5,\"maxX\":770.5,\"maxY\":365.5},{\"minX\":760,\"minY\":374.5,\"maxX\":770.5,\"maxY\":375.5},{\"minX\":760,\"minY\":384.5,\"maxX\":770.5,\"maxY\":385.5},{\"minX\":760,\"minY\":394.5,\"maxX\":770.5,\"maxY\":395.5},{\"minX\":760,\"minY\":404.5,\"maxX\":770.5,\"maxY\":405.5},{\"minX\":760,\"minY\":414.5,\"maxX\":770.5,\"maxY\":415.5},{\"minX\":760,\"minY\":424.5,\"maxX\":770.5,\"maxY\":425.5},{\"minX\":760,\"minY\":434.5,\"maxX\":770.5,\"maxY\":435.5},{\"minX\":760,\"minY\":444.5,\"maxX\":770.5,\"maxY\":445.5},{\"minX\":760,\"minY\":454.5,\"maxX\":770.5,\"maxY\":455.5},{\"minX\":760,\"minY\":464.5,\"maxX\":770.5,\"maxY\":465.5},{\"minX\":760,\"minY\":474.5,\"maxX\":770.5,\"maxY\":475.5},{\"minX\":760,\"minY\":484.5,\"maxX\":770.5,\"maxY\":485.5},{\"minX\":760,\"minY\":494.5,\"maxX\":770.5,\"maxY\":495.5},{\"minX\":760,\"minY\":504.5,\"maxX\":770.5,\"maxY\":505.5},{\"minX\":379.5,\"minY\":316.5,\"maxX\":400.5,\"maxY\":368.5},{\"minX\":380,\"minY\":355,\"maxX\":402.179199219,\"maxY\":363},{\"minX\":369.5,\"minY\":344.5,\"maxX\":380,\"maxY\":345.5},{\"minX\":400,\"minY\":344.5,\"maxX\":410.5,\"maxY\":345.5},{\"minX\":379.5,\"minY\":436.5,\"maxX\":400.5,\"maxY\":488.5},{\"minX\":380,\"minY\":475,\"maxX\":402.179199219,\"maxY\":483},{\"minX\":369.5,\"minY\":464.5,\"maxX\":380,\"maxY\":465.5},{\"minX\":400,\"minY\":464.5,\"maxX\":410.5,\"maxY\":465.5},{\"minX\":874.5,\"minY\":739.5,\"maxX\":895.5,\"maxY\":785.5},{\"minX\":875,\"minY\":770,\"maxX\":897.179199219,\"maxY\":778},{\"minX\":895,\"minY\":764.5,\"maxX\":905.5,\"maxY\":765.5},{\"minX\":864.5,\"minY\":764.5,\"maxX\":875,\"maxY\":765.5},{\"minX\":994.5,\"minY\":661.5,\"maxX\":1015.5,\"maxY\":713.5},{\"minX\":995,\"minY\":700,\"maxX\":1017.179199219,\"maxY\":708},{\"minX\":984.5,\"minY\":689.5,\"maxX\":995,\"maxY\":690.5},{\"minX\":1015,\"minY\":689.5,\"maxX\":1025.5,\"maxY\":690.5},{\"minX\":1024.5,\"minY\":743,\"maxX\":1045.5,\"maxY\":787.5},{\"minX\":1025,\"minY\":775,\"maxX\":1043.286132812,\"maxY\":783},{\"minX\":1014.5,\"minY\":764.5,\"maxX\":1025,\"maxY\":765.5},{\"minX\":1045,\"minY\":764.5,\"maxX\":1055.5,\"maxY\":765.5},{\"minX\":979.5,\"minY\":689.5,\"maxX\":985.5,\"maxY\":690.5},{\"minX\":769.5,\"minY\":504.5,\"maxX\":980.5,\"maxY\":505.5},{\"minX\":979.5,\"minY\":504.5,\"maxX\":980.5,\"maxY\":690.5},{\"minX\":979.5,\"minY\":689.5,\"maxX\":980.5,\"maxY\":765.5},{\"minX\":904.5,\"minY\":764.5,\"maxX\":980.5,\"maxY\":765.5},{\"minX\":979.5,\"minY\":764.5,\"maxX\":1015.5,\"maxY\":765.5},{\"minX\":364.5,\"minY\":344.5,\"maxX\":370.5,\"maxY\":345.5},{\"minX\":364.5,\"minY\":464.5,\"maxX\":370.5,\"maxY\":465.5},{\"minX\":364.5,\"minY\":344.5,\"maxX\":365.5,\"maxY\":390.5},{\"minX\":364.5,\"minY\":389.5,\"maxX\":365.5,\"maxY\":465.5},{\"minX\":364.5,\"minY\":389.5,\"maxX\":595.5,\"maxY\":390.5},{\"minX\":594.5,\"minY\":389.5,\"maxX\":610.5,\"maxY\":390.5},{\"minX\":594.5,\"minY\":389.5,\"maxX\":595.5,\"maxY\":395.5},{\"minX\":839.5,\"minY\":764.5,\"maxX\":865.5,\"maxY\":765.5},{\"minX\":829.5,\"minY\":759.5,\"maxX\":835.5,\"maxY\":770.5},{\"minX\":840,\"minY\":765,\"maxX\":858,\"maxY\":777},{\"minX\":1054.5,\"minY\":764.5,\"maxX\":1080.5,\"maxY\":765.5},{\"minX\":1089.5,\"minY\":754.5,\"maxX\":1099.5,\"maxY\":775.5},{\"minX\":1062,\"minY\":765,\"maxX\":1080,\"maxY\":777},{\"minX\":1024.5,\"minY\":689.5,\"maxX\":1050.5,\"maxY\":690.5},{\"minX\":1059.5,\"minY\":679.5,\"maxX\":1069.5,\"maxY\":700.5},{\"minX\":1032,\"minY\":690,\"maxX\":1050,\"maxY\":702},{\"minX\":874.5,\"minY\":504.5,\"maxX\":875.5,\"maxY\":515.5},{\"minX\":869.5,\"minY\":524.5,\"maxX\":880.5,\"maxY\":555.5},{\"minX\":869.5,\"minY\":555.5,\"maxX\":880.5,\"maxY\":581.5},{\"minX\":584.5,\"minY\":499.5,\"maxX\":610.5,\"maxY\":500.5},{\"minX\":565.5,\"minY\":489.5,\"maxX\":575.5,\"maxY\":510.5},{\"minX\":585,\"minY\":500,\"maxX\":603,\"maxY\":512},{\"minX\":769.5,\"minY\":494.5,\"maxX\":1000.5,\"maxY\":495.5},{\"minX\":1009.5,\"minY\":484.5,\"maxX\":1019.5,\"maxY\":505.5},{\"minX\":982,\"minY\":495,\"maxX\":1000,\"maxY\":507},{\"minX\":569.5,\"minY\":479.5,\"maxX\":610.5,\"maxY\":480.5},{\"minX\":529.5,\"minY\":474.5,\"maxX\":560.5,\"maxY\":485.5},{\"minX\":485.5,\"minY\":474.5,\"maxX\":529.5,\"maxY\":485.5},{\"minX\":409.5,\"minY\":464.5,\"maxX\":435.5,\"maxY\":465.5},{\"minX\":444.5,\"minY\":454.5,\"maxX\":454.5,\"maxY\":475.5},{\"minX\":417,\"minY\":465,\"maxX\":435,\"maxY\":477},{\"minX\":599.5,\"minY\":419.5,\"maxX\":610.5,\"maxY\":420.5},{\"minX\":559.5,\"minY\":414.5,\"maxX\":590.5,\"maxY\":425.5},{\"minX\":539.5,\"minY\":414.5,\"maxX\":559.5,\"maxY\":425.5},{\"minX\":539.5,\"minY\":409.5,\"maxX\":610.5,\"maxY\":410.5},{\"minX\":499.5,\"minY\":404.5,\"maxX\":530.5,\"maxY\":415.5},{\"minX\":479.5,\"minY\":404.5,\"maxX\":499.5,\"maxY\":415.5},{\"minX\":769.5,\"minY\":394.5,\"maxX\":780.5,\"maxY\":395.5},{\"minX\":789.5,\"minY\":389.5,\"maxX\":820.5,\"maxY\":400.5},{\"minX\":820.5,\"minY\":389.5,\"maxX\":846.5,\"maxY\":400.5},{\"minX\":594.5,\"minY\":394.5,\"maxX\":595.5,\"maxY\":430.5},{\"minX\":589.5,\"minY\":434.5,\"maxX\":600.5,\"maxY\":440.5},{\"minX\":586,\"minY\":440.5,\"maxX\":604,\"maxY\":452.5},{\"minX\":344.5,\"minY\":379.5,\"maxX\":610.5,\"maxY\":380.5},{\"minX\":325.5,\"minY\":369.5,\"maxX\":335.5,\"maxY\":390.5},{\"minX\":345,\"minY\":380,\"maxX\":363,\"maxY\":392},{\"minX\":409.5,\"minY\":344.5,\"maxX\":435.5,\"maxY\":345.5},{\"minX\":444.5,\"minY\":334.5,\"maxX\":454.5,\"maxY\":355.5},{\"minX\":417,\"minY\":345,\"maxX\":435,\"maxY\":357},{\"minX\":769.5,\"minY\":344.5,\"maxX\":780.5,\"maxY\":345.5},{\"minX\":789.5,\"minY\":339.5,\"maxX\":820.5,\"maxY\":350.5},{\"minX\":820.5,\"minY\":339.5,\"maxX\":870.5,\"maxY\":350.5},{\"minX\":599.5,\"minY\":339.5,\"maxX\":610.5,\"maxY\":340.5},{\"minX\":559.5,\"minY\":334.5,\"maxX\":590.5,\"maxY\":345.5},{\"minX\":533.5,\"minY\":334.5,\"maxX\":559.5,\"maxY\":345.5}]}},{\"id\":\"TARGET_HDR\",\"title\":\"Target SWire 1x5P (H1)\",\"rect\":{\"minX\":25,\"minY\":95,\"maxX\":340,\"maxY\":270},\"titleX\":40,\"titleY\":255,\"fontSize\":20,\"color\":\"#AA00AA\",\"lineType\":1,\"titleLayout\":{\"width\":285,\"height\":20,\"clearance\":5,\"obstacles\":[{\"minX\":214.5,\"minY\":109.5,\"maxX\":235.5,\"maxY\":205.5},{\"minX\":215,\"minY\":190,\"maxX\":237.179199219,\"maxY\":198},{\"minX\":204.5,\"minY\":179.5,\"maxX\":215,\"maxY\":180.5},{\"minX\":204.5,\"minY\":169.5,\"maxX\":215,\"maxY\":170.5},{\"minX\":204.5,\"minY\":159.5,\"maxX\":215,\"maxY\":160.5},{\"minX\":204.5,\"minY\":149.5,\"maxX\":215,\"maxY\":150.5},{\"minX\":204.5,\"minY\":139.5,\"maxX\":215,\"maxY\":140.5},{\"minX\":199.5,\"minY\":169.5,\"maxX\":205.5,\"maxY\":170.5},{\"minX\":199.5,\"minY\":169.5,\"maxX\":200.5,\"maxY\":175.5},{\"minX\":199.5,\"minY\":179.5,\"maxX\":205.5,\"maxY\":180.5},{\"minX\":199.5,\"minY\":179.5,\"maxX\":200.5,\"maxY\":185.5},{\"minX\":194.5,\"minY\":139.5,\"maxX\":205.5,\"maxY\":140.5},{\"minX\":154.5,\"minY\":134.5,\"maxX\":185.5,\"maxY\":145.5},{\"minX\":104.5,\"minY\":134.5,\"maxX\":154.5,\"maxY\":145.5},{\"minX\":104.5,\"minY\":149.5,\"maxX\":205.5,\"maxY\":150.5},{\"minX\":64.5,\"minY\":144.5,\"maxX\":95.5,\"maxY\":155.5},{\"minX\":38.5,\"minY\":144.5,\"maxX\":64.5,\"maxY\":155.5},{\"minX\":179.5,\"minY\":159.5,\"maxX\":205.5,\"maxY\":160.5},{\"minX\":169.5,\"minY\":154.5,\"maxX\":175.5,\"maxY\":165.5},{\"minX\":180,\"minY\":160,\"maxX\":198,\"maxY\":172},{\"minX\":154.5,\"minY\":174.5,\"maxX\":200.5,\"maxY\":175.5},{\"minX\":144.5,\"minY\":169.5,\"maxX\":150.5,\"maxY\":180.5},{\"minX\":155,\"minY\":175,\"maxX\":173,\"maxY\":187},{\"minX\":199.5,\"minY\":184.5,\"maxX\":200.5,\"maxY\":195.5},{\"minX\":189.5,\"minY\":204.5,\"maxX\":210.5,\"maxY\":214.5},{\"minX\":191,\"minY\":214.5,\"maxX\":209,\"maxY\":226.5}]}}]}"
+      },
+      "assert": {
+        "$.verified": "true"
+      }
+    },
+    {
+      "id": "apply-page-titleblock",
+      "run": "sch titleblock",
+      "flags": {
+        "data": "{\"Description\":{\"value\":\"TLSR SWire Flasher (E180-Z6907A + USB-C + AP63203WU-7)\",\"showTitle\":false,\"showValue\":true},\"Drawed\":{\"value\":\"Antigravity\",\"showTitle\":false,\"showValue\":true},\"Name\":{\"value\":\"TLSR Flasher P3 - E180-Z6907A Core, Reset \\u0026 SWire Headers\",\"showTitle\":false,\"showValue\":true}}"
+      }
+    },
+    {
+      "id": "verify-all-pins-nets-nc",
+      "action": "schematic.components.list",
+      "payload": {
+        "includeBBox": true,
+        "includeConnectivitySummary": true,
+        "includeDeviceIdentity": true,
+        "includePagePrimitives": true,
+        "includePins": true,
+        "includeWires": true
+      },
+      "expectSchematic": {
+        "exactParts": true,
+        "parts": {
+          "C7": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "345d8669720442d6a8747f19c9226485"
+            },
+            "x": 390,
+            "y": 345,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 379.5,
+              "minY": 336.5,
+              "maxX": 400.5,
+              "maxY": 353.5
+            },
+            "pins": {
+              "1": {
+                "x": 370,
+                "y": 345,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 410,
+                "y": 345,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "C8": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 390,
+            "y": 465,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 379.5,
+              "minY": 456.5,
+              "maxX": 400.5,
+              "maxY": 473.5
+            },
+            "pins": {
+              "1": {
+                "x": 370,
+                "y": 465,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 410,
+                "y": 465,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "C9": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "b470d7af3c48415db6a4748fa8e62805"
+            },
+            "x": 1005,
+            "y": 690,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 994.5,
+              "minY": 681.5,
+              "maxX": 1015.5,
+              "maxY": 698.5
+            },
+            "pins": {
+              "1": {
+                "x": 985,
+                "y": 690,
+                "net": "RST",
+                "noConnected": false
+              },
+              "2": {
+                "x": 1025,
+                "y": 690,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "H1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "a39f9c9126e24625a6e7edb3fdff00c6"
+            },
+            "x": 225,
+            "y": 160,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 214.5,
+              "minY": 129.5,
+              "maxX": 235.5,
+              "maxY": 190.5
+            },
+            "pins": {
+              "1": {
+                "x": 205,
+                "y": 180,
+                "net": "GND",
+                "noConnected": false
+              },
+              "2": {
+                "x": 205,
+                "y": 170,
+                "net": "PWR",
+                "noConnected": false
+              },
+              "3": {
+                "x": 205,
+                "y": 160,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "4": {
+                "x": 205,
+                "y": 150,
+                "net": "SWM",
+                "noConnected": false
+              },
+              "5": {
+                "x": 205,
+                "y": 140,
+                "net": "EXT_RST",
+                "noConnected": false
+              }
+            }
+          },
+          "H2": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "9b540f58c6ad4e26b03d1a299cfb1108"
+            },
+            "x": 200,
+            "y": 695,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 189.5,
+              "minY": 669.5,
+              "maxX": 210.5,
+              "maxY": 720.5
+            },
+            "pins": {
+              "1": {
+                "x": 180,
+                "y": 710,
+                "net": "GND",
+                "noConnected": false
+              },
+              "2": {
+                "x": 180,
+                "y": 700,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "3": {
+                "x": 180,
+                "y": 690,
+                "net": "SWS",
+                "noConnected": false
+              },
+              "4": {
+                "x": 180,
+                "y": 680,
+                "net": "RST",
+                "noConnected": false
+              }
+            }
+          },
+          "R6": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "7d0a4241f13846d38eb1c0e45cc6ecf8"
+            },
+            "x": 885,
+            "y": 765,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 874.5,
+              "minY": 759.5,
+              "maxX": 895.5,
+              "maxY": 770.5
+            },
+            "pins": {
+              "1": {
+                "x": 865,
+                "y": 765,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "2": {
+                "x": 905,
+                "y": 765,
+                "net": "RST",
+                "noConnected": false
+              }
+            }
+          },
+          "SW1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "74bd52f1120e4bee9df6a4e8c1f72428"
+            },
+            "x": 1035,
+            "y": 765,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 1024.5,
+              "minY": 763,
+              "maxX": 1045.5,
+              "maxY": 772.5
+            },
+            "pins": {
+              "1": {
+                "x": 1015,
+                "y": 765,
+                "net": "RST",
+                "noConnected": false
+              },
+              "2": {
+                "x": 1055,
+                "y": 765,
+                "net": "GND",
+                "noConnected": false
+              }
+            }
+          },
+          "U1": {
+            "device": {
+              "libraryUuid": "0819f05c4eef4c71ace90d822a990e87",
+              "uuid": "cbb003c3987643819c5e2cec9988e2cb"
+            },
+            "x": 690,
+            "y": 420,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 619.5,
+              "minY": 319.5,
+              "maxX": 760.5,
+              "maxY": 520.5
+            },
+            "pins": {
+              "1": {
+                "x": 610,
+                "y": 510,
+                "net": "",
+                "noConnected": true
+              },
+              "10": {
+                "x": 610,
+                "y": 420,
+                "net": "DM",
+                "noConnected": false
+              },
+              "11": {
+                "x": 610,
+                "y": 410,
+                "net": "DP",
+                "noConnected": false
+              },
+              "12": {
+                "x": 610,
+                "y": 400,
+                "net": "",
+                "noConnected": true
+              },
+              "13": {
+                "x": 610,
+                "y": 390,
+                "net": "3V3",
+                "noConnected": false
+              },
+              "14": {
+                "x": 610,
+                "y": 380,
+                "net": "GND",
+                "noConnected": false
+              },
+              "15": {
+                "x": 610,
+                "y": 370,
+                "net": "",
+                "noConnected": true
+              },
+              "16": {
+                "x": 610,
+                "y": 360,
+                "net": "",
+                "noConnected": true
+              },
+              "17": {
+                "x": 610,
+                "y": 350,
+                "net": "",
+                "noConnected": true
+              },
+              "18": {
+                "x": 610,
+                "y": 340,
+                "net": "SWM",
+                "noConnected": false
+              },
+              "19": {
+                "x": 610,
+                "y": 330,
+                "net": "",
+                "noConnected": true
+              },
+              "2": {
+                "x": 610,
+                "y": 500,
+                "net": "GND",
+                "noConnected": false
+              },
+              "20": {
+                "x": 770,
+                "y": 335,
+                "net": "",
+                "noConnected": true
+              },
+              "21": {
+                "x": 770,
+                "y": 345,
+                "net": "EXT_RST",
+                "noConnected": false
+              },
+              "22": {
+                "x": 770,
+                "y": 355,
+                "net": "",
+                "noConnected": true
+              },
+              "23": {
+                "x": 770,
+                "y": 365,
+                "net": "",
+                "noConnected": true
+              },
+              "24": {
+                "x": 770,
+                "y": 375,
+                "net": "",
+                "noConnected": true
+              },
+              "25": {
+                "x": 770,
+                "y": 385,
+                "net": "",
+                "noConnected": true
+              },
+              "26": {
+                "x": 770,
+                "y": 395,
+                "net": "SWS",
+                "noConnected": false
+              },
+              "27": {
+                "x": 770,
+                "y": 405,
+                "net": "",
+                "noConnected": true
+              },
+              "28": {
+                "x": 770,
+                "y": 415,
+                "net": "",
+                "noConnected": true
+              },
+              "29": {
+                "x": 770,
+                "y": 425,
+                "net": "",
+                "noConnected": true
+              },
+              "3": {
+                "x": 610,
+                "y": 490,
+                "net": "",
+                "noConnected": true
+              },
+              "30": {
+                "x": 770,
+                "y": 435,
+                "net": "",
+                "noConnected": true
+              },
+              "31": {
+                "x": 770,
+                "y": 445,
+                "net": "",
+                "noConnected": true
+              },
+              "32": {
+                "x": 770,
+                "y": 455,
+                "net": "",
+                "noConnected": true
+              },
+              "33": {
+                "x": 770,
+                "y": 465,
+                "net": "",
+                "noConnected": true
+              },
+              "34": {
+                "x": 770,
+                "y": 475,
+                "net": "",
+                "noConnected": true
+              },
+              "35": {
+                "x": 770,
+                "y": 485,
+                "net": "",
+                "noConnected": true
+              },
+              "36": {
+                "x": 770,
+                "y": 495,
+                "net": "GND",
+                "noConnected": false
+              },
+              "37": {
+                "x": 770,
+                "y": 505,
+                "net": "RST",
+                "noConnected": false
+              },
+              "4": {
+                "x": 610,
+                "y": 480,
+                "net": "PWR_EN",
+                "noConnected": false
+              },
+              "5": {
+                "x": 610,
+                "y": 470,
+                "net": "",
+                "noConnected": true
+              },
+              "6": {
+                "x": 610,
+                "y": 460,
+                "net": "",
+                "noConnected": true
+              },
+              "7": {
+                "x": 610,
+                "y": 450,
+                "net": "",
+                "noConnected": true
+              },
+              "8": {
+                "x": 610,
+                "y": 440,
+                "net": "",
+                "noConnected": true
+              },
+              "9": {
+                "x": 610,
+                "y": 430,
+                "net": "",
+                "noConnected": true
+              }
+            }
+          }
+        },
+        "drawing": {
+          "wires": [
+            {
+              "net": "GND",
+              "points": [
+                [
+                  180,
+                  710
+                ],
+                [
+                  175,
+                  710
+                ]
+              ]
+            },
+            {
+              "net": "GND",
+              "points": [
+                [
+                  175,
+                  710
+                ],
+                [
+                  175,
+                  715
+                ]
+              ]
+            },
+            {
+              "net": "RST",
+              "points": [
+                [
+                  980,
+                  690
+                ],
+                [
+                  985,
+                  690
+                ]
+              ]
+            },
+            {
+              "net": "RST",
+              "points": [
+                [
+                  770,
+                  505
+                ],
+                [
+                  980,
+                  505
+                ]
+              ]
+            },
+            {
+              "net": "RST",
+              "points": [
+                [
+                  980,
+                  505
+                ],
+                [
+                  980,
+                  690
+                ]
+              ]
+            },
+            {
+              "net": "RST",
+              "points": [
+                [
+                  980,
+                  690
+                ],
+                [
+                  980,
+                  765
+                ]
+              ]
+            },
+            {
+              "net": "RST",
+              "points": [
+                [
+                  905,
+                  765
+                ],
+                [
+                  980,
+                  765
+                ]
+              ]
+            },
+            {
+              "net": "RST",
+              "points": [
+                [
+                  980,
+                  765
+                ],
+                [
+                  1015,
+                  765
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  370,
+                  345
+                ],
+                [
+                  365,
+                  345
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  370,
+                  465
+                ],
+                [
+                  365,
+                  465
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  365,
+                  345
+                ],
+                [
+                  365,
+                  390
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  365,
+                  390
+                ],
+                [
+                  365,
+                  465
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  365,
+                  390
+                ],
+                [
+                  595,
+                  390
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  595,
+                  390
+                ],
+                [
+                  610,
+                  390
+                ]
+              ]
+            },
+            {
+              "net": "3V3",
+              "points": [
+                [
+                  595,
+                  390
+                ],
+                [
+                  595,
+                  395
+                ]
+              ]
+            },
+            {
+              "net": "PWR",
+              "points": [
+                [
+                  205,
+                  170
+                ],
+                [
+                  200,
+                  170
+                ]
+              ]
+            },
+            {
+              "net": "PWR",
+              "points": [
+                [
+                  200,
+                  170
+                ],
+                [
+                  200,
+                  175
+                ]
+              ]
+            },
+            {
+              "net": "GND",
+              "points": [
+                [
+                  205,
+                  180
+                ],
+                [
+                  200,
+                  180
+                ]
+              ]
+            },
+            {
+              "net": "GND",
+              "points": [
+                [
+                  200,
+                  180
+                ],
+                [
+                  200,
+                  185
+                ]
+              ]
+            }
+          ],
+          "flags": [
+            {
+              "net": "RST",
+              "kind": "net_port_bi",
+              "pinX": 180,
+              "pinY": 680,
+              "direction": "left",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-H2",
+                "pinNumber": "4",
+                "zoneId": "SELF_HDR",
+                "net": "RST"
+              }
+            },
+            {
+              "net": "SWS",
+              "kind": "net_port_bi",
+              "pinX": 180,
+              "pinY": 690,
+              "direction": "left",
+              "offset": 75,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-H2",
+                "pinNumber": "3",
+                "zoneId": "SELF_HDR",
+                "net": "SWS"
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 180,
+              "pinY": 700,
+              "direction": "left",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-H2",
+                "pinNumber": "2",
+                "zoneId": "SELF_HDR",
+                "net": "3V3"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 175,
+              "pinY": 715,
+              "direction": "up",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "SELF_HDR",
+                "net": "GND",
+                "x": -25,
+                "y": 20
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 865,
+              "pinY": 765,
+              "direction": "left",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-R6",
+                "pinNumber": "1",
+                "zoneId": "TLSR_CORE",
+                "net": "3V3"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 1055,
+              "pinY": 765,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-SW1",
+                "pinNumber": "2",
+                "zoneId": "TLSR_CORE",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 1025,
+              "pinY": 690,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C9",
+                "pinNumber": "2",
+                "zoneId": "TLSR_CORE",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "RST",
+              "kind": "net_port_bi",
+              "pinX": 875,
+              "pinY": 505,
+              "direction": "up",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "TLSR_CORE",
+                "net": "RST",
+                "x": 185,
+                "y": 85
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 610,
+              "pinY": 500,
+              "direction": "left",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "2",
+                "zoneId": "TLSR_CORE",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 770,
+              "pinY": 495,
+              "direction": "right",
+              "offset": 230,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "36",
+                "zoneId": "TLSR_CORE",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "PWR_EN",
+              "kind": "net_port_bi",
+              "pinX": 610,
+              "pinY": 480,
+              "direction": "left",
+              "offset": 40,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "4",
+                "zoneId": "TLSR_CORE",
+                "net": "PWR_EN"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 410,
+              "pinY": 465,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C8",
+                "pinNumber": "2",
+                "zoneId": "TLSR_CORE",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "DM",
+              "kind": "net_port_bi",
+              "pinX": 610,
+              "pinY": 420,
+              "direction": "left",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "10",
+                "zoneId": "TLSR_CORE",
+                "net": "DM"
+              }
+            },
+            {
+              "net": "DP",
+              "kind": "net_port_bi",
+              "pinX": 610,
+              "pinY": 410,
+              "direction": "left",
+              "offset": 70,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "11",
+                "zoneId": "TLSR_CORE",
+                "net": "DP"
+              }
+            },
+            {
+              "net": "SWS",
+              "kind": "net_port_bi",
+              "pinX": 770,
+              "pinY": 395,
+              "direction": "right",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "26",
+                "zoneId": "TLSR_CORE",
+                "net": "SWS"
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 595,
+              "pinY": 395,
+              "direction": "up",
+              "offset": 35,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "TLSR_CORE",
+                "net": "3V3",
+                "x": -95,
+                "y": -25
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 610,
+              "pinY": 380,
+              "direction": "left",
+              "offset": 265,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "14",
+                "zoneId": "TLSR_CORE",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 410,
+              "pinY": 345,
+              "direction": "right",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-C7",
+                "pinNumber": "2",
+                "zoneId": "TLSR_CORE",
+                "net": "GND"
+              }
+            },
+            {
+              "net": "EXT_RST",
+              "kind": "net_port_bi",
+              "pinX": 770,
+              "pinY": 345,
+              "direction": "right",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "21",
+                "zoneId": "TLSR_CORE",
+                "net": "EXT_RST"
+              }
+            },
+            {
+              "net": "SWM",
+              "kind": "net_port_bi",
+              "pinX": 610,
+              "pinY": 340,
+              "direction": "left",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-U1",
+                "pinNumber": "18",
+                "zoneId": "TLSR_CORE",
+                "net": "SWM"
+              }
+            },
+            {
+              "net": "EXT_RST",
+              "kind": "net_port_bi",
+              "pinX": 205,
+              "pinY": 140,
+              "direction": "left",
+              "offset": 10,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-H1",
+                "pinNumber": "5",
+                "zoneId": "TARGET_HDR",
+                "net": "EXT_RST"
+              }
+            },
+            {
+              "net": "SWM",
+              "kind": "net_port_bi",
+              "pinX": 205,
+              "pinY": 150,
+              "direction": "left",
+              "offset": 100,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-H1",
+                "pinNumber": "4",
+                "zoneId": "TARGET_HDR",
+                "net": "SWM"
+              }
+            },
+            {
+              "net": "3V3",
+              "kind": "power",
+              "pinX": 205,
+              "pinY": 160,
+              "direction": "left",
+              "offset": 25,
+              "anchor": {
+                "type": "pin",
+                "componentId": "comp-H1",
+                "pinNumber": "3",
+                "zoneId": "TARGET_HDR",
+                "net": "3V3"
+              }
+            },
+            {
+              "net": "PWR",
+              "kind": "power",
+              "pinX": 200,
+              "pinY": 175,
+              "direction": "left",
+              "offset": 45,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "TARGET_HDR",
+                "net": "PWR",
+                "x": -25,
+                "y": 15
+              }
+            },
+            {
+              "net": "GND",
+              "kind": "ground",
+              "pinX": 200,
+              "pinY": 185,
+              "direction": "up",
+              "offset": 10,
+              "anchor": {
+                "type": "wire_tree",
+                "zoneId": "TARGET_HDR",
+                "net": "GND",
+                "x": -25,
+                "y": 25
+              }
+            }
+          ]
+        },
+        "ownership": {
+          "componentIds": {
+            "C7": "comp-C7",
+            "C8": "comp-C8",
+            "C9": "comp-C9",
+            "H1": "comp-H1",
+            "H2": "comp-H2",
+            "R6": "comp-R6",
+            "SW1": "comp-SW1",
+            "U1": "comp-U1"
+          },
+          "modules": [
+            {
+              "id": "SELF_HDR",
+              "name": "Self-Prog 1x4P (H2)",
+              "coreComponents": [
+                "comp-H2"
+              ],
+              "ports": [
+                {
+                  "id": "port-SELF_HDR-RST",
+                  "name": "RST",
+                  "netId": "net-RST",
+                  "pinRefs": [
+                    "comp-H2:4"
+                  ]
+                },
+                {
+                  "id": "port-SELF_HDR-SWS",
+                  "name": "SWS",
+                  "netId": "net-SWS",
+                  "pinRefs": [
+                    "comp-H2:3"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TLSR_CORE",
+              "name": "E180-Z6907A Core \u0026 Reset",
+              "coreComponents": [
+                "comp-U1"
+              ],
+              "peripheralComponents": [
+                "comp-C7",
+                "comp-C8",
+                "comp-R6",
+                "comp-C9",
+                "comp-SW1"
+              ],
+              "ports": [
+                {
+                  "id": "port-TLSR_CORE-DM",
+                  "name": "DM",
+                  "netId": "net-DM",
+                  "pinRefs": [
+                    "comp-U1:10"
+                  ]
+                },
+                {
+                  "id": "port-TLSR_CORE-DP",
+                  "name": "DP",
+                  "netId": "net-DP",
+                  "pinRefs": [
+                    "comp-U1:11"
+                  ]
+                },
+                {
+                  "id": "port-TLSR_CORE-EXT_RST",
+                  "name": "EXT_RST",
+                  "netId": "net-EXT_RST",
+                  "pinRefs": [
+                    "comp-U1:21"
+                  ]
+                },
+                {
+                  "id": "port-TLSR_CORE-PWR_EN",
+                  "name": "PWR_EN",
+                  "netId": "net-PWR_EN",
+                  "pinRefs": [
+                    "comp-U1:4"
+                  ]
+                },
+                {
+                  "id": "port-TLSR_CORE-RST",
+                  "name": "RST",
+                  "netId": "net-RST",
+                  "pinRefs": [
+                    "comp-U1:37",
+                    "comp-R6:2",
+                    "comp-C9:1",
+                    "comp-SW1:1"
+                  ]
+                },
+                {
+                  "id": "port-TLSR_CORE-SWM",
+                  "name": "SWM",
+                  "netId": "net-SWM",
+                  "pinRefs": [
+                    "comp-U1:18"
+                  ]
+                },
+                {
+                  "id": "port-TLSR_CORE-SWS",
+                  "name": "SWS",
+                  "netId": "net-SWS",
+                  "pinRefs": [
+                    "comp-U1:26"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TARGET_HDR",
+              "name": "Target SWire 1x5P (H1)",
+              "coreComponents": [
+                "comp-H1"
+              ],
+              "ports": [
+                {
+                  "id": "port-TARGET_HDR-EXT_RST",
+                  "name": "EXT_RST",
+                  "netId": "net-EXT_RST",
+                  "pinRefs": [
+                    "comp-H1:5"
+                  ]
+                },
+                {
+                  "id": "port-TARGET_HDR-SWM",
+                  "name": "SWM",
+                  "netId": "net-SWM",
+                  "pinRefs": [
+                    "comp-H1:4"
+                  ]
+                }
+              ]
+            }
+          ],
+          "netRoles": {
+            "3V3": "power",
+            "DM": "signal",
+            "DP": "signal",
+            "EXT_RST": "signal",
+            "GND": "ground",
+            "PWR": "power",
+            "PWR_EN": "signal",
+            "RST": "signal",
+            "SWM": "signal",
+            "SWS": "signal"
+          }
+        }
+      }
+    },
+    {
+      "id": "electrical-check",
+      "action": "schematic.check",
+      "assert": {
+        "$.passed": "true"
+      }
+    },
+    {
+      "id": "wire-tree-check",
+      "action": "schematic.bridgeCheck",
+      "assert": {
+        "$.passed": "true"
+      }
+    },
+    {
+      "id": "strict-schematic-gate",
+      "run": "sch gate",
+      "flags": {
+        "json": true,
+        "strict": true
+      }
+    },
+    {
+      "id": "save-composition",
+      "action": "schematic.save",
+      "assert": {
+        "$.saved": "true"
+      }
+    }
+  ]
+}

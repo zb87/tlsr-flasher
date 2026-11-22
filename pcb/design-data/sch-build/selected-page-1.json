@@ -1,0 +1,3280 @@
+{
+  "schemaVersion": 1,
+  "title": " · 1/1",
+  "zones": [
+    {
+      "id": "USB_ESD_DATA",
+      "title": "USB ESD & 33R Series (D1)",
+      "coreComponentId": "comp-D1",
+      "contentBounds": {
+        "minX": -85.5,
+        "minY": -144.5,
+        "maxX": 270.5,
+        "maxY": 304.5
+      },
+      "frame": {
+        "id": "USB_ESD_DATA",
+        "title": "USB ESD & 33R Series (D1)",
+        "rect": {
+          "minX": -100,
+          "minY": -155,
+          "maxX": 285,
+          "maxY": 315
+        },
+        "titleX": -65,
+        "titleY": -120,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 320,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -70.5,
+              "minY": -60.5,
+              "maxX": 70.5,
+              "maxY": 55.5
+            },
+            {
+              "minX": 75,
+              "minY": 30,
+              "maxX": 93.2861328125,
+              "maxY": 38
+            },
+            {
+              "minX": -40.5,
+              "minY": -60.5,
+              "maxX": -39.5,
+              "maxY": -40
+            },
+            {
+              "minX": -0.5,
+              "minY": -60.5,
+              "maxX": 0.5,
+              "maxY": -40
+            },
+            {
+              "minX": 39.5,
+              "minY": -60.5,
+              "maxX": 40.5,
+              "maxY": -40
+            },
+            {
+              "minX": 39.5,
+              "minY": 40,
+              "maxX": 40.5,
+              "maxY": 60.5
+            },
+            {
+              "minX": -0.5,
+              "minY": 40,
+              "maxX": 0.5,
+              "maxY": 60.5
+            },
+            {
+              "minX": -40.5,
+              "minY": 40,
+              "maxX": -39.5,
+              "maxY": 60.5
+            },
+            {
+              "minX": -70.5,
+              "minY": 184.5,
+              "maxX": -49.5,
+              "maxY": 230.5
+            },
+            {
+              "minX": -70,
+              "minY": 215,
+              "maxX": -47.82080078125,
+              "maxY": 223
+            },
+            {
+              "minX": -50,
+              "minY": 209.5,
+              "maxX": -39.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": -80.5,
+              "minY": 209.5,
+              "maxX": -70,
+              "maxY": 210.5
+            },
+            {
+              "minX": 169.5,
+              "minY": 184.5,
+              "maxX": 190.5,
+              "maxY": 230.5
+            },
+            {
+              "minX": 170,
+              "minY": 215,
+              "maxX": 192.17919921875,
+              "maxY": 223
+            },
+            {
+              "minX": 190,
+              "minY": 209.5,
+              "maxX": 200.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": 159.5,
+              "minY": 209.5,
+              "maxX": 170,
+              "maxY": 210.5
+            },
+            {
+              "minX": -85.5,
+              "minY": 209.5,
+              "maxX": -79.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": -85.5,
+              "minY": 64.5,
+              "maxX": -84.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": -85.5,
+              "minY": 64.5,
+              "maxX": -74.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": -75.5,
+              "minY": 64.5,
+              "maxX": -39.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": -40.5,
+              "minY": 59.5,
+              "maxX": -39.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -65.5,
+              "maxX": -39.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": -75.5,
+              "minY": -65.5,
+              "maxX": -39.5,
+              "maxY": -64.5
+            },
+            {
+              "minX": -75.5,
+              "minY": -65.5,
+              "maxX": -74.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": 39.5,
+              "minY": 209.5,
+              "maxX": 160.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": 39.5,
+              "minY": 64.5,
+              "maxX": 40.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": 39.5,
+              "minY": 59.5,
+              "maxX": 40.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": 39.5,
+              "minY": 64.5,
+              "maxX": 95.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": 94.5,
+              "minY": -65.5,
+              "maxX": 95.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": 39.5,
+              "minY": -65.5,
+              "maxX": 95.5,
+              "maxY": -64.5
+            },
+            {
+              "minX": 39.5,
+              "minY": -65.5,
+              "maxX": 40.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": -0.5,
+              "minY": -70.5,
+              "maxX": 0.5,
+              "maxY": -59.5
+            },
+            {
+              "minX": -10.5,
+              "minY": -89.5,
+              "maxX": 10.5,
+              "maxY": -79.5
+            },
+            {
+              "minX": -9,
+              "minY": -101.5,
+              "maxX": 9,
+              "maxY": -89.5
+            },
+            {
+              "minX": -0.5,
+              "minY": 59.5,
+              "maxX": 0.5,
+              "maxY": 70.5
+            },
+            {
+              "minX": -5.5,
+              "minY": 74.5,
+              "maxX": 5.5,
+              "maxY": 80.5
+            },
+            {
+              "minX": -9,
+              "minY": 80.5,
+              "maxX": 9,
+              "maxY": 92.5
+            },
+            {
+              "minX": -80.5,
+              "minY": -60.5,
+              "maxX": -79.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": -85.5,
+              "minY": -100.5,
+              "maxX": -74.5,
+              "maxY": -69.5
+            },
+            {
+              "minX": -85.5,
+              "minY": -144.5,
+              "maxX": -74.5,
+              "maxY": -100.5
+            },
+            {
+              "minX": 99.5,
+              "minY": 209.5,
+              "maxX": 100.5,
+              "maxY": 220.5
+            },
+            {
+              "minX": 94.5,
+              "minY": 229.5,
+              "maxX": 105.5,
+              "maxY": 260.5
+            },
+            {
+              "minX": 94.5,
+              "minY": 260.5,
+              "maxX": 105.5,
+              "maxY": 304.5
+            },
+            {
+              "minX": -40.5,
+              "minY": 209.5,
+              "maxX": -29.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": -20.5,
+              "minY": 204.5,
+              "maxX": 10.5,
+              "maxY": 215.5
+            },
+            {
+              "minX": 10.5,
+              "minY": 204.5,
+              "maxX": 30.5,
+              "maxY": 215.5
+            },
+            {
+              "minX": 199.5,
+              "minY": 209.5,
+              "maxX": 210.5,
+              "maxY": 210.5
+            },
+            {
+              "minX": 219.5,
+              "minY": 204.5,
+              "maxX": 250.5,
+              "maxY": 215.5
+            },
+            {
+              "minX": 250.5,
+              "minY": 204.5,
+              "maxX": 270.5,
+              "maxY": 215.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "D1": "comp-D1",
+          "R1": "comp-R1",
+          "R2": "comp-R2"
+        },
+        "pinStates": {
+          "comp-D1": null,
+          "comp-R1": null,
+          "comp-R2": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "D1",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -70.5,
+              "minY": -40.5,
+              "maxX": 70.5,
+              "maxY": 40.5
+            },
+            "textBboxes": [
+              {
+                "minX": 75,
+                "minY": 30,
+                "maxX": 93.2861328125,
+                "maxY": 38
+              }
+            ],
+            "pins": [
+              {
+                "number": "1",
+                "name": "IO1",
+                "net": "USB_DN",
+                "x": -40,
+                "y": -60,
+                "rotation": 270
+              },
+              {
+                "number": "2",
+                "name": "GND",
+                "net": "GND",
+                "x": 0,
+                "y": -60,
+                "rotation": 270
+              },
+              {
+                "number": "3",
+                "name": "IO3",
+                "net": "USB_DP",
+                "x": 40,
+                "y": -60,
+                "rotation": 270
+              },
+              {
+                "number": "4",
+                "name": "IO4",
+                "net": "USB_DP",
+                "x": 40,
+                "y": 60,
+                "rotation": 90
+              },
+              {
+                "number": "5",
+                "name": "VCC",
+                "net": "+5V",
+                "x": 0,
+                "y": 60,
+                "rotation": 90
+              },
+              {
+                "number": "6",
+                "name": "IO2",
+                "net": "USB_DN",
+                "x": -40,
+                "y": 60,
+                "rotation": 90
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "R1",
+            "x": -60,
+            "y": 210,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -70.5,
+              "minY": 204.5,
+              "maxX": -49.5,
+              "maxY": 215.5
+            },
+            "textBboxes": [
+              {
+                "minX": -70,
+                "minY": 215,
+                "maxX": -47.82080078125,
+                "maxY": 223
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "DM",
+                "x": -40,
+                "y": 210,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "USB_DN",
+                "x": -80,
+                "y": 210,
+                "rotation": 180
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "R2",
+            "x": 180,
+            "y": 210,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": 169.5,
+              "minY": 204.5,
+              "maxX": 190.5,
+              "maxY": 215.5
+            },
+            "textBboxes": [
+              {
+                "minX": 170,
+                "minY": 215,
+                "maxX": 192.17919921875,
+                "maxY": 223
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "DP",
+                "x": 200,
+                "y": 210,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "USB_DP",
+                "x": 160,
+                "y": 210,
+                "rotation": 180
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -80,
+                210
+              ],
+              [
+                -85,
+                210
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -85,
+                210
+              ],
+              [
+                -85,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -85,
+                65
+              ],
+              [
+                -75,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -75,
+                65
+              ],
+              [
+                -40,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -40,
+                65
+              ],
+              [
+                -40,
+                60
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -40,
+                -60
+              ],
+              [
+                -40,
+                -65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -40,
+                -65
+              ],
+              [
+                -75,
+                -65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -75,
+                -65
+              ],
+              [
+                -75,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                160,
+                210
+              ],
+              [
+                40,
+                210
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                40,
+                210
+              ],
+              [
+                40,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                40,
+                65
+              ],
+              [
+                40,
+                60
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                40,
+                65
+              ],
+              [
+                95,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                95,
+                65
+              ],
+              [
+                95,
+                -65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                95,
+                -65
+              ],
+              [
+                40,
+                -65
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                40,
+                -65
+              ],
+              [
+                40,
+                -60
+              ]
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 0,
+            "pinY": -60,
+            "direction": "down",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-D1",
+              "pinNumber": "2",
+              "zoneId": "USB_ESD_DATA",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "+5V",
+            "kind": "power",
+            "pinX": 0,
+            "pinY": 60,
+            "direction": "up",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-D1",
+              "pinNumber": "5",
+              "zoneId": "USB_ESD_DATA",
+              "net": "+5V"
+            }
+          },
+          {
+            "net": "USB_DN",
+            "kind": "net_port_bi",
+            "pinX": -80,
+            "pinY": 65,
+            "direction": "down",
+            "offset": 125,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "USB_ESD_DATA",
+              "net": "USB_DN",
+              "x": -80,
+              "y": 65
+            }
+          },
+          {
+            "net": "USB_DP",
+            "kind": "net_port_bi",
+            "pinX": 100,
+            "pinY": 210,
+            "direction": "up",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "USB_ESD_DATA",
+              "net": "USB_DP",
+              "x": 100,
+              "y": 210
+            }
+          },
+          {
+            "net": "DM",
+            "kind": "net_port_bi",
+            "pinX": -40,
+            "pinY": 210,
+            "direction": "right",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R1",
+              "pinNumber": "2",
+              "zoneId": "USB_ESD_DATA",
+              "net": "DM"
+            }
+          },
+          {
+            "net": "DP",
+            "kind": "net_port_bi",
+            "pinX": 200,
+            "pinY": 210,
+            "direction": "right",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R2",
+              "pinNumber": "2",
+              "zoneId": "USB_ESD_DATA",
+              "net": "DP"
+            }
+          }
+        ],
+        "score": [
+          1060,
+          21,
+          0,
+          159844
+        ],
+        "candidatesUsed": 766,
+        "search": {
+          "spacingTrials": [
+            {
+              "factor": 3,
+              "candidateQuota": 4096,
+              "candidatesUsed": 410,
+              "expandedNodes": 3825,
+              "result": "accepted"
+            }
+          ],
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [
+            "comp-R1",
+            "comp-R2"
+          ],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0,
+          "checkpointAlternatives": {
+            "comp-R1": 1,
+            "comp-R2": 1
+          }
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 6033,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 4,
+          "templateCacheHits": 0,
+          "boundaryAttempts": [
+            {
+              "net": "USB_DN",
+              "sourceIsland": "USB_DN:6@-40,60;1@-40,70",
+              "targetIsland": "USB_DN:1@-40,-60",
+              "expansionRaw": 40,
+              "expandedNodes": 502,
+              "result": "merged"
+            },
+            {
+              "net": "USB_DP",
+              "sourceIsland": "USB_DP:4@40,60;1@40,70",
+              "targetIsland": "USB_DP:3@40,-60",
+              "expansionRaw": 40,
+              "expandedNodes": 609,
+              "result": "boundary-reached"
+            },
+            {
+              "net": "USB_DP",
+              "sourceIsland": "USB_DP:4@40,60;1@40,70",
+              "targetIsland": "USB_DP:3@40,-60",
+              "expansionRaw": 80,
+              "expandedNodes": 1097,
+              "result": "merged"
+            },
+            {
+              "net": "USB_DN",
+              "sourceIsland": "USB_DN:6@-40,60;1@-80,210",
+              "targetIsland": "USB_DN:1@-40,-60",
+              "expansionRaw": 40,
+              "expandedNodes": 298,
+              "result": "merged"
+            },
+            {
+              "net": "USB_DP",
+              "sourceIsland": "USB_DP:4@40,60;1@160,210",
+              "targetIsland": "USB_DP:3@40,-60",
+              "expansionRaw": 40,
+              "expandedNodes": 1707,
+              "result": "boundary-reached"
+            },
+            {
+              "net": "USB_DP",
+              "sourceIsland": "USB_DP:4@40,60;1@160,210",
+              "targetIsland": "USB_DP:3@40,-60",
+              "expansionRaw": 80,
+              "expandedNodes": 1820,
+              "result": "merged"
+            }
+          ],
+          "rejectedEdges": [
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "+5V",
+              "reason": "foreign-pin",
+              "count": 9,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "GND",
+              "reason": "foreign-pin",
+              "count": 8,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DN",
+              "reason": "foreign-pin",
+              "count": 2,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DP",
+              "reason": "foreign-pin",
+              "count": 15,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "DM",
+              "reason": "foreign-pin",
+              "count": 3,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "USB_DP",
+              "reason": "foreign-pin",
+              "count": 3,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "DP",
+              "reason": "foreign-pin",
+              "count": 5,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "USB_DP",
+              "reason": "foreign-pin",
+              "count": 5,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "+5V",
+              "reason": "foreign-stem",
+              "count": 24,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "GND",
+              "reason": "foreign-stem",
+              "count": 22,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DN",
+              "reason": "foreign-stem",
+              "count": 6,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DP",
+              "reason": "foreign-stem",
+              "count": 40,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "DM",
+              "reason": "foreign-stem",
+              "count": 2,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "USB_DP",
+              "reason": "foreign-stem",
+              "count": 2,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "DP",
+              "reason": "foreign-stem",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "USB_DP",
+              "reason": "foreign-stem",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DN",
+              "reason": "pin-exit-direction",
+              "count": 27,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DP",
+              "reason": "pin-exit-direction",
+              "count": 58,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "USB_DP",
+              "reason": "pin-exit-direction",
+              "count": 12,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "+5V",
+              "reason": "pin-exit-foreign-wire",
+              "count": 11,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "GND",
+              "reason": "pin-exit-foreign-wire",
+              "count": 8,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DN",
+              "reason": "pin-exit-foreign-wire",
+              "count": 1,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DP",
+              "reason": "pin-exit-foreign-wire",
+              "count": 18,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "DM",
+              "reason": "pin-exit-foreign-wire",
+              "count": 8,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "USB_DP",
+              "reason": "pin-exit-foreign-wire",
+              "count": 8,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "DP",
+              "reason": "pin-exit-foreign-wire",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "USB_DP",
+              "reason": "pin-exit-foreign-wire",
+              "count": 4,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DN",
+              "reason": "wire-body",
+              "count": 111,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DP",
+              "reason": "wire-body",
+              "count": 331,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "USB_DP",
+              "reason": "wire-body",
+              "count": 2,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "USB_DP",
+              "reason": "wire-body",
+              "count": 27,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-D1",
+              "componentRef": "D1",
+              "net": "USB_DP",
+              "reason": "wire-text",
+              "count": 74,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R1",
+              "componentRef": "R1",
+              "net": "USB_DP",
+              "reason": "wire-text",
+              "count": 3,
+              "attributionComplete": true
+            },
+            {
+              "componentId": "comp-R2",
+              "componentRef": "R2",
+              "net": "USB_DP",
+              "reason": "wire-text",
+              "count": 21,
+              "attributionComplete": true
+            }
+          ],
+          "candidateSummaries": [
+            {
+              "net": "USB_DN",
+              "sourceIsland": "USB_DN:6@-40,60;1@-40,70",
+              "targetIsland": "USB_DN:1@-40,-60",
+              "points": [
+                [
+                  -40,
+                  -60
+                ],
+                [
+                  -40,
+                  -65
+                ],
+                [
+                  -75,
+                  -65
+                ],
+                [
+                  -75,
+                  65
+                ],
+                [
+                  -45,
+                  65
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "USB_DP",
+              "sourceIsland": "USB_DP:4@40,60;1@40,70",
+              "targetIsland": "USB_DP:3@40,-60",
+              "points": [
+                [
+                  40,
+                  65
+                ],
+                [
+                  45,
+                  65
+                ],
+                [
+                  45,
+                  45
+                ],
+                [
+                  95,
+                  45
+                ],
+                [
+                  95,
+                  -65
+                ],
+                [
+                  40,
+                  -65
+                ],
+                [
+                  40,
+                  -60
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "USB_DN",
+              "sourceIsland": "USB_DN:6@-40,60;1@-80,210",
+              "targetIsland": "USB_DN:1@-40,-60",
+              "points": [
+                [
+                  -40,
+                  -60
+                ],
+                [
+                  -40,
+                  -65
+                ],
+                [
+                  -75,
+                  -65
+                ],
+                [
+                  -75,
+                  65
+                ]
+              ],
+              "result": "merged"
+            },
+            {
+              "net": "USB_DP",
+              "sourceIsland": "USB_DP:4@40,60;1@160,210",
+              "targetIsland": "USB_DP:3@40,-60",
+              "points": [
+                [
+                  40,
+                  65
+                ],
+                [
+                  95,
+                  65
+                ],
+                [
+                  95,
+                  -65
+                ],
+                [
+                  40,
+                  -65
+                ],
+                [
+                  40,
+                  -60
+                ]
+              ],
+              "result": "merged"
+            }
+          ]
+        }
+      },
+      "sheetPosition": {
+        "x": 25,
+        "y": 800
+      }
+    },
+    {
+      "id": "USB_CONN",
+      "title": "USB-C Receptacle (USB1)",
+      "coreComponentId": "comp-USB1",
+      "contentBounds": {
+        "minX": -239.5,
+        "minY": -105.5,
+        "maxX": 25.5,
+        "maxY": 169.5
+      },
+      "frame": {
+        "id": "USB_CONN",
+        "title": "USB-C Receptacle (USB1)",
+        "rect": {
+          "minX": -250,
+          "minY": -120,
+          "maxX": 85,
+          "maxY": 210
+        },
+        "titleX": -235,
+        "titleY": 195,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 305,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -25.5,
+              "minY": -105.5,
+              "maxX": 25.5,
+              "maxY": 100.5
+            },
+            {
+              "minX": -25,
+              "minY": 85,
+              "maxX": -6.7138671875,
+              "maxY": 93
+            },
+            {
+              "minX": -35.5,
+              "minY": 74.5,
+              "maxX": -25,
+              "maxY": 75.5
+            },
+            {
+              "minX": -35.5,
+              "minY": 64.5,
+              "maxX": -25,
+              "maxY": 65.5
+            },
+            {
+              "minX": -35.5,
+              "minY": 54.5,
+              "maxX": -25,
+              "maxY": 55.5
+            },
+            {
+              "minX": -35.5,
+              "minY": 44.5,
+              "maxX": -25,
+              "maxY": 45.5
+            },
+            {
+              "minX": -35.5,
+              "minY": 34.5,
+              "maxX": -25,
+              "maxY": 35.5
+            },
+            {
+              "minX": -35.5,
+              "minY": 24.5,
+              "maxX": -25,
+              "maxY": 25.5
+            },
+            {
+              "minX": -35.5,
+              "minY": 14.5,
+              "maxX": -25,
+              "maxY": 15.5
+            },
+            {
+              "minX": -35.5,
+              "minY": 4.5,
+              "maxX": -25,
+              "maxY": 5.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -5.5,
+              "maxX": -25,
+              "maxY": -4.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -15.5,
+              "maxX": -25,
+              "maxY": -14.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -25.5,
+              "maxX": -25,
+              "maxY": -24.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -35.5,
+              "maxX": -25,
+              "maxY": -34.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -45.5,
+              "maxX": -25,
+              "maxY": -44.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -55.5,
+              "maxX": -25,
+              "maxY": -54.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -65.5,
+              "maxX": -25,
+              "maxY": -64.5
+            },
+            {
+              "minX": -35.5,
+              "minY": -75.5,
+              "maxX": -25,
+              "maxY": -74.5
+            },
+            {
+              "minX": -55.5,
+              "minY": 4.5,
+              "maxX": -34.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": -55.5,
+              "minY": 4.5,
+              "maxX": -54.5,
+              "maxY": 45.5
+            },
+            {
+              "minX": -55.5,
+              "minY": 44.5,
+              "maxX": -34.5,
+              "maxY": 45.5
+            },
+            {
+              "minX": -45.5,
+              "minY": -5.5,
+              "maxX": -34.5,
+              "maxY": -4.5
+            },
+            {
+              "minX": -45.5,
+              "minY": -5.5,
+              "maxX": -44.5,
+              "maxY": 35.5
+            },
+            {
+              "minX": -45.5,
+              "minY": 34.5,
+              "maxX": -34.5,
+              "maxY": 35.5
+            },
+            {
+              "minX": -50.5,
+              "minY": -25.5,
+              "maxX": -34.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": -50.5,
+              "minY": -25.5,
+              "maxX": -49.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": -50.5,
+              "minY": 64.5,
+              "maxX": -34.5,
+              "maxY": 65.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -45.5,
+              "maxX": -34.5,
+              "maxY": -44.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -75.5,
+              "maxX": -34.5,
+              "maxY": -74.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -65.5,
+              "maxX": -34.5,
+              "maxY": -64.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -55.5,
+              "maxX": -34.5,
+              "maxY": -54.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -35.5,
+              "maxX": -34.5,
+              "maxY": -34.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -75.5,
+              "maxX": -39.5,
+              "maxY": -64.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -65.5,
+              "maxX": -39.5,
+              "maxY": -54.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -55.5,
+              "maxX": -39.5,
+              "maxY": -44.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -45.5,
+              "maxX": -39.5,
+              "maxY": -34.5
+            },
+            {
+              "minX": -40.5,
+              "minY": -35.5,
+              "maxX": -39.5,
+              "maxY": -29.5
+            },
+            {
+              "minX": -60.5,
+              "minY": 14.5,
+              "maxX": -34.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": -60.5,
+              "minY": -0.5,
+              "maxX": -59.5,
+              "maxY": 15.5
+            },
+            {
+              "minX": -70.5,
+              "minY": 74.5,
+              "maxX": -34.5,
+              "maxY": 75.5
+            },
+            {
+              "minX": -89.5,
+              "minY": 64.5,
+              "maxX": -79.5,
+              "maxY": 85.5
+            },
+            {
+              "minX": -70,
+              "minY": 75,
+              "maxX": -52,
+              "maxY": 87
+            },
+            {
+              "minX": -70.5,
+              "minY": -30.5,
+              "maxX": -39.5,
+              "maxY": -29.5
+            },
+            {
+              "minX": -89.5,
+              "minY": -40.5,
+              "maxX": -79.5,
+              "maxY": -19.5
+            },
+            {
+              "minX": -70,
+              "minY": -30,
+              "maxX": -52,
+              "maxY": -18
+            },
+            {
+              "minX": -60.5,
+              "minY": 19.5,
+              "maxX": -49.5,
+              "maxY": 20.5
+            },
+            {
+              "minX": -100.5,
+              "minY": 14.5,
+              "maxX": -69.5,
+              "maxY": 25.5
+            },
+            {
+              "minX": -156.5,
+              "minY": 14.5,
+              "maxX": -100.5,
+              "maxY": 25.5
+            },
+            {
+              "minX": -85.5,
+              "minY": 54.5,
+              "maxX": -34.5,
+              "maxY": 55.5
+            },
+            {
+              "minX": -125.5,
+              "minY": 49.5,
+              "maxX": -94.5,
+              "maxY": 60.5
+            },
+            {
+              "minX": -151.5,
+              "minY": 49.5,
+              "maxX": -125.5,
+              "maxY": 60.5
+            },
+            {
+              "minX": -45.5,
+              "minY": 44.5,
+              "maxX": -44.5,
+              "maxY": 85.5
+            },
+            {
+              "minX": -50.5,
+              "minY": 94.5,
+              "maxX": -39.5,
+              "maxY": 125.5
+            },
+            {
+              "minX": -50.5,
+              "minY": 125.5,
+              "maxX": -39.5,
+              "maxY": 169.5
+            },
+            {
+              "minX": -155.5,
+              "minY": 34.5,
+              "maxX": -44.5,
+              "maxY": 35.5
+            },
+            {
+              "minX": -195.5,
+              "minY": 29.5,
+              "maxX": -164.5,
+              "maxY": 40.5
+            },
+            {
+              "minX": -239.5,
+              "minY": 29.5,
+              "maxX": -195.5,
+              "maxY": 40.5
+            },
+            {
+              "minX": -70.5,
+              "minY": -0.5,
+              "maxX": -59.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -110.5,
+              "minY": -5.5,
+              "maxX": -79.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": -136.5,
+              "minY": -5.5,
+              "maxX": -110.5,
+              "maxY": 5.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "USB1": "comp-USB1"
+        },
+        "pinStates": {
+          "comp-USB1": {
+            "A8": "nc",
+            "B8": "nc"
+          }
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "USB1",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -25.5,
+              "minY": -85.5,
+              "maxX": 25.5,
+              "maxY": 85.5
+            },
+            "textBboxes": [
+              {
+                "minX": -25,
+                "minY": 85,
+                "maxX": -6.7138671875,
+                "maxY": 93
+              }
+            ],
+            "pins": [
+              {
+                "number": "A1B12",
+                "name": "GND",
+                "net": "GND",
+                "x": -35,
+                "y": 75,
+                "rotation": 180
+              },
+              {
+                "number": "A4B9",
+                "name": "VBUS",
+                "net": "VBUS_RAW",
+                "x": -35,
+                "y": 65,
+                "rotation": 180
+              },
+              {
+                "number": "A5",
+                "name": "CC1",
+                "net": "CC1",
+                "x": -35,
+                "y": 55,
+                "rotation": 180
+              },
+              {
+                "number": "A6",
+                "name": "DP1",
+                "net": "USB_DP",
+                "x": -35,
+                "y": 45,
+                "rotation": 180
+              },
+              {
+                "number": "A7",
+                "name": "DN1",
+                "net": "USB_DN",
+                "x": -35,
+                "y": 35,
+                "rotation": 180
+              },
+              {
+                "number": "A8",
+                "name": "SBU1",
+                "net": "",
+                "x": -35,
+                "y": 25,
+                "rotation": 180
+              },
+              {
+                "number": "B5",
+                "name": "CC2",
+                "net": "CC2",
+                "x": -35,
+                "y": 15,
+                "rotation": 180
+              },
+              {
+                "number": "B6",
+                "name": "DP2",
+                "net": "USB_DP",
+                "x": -35,
+                "y": 5,
+                "rotation": 180
+              },
+              {
+                "number": "B7",
+                "name": "DN2",
+                "net": "USB_DN",
+                "x": -35,
+                "y": -5,
+                "rotation": 180
+              },
+              {
+                "number": "B8",
+                "name": "SBU2",
+                "net": "",
+                "x": -35,
+                "y": -15,
+                "rotation": 180
+              },
+              {
+                "number": "B4A9",
+                "name": "VBUS",
+                "net": "VBUS_RAW",
+                "x": -35,
+                "y": -25,
+                "rotation": 180
+              },
+              {
+                "number": "B1A12",
+                "name": "GND",
+                "net": "GND",
+                "x": -35,
+                "y": -35,
+                "rotation": 180
+              },
+              {
+                "number": "1",
+                "name": "SHELL",
+                "net": "GND",
+                "x": -35,
+                "y": -45,
+                "rotation": 180
+              },
+              {
+                "number": "2",
+                "name": "SHELL",
+                "net": "GND",
+                "x": -35,
+                "y": -55,
+                "rotation": 180
+              },
+              {
+                "number": "3",
+                "name": "SHELL",
+                "net": "GND",
+                "x": -35,
+                "y": -65,
+                "rotation": 180
+              },
+              {
+                "number": "4",
+                "name": "SHELL",
+                "net": "GND",
+                "x": -35,
+                "y": -75,
+                "rotation": 180
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                -35,
+                5
+              ],
+              [
+                -55,
+                5
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                -55,
+                5
+              ],
+              [
+                -55,
+                45
+              ]
+            ]
+          },
+          {
+            "net": "USB_DP",
+            "points": [
+              [
+                -55,
+                45
+              ],
+              [
+                -35,
+                45
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -35,
+                -5
+              ],
+              [
+                -45,
+                -5
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -45,
+                -5
+              ],
+              [
+                -45,
+                35
+              ]
+            ]
+          },
+          {
+            "net": "USB_DN",
+            "points": [
+              [
+                -45,
+                35
+              ],
+              [
+                -35,
+                35
+              ]
+            ]
+          },
+          {
+            "net": "VBUS_RAW",
+            "points": [
+              [
+                -35,
+                -25
+              ],
+              [
+                -50,
+                -25
+              ]
+            ]
+          },
+          {
+            "net": "VBUS_RAW",
+            "points": [
+              [
+                -50,
+                -25
+              ],
+              [
+                -50,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "VBUS_RAW",
+            "points": [
+              [
+                -50,
+                65
+              ],
+              [
+                -35,
+                65
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -35,
+                -45
+              ],
+              [
+                -40,
+                -45
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -40,
+                -75
+              ],
+              [
+                -35,
+                -75
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -35,
+                -65
+              ],
+              [
+                -40,
+                -65
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -35,
+                -55
+              ],
+              [
+                -40,
+                -55
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -40,
+                -35
+              ],
+              [
+                -35,
+                -35
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -40,
+                -75
+              ],
+              [
+                -40,
+                -65
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -40,
+                -65
+              ],
+              [
+                -40,
+                -55
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -40,
+                -55
+              ],
+              [
+                -40,
+                -45
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -40,
+                -45
+              ],
+              [
+                -40,
+                -35
+              ]
+            ]
+          },
+          {
+            "net": "GND",
+            "points": [
+              [
+                -40,
+                -35
+              ],
+              [
+                -40,
+                -30
+              ]
+            ]
+          },
+          {
+            "net": "CC2",
+            "points": [
+              [
+                -35,
+                15
+              ],
+              [
+                -60,
+                15
+              ]
+            ]
+          },
+          {
+            "net": "CC2",
+            "points": [
+              [
+                -60,
+                15
+              ],
+              [
+                -60,
+                0
+              ]
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": -35,
+            "pinY": 75,
+            "direction": "left",
+            "offset": 35,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-USB1",
+              "pinNumber": "A1B12",
+              "zoneId": "USB_CONN",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": -40,
+            "pinY": -30,
+            "direction": "left",
+            "offset": 30,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "USB_CONN",
+              "net": "GND",
+              "x": -40,
+              "y": -30
+            }
+          },
+          {
+            "net": "VBUS_RAW",
+            "kind": "net_port_bi",
+            "pinX": -50,
+            "pinY": 20,
+            "direction": "left",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "USB_CONN",
+              "net": "VBUS_RAW",
+              "x": -50,
+              "y": 20
+            }
+          },
+          {
+            "net": "CC1",
+            "kind": "net_port_bi",
+            "pinX": -35,
+            "pinY": 55,
+            "direction": "left",
+            "offset": 50,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-USB1",
+              "pinNumber": "A5",
+              "zoneId": "USB_CONN",
+              "net": "CC1"
+            }
+          },
+          {
+            "net": "USB_DP",
+            "kind": "net_port_bi",
+            "pinX": -45,
+            "pinY": 45,
+            "direction": "up",
+            "offset": 40,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "USB_CONN",
+              "net": "USB_DP",
+              "x": -45,
+              "y": 45
+            }
+          },
+          {
+            "net": "USB_DN",
+            "kind": "net_port_bi",
+            "pinX": -45,
+            "pinY": 35,
+            "direction": "left",
+            "offset": 110,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "USB_CONN",
+              "net": "USB_DN",
+              "x": -45,
+              "y": 35
+            }
+          },
+          {
+            "net": "CC2",
+            "kind": "net_port_bi",
+            "pinX": -60,
+            "pinY": 0,
+            "direction": "left",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "USB_CONN",
+              "net": "CC2",
+              "x": -60,
+              "y": 0
+            }
+          }
+        ],
+        "score": [
+          655,
+          28,
+          0,
+          72875
+        ],
+        "candidatesUsed": 1178,
+        "search": {
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 0,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 0,
+          "templateCacheHits": 0
+        }
+      },
+      "sheetPosition": {
+        "x": 425,
+        "y": 800
+      }
+    },
+    {
+      "id": "LED_5V",
+      "title": "+5V Power LED (LED1)",
+      "coreComponentId": "comp-LED1",
+      "contentBounds": {
+        "minX": -30.5,
+        "minY": -50.5,
+        "maxX": 59.5,
+        "maxY": 94.5
+      },
+      "frame": {
+        "id": "LED_5V",
+        "title": "+5V Power LED (LED1)",
+        "rect": {
+          "minX": -45,
+          "minY": -65,
+          "maxX": 260,
+          "maxY": 135
+        },
+        "titleX": -30,
+        "titleY": 120,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 275,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -9.5,
+              "minY": -26.5,
+              "maxX": 5.5,
+              "maxY": 34.5
+            },
+            {
+              "minX": -10,
+              "minY": 20,
+              "maxX": 12.17919921875,
+              "maxY": 28
+            },
+            {
+              "minX": 5,
+              "minY": -0.5,
+              "maxX": 20.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -20.5,
+              "minY": -0.5,
+              "maxX": -9,
+              "maxY": 0.5
+            },
+            {
+              "minX": -15.5,
+              "minY": -50.5,
+              "maxX": 5.5,
+              "maxY": -4.5
+            },
+            {
+              "minX": -15,
+              "minY": -20,
+              "maxX": 7.17919921875,
+              "maxY": -12
+            },
+            {
+              "minX": 5,
+              "minY": -25.5,
+              "maxX": 15.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": -25.5,
+              "minY": -25.5,
+              "maxX": -15,
+              "maxY": -24.5
+            },
+            {
+              "minX": -30.5,
+              "minY": -25.5,
+              "maxX": -24.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": -30.5,
+              "minY": -25.5,
+              "maxX": -29.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -30.5,
+              "minY": -0.5,
+              "maxX": -19.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 14.5,
+              "minY": -25.5,
+              "maxX": 40.5,
+              "maxY": -24.5
+            },
+            {
+              "minX": 49.5,
+              "minY": -35.5,
+              "maxX": 59.5,
+              "maxY": -14.5
+            },
+            {
+              "minX": 22,
+              "minY": -25,
+              "maxX": 40,
+              "maxY": -13
+            },
+            {
+              "minX": 19.5,
+              "minY": -0.5,
+              "maxX": 45.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 49.5,
+              "minY": -5.5,
+              "maxX": 55.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": 27,
+              "minY": 0,
+              "maxX": 45,
+              "maxY": 12
+            },
+            {
+              "minX": -25.5,
+              "minY": -0.5,
+              "maxX": -24.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": -30.5,
+              "minY": 19.5,
+              "maxX": -19.5,
+              "maxY": 50.5
+            },
+            {
+              "minX": -30.5,
+              "minY": 50.5,
+              "maxX": -19.5,
+              "maxY": 94.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "LED1": "comp-LED1",
+          "R5": "comp-R5"
+        },
+        "pinStates": {
+          "comp-LED1": null,
+          "comp-R5": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "LED1",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -9.5,
+              "minY": -6.5,
+              "maxX": 5.5,
+              "maxY": 19.5
+            },
+            "textBboxes": [
+              {
+                "minX": -10,
+                "minY": 20,
+                "maxX": 12.17919921875,
+                "maxY": 28
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "A",
+                "net": "+5V",
+                "x": 20,
+                "y": 0,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "K",
+                "net": "LED1_K",
+                "x": -20,
+                "y": 0,
+                "rotation": 180
+              }
+            ]
+          },
+          {
+            "primitiveId": "",
+            "designator": "R5",
+            "x": -5,
+            "y": -25,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -15.5,
+              "minY": -30.5,
+              "maxX": 5.5,
+              "maxY": -19.5
+            },
+            "textBboxes": [
+              {
+                "minX": -15,
+                "minY": -20,
+                "maxX": 7.17919921875,
+                "maxY": -12
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 15,
+                "y": -25,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "LED1_K",
+                "x": -25,
+                "y": -25,
+                "rotation": 180
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "net": "LED1_K",
+            "points": [
+              [
+                -25,
+                -25
+              ],
+              [
+                -30,
+                -25
+              ]
+            ]
+          },
+          {
+            "net": "LED1_K",
+            "points": [
+              [
+                -30,
+                -25
+              ],
+              [
+                -30,
+                0
+              ]
+            ]
+          },
+          {
+            "net": "LED1_K",
+            "points": [
+              [
+                -30,
+                0
+              ],
+              [
+                -20,
+                0
+              ]
+            ]
+          }
+        ],
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 15,
+            "pinY": -25,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R5",
+              "pinNumber": "2",
+              "zoneId": "LED_5V",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "+5V",
+            "kind": "power",
+            "pinX": 20,
+            "pinY": 0,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-LED1",
+              "pinNumber": "2",
+              "zoneId": "LED_5V",
+              "net": "+5V"
+            }
+          },
+          {
+            "net": "LED1_K",
+            "kind": "net_port_bi",
+            "pinX": -25,
+            "pinY": 0,
+            "direction": "up",
+            "offset": 10,
+            "anchor": {
+              "type": "wire_tree",
+              "zoneId": "LED_5V",
+              "net": "LED1_K",
+              "x": -25,
+              "y": 0
+            }
+          }
+        ],
+        "score": [
+          100,
+          6,
+          5,
+          13050
+        ],
+        "candidatesUsed": 64,
+        "search": {
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0,
+          "checkpointAlternatives": {
+            "comp-R5": 1
+          }
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 0,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 0,
+          "templateCacheHits": 0
+        }
+      },
+      "sheetPosition": {
+        "x": 775,
+        "y": 800
+      }
+    },
+    {
+      "id": "CC1_PD",
+      "title": "CC1 5.1k Pull-Down",
+      "coreComponentId": "comp-R3",
+      "contentBounds": {
+        "minX": -96.5,
+        "minY": -25.5,
+        "maxX": 64.5,
+        "maxY": 20.5
+      },
+      "frame": {
+        "id": "CC1_PD",
+        "title": "CC1 5.1k Pull-Down",
+        "rect": {
+          "minX": -110,
+          "minY": -40,
+          "maxX": 145,
+          "maxY": 65
+        },
+        "titleX": -95,
+        "titleY": 50,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 225,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -10.5,
+              "minY": -25.5,
+              "maxX": 10.5,
+              "maxY": 20.5
+            },
+            {
+              "minX": -10,
+              "minY": 5,
+              "maxX": 12.17919921875,
+              "maxY": 13
+            },
+            {
+              "minX": 10,
+              "minY": -0.5,
+              "maxX": 20.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -20.5,
+              "minY": -0.5,
+              "maxX": -10,
+              "maxY": 0.5
+            },
+            {
+              "minX": 19.5,
+              "minY": -0.5,
+              "maxX": 45.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 54.5,
+              "minY": -10.5,
+              "maxX": 64.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": 27,
+              "minY": 0,
+              "maxX": 45,
+              "maxY": 12
+            },
+            {
+              "minX": -30.5,
+              "minY": -0.5,
+              "maxX": -19.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -70.5,
+              "minY": -5.5,
+              "maxX": -39.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": -96.5,
+              "minY": -5.5,
+              "maxX": -70.5,
+              "maxY": 5.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "R3": "comp-R3"
+        },
+        "pinStates": {
+          "comp-R3": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "R3",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -10.5,
+              "minY": -5.5,
+              "maxX": 10.5,
+              "maxY": 5.5
+            },
+            "textBboxes": [
+              {
+                "minX": -10,
+                "minY": 5,
+                "maxX": 12.17919921875,
+                "maxY": 13
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 20,
+                "y": 0,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "CC1",
+                "x": -20,
+                "y": 0,
+                "rotation": 180
+              }
+            ]
+          }
+        ],
+        "wires": null,
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 20,
+            "pinY": 0,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R3",
+              "pinNumber": "2",
+              "zoneId": "CC1_PD",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "CC1",
+            "kind": "net_port_bi",
+            "pinX": -20,
+            "pinY": 0,
+            "direction": "left",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R3",
+              "pinNumber": "1",
+              "zoneId": "CC1_PD",
+              "net": "CC1"
+            }
+          }
+        ],
+        "score": [
+          35,
+          2,
+          0,
+          7406
+        ],
+        "candidatesUsed": 18,
+        "search": {
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 0,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 0,
+          "templateCacheHits": 0
+        }
+      },
+      "sheetPosition": {
+        "x": 25,
+        "y": 315
+      }
+    },
+    {
+      "id": "CC2_PD",
+      "title": "CC2 5.1k Pull-Down",
+      "coreComponentId": "comp-R4",
+      "contentBounds": {
+        "minX": -96.5,
+        "minY": -25.5,
+        "maxX": 64.5,
+        "maxY": 20.5
+      },
+      "frame": {
+        "id": "CC2_PD",
+        "title": "CC2 5.1k Pull-Down",
+        "rect": {
+          "minX": -110,
+          "minY": -40,
+          "maxX": 145,
+          "maxY": 65
+        },
+        "titleX": -95,
+        "titleY": 50,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 225,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -10.5,
+              "minY": -25.5,
+              "maxX": 10.5,
+              "maxY": 20.5
+            },
+            {
+              "minX": -10,
+              "minY": 5,
+              "maxX": 12.17919921875,
+              "maxY": 13
+            },
+            {
+              "minX": 10,
+              "minY": -0.5,
+              "maxX": 20.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -20.5,
+              "minY": -0.5,
+              "maxX": -10,
+              "maxY": 0.5
+            },
+            {
+              "minX": 19.5,
+              "minY": -0.5,
+              "maxX": 45.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 54.5,
+              "minY": -10.5,
+              "maxX": 64.5,
+              "maxY": 10.5
+            },
+            {
+              "minX": 27,
+              "minY": 0,
+              "maxX": 45,
+              "maxY": 12
+            },
+            {
+              "minX": -30.5,
+              "minY": -0.5,
+              "maxX": -19.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -70.5,
+              "minY": -5.5,
+              "maxX": -39.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": -96.5,
+              "minY": -5.5,
+              "maxX": -70.5,
+              "maxY": 5.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "R4": "comp-R4"
+        },
+        "pinStates": {
+          "comp-R4": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "R4",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -10.5,
+              "minY": -5.5,
+              "maxX": 10.5,
+              "maxY": 5.5
+            },
+            "textBboxes": [
+              {
+                "minX": -10,
+                "minY": 5,
+                "maxX": 12.17919921875,
+                "maxY": 13
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "GND",
+                "x": 20,
+                "y": 0,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "CC2",
+                "x": -20,
+                "y": 0,
+                "rotation": 180
+              }
+            ]
+          }
+        ],
+        "wires": null,
+        "flags": [
+          {
+            "net": "GND",
+            "kind": "ground",
+            "pinX": 20,
+            "pinY": 0,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R4",
+              "pinNumber": "2",
+              "zoneId": "CC2_PD",
+              "net": "GND"
+            }
+          },
+          {
+            "net": "CC2",
+            "kind": "net_port_bi",
+            "pinX": -20,
+            "pinY": 0,
+            "direction": "left",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-R4",
+              "pinNumber": "1",
+              "zoneId": "CC2_PD",
+              "net": "CC2"
+            }
+          }
+        ],
+        "score": [
+          35,
+          2,
+          0,
+          7406
+        ],
+        "candidatesUsed": 18,
+        "search": {
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 0,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 0,
+          "templateCacheHits": 0
+        }
+      },
+      "sheetPosition": {
+        "x": 295,
+        "y": 315
+      }
+    },
+    {
+      "id": "VBUS_FUSE",
+      "title": "1.5A Polyfuse (F1)",
+      "coreComponentId": "comp-F1",
+      "contentBounds": {
+        "minX": -126.5,
+        "minY": -24.5,
+        "maxX": 55.5,
+        "maxY": 19.5
+      },
+      "frame": {
+        "id": "VBUS_FUSE",
+        "title": "1.5A Polyfuse (F1)",
+        "rect": {
+          "minX": -140,
+          "minY": -35,
+          "maxX": 110,
+          "maxY": 60
+        },
+        "titleX": -125,
+        "titleY": 45,
+        "fontSize": 20,
+        "color": "#AA00AA",
+        "lineType": 1,
+        "titleLayout": {
+          "width": 220,
+          "height": 20,
+          "clearance": 5,
+          "obstacles": [
+            {
+              "minX": -10.5,
+              "minY": -24.5,
+              "maxX": 10.5,
+              "maxY": 19.5
+            },
+            {
+              "minX": -10,
+              "minY": 5,
+              "maxX": 8.2861328125,
+              "maxY": 13
+            },
+            {
+              "minX": 10,
+              "minY": -0.5,
+              "maxX": 20.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -20.5,
+              "minY": -0.5,
+              "maxX": -10,
+              "maxY": 0.5
+            },
+            {
+              "minX": 19.5,
+              "minY": -0.5,
+              "maxX": 45.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": 49.5,
+              "minY": -5.5,
+              "maxX": 55.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": 27,
+              "minY": 0,
+              "maxX": 45,
+              "maxY": 12
+            },
+            {
+              "minX": -30.5,
+              "minY": -0.5,
+              "maxX": -19.5,
+              "maxY": 0.5
+            },
+            {
+              "minX": -70.5,
+              "minY": -5.5,
+              "maxX": -39.5,
+              "maxY": 5.5
+            },
+            {
+              "minX": -126.5,
+              "minY": -5.5,
+              "maxX": -70.5,
+              "maxY": 5.5
+            }
+          ]
+        }
+      },
+      "layout": {
+        "schemaVersion": 1,
+        "componentIds": {
+          "F1": "comp-F1"
+        },
+        "pinStates": {
+          "comp-F1": null
+        },
+        "placements": [
+          {
+            "primitiveId": "",
+            "designator": "F1",
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "mirror": false,
+            "bbox": {
+              "minX": -10.5,
+              "minY": -4.5,
+              "maxX": 10.5,
+              "maxY": 4.5
+            },
+            "textBboxes": [
+              {
+                "minX": -10,
+                "minY": 5,
+                "maxX": 8.2861328125,
+                "maxY": 13
+              }
+            ],
+            "pins": [
+              {
+                "number": "2",
+                "name": "2",
+                "net": "+5V",
+                "x": 20,
+                "y": 0,
+                "rotation": 0
+              },
+              {
+                "number": "1",
+                "name": "1",
+                "net": "VBUS_RAW",
+                "x": -20,
+                "y": 0,
+                "rotation": 180
+              }
+            ]
+          }
+        ],
+        "wires": null,
+        "flags": [
+          {
+            "net": "+5V",
+            "kind": "power",
+            "pinX": 20,
+            "pinY": 0,
+            "direction": "right",
+            "offset": 25,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-F1",
+              "pinNumber": "2",
+              "zoneId": "VBUS_FUSE",
+              "net": "+5V"
+            }
+          },
+          {
+            "net": "VBUS_RAW",
+            "kind": "net_port_bi",
+            "pinX": -20,
+            "pinY": 0,
+            "direction": "left",
+            "offset": 10,
+            "anchor": {
+              "type": "pin",
+              "componentId": "comp-F1",
+              "pinNumber": "1",
+              "zoneId": "VBUS_FUSE",
+              "net": "VBUS_RAW"
+            }
+          }
+        ],
+        "score": [
+          35,
+          2,
+          0,
+          8008
+        ],
+        "candidatesUsed": 18,
+        "search": {
+          "strategy": "checkpoint-local-repair-v1",
+          "backtracks": 0,
+          "repairAttempts": 0,
+          "targetedRelocations": 0,
+          "movedComponents": [],
+          "branchLimit": 200000,
+          "conflictPasses": 1,
+          "skippedCheckpoints": 0,
+          "placementFailures": 0,
+          "dependencyShellJumps": 0
+        },
+        "routing": {
+          "strategy": "directional-grid-a-star-v1",
+          "maxExpandedNodes": 200000,
+          "maxNodesPerAttempt": 50000,
+          "expandedNodes": 0,
+          "maxReroutes": 4,
+          "reroutes": 0,
+          "completedJoins": 0,
+          "templateCacheHits": 0
+        }
+      },
+      "sheetPosition": {
+        "x": 565,
+        "y": 315
+      }
+    }
+  ],
+  "sheet": {
+    "bounds": {
+      "minX": 0,
+      "minY": 0,
+      "maxX": 1170,
+      "maxY": 825
+    },
+    "border": {
+      "minX": 10,
+      "minY": 10,
+      "maxX": 1160,
+      "maxY": 815
+    },
+    "keepouts": [
+      {
+        "minX": 468,
+        "minY": 0,
+        "maxX": 1170,
+        "maxY": 198
+      }
+    ],
+    "padding": 10,
+    "gap": 10,
+    "flow": "z"
+  },
+  "spacing": 10
+}

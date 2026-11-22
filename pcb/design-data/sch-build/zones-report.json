@@ -1,0 +1,1840 @@
+{
+  "schemaVersion": 1,
+  "operation": "schematic.layout-plan",
+  "algorithmVersion": "v1.17.0",
+  "scope": "offline-layout-only",
+  "status": "planned",
+  "phase": "complete",
+  "zones": true,
+  "sourceSha256": "f8db47c028b62a385d4797f9724324d44ecf803786eba81d6162502db52a7008",
+  "routingDurationMs": 375,
+  "diagnostics": [
+    {
+      "candidatesUsed": 766,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 6033,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 4,
+        "templateCacheHits": 0,
+        "boundaryAttempts": [
+          {
+            "net": "USB_DN",
+            "sourceIsland": "USB_DN:6@-40,60;1@-40,70",
+            "targetIsland": "USB_DN:1@-40,-60",
+            "expansionRaw": 40,
+            "expandedNodes": 502,
+            "result": "merged"
+          },
+          {
+            "net": "USB_DP",
+            "sourceIsland": "USB_DP:4@40,60;1@40,70",
+            "targetIsland": "USB_DP:3@40,-60",
+            "expansionRaw": 40,
+            "expandedNodes": 609,
+            "result": "boundary-reached"
+          },
+          {
+            "net": "USB_DP",
+            "sourceIsland": "USB_DP:4@40,60;1@40,70",
+            "targetIsland": "USB_DP:3@40,-60",
+            "expansionRaw": 80,
+            "expandedNodes": 1097,
+            "result": "merged"
+          },
+          {
+            "net": "USB_DN",
+            "sourceIsland": "USB_DN:6@-40,60;1@-80,210",
+            "targetIsland": "USB_DN:1@-40,-60",
+            "expansionRaw": 40,
+            "expandedNodes": 298,
+            "result": "merged"
+          },
+          {
+            "net": "USB_DP",
+            "sourceIsland": "USB_DP:4@40,60;1@160,210",
+            "targetIsland": "USB_DP:3@40,-60",
+            "expansionRaw": 40,
+            "expandedNodes": 1707,
+            "result": "boundary-reached"
+          },
+          {
+            "net": "USB_DP",
+            "sourceIsland": "USB_DP:4@40,60;1@160,210",
+            "targetIsland": "USB_DP:3@40,-60",
+            "expansionRaw": 80,
+            "expandedNodes": 1820,
+            "result": "merged"
+          }
+        ],
+        "rejectedEdges": [
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "+5V",
+            "reason": "foreign-pin",
+            "count": 9,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "GND",
+            "reason": "foreign-pin",
+            "count": 8,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DN",
+            "reason": "foreign-pin",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DP",
+            "reason": "foreign-pin",
+            "count": 15,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "DM",
+            "reason": "foreign-pin",
+            "count": 3,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "USB_DP",
+            "reason": "foreign-pin",
+            "count": 3,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "DP",
+            "reason": "foreign-pin",
+            "count": 5,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "USB_DP",
+            "reason": "foreign-pin",
+            "count": 5,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "+5V",
+            "reason": "foreign-stem",
+            "count": 24,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "GND",
+            "reason": "foreign-stem",
+            "count": 22,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DN",
+            "reason": "foreign-stem",
+            "count": 6,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DP",
+            "reason": "foreign-stem",
+            "count": 40,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "DM",
+            "reason": "foreign-stem",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "USB_DP",
+            "reason": "foreign-stem",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "DP",
+            "reason": "foreign-stem",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "USB_DP",
+            "reason": "foreign-stem",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DN",
+            "reason": "pin-exit-direction",
+            "count": 27,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DP",
+            "reason": "pin-exit-direction",
+            "count": 58,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "USB_DP",
+            "reason": "pin-exit-direction",
+            "count": 12,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "+5V",
+            "reason": "pin-exit-foreign-wire",
+            "count": 11,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "GND",
+            "reason": "pin-exit-foreign-wire",
+            "count": 8,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DN",
+            "reason": "pin-exit-foreign-wire",
+            "count": 1,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DP",
+            "reason": "pin-exit-foreign-wire",
+            "count": 18,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "DM",
+            "reason": "pin-exit-foreign-wire",
+            "count": 8,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "USB_DP",
+            "reason": "pin-exit-foreign-wire",
+            "count": 8,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "DP",
+            "reason": "pin-exit-foreign-wire",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "USB_DP",
+            "reason": "pin-exit-foreign-wire",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DN",
+            "reason": "wire-body",
+            "count": 111,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DP",
+            "reason": "wire-body",
+            "count": 331,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "USB_DP",
+            "reason": "wire-body",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "USB_DP",
+            "reason": "wire-body",
+            "count": 27,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-D1",
+            "componentRef": "D1",
+            "net": "USB_DP",
+            "reason": "wire-text",
+            "count": 74,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R1",
+            "componentRef": "R1",
+            "net": "USB_DP",
+            "reason": "wire-text",
+            "count": 3,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R2",
+            "componentRef": "R2",
+            "net": "USB_DP",
+            "reason": "wire-text",
+            "count": 21,
+            "attributionComplete": true
+          }
+        ],
+        "candidateSummaries": [
+          {
+            "net": "USB_DN",
+            "sourceIsland": "USB_DN:6@-40,60;1@-40,70",
+            "targetIsland": "USB_DN:1@-40,-60",
+            "points": [
+              [
+                -40,
+                -60
+              ],
+              [
+                -40,
+                -65
+              ],
+              [
+                -75,
+                -65
+              ],
+              [
+                -75,
+                65
+              ],
+              [
+                -45,
+                65
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "USB_DP",
+            "sourceIsland": "USB_DP:4@40,60;1@40,70",
+            "targetIsland": "USB_DP:3@40,-60",
+            "points": [
+              [
+                40,
+                65
+              ],
+              [
+                45,
+                65
+              ],
+              [
+                45,
+                45
+              ],
+              [
+                95,
+                45
+              ],
+              [
+                95,
+                -65
+              ],
+              [
+                40,
+                -65
+              ],
+              [
+                40,
+                -60
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "USB_DN",
+            "sourceIsland": "USB_DN:6@-40,60;1@-80,210",
+            "targetIsland": "USB_DN:1@-40,-60",
+            "points": [
+              [
+                -40,
+                -60
+              ],
+              [
+                -40,
+                -65
+              ],
+              [
+                -75,
+                -65
+              ],
+              [
+                -75,
+                65
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "USB_DP",
+            "sourceIsland": "USB_DP:4@40,60;1@160,210",
+            "targetIsland": "USB_DP:3@40,-60",
+            "points": [
+              [
+                40,
+                65
+              ],
+              [
+                95,
+                65
+              ],
+              [
+                95,
+                -65
+              ],
+              [
+                40,
+                -65
+              ],
+              [
+                40,
+                -60
+              ]
+            ],
+            "result": "merged"
+          }
+        ]
+      },
+      "search": {
+        "spacingTrials": [
+          {
+            "factor": 3,
+            "candidateQuota": 4096,
+            "candidatesUsed": 410,
+            "expandedNodes": 3825,
+            "result": "accepted"
+          }
+        ],
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [
+          "comp-R1",
+          "comp-R2"
+        ],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0,
+        "checkpointAlternatives": {
+          "comp-R1": 1,
+          "comp-R2": 1
+        }
+      },
+      "type": "layout-search",
+      "zoneId": "USB_ESD_DATA"
+    },
+    {
+      "candidatesUsed": 1178,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0
+      },
+      "type": "layout-search",
+      "zoneId": "USB_CONN"
+    },
+    {
+      "candidatesUsed": 64,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0,
+        "checkpointAlternatives": {
+          "comp-R5": 1
+        }
+      },
+      "type": "layout-search",
+      "zoneId": "LED_5V"
+    },
+    {
+      "candidatesUsed": 18,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0
+      },
+      "type": "layout-search",
+      "zoneId": "CC1_PD"
+    },
+    {
+      "candidatesUsed": 18,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0
+      },
+      "type": "layout-search",
+      "zoneId": "CC2_PD"
+    },
+    {
+      "candidatesUsed": 18,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0
+      },
+      "type": "layout-search",
+      "zoneId": "VBUS_FUSE"
+    },
+    {
+      "candidatesUsed": 1480,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 819,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 5,
+        "templateCacheHits": 0,
+        "boundaryAttempts": [
+          {
+            "net": "BUCK_SW",
+            "sourceIsland": "BUCK_SW:1@50,-20;5@35,0",
+            "targetIsland": "BUCK_SW:2@85,10",
+            "expansionRaw": 40,
+            "expandedNodes": 27,
+            "result": "merged"
+          },
+          {
+            "net": "BUCK_SW",
+            "sourceIsland": "BUCK_SW:1@190,-60;2@215,30",
+            "targetIsland": "BUCK_SW:5@35,0",
+            "expansionRaw": 40,
+            "expandedNodes": 390,
+            "result": "merged"
+          },
+          {
+            "net": "+5V",
+            "sourceIsland": "+5V:3@-35,-10;2@-35,0",
+            "targetIsland": "+5V:1@-80,-135",
+            "expansionRaw": 40,
+            "expandedNodes": 232,
+            "result": "merged"
+          },
+          {
+            "net": "+5V",
+            "sourceIsland": "+5V:1@-80,-135;3@-35,-10;2@-35,0",
+            "targetIsland": "+5V:1@-185,15",
+            "expansionRaw": 40,
+            "expandedNodes": 147,
+            "result": "merged"
+          },
+          {
+            "net": "3V3",
+            "sourceIsland": "3V3:1@325,-165;2@230,-60;1@340,-60",
+            "targetIsland": "3V3:1@340,45",
+            "expansionRaw": 40,
+            "expandedNodes": 23,
+            "result": "merged"
+          }
+        ],
+        "rejectedEdges": [
+          {
+            "componentId": "comp-C1",
+            "componentRef": "C1",
+            "net": "+5V",
+            "reason": "pin-exit-direction",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-C2",
+            "componentRef": "C2",
+            "net": "+5V",
+            "reason": "pin-exit-direction",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-C3",
+            "componentRef": "C3",
+            "net": "BUCK_SW",
+            "reason": "pin-exit-direction",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-U2",
+            "componentRef": "U2",
+            "net": "BUCK_SW",
+            "reason": "pin-exit-direction",
+            "count": 3,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-U2",
+            "componentRef": "U2",
+            "net": "BUCK_BST",
+            "reason": "pin-exit-foreign-wire",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-U2",
+            "componentRef": "U2",
+            "net": "BUCK_SW",
+            "reason": "pin-exit-foreign-wire",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-U2",
+            "componentRef": "U2",
+            "net": "GND",
+            "reason": "pin-exit-foreign-wire",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-C1",
+            "componentRef": "C1",
+            "net": "+5V",
+            "reason": "wire-body",
+            "count": 1,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-C2",
+            "componentRef": "C2",
+            "net": "+5V",
+            "reason": "wire-body",
+            "count": 6,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-C3",
+            "componentRef": "C3",
+            "net": "BUCK_SW",
+            "reason": "wire-body",
+            "count": 6,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-C1",
+            "componentRef": "C1",
+            "net": "+5V",
+            "reason": "wire-text",
+            "count": 7,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-L1",
+            "componentRef": "L1",
+            "net": "BUCK_SW",
+            "reason": "wire-text",
+            "count": 4,
+            "attributionComplete": true
+          }
+        ],
+        "candidateSummaries": [
+          {
+            "net": "BUCK_SW",
+            "sourceIsland": "BUCK_SW:1@50,-20;5@35,0",
+            "targetIsland": "BUCK_SW:2@85,10",
+            "points": [
+              [
+                85,
+                10
+              ],
+              [
+                90,
+                10
+              ],
+              [
+                90,
+                0
+              ],
+              [
+                45,
+                0
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "BUCK_SW",
+            "sourceIsland": "BUCK_SW:1@190,-60;2@215,30",
+            "targetIsland": "BUCK_SW:5@35,0",
+            "points": [
+              [
+                35,
+                0
+              ],
+              [
+                185,
+                0
+              ],
+              [
+                185,
+                -15
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "+5V",
+            "sourceIsland": "+5V:3@-35,-10;2@-35,0",
+            "targetIsland": "+5V:1@-80,-135",
+            "points": [
+              [
+                -80,
+                -135
+              ],
+              [
+                -85,
+                -135
+              ],
+              [
+                -85,
+                -10
+              ],
+              [
+                -40,
+                -10
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "+5V",
+            "sourceIsland": "+5V:1@-80,-135;3@-35,-10;2@-35,0",
+            "targetIsland": "+5V:1@-185,15",
+            "points": [
+              [
+                -185,
+                15
+              ],
+              [
+                -190,
+                15
+              ],
+              [
+                -190,
+                -10
+              ],
+              [
+                -85,
+                -10
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "3V3",
+            "sourceIsland": "3V3:1@325,-165;2@230,-60;1@340,-60",
+            "targetIsland": "3V3:1@340,45",
+            "points": [
+              [
+                340,
+                45
+              ],
+              [
+                335,
+                45
+              ],
+              [
+                335,
+                -60
+              ]
+            ],
+            "result": "merged"
+          }
+        ]
+      },
+      "search": {
+        "spacingTrials": [
+          {
+            "factor": 3,
+            "candidateQuota": 4096,
+            "candidatesUsed": 837,
+            "expandedNodes": 792,
+            "result": "accepted"
+          }
+        ],
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [
+          "comp-C1",
+          "comp-C2",
+          "comp-C3",
+          "comp-L1",
+          "comp-C4",
+          "comp-C5",
+          "comp-C6"
+        ],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0,
+        "checkpointAlternatives": {
+          "comp-C1": 1,
+          "comp-C2": 1,
+          "comp-C3": 1,
+          "comp-C4": 1,
+          "comp-C5": 1,
+          "comp-C6": 1,
+          "comp-L1": 1
+        }
+      },
+      "type": "layout-search",
+      "zoneId": "BUCK_3V3"
+    },
+    {
+      "candidatesUsed": 708,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 69,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 3,
+        "templateCacheHits": 0,
+        "boundaryAttempts": [
+          {
+            "net": "Q1_GATE",
+            "sourceIsland": "Q1_GATE:3@-25,-5;2@-30,0;1@-20,0",
+            "targetIsland": "Q1_GATE:1@-25,35",
+            "expansionRaw": 40,
+            "expandedNodes": 16,
+            "result": "merged"
+          },
+          {
+            "net": "Q2_BASE",
+            "sourceIsland": "Q2_BASE:2@-55,-25;1@-45,-25",
+            "targetIsland": "Q2_BASE:1@-60,-55",
+            "expansionRaw": 40,
+            "expandedNodes": 30,
+            "result": "merged"
+          },
+          {
+            "net": "Q1_GATE",
+            "sourceIsland": "Q1_GATE:3@-95,-55;2@-130,0;1@-20,0",
+            "targetIsland": "Q1_GATE:1@-35,105",
+            "expansionRaw": 40,
+            "expandedNodes": 23,
+            "result": "merged"
+          }
+        ],
+        "rejectedEdges": [
+          {
+            "componentId": "comp-C10",
+            "componentRef": "C10",
+            "net": "Q1_GATE",
+            "reason": "pin-exit-direction",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R7",
+            "componentRef": "R7",
+            "net": "Q1_GATE",
+            "reason": "pin-exit-direction",
+            "count": 1,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R8",
+            "componentRef": "R8",
+            "net": "Q2_BASE",
+            "reason": "pin-exit-direction",
+            "count": 3,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R9",
+            "componentRef": "R9",
+            "net": "Q2_BASE",
+            "reason": "pin-exit-direction",
+            "count": 4,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R8",
+            "componentRef": "R8",
+            "net": "Q2_BASE",
+            "reason": "wire-body",
+            "count": 3,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R9",
+            "componentRef": "R9",
+            "net": "Q2_BASE",
+            "reason": "wire-body",
+            "count": 1,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R9",
+            "componentRef": "R9",
+            "net": "Q2_BASE",
+            "reason": "wire-text",
+            "count": 3,
+            "attributionComplete": true
+          }
+        ],
+        "candidateSummaries": [
+          {
+            "net": "Q1_GATE",
+            "sourceIsland": "Q1_GATE:3@-25,-5;2@-30,0;1@-20,0",
+            "targetIsland": "Q1_GATE:1@-25,35",
+            "points": [
+              [
+                -25,
+                35
+              ],
+              [
+                -30,
+                35
+              ],
+              [
+                -30,
+                5
+              ],
+              [
+                -25,
+                5
+              ],
+              [
+                -25,
+                0
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "Q2_BASE",
+            "sourceIsland": "Q2_BASE:2@-55,-25;1@-45,-25",
+            "targetIsland": "Q2_BASE:1@-60,-55",
+            "points": [
+              [
+                -60,
+                -55
+              ],
+              [
+                -65,
+                -55
+              ],
+              [
+                -65,
+                -35
+              ],
+              [
+                -50,
+                -35
+              ],
+              [
+                -50,
+                -25
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "Q1_GATE",
+            "sourceIsland": "Q1_GATE:3@-95,-55;2@-130,0;1@-20,0",
+            "targetIsland": "Q1_GATE:1@-35,105",
+            "points": [
+              [
+                -35,
+                105
+              ],
+              [
+                -40,
+                105
+              ],
+              [
+                -40,
+                0
+              ]
+            ],
+            "result": "merged"
+          }
+        ]
+      },
+      "search": {
+        "spacingTrials": [
+          {
+            "factor": 3,
+            "candidateQuota": 4096,
+            "candidatesUsed": 288,
+            "expandedNodes": 23,
+            "result": "accepted"
+          }
+        ],
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [
+          "comp-R7",
+          "comp-C10",
+          "comp-Q2",
+          "comp-R8",
+          "comp-R9"
+        ],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0,
+        "checkpointAlternatives": {
+          "comp-C10": 1,
+          "comp-Q2": 1,
+          "comp-R7": 1,
+          "comp-R8": 1,
+          "comp-R9": 1
+        }
+      },
+      "type": "layout-search",
+      "zoneId": "PWR_SWITCH"
+    },
+    {
+      "candidatesUsed": 64,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0,
+        "checkpointAlternatives": {
+          "comp-R10": 1
+        }
+      },
+      "type": "layout-search",
+      "zoneId": "LED_PWR"
+    },
+    {
+      "candidatesUsed": 863,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0
+      },
+      "type": "layout-search",
+      "zoneId": "SELF_HDR"
+    },
+    {
+      "candidatesUsed": 3783,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 2414,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 4,
+        "templateCacheHits": 0,
+        "boundaryAttempts": [
+          {
+            "net": "RST",
+            "sourceIsland": "RST:37@80,85;1@85,90",
+            "targetIsland": "RST:2@85,115",
+            "expansionRaw": 40,
+            "expandedNodes": 5,
+            "result": "merged"
+          },
+          {
+            "net": "RST",
+            "sourceIsland": "RST:1@295,270;1@325,345",
+            "targetIsland": "RST:37@80,85",
+            "expansionRaw": 40,
+            "expandedNodes": 1597,
+            "result": "merged"
+          },
+          {
+            "net": "RST",
+            "sourceIsland": "RST:37@80,85;1@295,270;1@325,345",
+            "targetIsland": "RST:2@215,345",
+            "expansionRaw": 40,
+            "expandedNodes": 795,
+            "result": "merged"
+          },
+          {
+            "net": "3V3",
+            "sourceIsland": "3V3:1@-320,-75;13@-80,-30",
+            "targetIsland": "3V3:1@-320,45",
+            "expansionRaw": 40,
+            "expandedNodes": 17,
+            "result": "merged"
+          }
+        ],
+        "rejectedEdges": [
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "3V3",
+            "reason": "foreign-pin",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "RST",
+            "reason": "foreign-pin",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "3V3",
+            "reason": "foreign-stem",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "RST",
+            "reason": "foreign-stem",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "RST",
+            "reason": "pin-exit-direction",
+            "count": 11,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "3V3",
+            "reason": "pin-exit-foreign-wire",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "RST",
+            "reason": "pin-exit-foreign-wire",
+            "count": 2,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "RST",
+            "reason": "wire-body",
+            "count": 25,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-C9",
+            "componentRef": "C9",
+            "net": "RST",
+            "reason": "wire-text",
+            "count": 1,
+            "attributionComplete": true
+          },
+          {
+            "componentId": "comp-R6",
+            "componentRef": "R6",
+            "net": "RST",
+            "reason": "wire-text",
+            "count": 14,
+            "attributionComplete": true
+          }
+        ],
+        "candidateSummaries": [
+          {
+            "net": "RST",
+            "sourceIsland": "RST:37@80,85;1@85,90",
+            "targetIsland": "RST:2@85,115",
+            "points": [
+              [
+                85,
+                115
+              ],
+              [
+                90,
+                115
+              ],
+              [
+                90,
+                100
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "RST",
+            "sourceIsland": "RST:1@295,270;1@325,345",
+            "targetIsland": "RST:37@80,85",
+            "points": [
+              [
+                80,
+                85
+              ],
+              [
+                290,
+                85
+              ],
+              [
+                290,
+                270
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "RST",
+            "sourceIsland": "RST:37@80,85;1@295,270;1@325,345",
+            "targetIsland": "RST:2@215,345",
+            "points": [
+              [
+                215,
+                345
+              ],
+              [
+                290,
+                345
+              ]
+            ],
+            "result": "merged"
+          },
+          {
+            "net": "3V3",
+            "sourceIsland": "3V3:1@-320,-75;13@-80,-30",
+            "targetIsland": "3V3:1@-320,45",
+            "points": [
+              [
+                -320,
+                45
+              ],
+              [
+                -325,
+                45
+              ],
+              [
+                -325,
+                -30
+              ]
+            ],
+            "result": "merged"
+          }
+        ]
+      },
+      "search": {
+        "spacingTrials": [
+          {
+            "factor": 3,
+            "candidateQuota": 4096,
+            "candidatesUsed": 2323,
+            "expandedNodes": 2409,
+            "result": "accepted"
+          }
+        ],
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [
+          "comp-C7",
+          "comp-C8",
+          "comp-R6",
+          "comp-C9",
+          "comp-SW1"
+        ],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0,
+        "checkpointAlternatives": {
+          "comp-C7": 1,
+          "comp-C8": 1,
+          "comp-C9": 1,
+          "comp-R6": 1,
+          "comp-SW1": 1
+        }
+      },
+      "type": "layout-search",
+      "zoneId": "TLSR_CORE"
+    },
+    {
+      "candidatesUsed": 1006,
+      "feasibility": null,
+      "optimization": null,
+      "routing": {
+        "strategy": "directional-grid-a-star-v1",
+        "maxExpandedNodes": 200000,
+        "maxNodesPerAttempt": 50000,
+        "expandedNodes": 0,
+        "maxReroutes": 4,
+        "reroutes": 0,
+        "completedJoins": 0,
+        "templateCacheHits": 0
+      },
+      "search": {
+        "strategy": "checkpoint-local-repair-v1",
+        "backtracks": 0,
+        "repairAttempts": 0,
+        "targetedRelocations": 0,
+        "movedComponents": [],
+        "branchLimit": 200000,
+        "conflictPasses": 1,
+        "skippedCheckpoints": 0,
+        "placementFailures": 0,
+        "dependencyShellJumps": 0
+      },
+      "type": "layout-search",
+      "zoneId": "TARGET_HDR"
+    }
+  ],
+  "globalInfeasibilityProven": false,
+  "zoneReview": {
+    "schemaVersion": 1,
+    "ruleVersion": "1",
+    "sourceSha256": "f8db47c028b62a385d4797f9724324d44ecf803786eba81d6162502db52a7008",
+    "status": "review-required",
+    "scope": "source-zone-topology-advisory",
+    "limitations": [
+      "未命中规则不证明功能归属正确；AI 需结合器件身份、手册和设计意图决定保留或拆分。",
+      "仅排除显式 local_power/local_ground；direct/module_port 也可能承载电源，不从网名猜类型。",
+      "共享源网络不证明真实导线连通；本报告不验证布局、库身份或现场图面。"
+    ],
+    "findings": [
+      {
+        "rule": "rail-only-attachment",
+        "severity": "warning",
+        "zoneId": "BUCK_3V3",
+        "coreComponentId": "comp-U2",
+        "components": [
+          {
+            "id": "comp-C1",
+            "ref": "C1",
+            "pinCount": 2
+          },
+          {
+            "id": "comp-U2",
+            "ref": "U2",
+            "pinCount": 6
+          }
+        ],
+        "nets": [
+          {
+            "name": "+5V",
+            "policy": "local_power",
+            "pins": [
+              {
+                "componentId": "comp-C1",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C2",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-U2",
+                "pinNumber": "2"
+              },
+              {
+                "componentId": "comp-U2",
+                "pinNumber": "3"
+              }
+            ]
+          }
+        ],
+        "message": "该 attachment 两端器件只共享声明的电源/地网络，无法仅据此证明专属外围关系。",
+        "suggestion": "AI 核对去耦/供电支路等功能依据；合法外围可以保留，独立电源功能可考虑拆区。"
+      },
+      {
+        "rule": "rail-only-attachment",
+        "severity": "warning",
+        "zoneId": "BUCK_3V3",
+        "coreComponentId": "comp-U2",
+        "components": [
+          {
+            "id": "comp-C2",
+            "ref": "C2",
+            "pinCount": 2
+          },
+          {
+            "id": "comp-U2",
+            "ref": "U2",
+            "pinCount": 6
+          }
+        ],
+        "nets": [
+          {
+            "name": "+5V",
+            "policy": "local_power",
+            "pins": [
+              {
+                "componentId": "comp-C1",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C2",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-U2",
+                "pinNumber": "2"
+              },
+              {
+                "componentId": "comp-U2",
+                "pinNumber": "3"
+              }
+            ]
+          }
+        ],
+        "message": "该 attachment 两端器件只共享声明的电源/地网络，无法仅据此证明专属外围关系。",
+        "suggestion": "AI 核对去耦/供电支路等功能依据；合法外围可以保留，独立电源功能可考虑拆区。"
+      },
+      {
+        "rule": "rail-only-attachment",
+        "severity": "warning",
+        "zoneId": "BUCK_3V3",
+        "coreComponentId": "comp-U2",
+        "components": [
+          {
+            "id": "comp-C4",
+            "ref": "C4",
+            "pinCount": 2
+          },
+          {
+            "id": "comp-L1",
+            "ref": "L1",
+            "pinCount": 2
+          }
+        ],
+        "nets": [
+          {
+            "name": "3V3",
+            "policy": "local_power",
+            "pins": [
+              {
+                "componentId": "comp-C4",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C5",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C6",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-L1",
+                "pinNumber": "2"
+              },
+              {
+                "componentId": "comp-U2",
+                "pinNumber": "1"
+              }
+            ]
+          }
+        ],
+        "message": "该 attachment 两端器件只共享声明的电源/地网络，无法仅据此证明专属外围关系。",
+        "suggestion": "AI 核对去耦/供电支路等功能依据；合法外围可以保留，独立电源功能可考虑拆区。"
+      },
+      {
+        "rule": "rail-only-attachment",
+        "severity": "warning",
+        "zoneId": "BUCK_3V3",
+        "coreComponentId": "comp-U2",
+        "components": [
+          {
+            "id": "comp-C5",
+            "ref": "C5",
+            "pinCount": 2
+          },
+          {
+            "id": "comp-L1",
+            "ref": "L1",
+            "pinCount": 2
+          }
+        ],
+        "nets": [
+          {
+            "name": "3V3",
+            "policy": "local_power",
+            "pins": [
+              {
+                "componentId": "comp-C4",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C5",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C6",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-L1",
+                "pinNumber": "2"
+              },
+              {
+                "componentId": "comp-U2",
+                "pinNumber": "1"
+              }
+            ]
+          }
+        ],
+        "message": "该 attachment 两端器件只共享声明的电源/地网络，无法仅据此证明专属外围关系。",
+        "suggestion": "AI 核对去耦/供电支路等功能依据；合法外围可以保留，独立电源功能可考虑拆区。"
+      },
+      {
+        "rule": "rail-only-attachment",
+        "severity": "warning",
+        "zoneId": "BUCK_3V3",
+        "coreComponentId": "comp-U2",
+        "components": [
+          {
+            "id": "comp-C6",
+            "ref": "C6",
+            "pinCount": 2
+          },
+          {
+            "id": "comp-L1",
+            "ref": "L1",
+            "pinCount": 2
+          }
+        ],
+        "nets": [
+          {
+            "name": "3V3",
+            "policy": "local_power",
+            "pins": [
+              {
+                "componentId": "comp-C4",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C5",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C6",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-L1",
+                "pinNumber": "2"
+              },
+              {
+                "componentId": "comp-U2",
+                "pinNumber": "1"
+              }
+            ]
+          }
+        ],
+        "message": "该 attachment 两端器件只共享声明的电源/地网络，无法仅据此证明专属外围关系。",
+        "suggestion": "AI 核对去耦/供电支路等功能依据；合法外围可以保留，独立电源功能可考虑拆区。"
+      },
+      {
+        "rule": "rail-only-attachment",
+        "severity": "warning",
+        "zoneId": "TLSR_CORE",
+        "coreComponentId": "comp-U1",
+        "components": [
+          {
+            "id": "comp-C7",
+            "ref": "C7",
+            "pinCount": 2
+          },
+          {
+            "id": "comp-U1",
+            "ref": "U1",
+            "pinCount": 37
+          }
+        ],
+        "nets": [
+          {
+            "name": "3V3",
+            "policy": "local_power",
+            "pins": [
+              {
+                "componentId": "comp-C7",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C8",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-R6",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-U1",
+                "pinNumber": "13"
+              }
+            ]
+          }
+        ],
+        "message": "该 attachment 两端器件只共享声明的电源/地网络，无法仅据此证明专属外围关系。",
+        "suggestion": "AI 核对去耦/供电支路等功能依据；合法外围可以保留，独立电源功能可考虑拆区。"
+      },
+      {
+        "rule": "rail-only-attachment",
+        "severity": "warning",
+        "zoneId": "TLSR_CORE",
+        "coreComponentId": "comp-U1",
+        "components": [
+          {
+            "id": "comp-C8",
+            "ref": "C8",
+            "pinCount": 2
+          },
+          {
+            "id": "comp-U1",
+            "ref": "U1",
+            "pinCount": 37
+          }
+        ],
+        "nets": [
+          {
+            "name": "3V3",
+            "policy": "local_power",
+            "pins": [
+              {
+                "componentId": "comp-C7",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-C8",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-R6",
+                "pinNumber": "1"
+              },
+              {
+                "componentId": "comp-U1",
+                "pinNumber": "13"
+              }
+            ]
+          }
+        ],
+        "message": "该 attachment 两端器件只共享声明的电源/地网络，无法仅据此证明专属外围关系。",
+        "suggestion": "AI 核对去耦/供电支路等功能依据；合法外围可以保留，独立电源功能可考虑拆区。"
+      }
+    ]
+  }
+}
