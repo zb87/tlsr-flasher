@@ -22,8 +22,9 @@ void board_init(void)
     gpio_set_input_en(PIN_USB_COMPAT_PE0, 0);
     gpio_setup_up_down_resistor(PIN_USB_COMPAT_PE0, PM_PIN_UP_DOWN_FLOAT);
 
-    /* Clear UART RX pinmux on PA7 so AS_SWM controls PA7 */
+    /* Clear UART RX / I2S_DI_DMIC pinmux on PA7 so AS_SWM controls PA7 */
     REG_ADDR8(0x5b0) &= (u8)(~BIT(7));
+    REG_ADDR8(0x5b2) &= (u8)(~BIT(7));
 
     /* Safe defaults: PWR_EN=0, EXT_RST released (Hi-Z + 10k pull-up), SWM floating */
     board_set_ext_rst(1);
@@ -142,6 +143,7 @@ void board_set_ext_rst(u8 release)
 void board_swm_enable(void)
 {
     REG_ADDR8(0x5b0) &= (u8)(~BIT(7));
+    REG_ADDR8(0x5b2) &= (u8)(~BIT(7));
     gpio_set_output_en(PIN_SWM, 0);
     gpio_set_input_en(PIN_SWM, 1);
     gpio_setup_up_down_resistor(PIN_SWM, PM_PIN_PULLUP_10K);

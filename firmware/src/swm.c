@@ -8,8 +8,9 @@ static u8 s_swbuf[6]  = {0x5A, 0x00, 0x06, 0x02, 0x00, 0x05};
 
 static void swm_hw_reset(void)
 {
-    reg_rst1 |= FLD_RST_SWR_M;
-    reg_rst1 &= (u8)(~FLD_RST_SWR_M);
+    reg_swire_ctrl1 = 0;
+    reg_rst0_16 |= FLD_RST_SWR_M;
+    reg_rst0_16 &= (u16)(~FLD_RST_SWR_M);
     reg_swire_clk_div = s_swdiv & 0x7F;
 }
 
