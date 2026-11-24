@@ -62,7 +62,7 @@ Compiles [`tests/host_harness.c`](tests/host_harness.c) against stubbed Telink r
    ```bash
    python3 ../TlsrPgm.py -p <PORT> -b 1500000 -u -t 1500 -a 300 we 0 bin/tlsr_flasher_8269.bin
    ```
-   *(See [`../README.md`](../README.md) for optional `ea` full erase and [`../USBCOMFlashTx.html`](../USBCOMFlashTx.html) browser UART-TX-SWS bootstrapping when no second programmer is available.)*
+   *(See [`../README.md`](../README.md) for optional `ea` full erase and `-R/--retry` flashing options.)*
 
 ---
 

@@ -1,0 +1,3273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>TLSR82xx Flasher &amp; SWire Workbench — WebSerial</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      /* Palette primitives */
+      --bg-light: #f4f6f9;
+      --bg-dark: #0e1319;
+      --surface-light: #ffffff;
+      --surface-dark: #151c24;
+      --surface-2-light: #eef2f6;
+      --surface-2-dark: #1c2632;
+      --surface-3-light: #e2e8f0;
+      --surface-3-dark: #24303e;
+      --text-light: #111827;
+      --text-dark: #e6edf3;
+      --muted-light: #4b5563;
+      --muted-dark: #94a3b8;
+      --border-light: #cbd5e1;
+      --border-dark: #2c3948;
+
+      --accent-light: #0369a1;
+      --accent-dark: #38bdf8;
+      --accent-fg-light: #ffffff;
+      --accent-fg-dark: #071926;
+
+      --ok-light: #15803d;
+      --ok-dark: #4ade80;
+      --ok-bg-light: #dcfce7;
+      --ok-bg-dark: #0d2b1d;
+
+      --warn-light: #b45309;
+      --warn-dark: #fbbf24;
+      --warn-bg-light: #fef3c7;
+      --warn-bg-dark: #2c210b;
+
+      --err-light: #b91c1c;
+      --err-dark: #f87171;
+      --err-bg-light: #fee2e2;
+      --err-bg-dark: #321316;
+
+      /* Fallback defaults (light) for browsers before light-dark() */
+      --bg: var(--bg-light);
+      --surface: var(--surface-light);
+      --surface-2: var(--surface-2-light);
+      --surface-3: var(--surface-3-light);
+      --text: var(--text-light);
+      --muted: var(--muted-light);
+      --border: var(--border-light);
+      --accent: var(--accent-light);
+      --accent-fg: var(--accent-fg-light);
+      --ok: var(--ok-light);
+      --ok-bg: var(--ok-bg-light);
+      --warn: var(--warn-light);
+      --warn-bg: var(--warn-bg-light);
+      --err: var(--err-light);
+      --err-bg: var(--err-bg-light);
+      --mono-bg: #0f172a;
+      --mono-fg: #e2e8f0;
+
+      /* Resolved tokens with light-dark() */
+      --bg: light-dark(var(--bg-light), var(--bg-dark));
+      --surface: light-dark(var(--surface-light), var(--surface-dark));
+      --surface-2: light-dark(var(--surface-2-light), var(--surface-2-dark));
+      --surface-3: light-dark(var(--surface-3-light), var(--surface-3-dark));
+      --text: light-dark(var(--text-light), var(--text-dark));
+      --muted: light-dark(var(--muted-light), var(--muted-dark));
+      --border: light-dark(var(--border-light), var(--border-dark));
+      --accent: light-dark(var(--accent-light), var(--accent-dark));
+      --accent-fg: light-dark(var(--accent-fg-light), var(--accent-fg-dark));
+      --ok: light-dark(var(--ok-light), var(--ok-dark));
+      --ok-bg: light-dark(var(--ok-bg-light), var(--ok-bg-dark));
+      --warn: light-dark(var(--warn-light), var(--warn-dark));
+      --warn-bg: light-dark(var(--warn-bg-light), var(--warn-bg-dark));
+      --err: light-dark(var(--err-light), var(--err-dark));
+      --err-bg: light-dark(var(--err-bg-light), var(--err-bg-dark));
+      --mono-bg: light-dark(#f8fafc, #0b1016);
+      --mono-fg: light-dark(#0f172a, #d8e2ec);
+
+      accent-color: var(--accent);
+      scrollbar-color: var(--border) var(--surface-2);
+
+      --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Consolas, monospace;
+      --radius: 10px;
+      --radius-sm: 6px;
+      --shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.04);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: var(--bg-dark);
+        --surface: var(--surface-dark);
+        --surface-2: var(--surface-2-dark);
+        --surface-3: var(--surface-3-dark);
+        --text: var(--text-dark);
+        --muted: var(--muted-dark);
+        --border: var(--border-dark);
+        --accent: var(--accent-dark);
+        --accent-fg: var(--accent-fg-dark);
+        --ok: var(--ok-dark);
+        --ok-bg: var(--ok-bg-dark);
+        --warn: var(--warn-dark);
+        --warn-bg: var(--warn-bg-dark);
+        --err: var(--err-dark);
+        --err-bg: var(--err-bg-dark);
+        --mono-bg: #0b1016;
+        --mono-fg: #d8e2ec;
+      }
+    }
+
+    :root[data-theme="light"] { color-scheme: light; }
+    :root[data-theme="dark"] { color-scheme: dark; }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.45;
+      min-height: 100vh;
+    }
+
+    .app-shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    /* Header & status strip */
+    .topbar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      inline-size: 38px;
+      block-size: 38px;
+      border-radius: 9px;
+      background: color-mix(in srgb, var(--accent) 16%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .topbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      font-family: var(--font-mono);
+    }
+
+    .badge.ok { background: var(--ok-bg); color: var(--ok); border-color: color-mix(in srgb, var(--ok) 40%, transparent); }
+    .badge.warn { background: var(--warn-bg); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 40%, transparent); }
+    .badge.err { background: var(--err-bg); color: var(--err); border-color: color-mix(in srgb, var(--err) 40%, transparent); }
+
+    .dot {
+      inline-size: 8px;
+      block-size: 8px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* Cards & Controls */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 110px;
+    }
+
+    .field label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 6px 9px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      min-block-size: 32px;
+    }
+
+    input:focus-visible,
+    select:focus-visible,
+    button:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    input:invalid {
+      border-color: var(--err);
+    }
+
+    .check-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      cursor: pointer;
+      user-select: none;
+      min-block-size: 28px;
+    }
+
+    button {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 6px 12px;
+      min-block-size: 32px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background-color 0.12s ease, border-color 0.12s ease, opacity 0.12s ease;
+    }
+
+    button:hover:not(:disabled) {
+      background: var(--surface-3);
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    }
+
+    button:disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+    }
+
+    button.primary {
+      background: var(--accent);
+      color: var(--accent-fg);
+      border-color: transparent;
+    }
+
+    button.primary:hover:not(:disabled) {
+      filter: brightness(1.06);
+      background: var(--accent);
+    }
+
+    button.ok {
+      background: var(--ok-bg);
+      color: var(--ok);
+      border-color: color-mix(in srgb, var(--ok) 45%, transparent);
+    }
+
+    button.warn {
+      background: var(--warn-bg);
+      color: var(--warn);
+      border-color: color-mix(in srgb, var(--warn) 45%, transparent);
+    }
+
+    button.danger {
+      background: var(--err-bg);
+      color: var(--err);
+      border-color: color-mix(in srgb, var(--err) 45%, transparent);
+    }
+
+    button.sm {
+      padding: 4px 9px;
+      font-size: 12px;
+      min-block-size: 28px;
+    }
+
+    /* Accessible Copy Button + Live Status Bubble (outside button) */
+    .copy-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    .copy-btn {
+      min-inline-size: 28px;
+      min-block-size: 28px;
+      padding: 3px 8px;
+      font-size: 11.5px;
+      font-family: var(--font-mono);
+    }
+
+    .copy-status {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ok);
+      opacity: 0;
+      transition: opacity 0.16s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .copy-status.visible {
+      opacity: 1;
+    }
+
+    /* Telemetry Strip */
+    .telemetry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+    }
+
+    .kv-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .kv-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .kv-value {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Accessible Tabs */
+    .tabs-shell {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    [role="tablist"] {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+      gap: 2px;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 10px 0;
+    }
+
+    [role="tablist"]::-webkit-scrollbar { display: none; }
+
+    [role="tab"] {
+      position: relative;
+      border: 1px solid transparent;
+      border-bottom: none;
+      border-radius: 7px 7px 0 0;
+      background: transparent;
+      color: var(--muted);
+      padding: 8px 14px 10px;
+      min-block-size: 38px;
+      font-weight: 600;
+    }
+
+    [role="tab"]:hover:not([aria-selected="true"]) {
+      color: var(--text);
+      background: color-mix(in srgb, var(--surface) 60%, transparent);
+    }
+
+    [role="tab"][aria-selected="true"] {
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 700;
+      border-color: var(--border);
+    }
+
+    [role="tab"][aria-selected="true"]::after {
+      content: "";
+      position: absolute;
+      inset-inline: 10px;
+      inset-block-end: 0;
+      block-size: 3px;
+      border-radius: 3px 3px 0 0;
+      background: var(--accent);
+    }
+
+    .panel-body {
+      padding: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    [role="tabpanel"][hidden] {
+      display: none;
+    }
+
+    /* Dropzone */
+    .dropzone {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: var(--surface);
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .dropzone.dragover {
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+    }
+
+    /* Progress Bar */
+    .progress-wrap {
+      display: grid;
+      gap: 6px;
+    }
+
+    progress {
+      inline-size: 100%;
+      block-size: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Specs table & Reg grids */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .specs-table th, .specs-table td {
+      text-align: left;
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .specs-table th {
+      color: var(--muted);
+      font-weight: 600;
+      width: 34%;
+    }
+
+    .specs-table td {
+      font-family: var(--font-mono);
+      word-break: break-all;
+    }
+
+    .cpu-regs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .reg-cell {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 5px 8px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .reg-cell.changed {
+      border-color: var(--warn);
+      background: var(--warn-bg);
+    }
+
+    /* Hex & Console Panels */
+    .mono-pane {
+      background: var(--mono-bg);
+      color: var(--mono-fg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.5;
+      overflow: auto;
+      max-height: 290px;
+      white-space: pre;
+      margin: 0;
+    }
+
+    .log-pane {
+      background: var(--mono-bg);
+      color: var(--mono-fg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.45;
+      overflow: auto;
+      max-height: 290px;
+    }
+
+    .log-line { margin: 0 0 2px; white-space: pre-wrap; word-break: break-word; }
+    .log-line.ok { color: var(--ok); }
+    .log-line.warn { color: var(--warn); }
+    .log-line.err { color: var(--err); }
+    .log-line.muted { color: var(--muted); }
+
+    .subcard {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .subcard h3 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Native Dialog */
+    dialog {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      max-width: 460px;
+      width: calc(100% - 32px);
+      box-shadow: 0 20px 50px rgb(0 0 0 / 0.35);
+    }
+
+    dialog:modal {
+      overscroll-behavior: contain;
+    }
+
+    dialog::backdrop {
+      background: rgb(0 0 0 / 0.55);
+      backdrop-filter: blur(2px);
+      overflow: hidden;
+      overscroll-behavior: contain;
+    }
+
+    dialog h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    dialog p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .dialog-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .banner {
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+
+    .banner.warn { background: var(--warn-bg); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 40%, transparent); }
+    .banner.ok { background: var(--ok-bg); color: var(--ok); border-color: color-mix(in srgb, var(--ok) 40%, transparent); }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Header -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">SWM</div>
+        <div>
+          <h1>TLSR82xx Flasher &amp; SWire Workbench</h1>
+          <div class="brand-sub">WebSerial client for TLSR_SWire_Flasher / TLSRPGM (full TlsrPgm + autonomous dumper parity)</div>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <span id="badge-webserial" class="badge">Checking WebSerial...</span>
+        <span id="badge-conn" class="badge">Disconnected</span>
+        <span id="badge-pwr" class="badge">PWR: —</span>
+
+        <div class="field" style="min-width: 96px;">
+          <select id="sel-theme" aria-label="Color theme">
+            <option value="auto">Theme: Auto</option>
+            <option value="light">Theme: Light</option>
+            <option value="dark">Theme: Dark</option>
+          </select>
+        </div>
+
+        <label class="check-inline" title="Filter WebSerial picker to Telink VID 0x248A PID 0x8269">
+          <input type="checkbox" id="chk-filter-telink">
+          <span>Filter Telink USB</span>
+        </label>
+
+        <button type="button" id="btn-connect" class="primary">Connect USB Programmer</button>
+        <button type="button" id="btn-disconnect" disabled>Disconnect</button>
+      </div>
+    </header>
+
+    <div id="webserial-warning" class="banner warn" hidden>
+      WebSerial (`navigator.serial`) is unavailable in this context. Use Google Chrome or Microsoft Edge over HTTPS or `http://localhost` to communicate directly with USB hardware.
+    </div>
+
+    <!-- Persistent Programmer & Target Control Strip -->
+    <section class="card" aria-label="Programmer controls">
+      <div class="grid-2">
+        <!-- Programmer Config -->
+        <div class="subcard">
+          <div class="row" style="justify-content: space-between;">
+            <h3>Programmer &amp; Power Controls</h3>
+            <div class="row">
+              <button type="button" id="btn-probe-pgm" class="sm" data-need-conn disabled>GetVersion</button>
+              <button type="button" id="btn-reboot-pgm" class="sm warn" data-need-conn disabled>Reboot PGM</button>
+            </div>
+          </div>
+
+          <div class="telemetry-grid">
+            <div class="kv-box"><span class="kv-label">PGM Chip / Ver</span><span class="kv-value" id="kv-pgm-chip">—</span></div>
+            <div class="kv-box"><span class="kv-label">SWire Clock</span><span class="kv-value" id="kv-pgm-sws">—</span></div>
+            <div class="kv-box"><span class="kv-label">SWire Config</span><span class="kv-value" id="kv-pgm-cfg">—</span></div>
+            <div class="kv-box"><span class="kv-label">UART Baud</span><span class="kv-value" id="kv-pgm-baud">—</span></div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="sel-baud">UART Speed</label>
+              <select id="sel-baud">
+                <option value="230400">230400 bps</option>
+                <option value="1500000" selected>1500000 bps</option>
+                <option value="921600">921600 bps</option>
+                <option value="1000000">1000000 bps</option>
+                <option value="500000">500000 bps</option>
+                <option value="460800">460800 bps</option>
+                <option value="115200">115200 bps</option>
+                <option value="2000000">2000000 bps</option>
+                <option value="3000000">3000000 bps</option>
+              </select>
+            </div>
+            <div class="field" style="min-width: 82px;">
+              <label for="inp-swdiv">swdiv (0=auto)</label>
+              <input type="number" id="inp-swdiv" value="0" min="0" max="255">
+            </div>
+            <div class="field">
+              <label for="sel-addrlen">Addr Width</label>
+              <select id="sel-addrlen">
+                <option value="3" selected>3-byte (TLSR825x/8208)</option>
+                <option value="2">2-byte (-u TLSR826x)</option>
+              </select>
+            </div>
+            <div class="field" style="min-width: 140px;">
+              <label for="inp-swbuf">swbuf (6B hex)</label>
+              <input type="text" id="inp-swbuf" value="5a 00 06 02 00 05" pattern="[0-9a-fA-F ]+">
+            </div>
+            <div class="field" style="justify-content: flex-end;">
+              <button type="button" id="btn-apply-cfg" data-need-conn disabled>Apply Config</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <button type="button" id="btn-pwr-on" class="ok" data-need-conn disabled>PWR On (3.3V)</button>
+            <button type="button" id="btn-pwr-off" class="warn" data-need-conn disabled>PWR Off (0V)</button>
+            <button type="button" id="btn-pwr-toggle" data-need-conn disabled>Toggle PWR</button>
+            <label class="check-inline">
+              <input type="checkbox" id="chk-sound" checked>
+              <span>Beep Alerts</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Target Acquisition & CPU Control -->
+        <div class="subcard">
+          <div class="row" style="justify-content: space-between;">
+            <h3>Target Acquisition &amp; CPU Lifecycle</h3>
+            <span id="badge-target" class="badge">Target: Unlocked</span>
+          </div>
+
+          <div class="row">
+            <label class="check-inline" title="When enabled, Flash/Inspect operations automatically retry & re-acquire contact if pins slip (-R)">
+              <input type="checkbox" id="chk-retry-mode" checked>
+              <span><strong>Autonomous Retry Mode (-R)</strong></span>
+            </label>
+            <label class="check-inline">
+              <input type="checkbox" id="chk-use-crc" checked>
+              <span>Hardware CRC16 Verify</span>
+            </label>
+            <label class="check-inline">
+              <input type="checkbox" id="chk-keep-pwr">
+              <span>Keep PWR On After Op</span>
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="field" style="min-width: 85px;">
+              <label for="inp-trst">-t Reset (ms)</label>
+              <input type="number" id="inp-trst" value="100" min="0" max="10000">
+            </div>
+            <div class="field" style="min-width: 85px;">
+              <label for="inp-act">-a Act (ms)</label>
+              <input type="number" id="inp-act" value="150" min="0" max="5000">
+            </div>
+            <div class="field" style="min-width: 90px;">
+              <label for="inp-pwr-off-ms">Cycle Off (ms)</label>
+              <input type="number" id="inp-pwr-off-ms" value="60" min="10" max="2000">
+            </div>
+            <div class="field" style="min-width: 85px;">
+              <label for="inp-stable-reads">Stable Reads</label>
+              <input type="number" id="inp-stable-reads" value="3" min="1" max="10">
+            </div>
+            <div class="field" style="min-width: 85px;">
+              <label for="inp-wait-sec">-z Wait (s)</label>
+              <input type="number" id="inp-wait-sec" value="5" min="1" max="60">
+            </div>
+          </div>
+
+          <div class="row">
+            <button type="button" id="btn-wait-lock" class="primary" data-need-conn disabled>Acquire Target (Retry Loop)</button>
+            <button type="button" id="btn-cancel-op" class="danger" disabled>Cancel Active Op</button>
+            <button type="button" id="btn-oneshot-act" class="sm" data-need-conn disabled>Hard Reset + Activate</button>
+            <button type="button" id="btn-soft-act" class="sm" data-need-conn disabled>Soft Reset + Act</button>
+            <button type="button" id="btn-wait-cpu" class="sm" data-need-conn disabled>Wait CPU (-z)</button>
+          </div>
+
+          <div class="row">
+            <button type="button" id="btn-cpu-stop" class="sm" data-need-conn disabled>CPU Stop (0x05)</button>
+            <button type="button" id="btn-cpu-stall" class="sm" data-need-conn disabled>CPU Stall (0x06)</button>
+            <button type="button" id="btn-cpu-run" class="sm" data-need-conn disabled>CPU Run (0x88)</button>
+            <button type="button" id="btn-cpu-go" class="sm" data-need-conn disabled>CPU Go (0x08)</button>
+            <button type="button" id="btn-mcu-reboot" class="sm" data-need-conn disabled>MCU Reboot ([0x6f]=0x20)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Tabbed Workbench -->
+    <section class="tabs-shell" aria-label="TLSR Workbench Tools">
+      <div role="tablist" focusgroup="tablist nomemory" aria-label="Workbench Sections">
+        <button type="button" role="tab" id="tab-overview" data-panel="panel-overview" aria-selected="true" tabindex="0">Overview &amp; Specs</button>
+        <button type="button" role="tab" id="tab-flash" data-panel="panel-flash" aria-selected="false" tabindex="-1">Flash Dump &amp; Program</button>
+        <button type="button" role="tab" id="tab-swire" data-panel="panel-swire" aria-selected="false" tabindex="-1">SWire, SRAM &amp; Regs</button>
+        <button type="button" role="tab" id="tab-analog" data-panel="panel-analog" aria-selected="false" tabindex="-1">Analog &amp; OTP</button>
+        <button type="button" role="tab" id="tab-debug" data-panel="panel-debug" aria-selected="false" tabindex="-1">Debug, Step &amp; SWS Printf</button>
+      </div>
+
+      <!-- TAB 1: Overview & Specs -->
+      <div role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
+        <div class="panel-body">
+          <div class="row" style="justify-content: space-between;">
+            <div class="row">
+              <button type="button" id="btn-inspect-all" class="primary" data-need-conn disabled>Read Full Chip Specs &amp; Info (i)</button>
+              <button type="button" id="btn-quick-specs" data-need-conn disabled>Probe Chip &amp; JEDEC Only</button>
+            </div>
+            <span class="badge">Wiring: PWR-&gt;VCC, GND-&gt;GND, SWM-&gt;SWS</span>
+          </div>
+
+          <div class="grid-2">
+            <div class="subcard">
+              <h3>Target Silicon &amp; CPU</h3>
+              <table class="specs-table">
+                <tbody>
+                  <tr><th>Chip Name</th><td id="spec-chip-name">—</td></tr>
+                  <tr><th>Chip ID / Rev</th><td><span id="spec-chip-id">—</span> <span class="copy-wrap"><button type="button" class="copy-btn" command="--copy" commandfor="spec-chip-id">Copy</button><span class="copy-status" role="status"></span></span></td></tr>
+                  <tr><th>Internal SRAM / Radio</th><td id="spec-sram-ble">—</td></tr>
+                  <tr><th>CPU PC / [0x0602]</th><td id="spec-pc-state">—</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="subcard">
+              <h3>SPI Flash &amp; Identity</h3>
+              <table class="specs-table">
+                <tbody>
+                  <tr><th>Flash Vendor</th><td id="spec-flash-vendor">—</td></tr>
+                  <tr><th>JEDEC ID / Capacity</th><td id="spec-flash-jedec">—</td></tr>
+                  <tr><th>Flash Status</th><td id="spec-flash-status">—</td></tr>
+                  <tr><th>Flash Unique ID</th><td><span id="spec-flash-uid">—</span> <span class="copy-wrap"><button type="button" class="copy-btn" command="--copy" commandfor="spec-flash-uid">Copy</button><span class="copy-status" role="status"></span></span></td></tr>
+                  <tr><th>Detected BLE MAC</th><td><span id="spec-ble-mac">—</span> <span class="copy-wrap"><button type="button" class="copy-btn" command="--copy" commandfor="spec-ble-mac">Copy</button><span class="copy-status" role="status"></span></span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Flash Operations -->
+      <div role="tabpanel" id="panel-flash" aria-labelledby="tab-flash" hidden="until-found">
+        <div class="panel-body">
+          <!-- Autonomous Full Dump -->
+          <div class="subcard">
+            <div class="row" style="justify-content: space-between;">
+              <h3>Autonomous Full Flash Dump (Hardware CRC16)</h3>
+              <div class="row">
+                <button type="button" id="btn-download-dump" class="ok" disabled>Download .bin</button>
+                <button type="button" id="btn-view-dump" disabled>Load in Hex Viewer</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="inp-dump-size">Size Override (bytes/hex, blank=auto)</label>
+                <input type="text" id="inp-dump-size" placeholder="auto from JEDEC">
+              </div>
+              <div class="field">
+                <label for="inp-dump-name">Output Filename (blank=auto)</label>
+                <input type="text" id="inp-dump-name" placeholder="dump_TLSR825x_512KB.bin" style="min-width: 220px;">
+              </div>
+              <div class="field" style="justify-content: flex-end;">
+                <button type="button" id="btn-full-dump" class="primary" data-need-conn disabled>Start Full Flash Dump</button>
+              </div>
+            </div>
+
+            <div class="progress-wrap">
+              <progress id="prog-dump" value="0" max="100"></progress>
+              <div class="progress-meta">
+                <span id="meta-dump-status">Idle</span>
+                <span id="meta-dump-speed">0.0 KB/s | ETA —</span>
+              </div>
+            </div>
+
+            <div class="row" style="justify-content: space-between; font-family: var(--font-mono); font-size: 12px;">
+              <span>SHA-256: <strong id="dump-sha256">—</strong></span>
+              <span class="copy-wrap">
+                <button type="button" class="copy-btn" command="--copy" commandfor="dump-sha256">Copy SHA-256</button>
+                <span class="copy-status" role="status"></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <!-- Write Flash (we / wf) -->
+            <div class="subcard">
+              <h3>Program / Write Flash (we / wf)</h3>
+              <div id="flash-dropzone" class="dropzone" tabindex="0" role="button" aria-label="Choose or drop firmware binary file">
+                <strong>Drop .bin firmware here or click to choose</strong>
+                <div id="flash-file-info" style="font-size: 12px; color: var(--muted); margin-top: 4px;">No file loaded</div>
+                <input type="file" id="inp-flash-file" accept=".bin,.hex,*/*" hidden>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-wr-addr">Start Addr (hex)</label>
+                  <input type="text" id="inp-wr-addr" value="0x000000">
+                </div>
+                <div class="field">
+                  <label for="sel-wr-mode">Write Mode</label>
+                  <select id="sel-wr-mode">
+                    <option value="we" selected>Erase Sectors + Write (we)</option>
+                    <option value="wf">Write Without Erase (wf)</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="sel-wr-post">Post Action</label>
+                  <select id="sel-wr-post">
+                    <option value="none">None / Follow Keep PWR</option>
+                    <option value="run">CPU Run (0x602=0x88)</option>
+                    <option value="go">CPU Go (0x602=0x08)</option>
+                    <option value="mrst">MCU Reboot (0x6f=0x20)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="progress-wrap">
+                <progress id="prog-write" value="0" max="100"></progress>
+                <div class="progress-meta">
+                  <span id="meta-write-status">Ready</span>
+                  <span id="meta-write-speed">0 / 0 KB</span>
+                </div>
+              </div>
+              <button type="button" id="btn-flash-write" class="primary" data-need-conn disabled>Flash Binary to Target</button>
+            </div>
+
+            <!-- Read Region / Erase / Flash Status -->
+            <div class="subcard">
+              <h3>Flash Region, Erase &amp; Status Register</h3>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-rf-addr">Address (hex)</label>
+                  <input type="text" id="inp-rf-addr" value="0x000000">
+                </div>
+                <div class="field">
+                  <label for="inp-rf-size">Size (bytes/hex)</label>
+                  <input type="text" id="inp-rf-size" value="0x1000">
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" id="btn-df" data-need-conn disabled>Preview Hex (df)</button>
+                <button type="button" id="btn-rf" data-need-conn disabled>Read &amp; Save .bin (rf)</button>
+                <button type="button" id="btn-es" class="warn" data-need-conn disabled>Erase Sectors (es)</button>
+              </div>
+              <hr style="border: none; border-top: 1px solid var(--border); margin: 4px 0;">
+              <div class="row">
+                <div class="field" style="min-width: 90px;">
+                  <label for="inp-fsr-val">Status Reg Byte</label>
+                  <input type="text" id="inp-fsr-val" value="0x00">
+                </div>
+                <button type="button" id="btn-fsr" data-need-conn disabled>Read Status (fsr)</button>
+                <button type="button" id="btn-fsw" class="warn" data-need-conn disabled>Write Status (fsw)</button>
+                <button type="button" id="btn-ea" class="danger" data-need-conn disabled>Erase All Flash (ea)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: SWire, SRAM & Registers -->
+      <div role="tabpanel" id="panel-swire" aria-labelledby="tab-swire" hidden="until-found">
+        <div class="panel-body">
+          <div class="grid-2">
+            <div class="subcard">
+              <h3>Read / Dump / Stream File to SWire (ds / rs / ws)</h3>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-sw-addr">SWire Address (hex)</label>
+                  <input type="text" id="inp-sw-addr" value="0x60">
+                </div>
+                <div class="field">
+                  <label for="inp-sw-size">Size (bytes/hex)</label>
+                  <input type="text" id="inp-sw-size" value="0x20">
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" id="btn-ds" class="primary" data-need-conn disabled>Dump Hex (ds)</button>
+                <button type="button" id="btn-rs" data-need-conn disabled>Save .bin (rs)</button>
+              </div>
+              <div class="row">
+                <input type="file" id="inp-ws-file">
+                <button type="button" id="btn-ws" class="warn" data-need-conn disabled>Write File to SWire (ws)</button>
+              </div>
+            </div>
+
+            <div class="subcard">
+              <h3>Scalar Write (wsb / wsw / wsd) &amp; Live Monitor (dc)</h3>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-scalar-addr">Address (hex)</label>
+                  <input type="text" id="inp-scalar-addr" value="0x602">
+                </div>
+                <div class="field">
+                  <label for="inp-scalar-val">Value (hex/dec)</label>
+                  <input type="text" id="inp-scalar-val" value="0x05">
+                </div>
+                <div class="field">
+                  <label for="sel-scalar-width">Width</label>
+                  <select id="sel-scalar-width">
+                    <option value="1">8-bit (wsb)</option>
+                    <option value="2">16-bit (wsw)</option>
+                    <option value="4">32-bit (wsd)</option>
+                  </select>
+                </div>
+                <div class="field" style="justify-content: flex-end;">
+                  <button type="button" id="btn-write-scalar" class="primary" data-need-conn disabled>Write &amp; Verify</button>
+                </div>
+              </div>
+              <hr style="border: none; border-top: 1px solid var(--border); margin: 4px 0;">
+              <div class="row">
+                <div class="field">
+                  <label for="inp-dc-addr">Watch uint32 Addr</label>
+                  <input type="text" id="inp-dc-addr" value="0x6bc">
+                </div>
+                <div class="field" style="min-width: 85px;">
+                  <label for="inp-dc-sec">Duration (s)</label>
+                  <input type="number" id="inp-dc-sec" value="5" min="1" max="120">
+                </div>
+                <div class="field" style="justify-content: flex-end;">
+                  <button type="button" id="btn-dc-start" data-need-conn disabled>Monitor (dc)</button>
+                </div>
+                <span id="dc-readout" class="badge">Value: —</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: Analog & OTP -->
+      <div role="tabpanel" id="panel-analog" aria-labelledby="tab-analog" hidden="until-found">
+        <div class="panel-body">
+          <div class="grid-2">
+            <div class="subcard">
+              <h3>Analog Registers (da / ra / wa)</h3>
+              <p style="margin: 0; font-size: 12px; color: var(--muted);">Automatically enables ALGM clock (`0x61..0x64` bit 3 for 825x or bit 1 for 826x) before analog access.</p>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-ana-addr">Start Offset (0x00..0xFF)</label>
+                  <input type="text" id="inp-ana-addr" value="0x00">
+                </div>
+                <div class="field">
+                  <label for="inp-ana-size">Size (max 256)</label>
+                  <input type="text" id="inp-ana-size" value="0x100">
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" id="btn-da" class="primary" data-need-conn disabled>Dump Analog Hex (da)</button>
+                <button type="button" id="btn-ra" data-need-conn disabled>Save Analog .bin (ra)</button>
+              </div>
+              <div class="row">
+                <input type="file" id="inp-wa-file">
+                <button type="button" id="btn-wa" class="warn" data-need-conn disabled>Write File to Analog (wa)</button>
+              </div>
+              <div class="row">
+                <div class="field" style="min-width: 90px;">
+                  <label for="inp-ana-byte-addr">Single Reg</label>
+                  <input type="text" id="inp-ana-byte-addr" value="0x00">
+                </div>
+                <div class="field" style="min-width: 90px;">
+                  <label for="inp-ana-byte-val">Byte Val</label>
+                  <input type="text" id="inp-ana-byte-val" value="0x00">
+                </div>
+                <div class="field" style="justify-content: flex-end;">
+                  <button type="button" id="btn-ana-wr-one" data-need-conn disabled>Write Analog Byte</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="subcard">
+              <h3>TLSR8208 OTP Memory (do / ro)</h3>
+              <p style="margin: 0; font-size: 12px; color: var(--muted);">Uses `0x80010`..`0x8001C` OTP controller sequence (TLSR8208 Chip ID `0x5591` only).</p>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-otp-addr">OTP Address (hex)</label>
+                  <input type="text" id="inp-otp-addr" value="0x3fc0">
+                </div>
+                <div class="field">
+                  <label for="inp-otp-size">Size (hex)</label>
+                  <input type="text" id="inp-otp-size" value="0x40">
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" id="btn-do" class="primary" data-need-conn disabled>Dump OTP Hex (do)</button>
+                <button type="button" id="btn-ro" data-need-conn disabled>Save OTP .bin (ro)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: Debug, Step & SWS Printf -->
+      <div role="tabpanel" id="panel-debug" aria-labelledby="tab-debug" hidden="until-found">
+        <div class="panel-body">
+          <div class="grid-2">
+            <div class="subcard">
+              <h3>CPU Breakpoint (bkp), Single Step (stp) &amp; Register Bank</h3>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-bkp-addr">Breakpoint Addr (hex)</label>
+                  <input type="text" id="inp-bkp-addr" value="0x000000">
+                </div>
+                <div class="field" style="min-width: 80px;">
+                  <label for="inp-stp-count">Steps</label>
+                  <input type="number" id="inp-stp-count" value="1" min="1" max="500">
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" id="btn-read-cpuregs" class="primary" data-need-conn disabled>Dump CPU Regs</button>
+                <button type="button" id="btn-bkp" data-need-conn disabled>Set Breakpoint &amp; Go (bkp)</button>
+                <button type="button" id="btn-stp" data-need-conn disabled>Stall &amp; Step (stp)</button>
+              </div>
+              <div id="cpu-regs-grid" class="cpu-regs-grid" aria-live="polite">
+                <div class="reg-cell"><span>Status</span><span>No capture yet</span></div>
+              </div>
+              <pre id="cpu-stack-dump" class="mono-pane" style="max-height: 110px;">Stack SP dump will appear here.</pre>
+            </div>
+
+            <div class="subcard">
+              <div class="row" style="justify-content: space-between;">
+                <h3>SWS Printf Live Stream (sws / -o)</h3>
+                <div class="row">
+                  <button type="button" id="btn-sws-clear" class="sm">Clear</button>
+                  <span class="copy-wrap">
+                    <button type="button" class="copy-btn sm" command="--copy" commandfor="sws-terminal">Copy</button>
+                    <span class="copy-status" role="status"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label for="inp-sws-addr">SRAM Printf Buffer Addr</label>
+                  <input type="text" id="inp-sws-addr" value="0x84E700">
+                </div>
+                <div class="field" style="justify-content: flex-end;">
+                  <button type="button" id="btn-sws-start" class="primary" data-need-conn disabled>Start SWS Stream</button>
+                </div>
+                <div class="field" style="justify-content: flex-end;">
+                  <button type="button" id="btn-sws-stop" class="danger" disabled>Stop Stream</button>
+                </div>
+              </div>
+              <pre id="sws-terminal" class="mono-pane" style="min-height: 210px; max-height: 260px;">Connect programmer (FW >= 0.0.0.4) and start SWS Printf stream...</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Shared Hex Viewer + Activity Log -->
+    <section class="grid-2" aria-label="Hex Viewer and Activity Log">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Hex Inspector <span id="hex-meta" class="badge">Empty</span></h2>
+          <div class="row">
+            <input type="text" id="inp-hex-find" placeholder="Find hex (4b 4e) or text" style="max-width: 170px;">
+            <button type="button" id="btn-hex-find" class="sm">Find</button>
+            <button type="button" id="btn-hex-download" class="sm" disabled>Save .bin</button>
+            <span class="copy-wrap">
+              <button type="button" class="copy-btn sm" command="--copy" commandfor="hex-view">Copy Hex</button>
+              <span class="copy-status" role="status"></span>
+            </span>
+          </div>
+        </div>
+        <pre id="hex-view" class="mono-pane">Dumped flash, registers, analog, or OTP data will render here.</pre>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Protocol &amp; Activity Log</h2>
+          <div class="row">
+            <button type="button" id="btn-log-clear" class="sm">Clear</button>
+            <span class="copy-wrap">
+              <button type="button" class="copy-btn sm" command="--copy" commandfor="log-view">Copy Log</button>
+              <span class="copy-status" role="status"></span>
+            </span>
+          </div>
+        </div>
+        <div id="log-view" class="log-pane" aria-live="polite"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Confirmation Modal for Destructive Actions -->
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">Confirm Action</h2>
+    <p id="confirm-body">Proceed with this operation?</p>
+    <div class="dialog-actions">
+      <button type="button" id="confirm-cancel" autofocus>Cancel</button>
+      <button type="button" id="confirm-ok" class="danger">Proceed</button>
+    </div>
+  </dialog>
+
+  <script>
+  (() => {
+    'use strict';
+
+    // =========================================================================
+    // Protocol Constants, Lookup Tables & CRC16
+    // =========================================================================
+    const DEFAULT_UART_BAUD = 230400;
+    const MAX_BUF_READ_SIZE = 1024;
+    const FLASH_SECTOR_SIZE = 4096;
+
+    const CMD = {
+      FUNCS: 0,
+      FLASH_READ: 1,
+      FLASH_WRITE: 2,
+      FLASH_SECT_ERASE: 3,
+      FLASH_ALL_ERASE: 4,
+      FLASH_GET_JEDEC_ID: 5,
+      FLASH_GET_STATUS: 6,
+      SWIRE_READ: 7,
+      SWIRE_WRITE: 8,
+      SWIRE_AREAD: 9,
+      SWIRE_AWRITE: 10,
+      SWIRE_FIFO_READ: 11,
+      SWIRE_FIFO_FWRITE: 12,
+      FLASH_WRRD: 13,
+      FLASH_RDCRC: 14,
+      SWS_PRINTF: 15,
+      WAIT_RESP: 16,
+    };
+
+    const CMDF = {
+      GET_VERSION: 0,
+      MCU_REBOOT: 1,
+      SWIRE_CFG: 2,
+      EXT_POWER: 3,
+      SWIRE_ACTIVATE: 4,
+      UART_BAUD: 5,
+    };
+
+    const PGM_ERR = {
+      NONE: 0,
+      FUNC: 1,
+      LEN: 2,
+      READ: 3,
+      BUSY: 4,
+      CRC: 5,
+      BAUD: 6,
+      TEXT: [
+        'No error',
+        'Function number error',
+        'Data length error',
+        'SWire read timeout',
+        'Analog register busy timeout',
+        'CRC mismatch',
+        'Invalid baud rate',
+      ],
+    };
+
+    const TAB_UART_BAUD = [115200, 230400, 460800, 500000, 921600, 1000000, 1500000, 2000000, 3000000];
+
+    const PGM_CHIP_CLK = {
+      0x5562: { chip: 'TLSR825x', clk: 24 },
+      0x5325: { chip: 'TLSR8266', clk: 32 },
+      0x5326: { chip: 'TLSR8267', clk: 32 },
+      0x5327: { chip: 'TLSR8269', clk: 32 },
+      0x5591: { chip: 'TLSR8208', clk: 32 },
+    };
+
+    const TARGET_CHIP_MAP = {
+      0x5562: { name: 'TLSR8258 / TLSR8253 (825x)', short: 'TLSR825x', sram: '64 KB', ble: 'BLE 5.0 / Mesh / Zigbee' },
+      0x5324: { name: 'TLSR8253', short: 'TLSR8253', sram: '48 KB', ble: 'BLE 5.0' },
+      0x5325: { name: 'TLSR8251 / TLSR8266', short: 'TLSR8266', sram: '32 KB', ble: 'BLE 4.2 / 5.0' },
+      0x5326: { name: 'TLSR8267', short: 'TLSR8267', sram: '32 KB', ble: 'BLE 4.2' },
+      0x5327: { name: 'TLSR8269', short: 'TLSR8269', sram: '32 KB', ble: 'BLE 4.2 / Zigbee' },
+      0x5328: { name: 'TLSR8258 (A0) / TLSR8359', short: 'TLSR8258_A0', sram: '64 KB', ble: 'BLE 5.0 / 2.4G RF' },
+      0x5591: { name: 'TLSR8208', short: 'TLSR8208', sram: '16 KB', ble: 'BLE 5.0' },
+      0x5316: { name: 'TLSR8261', short: 'TLSR8261', sram: '16 KB', ble: 'BLE 4.0' },
+      0x5317: { name: 'TLSR8263', short: 'TLSR8263', sram: '16 KB', ble: 'BLE 4.0' },
+    };
+
+    const FLASH_MFG_MAP = {
+      0x85: 'Puya Semiconductor (PUYA)',
+      0xE8: 'Puya Semiconductor (P25Q)',
+      0xEF: 'Winbond',
+      0xC8: 'GigaDevice (GD)',
+      0xC2: 'Macronix (MXIC)',
+      0x1C: 'EON / ESMT',
+      0x51: 'GigaDevice / MD',
+      0x68: 'Boya / BoyaMicro',
+      0x0B: 'XTX (XT25F)',
+      0x25: 'Microchip / SST',
+      0x9D: 'ISSI',
+      0x1F: 'Adesto / Atmel',
+      0xA1: 'Fudan Micro (FM)',
+      0xE0: 'Berg Micro (BG)',
+      0x5E: 'ZBIT (ZB25VQ)',
+    };
+
+    const MAC_CANDIDATE_ADDRS = [
+      { addr: 0x76000, desc: 'Custom FW / ATC / BTHome (0x76000)' },
+      { addr: 0x7F000, desc: 'Telink Stock / 512KB Config (0x7F000)' },
+      { addr: 0xFF000, desc: 'Telink Stock / 1MB Config (0xFF000)' },
+      { addr: 0x3F000, desc: 'Telink Stock / 256KB Config (0x3F000)' },
+      { addr: 0x1F000, desc: 'Telink Stock / 128KB Config (0x1F000)' },
+    ];
+
+    const KNOWN_TELINK_OUIS = new Set(['A4:C1:38', '48:A0:6D', '60:57:C6', 'B8:D8:12', 'C4:4F:33']);
+
+    const CRC16_TABLE = new Uint16Array([
+      0x0000,0xC0C1,0xC181,0x0140,0xC301,0x03C0,0x0280,0xC241,0xC601,0x06C0,0x0780,0xC741,0x0500,0xC5C1,0xC481,0x0440,
+      0xCC01,0x0CC0,0x0D80,0xCD41,0x0F00,0xCFC1,0xCE81,0x0E40,0x0A00,0xCAC1,0xCB81,0x0B40,0xC901,0x09C0,0x0880,0xC841,
+      0xD801,0x18C0,0x1980,0xD941,0x1B00,0xDBC1,0xDA81,0x1A40,0x1E00,0xDEC1,0xDF81,0x1F40,0xDD01,0x1DC0,0x1C80,0xDC41,
+      0x1400,0xD4C1,0xD581,0x1540,0xD701,0x17C0,0x1680,0xD641,0xD201,0x12C0,0x1380,0xD341,0x1100,0xD1C1,0xD081,0x1040,
+      0xF001,0x30C0,0x3180,0xF141,0x3300,0xF3C1,0xF281,0x3240,0x3600,0xF6C1,0xF781,0x3740,0xF501,0x35C0,0x3480,0xF441,
+      0x3C00,0xFCC1,0xFD81,0x3D40,0xFF01,0x3FC0,0x3E80,0xFE41,0xFA01,0x3AC0,0x3B80,0xFB41,0x3900,0xF9C1,0xF881,0x3840,
+      0x2800,0xE8C1,0xE981,0x2940,0xEB01,0x2BC0,0x2A80,0xEA41,0xEE01,0x2EC0,0x2F80,0xEF41,0x2D00,0xEDC1,0xEC81,0x2C40,
+      0xE401,0x24C0,0x2580,0xE541,0x2700,0xE7C1,0xE681,0x2640,0x2200,0xE2C1,0xE381,0x2340,0xE101,0x21C0,0x2080,0xE041,
+      0xA001,0x60C0,0x6180,0xA141,0x6300,0xA3C1,0xA281,0x6240,0x6600,0xA6C1,0xA781,0x6740,0xA501,0x65C0,0x6480,0xA441,
+      0x6C00,0xACC1,0xAD81,0x6D40,0xAF01,0x6FC0,0x6E80,0xAE41,0xAA01,0x6AC0,0x6B80,0xAB41,0x6900,0xA9C1,0xA881,0x6840,
+      0x7800,0xB8C1,0xB981,0x7940,0xBB01,0x7BC0,0x7A80,0xBA41,0xBE01,0x7EC0,0x7F80,0xBF41,0x7D00,0xBDC1,0xBC81,0x7C40,
+      0xB401,0x74C0,0x7580,0xB541,0x7700,0xB7C1,0xB681,0x7640,0x7200,0xB2C1,0xB381,0x7340,0xB101,0x71C0,0x7080,0xB041,
+      0x5000,0x90C1,0x9181,0x5140,0x9301,0x53C0,0x5280,0x9241,0x9601,0x56C0,0x5780,0x9741,0x5500,0x95C1,0x9481,0x5440,
+      0x9C01,0x5CC0,0x5D80,0x9D41,0x5F00,0x9FC1,0x9E81,0x5E40,0x5A00,0x9AC1,0x9B81,0x5B40,0x9901,0x59C0,0x5880,0x9841,
+      0x8801,0x48C0,0x4980,0x8941,0x4B00,0x8BC1,0x8A81,0x4A40,0x4E00,0x8EC1,0x8F81,0x4F40,0x8D01,0x4DC0,0x4C80,0x8C41,
+      0x4400,0x84C1,0x8581,0x4540,0x8701,0x47C0,0x4680,0x8641,0x8201,0x42C0,0x4380,0x8341,0x4100,0x81C1,0x8081,0x4040,
+    ]);
+
+    function crc16(bytes, len = bytes.length) {
+      let crc = 0xFFFF;
+      for (let i = 0; i < len; i++) {
+        crc = (crc >> 8) ^ CRC16_TABLE[(crc ^ bytes[i]) & 0xFF];
+      }
+      return crc & 0xFFFF;
+    }
+
+    function appendCrc(payload) {
+      const out = new Uint8Array(payload.length + 2);
+      out.set(payload, 0);
+      const c = crc16(payload, payload.length);
+      out[payload.length] = c & 0xFF;
+      out[payload.length + 1] = (c >> 8) & 0xFF;
+      return out;
+    }
+
+    function verifyCrc(packet) {
+      if (!packet || packet.length < 2) return false;
+      const expected = crc16(packet, packet.length - 2);
+      const actual = packet[packet.length - 2] | (packet[packet.length - 1] << 8);
+      return expected === actual;
+    }
+
+    // =========================================================================
+    // Generic Helpers
+    // =========================================================================
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+    function parseAutoInt(str, fallback = 0) {
+      if (str === undefined || str === null) return fallback;
+      const t = String(str).trim();
+      if (!t) return fallback;
+      const val = Number.parseInt(t, 0);
+      if (Number.isNaN(val)) throw new Error(`Invalid integer: "${t}"`);
+      return val;
+    }
+
+    function hexN(num, digits = 2) {
+      return (num >>> 0).toString(16).toUpperCase().padStart(digits, '0');
+    }
+
+    function bytesToHex(bytes, sep = ' ') {
+      return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join(sep);
+    }
+
+    function parseHexBytes(str) {
+      const clean = str.replace(/[^0-9a-fA-F]/g, '');
+      if (clean.length % 2 !== 0) throw new Error('Hex byte string must have even number of nibbles.');
+      const out = new Uint8Array(clean.length / 2);
+      for (let i = 0; i < out.length; i++) {
+        out[i] = Number.parseInt(clean.slice(i * 2, i * 2 + 2), 16);
+      }
+      return out;
+    }
+
+    function formatHexDump(baseAddr, data) {
+      const lines = [];
+      for (let i = 0; i < data.length; i += 16) {
+        const chunk = data.subarray(i, Math.min(i + 16, data.length));
+        const hexCols = [];
+        let ascii = '';
+        for (let j = 0; j < 16; j++) {
+          if (j < chunk.length) {
+            const b = chunk[j];
+            hexCols.push(b.toString(16).padStart(2, '0'));
+            ascii += (b >= 32 && b <= 126) ? String.fromCharCode(b) : '.';
+          } else {
+            hexCols.push('  ');
+          }
+        }
+        lines.push(`${hexN(baseAddr + i, 6)}: ${hexCols.slice(0, 8).join(' ')}  ${hexCols.slice(8).join(' ')}  |${ascii}|`);
+      }
+      return lines.join('\n');
+    }
+
+    async function sha256Hex(bytes) {
+      if (!window.crypto || !window.crypto.subtle) return 'Unavailable (requires secure context)';
+      const digest = await crypto.subtle.digest('SHA-256', bytes);
+      return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function findMacInDump(image) {
+      let fallback = null;
+      for (const { addr, desc } of MAC_CANDIDATE_ADDRS) {
+        if (addr + 6 > image.length) continue;
+        const cand = image.subarray(addr, addr + 6);
+        let ffCount = 0;
+        let zeroCount = 0;
+        for (const b of cand) {
+          if (b === 0xFF) ffCount++;
+          if (b === 0x00) zeroCount++;
+        }
+        if (ffCount >= 4 || zeroCount >= 4 || (cand[5] & 0x01) !== 0) continue;
+        const macStr = Array.from(cand).reverse().map((b) => hexN(b, 2)).join(':');
+        const oui = macStr.slice(0, 8);
+        if (KNOWN_TELINK_OUIS.has(oui)) return `${macStr} (${desc})`;
+        if (!fallback) fallback = `${macStr} (${desc})`;
+      }
+      return fallback || 'Not detected';
+    }
+
+    function beep(times = 1) {
+      if (!$('#chk-sound').checked) return;
+      try {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (!Ctx) return;
+        const ctx = new Ctx();
+        for (let i = 0; i < times; i++) {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.value = times > 1 && i === times - 1 ? 1046 : 880;
+          const start = ctx.currentTime + i * 0.14;
+          gain.gain.setValueAtTime(0.08, start);
+          gain.gain.exponentialRampToValueAtTime(0.001, start + 0.09);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(start);
+          osc.stop(start + 0.1);
+        }
+        setTimeout(() => ctx.close().catch(() => {}), times * 200 + 150);
+      } catch {}
+    }
+
+    function downloadBinary(filename, bytes) {
+      const blob = new Blob([bytes], { type: 'application/octet-stream' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    // =========================================================================
+    // UI Logging, Hex Viewer, Modals, Tabs, Copy Buttons
+    // =========================================================================
+    function logMsg(text, level = '') {
+      const box = $('#log-view');
+      const div = document.createElement('div');
+      div.className = `log-line ${level}`;
+      const ts = new Date().toLocaleTimeString('en-GB', { hour12: false });
+      div.textContent = `[${ts}] ${text}`;
+      box.appendChild(div);
+      while (box.children.length > 600) box.removeChild(box.firstChild);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    let currentHexBuffer = null;
+    let currentHexBase = 0;
+    let currentHexName = 'dump.bin';
+
+    function setHexViewer(baseAddr, data, label, filename = 'dump.bin') {
+      currentHexBase = baseAddr;
+      currentHexBuffer = new Uint8Array(data);
+      currentHexName = filename;
+      $('#hex-meta').textContent = `${label} (${data.length} B @ 0x${hexN(baseAddr, 6)})`;
+      $('#hex-view').textContent = formatHexDump(baseAddr, currentHexBuffer);
+      $('#btn-hex-download').disabled = currentHexBuffer.length === 0;
+    }
+
+    function confirmModal(title, message, confirmLabel = 'Proceed') {
+      const dlg = $('#confirm-dialog');
+      $('#confirm-title').textContent = title;
+      $('#confirm-body').textContent = message;
+      $('#confirm-ok').textContent = confirmLabel;
+      return new Promise((resolve) => {
+        const onCancel = () => { cleanup(); resolve(false); };
+        const onOk = () => { cleanup(); dlg.close(); resolve(true); };
+        const onClose = () => { cleanup(); resolve(false); };
+        function cleanup() {
+          $('#confirm-cancel').removeEventListener('click', onCancel);
+          $('#confirm-ok').removeEventListener('click', onOk);
+          dlg.removeEventListener('close', onClose);
+        }
+        $('#confirm-cancel').addEventListener('click', () => dlg.close(), { once: true });
+        $('#confirm-ok').addEventListener('click', onOk, { once: true });
+        dlg.addEventListener('close', onClose, { once: true });
+        dlg.showModal();
+      });
+    }
+
+    // Accessible Tabs Controller (with focusgroup fallback + until-found beforematch)
+    (() => {
+      const tablist = $('[role="tablist"]');
+      const tabs = $$('[role="tab"]');
+      const panels = $$('[role="tabpanel"]');
+
+      function activateTab(tab, focusTab = false) {
+        tabs.forEach((t) => {
+          const selected = t === tab;
+          t.setAttribute('aria-selected', String(selected));
+          t.tabIndex = selected ? 0 : -1;
+        });
+        panels.forEach((p) => {
+          if (p.id === tab.getAttribute('data-panel')) {
+            p.removeAttribute('hidden');
+          } else {
+            p.setAttribute('hidden', 'until-found');
+          }
+        });
+        if (focusTab) tab.focus();
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => activateTab(tab, false));
+      });
+
+      tablist.addEventListener('keydown', (e) => {
+        const idx = tabs.indexOf(document.activeElement);
+        if (idx === -1) return;
+        let next = -1;
+        if (e.key === 'ArrowRight') next = (idx + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') next = (idx - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = tabs.length - 1;
+        if (next >= 0) {
+          e.preventDefault();
+          activateTab(tabs[next], true);
+        }
+      });
+
+      panels.forEach((panel) => {
+        panel.addEventListener('beforematch', () => {
+          const tab = tabs.find((t) => t.getAttribute('data-panel') === panel.id);
+          if (tab) activateTab(tab, false);
+        });
+      });
+    })();
+
+    // Copy Button Handler (Invoker Commands + Fallback)
+    async function handleCopyButton(btn, targetEl = null) {
+      const targetId = btn.getAttribute('commandfor');
+      const el = targetEl || (targetId ? document.getElementById(targetId) : null);
+      const text = el ? (el.value !== undefined ? el.value : el.textContent) : '';
+      const status = btn.parentElement?.querySelector('.copy-status');
+      try {
+        await navigator.clipboard.writeText(text || '');
+        if (status) {
+          clearTimeout(status._tid);
+          status.textContent = 'Copied';
+          status.classList.add('visible');
+          status._tid = setTimeout(() => {
+            status.classList.remove('visible');
+            status.textContent = '';
+          }, 1800);
+        }
+      } catch {
+        if (status) {
+          clearTimeout(status._tid);
+          status.textContent = 'Copy failed';
+          status.classList.add('visible');
+          status._tid = setTimeout(() => {
+            status.classList.remove('visible');
+            status.textContent = '';
+          }, 1800);
+        }
+      }
+    }
+
+    // `command` events do not bubble: listen in capture phase on document
+    document.addEventListener('command', (e) => {
+      if (e.command === '--copy' && e.source instanceof HTMLButtonElement) {
+        handleCopyButton(e.source, e.target);
+      }
+    }, true);
+    if (!('CommandEvent' in window)) {
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[command="--copy"]');
+        if (btn) handleCopyButton(btn);
+      });
+    }
+
+    // Theme Selector
+    $('#sel-theme').addEventListener('change', (e) => {
+      const v = e.target.value;
+      if (v === 'auto') document.documentElement.removeAttribute('data-theme');
+      else document.documentElement.setAttribute('data-theme', v);
+    });
+
+    // =========================================================================
+    // WebSerial TLSRPGM Protocol Driver
+    // =========================================================================
+    class TlsrWebSerialClient {
+      constructor() {
+        this.port = null;
+        this.baudRate = DEFAULT_UART_BAUD;
+        this.reader = null;
+        this.readDone = null;
+        this.rxQueue = [];
+        this.rxWaiter = null;
+        this.swsCallback = null;
+        this.busy = false;
+        this.abortRequested = false;
+
+        this.pgmVersion = [0, 0];
+        this.pgmVerInt = 0;
+        this.pgmCid = 0;
+        this.pgmChip = '?';
+        this.pgmClk = 32;
+        this.pgmPwr = 0;
+        this.pgmSwdiv = 5;
+        this.pgmSwaddrlen = 3;
+        this.pgmSwbuf = new Uint8Array([0x5A, 0x00, 0x06, 0x02, 0x00, 0x05]);
+        this.pgmSwsps = 0;
+        this.lastErr = 0;
+        this.lastWcnt = 0;
+        this.extChip = null;
+        this.extCid = 0;
+        this.extCver = 0;
+      }
+
+      get isConnected() {
+        return Boolean(this.port && this.port.readable && this.port.writable);
+      }
+
+      async openPort(port, baudRate = DEFAULT_UART_BAUD) {
+        this.port = port;
+        this.baudRate = baudRate;
+        await port.open({ baudRate, dataBits: 8, stopBits: 1, parity: 'none', bufferSize: 16384 });
+        try {
+          await port.setSignals({ dataTerminalReady: false, requestToSend: false });
+        } catch {}
+        await sleep(50);
+        this.rxQueue = [];
+        this.startReadLoop();
+      }
+
+      startReadLoop() {
+        this.reader = this.port.readable.getReader();
+        this.readDone = (async () => {
+          try {
+            while (true) {
+              const { value, done } = await this.reader.read();
+              if (done) break;
+              if (value && value.length > 0) {
+                if (this.swsCallback) {
+                  this.swsCallback(value);
+                } else {
+                  for (let i = 0; i < value.length; i++) this.rxQueue.push(value[i]);
+                  if (this.rxWaiter) this.rxWaiter();
+                }
+              }
+            }
+          } catch (err) {
+            if (this.rxWaiter) this.rxWaiter();
+          } finally {
+            try { this.reader.releaseLock(); } catch {}
+            this.reader = null;
+          }
+        })();
+      }
+
+      async stopReadLoop() {
+        if (this.reader) {
+          try { await this.reader.cancel(); } catch {}
+        }
+        if (this.readDone) {
+          try { await this.readDone; } catch {}
+          this.readDone = null;
+        }
+      }
+
+      async close(powerOff = false) {
+        if (!this.port) return;
+        try {
+          this.swsCallback = null;
+          if (powerOff && this.isConnected) await this.setPinPwr(0).catch(() => {});
+          if (this.baudRate !== DEFAULT_UART_BAUD && this.isConnected) {
+            await this.commandRaw(new Uint8Array([CMD.FUNCS, CMDF.UART_BAUD, 1, 0]), 6, 300).catch(() => {});
+          }
+        } catch {}
+        await this.stopReadLoop();
+        try { await this.port.close(); } catch {}
+        this.port = null;
+      }
+
+      flushRx() {
+        this.rxQueue.length = 0;
+      }
+
+      async readExact(count, timeoutMs = 400) {
+        const deadline = performance.now() + timeoutMs;
+        while (this.rxQueue.length < count) {
+          if (!this.isConnected) return null;
+          const remaining = deadline - performance.now();
+          if (remaining <= 0) return null;
+          await new Promise((resolve) => {
+            const tid = setTimeout(() => {
+              this.rxWaiter = null;
+              resolve();
+            }, remaining);
+            this.rxWaiter = () => {
+              clearTimeout(tid);
+              this.rxWaiter = null;
+              resolve();
+            };
+          });
+        }
+        const out = new Uint8Array(count);
+        for (let i = 0; i < count; i++) out[i] = this.rxQueue.shift();
+        return out;
+      }
+
+      async writeRaw(bytes) {
+        const writer = this.port.writable.getWriter();
+        try {
+          await writer.write(bytes);
+        } finally {
+          writer.releaseLock();
+        }
+      }
+
+      async commandRaw(body, expectedLen, timeoutMs = 450) {
+        this.flushRx();
+        this.lastWcnt = 0;
+        const pkt = appendCrc(body);
+        await this.writeRaw(pkt);
+
+        const rblk = await this.readExact(expectedLen, timeoutMs);
+        if (!rblk || rblk.length < expectedLen) {
+          this.lastErr = PGM_ERR.LEN + 100;
+          return null;
+        }
+        if (!verifyCrc(rblk)) {
+          this.lastErr = PGM_ERR.CRC + 100;
+          return null;
+        }
+        if (rblk[0] !== body[0]) {
+          this.lastErr = PGM_ERR.FUNC + 100;
+          return null;
+        }
+        this.lastErr = rblk[1];
+        this.lastWcnt = rblk[2] | (rblk[3] << 8);
+        if (this.lastErr !== PGM_ERR.NONE) return null;
+        return rblk;
+      }
+
+      errText() {
+        const code = this.lastErr & 0xFF;
+        if (code < PGM_ERR.TEXT.length) return PGM_ERR.TEXT[code];
+        const base = this.lastErr >= 100 ? this.lastErr - 100 : this.lastErr;
+        if (base === PGM_ERR.LEN) return 'Timeout / incomplete USB packet';
+        if (base === PGM_ERR.CRC) return 'Host RX CRC mismatch';
+        if (base === PGM_ERR.FUNC) return 'Unexpected response opcode';
+        return `Error(${this.lastErr})`;
+      }
+
+      async getVersion() {
+        const r = await this.commandRaw(new Uint8Array([CMD.FUNCS, CMDF.GET_VERSION, 0, 0]), 19, 500);
+        if (!r) return false;
+        this.pgmVersion = [r[5], r[4]];
+        this.pgmVerInt = (r[5] << 8) | r[4];
+        this.pgmCid = r[6] | (r[7] << 8);
+        this.pgmPwr = r[8];
+        this.pgmSwdiv = r[9];
+        this.pgmSwaddrlen = r[10];
+        this.pgmSwbuf = r.slice(11, 17);
+        const meta = PGM_CHIP_CLK[this.pgmCid] || { chip: '?', clk: 32 };
+        this.pgmChip = meta.chip;
+        this.pgmClk = meta.clk;
+        this.pgmSwsps = this.pgmSwdiv > 0 ? this.pgmClk / 5.0 / this.pgmSwdiv : 0;
+        return true;
+      }
+
+      async mcuReboot() {
+        const r = await this.commandRaw(new Uint8Array([CMD.FUNCS, CMDF.MCU_REBOOT, 0, 0]), 6, 500);
+        return r !== null;
+      }
+
+      async setSwireConfig(swdiv, swaddrlen, swbuf) {
+        const body = new Uint8Array(12);
+        body[0] = CMD.FUNCS;
+        body[1] = CMDF.SWIRE_CFG;
+        body[2] = 0;
+        body[3] = 0;
+        body[4] = swdiv & 0xFF;
+        body[5] = swaddrlen & 0xFF;
+        body.set(swbuf.subarray(0, 6), 6);
+        const r = await this.commandRaw(body, 14, 500);
+        if (!r) return false;
+        this.pgmSwdiv = r[4];
+        this.pgmSwaddrlen = r[5];
+        this.pgmSwbuf = r.slice(6, 12);
+        this.pgmSwsps = this.pgmSwdiv > 0 ? this.pgmClk / 5.0 / this.pgmSwdiv : 0;
+        return true;
+      }
+
+      async setUartBaud(baud) {
+        const idx = TAB_UART_BAUD.indexOf(baud);
+        if (idx < 0) return false;
+        if (this.baudRate === baud) return true;
+        const prevBaud = this.baudRate;
+        const r = await this.commandRaw(new Uint8Array([CMD.FUNCS, CMDF.UART_BAUD, idx & 0xFF, 0]), 6, 500);
+        if (!r) return false;
+        const port = this.port;
+        await this.stopReadLoop();
+        try { await port.close(); } catch {}
+        try {
+          await this.openPort(port, baud);
+          if (await this.getVersion()) return true;
+        } catch {}
+        try { await this.stopReadLoop(); await port.close(); } catch {}
+        await this.openPort(port, prevBaud);
+        return false;
+      }
+
+      async setPinPwr(on) {
+        const v = on ? 1 : 0;
+        const r = await this.commandRaw(new Uint8Array([CMD.FUNCS, CMDF.EXT_POWER, v, 0]), 7, 500);
+        if (!r) return false;
+        this.pgmPwr = r[4];
+        return true;
+      }
+
+      async activate(tms) {
+        let count = 0;
+        if (tms > 0) {
+          count = Math.floor(tms / ((this.pgmSwaddrlen + 5.7) * 5 * this.pgmSwdiv / 2400.0));
+          if (count > 0xFFFF) count = 0xFFFF;
+        }
+        const body = new Uint8Array([CMD.FUNCS, CMDF.SWIRE_ACTIVATE, count & 0xFF, (count >> 8) & 0xFF]);
+        this.flushRx();
+        await this.writeRaw(appendCrc(body));
+        const head = await this.readExact(6, tms + 600);
+        if (!head || head[0] !== CMD.FUNCS) {
+          this.lastErr = PGM_ERR.LEN + 100;
+          return null;
+        }
+        this.lastErr = head[1];
+        this.lastWcnt = head[2] | (head[3] << 8);
+        let full = head;
+        if (this.lastErr === PGM_ERR.NONE && this.lastWcnt > 0 && this.lastWcnt <= 4) {
+          const tail = await this.readExact(this.lastWcnt, 400);
+          if (!tail) {
+            this.lastErr = PGM_ERR.LEN + 100;
+            return null;
+          }
+          full = new Uint8Array(head.length + tail.length);
+          full.set(head, 0);
+          full.set(tail, head.length);
+        }
+        if (!verifyCrc(full)) {
+          this.lastErr = PGM_ERR.CRC + 100;
+          return null;
+        }
+        if (this.lastErr !== PGM_ERR.NONE || full.length < 10) return null;
+        return (full[4] | (full[5] << 8) | (full[6] << 16) | (full[7] << 24)) >>> 0;
+      }
+
+      async swireRead(addr, size) {
+        const a = addr & 0xFFFFFF;
+        const body = new Uint8Array([CMD.SWIRE_READ, a & 0xFF, (a >> 8) & 0xFF, (a >> 16) & 0xFF, size & 0xFF, (size >> 8) & 0xFF]);
+        const r = await this.commandRaw(body, size + 6, 800);
+        if (!r || this.lastWcnt !== size) return null;
+        return r.slice(4, 4 + size);
+      }
+
+      async swireWrite(addr, bytes) {
+        const a = addr & 0xFFFFFF;
+        const body = new Uint8Array(4 + bytes.length);
+        body[0] = CMD.SWIRE_WRITE;
+        body[1] = a & 0xFF;
+        body[2] = (a >> 8) & 0xFF;
+        body[3] = (a >> 16) & 0xFF;
+        body.set(bytes, 4);
+        const r = await this.commandRaw(body, 6, 800);
+        return r !== null && this.lastWcnt === bytes.length;
+      }
+
+      async enableClkAlgm() {
+        const regs = await this.swireRead(0x61, 4);
+        if (!regs) return false;
+        const msk = this.pgmSwaddrlen === 3 ? 0x08 : 0x02;
+        if ((regs[0] & msk) !== 0 || (regs[3] & msk) === 0) {
+          const next = new Uint8Array(regs);
+          next[0] &= ~msk;
+          next[3] |= msk;
+          return this.swireWrite(0x61, next);
+        }
+        return true;
+      }
+
+      async analogRead(addr, size) {
+        if (!(await this.enableClkAlgm())) return null;
+        const body = new Uint8Array([CMD.SWIRE_AREAD, addr & 0xFF, 0, 0, size & 0xFF, (size >> 8) & 0xFF]);
+        const r = await this.commandRaw(body, size + 6, 900);
+        if (!r || this.lastWcnt !== size) return null;
+        return r.slice(4, 4 + size);
+      }
+
+      async analogWrite(addr, bytes) {
+        if (!(await this.enableClkAlgm())) return false;
+        const body = new Uint8Array(4 + bytes.length);
+        body[0] = CMD.SWIRE_AWRITE;
+        body[1] = addr & 0xFF;
+        body.set(bytes, 4);
+        const r = await this.commandRaw(body, 6, 900);
+        return r !== null && this.lastWcnt === bytes.length;
+      }
+
+      async readChipId() {
+        const raw = await this.swireRead(0x7D, 3);
+        if (!raw) return null;
+        const cver = raw[0];
+        const cid = raw[1] | (raw[2] << 8);
+        this.extCver = cver;
+        this.extCid = cid;
+        const meta = TARGET_CHIP_MAP[cid];
+        this.extChip = meta ? meta.short : null;
+        return { cid, cver };
+      }
+
+      async readJedecId() {
+        const r = await this.commandRaw(new Uint8Array([CMD.FLASH_GET_JEDEC_ID, 0, 0, 0]), 9, 600);
+        if (!r || this.lastWcnt !== 3) return null;
+        const mfg = r[4], memType = r[5], cap = r[6];
+        return { jedecId: (mfg << 16) | (memType << 8) | cap, mfg, memType, cap };
+      }
+
+      async readFlashStatus() {
+        const r = await this.commandRaw(new Uint8Array([CMD.FLASH_GET_STATUS, 0, 0, 0]), 7, 500);
+        if (!r || this.lastWcnt !== 1) return null;
+        return r[4];
+      }
+
+      async waitFlashReady(maxPoll = 300) {
+        for (let i = 0; i < maxPoll; i++) {
+          if (this.abortRequested) return false;
+          const st = await this.readFlashStatus();
+          if (st === null) return false;
+          if ((st & 0x01) === 0) return true;
+        }
+        return false;
+      }
+
+      async writeFlashStatus(val) {
+        let r = await this.commandRaw(new Uint8Array([CMD.FLASH_WRRD, 0, 0, 0, 0, 0, 6]), 6, 500);
+        if (!r) return false;
+        r = await this.commandRaw(new Uint8Array([CMD.FLASH_WRRD, 0, 0, 0, 0, 0, 1, val & 0xFF]), 6, 500);
+        if (!r) return false;
+        return this.waitFlashReady();
+      }
+
+      async flashUnlock() {
+        if (!(await this.writeFlashStatus(0))) return false;
+        const st = await this.readFlashStatus();
+        return st === 0;
+      }
+
+      async readFlashUid(uidLen = 16) {
+        const rdsize = uidLen + 4;
+        const body = new Uint8Array([CMD.FLASH_WRRD, 0, 0, 0, rdsize & 0xFF, (rdsize >> 8) & 0xFF, 0x4B]);
+        const r = await this.commandRaw(body, rdsize + 6, 700);
+        if (!r || this.lastWcnt !== rdsize + 1) return null;
+        return r.slice(8, 8 + uidLen);
+      }
+
+      async readFlashChunk(addr, size) {
+        const a = addr & 0xFFFFFF;
+        const body = new Uint8Array([CMD.FLASH_READ, a & 0xFF, (a >> 8) & 0xFF, (a >> 16) & 0xFF, size & 0xFF, (size >> 8) & 0xFF]);
+        const r = await this.commandRaw(body, size + 6, 1200);
+        if (!r || this.lastWcnt !== size) return null;
+        return r.slice(4, 4 + size);
+      }
+
+      async writeFlashChunk(addr, bytes) {
+        const a = addr & 0xFFFFFF;
+        const body = new Uint8Array(4 + bytes.length);
+        body[0] = CMD.FLASH_WRITE;
+        body[1] = a & 0xFF;
+        body[2] = (a >> 8) & 0xFF;
+        body[3] = (a >> 16) & 0xFF;
+        body.set(bytes, 4);
+        const r = await this.commandRaw(body, 6, 1200);
+        return r !== null && this.lastWcnt === bytes.length;
+      }
+
+      async eraseSectorFlash(addr) {
+        const a = addr & 0xFFF000;
+        const r = await this.commandRaw(new Uint8Array([CMD.FLASH_SECT_ERASE, a & 0xFF, (a >> 8) & 0xFF, (a >> 16) & 0xFF]), 6, 1500);
+        if (!r) return false;
+        return this.waitFlashReady();
+      }
+
+      async eraseAllFlash() {
+        const r = await this.commandRaw(new Uint8Array([CMD.FLASH_ALL_ERASE, 0, 0, 0]), 6, 2000);
+        if (!r) return false;
+        return this.waitFlashReady(3000);
+      }
+
+      async readFlashCrc16(addr, size) {
+        const a = addr & 0xFFFFFF;
+        const body = new Uint8Array([CMD.FLASH_RDCRC, a & 0xFF, (a >> 8) & 0xFF, (a >> 16) & 0xFF, size & 0xFF, (size >> 8) & 0xFF]);
+        const r = await this.commandRaw(body, 6, 1000);
+        if (!r) return null;
+        return this.lastWcnt; // CMD_FLASH_RDCRC encodes CRC16 inside wcnt
+      }
+
+      async verifyFlashBlockCrc(addr, blk, limitState) {
+        if (blk.length <= limitState.limit) {
+          const hwCrc = await this.readFlashCrc16(addr, blk.length);
+          if (hwCrc !== null) return hwCrc === crc16(blk, blk.length);
+          if ((this.lastErr & 0xFF) === PGM_ERR.LEN && limitState.limit > 256) {
+            limitState.limit = 256;
+          } else {
+            return false;
+          }
+        }
+        for (let sub = 0; sub < blk.length; sub += limitState.limit) {
+          const part = blk.subarray(sub, Math.min(sub + limitState.limit, blk.length));
+          const hwCrc = await this.readFlashCrc16(addr + sub, part.length);
+          if (hwCrc === null || hwCrc !== crc16(part, part.length)) return false;
+        }
+        return true;
+      }
+
+      async waitResp(waitAddr, timeoutMs, wrAddr = null, wrBytes = null) {
+        let body;
+        if (wrAddr !== null && wrBytes !== null) {
+          body = new Uint8Array(7 + wrBytes.length);
+          body[0] = CMD.WAIT_RESP;
+          body[1] = waitAddr & 0xFF;
+          body[2] = (waitAddr >> 8) & 0xFF;
+          body[3] = (waitAddr >> 16) & 0xFF;
+          body[4] = wrAddr & 0xFF;
+          body[5] = (wrAddr >> 8) & 0xFF;
+          body[6] = (wrAddr >> 16) & 0xFF;
+          body.set(wrBytes, 7);
+        } else {
+          body = new Uint8Array([CMD.WAIT_RESP, waitAddr & 0xFF, (waitAddr >> 8) & 0xFF, (waitAddr >> 16) & 0xFF]);
+        }
+        const ack = await this.commandRaw(body, 6, 500);
+        if (!ack) return null;
+
+        const deadline = performance.now() + timeoutMs;
+        while (performance.now() < deadline && !this.abortRequested) {
+          const msg = await this.readExact(10, Math.min(500, Math.max(50, deadline - performance.now())));
+          if (!msg) continue;
+          if (msg[0] !== CMD.WAIT_RESP || msg[1] !== 0 || msg[2] !== 4 || msg[3] !== 0 || !verifyCrc(msg)) {
+            await this.getVersion(); // exit MODE_WAIT_RESP on error
+            return null;
+          }
+          return (msg[4] | (msg[5] << 8) | (msg[6] << 16) | (msg[7] << 24)) >>> 0;
+        }
+        await this.getVersion(); // cancel MODE_WAIT_RESP
+        return null;
+      }
+
+      async startSwsPrintf(sramAddr, onChunk) {
+        const a = sramAddr & 0xFFFFFF;
+        const r = await this.commandRaw(new Uint8Array([CMD.SWS_PRINTF, a & 0xFF, (a >> 8) & 0xFF, (a >> 16) & 0xFF, 0]), 6, 500);
+        if (!r) return false;
+        this.swsCallback = onChunk;
+        return true;
+      }
+
+      async stopSwsPrintf() {
+        this.swsCallback = null;
+        await this.getVersion();
+      }
+    }
+
+    // =========================================================================
+    // Application State & Orchestration
+    // =========================================================================
+    const pgm = new TlsrWebSerialClient();
+    let lastDumpData = null;
+    let lastDumpFilename = 'dump.bin';
+    let writeFileBytes = null;
+    let writeFileName = '';
+    let lastSpecs = null;
+    let prevCpuRegs = null;
+    let swsActive = false;
+
+    function updateUiState() {
+      const conn = pgm.isConnected;
+      const busy = pgm.busy || swsActive;
+      $('#btn-connect').disabled = conn;
+      $('#btn-disconnect').disabled = !conn;
+      $('#btn-cancel-op').disabled = !pgm.busy;
+      $$('[data-need-conn]').forEach((el) => {
+        el.disabled = !conn || busy;
+      });
+      $('#btn-sws-start').disabled = !conn || pgm.busy || swsActive;
+      $('#btn-sws-stop').disabled = !conn || !swsActive;
+      $('#btn-download-dump').disabled = !lastDumpData;
+      $('#btn-view-dump').disabled = !lastDumpData;
+      $('#btn-flash-write').disabled = !conn || busy || !writeFileBytes;
+
+      const connBadge = $('#badge-conn');
+      if (conn) {
+        connBadge.className = 'badge ok';
+        connBadge.textContent = `Connected (${pgm.baudRate.toLocaleString()} bps)`;
+      } else {
+        connBadge.className = 'badge';
+        connBadge.textContent = 'Disconnected';
+      }
+
+      const pwrBadge = $('#badge-pwr');
+      if (!conn) {
+        pwrBadge.className = 'badge';
+        pwrBadge.textContent = 'PWR: —';
+        $('#kv-pgm-chip').textContent = '—';
+        $('#kv-pgm-sws').textContent = '—';
+        $('#kv-pgm-cfg').textContent = '—';
+        $('#kv-pgm-baud').textContent = '—';
+      } else {
+        pwrBadge.className = pgm.pgmPwr ? 'badge ok' : 'badge warn';
+        pwrBadge.textContent = pgm.pgmPwr ? 'PWR: ON (3.3V)' : 'PWR: OFF (0V)';
+        const verStr = `${(pgm.pgmVersion[0] >> 4)}.${pgm.pgmVersion[0] & 0xF}.${(pgm.pgmVersion[1] >> 4)}.${pgm.pgmVersion[1] & 0xF}`;
+        $('#kv-pgm-chip').textContent = `${pgm.pgmChip} (0x${hexN(pgm.pgmCid, 4)}) v${verStr}`;
+        $('#kv-pgm-sws').textContent = `${pgm.pgmSwsps.toFixed(4)} Mbit/s`;
+        $('#kv-pgm-cfg').textContent = `div=${pgm.pgmSwdiv}, ${pgm.pgmSwaddrlen}B, [${bytesToHex(pgm.pgmSwbuf)}]`;
+        $('#kv-pgm-baud').textContent = `${pgm.baudRate} bps`;
+      }
+    }
+
+    async function runExclusive(label, fn) {
+      if (!pgm.isConnected) return;
+      if (swsActive) {
+        await pgm.stopSwsPrintf();
+        swsActive = false;
+      }
+      pgm.busy = true;
+      pgm.abortRequested = false;
+      updateUiState();
+      try {
+        return await fn();
+      } catch (err) {
+        logMsg(`${label} failed: ${err.message || err}`, 'err');
+        return null;
+      } finally {
+        pgm.busy = false;
+        pgm.abortRequested = false;
+        updateUiState();
+      }
+    }
+
+    async function waitForTargetLock(expectedIds = null, banner = 'Cycling PWR + SWire Activate until stable contact...') {
+      const actMs = parseAutoInt($('#inp-act').value, 150);
+      const pwrOffMs = parseAutoInt($('#inp-pwr-off-ms').value, 60);
+      const stableReads = Math.max(1, parseAutoInt($('#inp-stable-reads').value, 3));
+      const tStart = performance.now();
+      let attempt = 0;
+
+      logMsg(banner, 'muted');
+      const targetBadge = $('#badge-target');
+      targetBadge.className = 'badge warn';
+      targetBadge.textContent = 'Target: Polling...';
+
+      while (!pgm.abortRequested) {
+        attempt++;
+        const offMs = attempt % 10 === 0 ? Math.max(pwrOffMs, 150) : pwrOffMs;
+        await pgm.setPinPwr(0);
+        updateUiState();
+        await sleep(offMs);
+        if (pgm.abortRequested) break;
+
+        const pc = await pgm.activate(actMs);
+        updateUiState();
+        if (pc === null) {
+          targetBadge.textContent = `Polling #${attempt} (${((performance.now() - tStart) / 1000).toFixed(1)}s)`;
+          continue;
+        }
+
+        if (!(await pgm.swireWrite(0x602, new Uint8Array([0x05])))) continue;
+
+        let ok = true;
+        let firstCid = null;
+        let firstCver = 0;
+        let firstJedec = null;
+
+        for (let i = 0; i < stableReads; i++) {
+          if (i > 0) await sleep(25);
+          const idPair = await pgm.readChipId();
+          const jedec = await pgm.readJedecId();
+          if (!idPair || !jedec) { ok = false; break; }
+          if (idPair.cid === 0x0000 || idPair.cid === 0xFFFF || jedec.jedecId === 0x000000 || jedec.jedecId === 0xFFFFFF) {
+            ok = false;
+            break;
+          }
+          if (i === 0) {
+            firstCid = idPair.cid;
+            firstCver = idPair.cver;
+            firstJedec = jedec.jedecId;
+          } else if (idPair.cid !== firstCid || idPair.cver !== firstCver || jedec.jedecId !== firstJedec) {
+            ok = false;
+            break;
+          }
+        }
+
+        if (!ok) {
+          logMsg(`Contact bounced at attempt #${attempt}, re-stabilizing...`, 'warn');
+          continue;
+        }
+
+        if (expectedIds && (firstCid !== expectedIds.cid || firstJedec !== expectedIds.jedecId)) {
+          logMsg(`Target mismatch (0x${hexN(firstCid, 4)} / 0x${hexN(firstJedec, 6)}), retrying...`, 'warn');
+          continue;
+        }
+
+        const elapsed = ((performance.now() - tStart) / 1000).toFixed(2);
+        targetBadge.className = 'badge ok';
+        targetBadge.textContent = `Locked: 0x${hexN(firstCid, 4)} (${elapsed}s)`;
+        logMsg(`Target locked in ${elapsed}s (attempt #${attempt}): Chip 0x${hexN(firstCid, 4)} Rev 0x${hexN(firstCver, 2)}, JEDEC 0x${hexN(firstJedec, 6)}`, 'ok');
+        return { pc, cid: firstCid, cver: firstCver, jedecId: firstJedec };
+      }
+
+      targetBadge.className = 'badge';
+      targetBadge.textContent = 'Target: Cancelled';
+      throw new Error('Cancelled by user');
+    }
+
+    async function ensureTargetReady(expectedIds = null) {
+      if ($('#chk-retry-mode').checked) {
+        return waitForTargetLock(expectedIds);
+      }
+      const trst = parseAutoInt($('#inp-trst').value, 0);
+      const act = parseAutoInt($('#inp-act').value, 0);
+      if (trst > 0) {
+        await pgm.setPinPwr(0);
+        await sleep(Math.max(5, trst));
+        if (act > 0) {
+          const pc = await pgm.activate(act);
+          if (pc === null) throw new Error(`Activate failed: ${pgm.errText()}`);
+        } else {
+          await pgm.setPinPwr(1);
+          await sleep(70);
+        }
+      } else if (act > 0) {
+        await pgm.setPinPwr(0);
+        await sleep(50);
+        const pc = await pgm.activate(act);
+        if (pc === null) throw new Error(`Activate failed: ${pgm.errText()}`);
+      }
+      const idPair = await pgm.readChipId();
+      const jedec = await pgm.readJedecId();
+      if (!idPair) throw new Error(`Chip ID read failed: ${pgm.errText()}`);
+      return { pc: 0, cid: idPair.cid, cver: idPair.cver, jedecId: jedec ? jedec.jedecId : 0 };
+    }
+
+    async function probeAndDisplaySpecs(sizeOverride = null) {
+      let cid = pgm.extCid;
+      let cver = pgm.extCver;
+      const idPair = await pgm.readChipId();
+      if (!idPair) throw new Error(`ReadChipID failed: ${pgm.errText()}`);
+      cid = idPair.cid;
+      cver = idPair.cver;
+
+      const pcRaw = await pgm.swireRead(0x6BC, 4);
+      const pc = pcRaw ? ((pcRaw[0] | (pcRaw[1] << 8) | (pcRaw[2] << 16) | (pcRaw[3] << 24)) >>> 0) : 0;
+      const stRaw = await pgm.swireRead(0x602, 1);
+      const cpuState = stRaw ? stRaw[0] : 0;
+
+      const jedec = await pgm.readJedecId();
+      let jedecId = 0;
+      let flashMfg = 'Unknown';
+      let flashSize = 512 * 1024;
+      let flashSizeStr = '512 KB (assumed)';
+
+      if (jedec) {
+        jedecId = jedec.jedecId;
+        flashMfg = FLASH_MFG_MAP[jedec.mfg] || `Unknown Vendor (0x${hexN(jedec.mfg, 2)})`;
+        if (sizeOverride && sizeOverride > 0) {
+          flashSize = sizeOverride;
+          flashSizeStr = `${Math.round(flashSize / 1024)} KB (override)`;
+        } else if (jedec.cap >= 0x10 && jedec.cap <= 0x1A) {
+          flashSize = 1 << jedec.cap;
+          flashSizeStr = flashSize >= 1048576
+            ? `${(flashSize / 1048576).toFixed(0)} MB (${flashSize / 1024} KB)`
+            : `${flashSize / 1024} KB`;
+        } else {
+          flashSizeStr = `512 KB (raw cap 0x${hexN(jedec.cap, 2)})`;
+        }
+      } else if (sizeOverride && sizeOverride > 0) {
+        flashSize = sizeOverride;
+        flashSizeStr = `${Math.round(flashSize / 1024)} KB (override)`;
+      }
+
+      const fstat = await pgm.readFlashStatus();
+      const uid = await pgm.readFlashUid(16);
+      const chipMeta = TARGET_CHIP_MAP[cid] || {
+        name: `Unknown TLSR (0x${hexN(cid, 4)})`,
+        short: `TLSR_${hexN(cid, 4)}`,
+        sram: 'Unknown',
+        ble: 'Unknown',
+      };
+
+      lastSpecs = {
+        cid, cver, chipMeta, pc, cpuState,
+        jedecId, flashMfg, flashSize, flashSizeStr,
+        flashStatus: fstat ?? 0, uid,
+      };
+
+      $('#spec-chip-name').textContent = chipMeta.name;
+      $('#spec-chip-id').textContent = `0x${hexN(cid, 4)} / Rev 0x${hexN(cver, 2)}`;
+      $('#spec-sram-ble').textContent = `${chipMeta.sram} (${chipMeta.ble})`;
+      $('#spec-pc-state').textContent = `0x${hexN(pc, 8)} / [0602]=0x${hexN(cpuState, 2)}`;
+      $('#spec-flash-vendor').textContent = flashMfg;
+      $('#spec-flash-jedec').textContent = `0x${hexN(jedecId, 6)} (${flashSizeStr}, 0x${hexN(flashSize, 6)} B)`;
+      const wip = (lastSpecs.flashStatus & 0x01) ? 'BUSY' : 'READY';
+      const bp = (lastSpecs.flashStatus >> 2) & 0x07;
+      $('#spec-flash-status').textContent = `0x${hexN(lastSpecs.flashStatus, 2)} (${wip}, BP=${bp})`;
+      $('#spec-flash-uid').textContent = uid ? bytesToHex(uid, ' ').toUpperCase() : 'Unavailable';
+
+      $('#badge-target').className = 'badge ok';
+      $('#badge-target').textContent = `${chipMeta.short} | ${flashSizeStr}`;
+      return lastSpecs;
+    }
+
+    async function maybePowerOffOnDone() {
+      if ($('#chk-retry-mode').checked && !$('#chk-keep-pwr').checked) {
+        await pgm.setPinPwr(0);
+        updateUiState();
+      }
+    }
+
+    // =========================================================================
+    // Connect / Disconnect / Config / Power Events
+    // =========================================================================
+    if ('serial' in navigator) {
+      $('#badge-webserial').className = 'badge ok';
+      $('#badge-webserial').textContent = 'WebSerial Ready';
+    } else {
+      $('#badge-webserial').className = 'badge err';
+      $('#badge-webserial').textContent = 'WebSerial Unsupported';
+      $('#webserial-warning').hidden = false;
+      $('#btn-connect').disabled = true;
+    }
+
+    $('#btn-connect').addEventListener('click', async () => {
+      try {
+        const filters = $('#chk-filter-telink').checked
+          ? [{ usbVendorId: 0x248A, usbProductId: 0x8269 }]
+          : [];
+        const port = await navigator.serial.requestPort(filters.length ? { filters } : {});
+        await pgm.openPort(port, DEFAULT_UART_BAUD);
+        logMsg(`Serial port opened at ${DEFAULT_UART_BAUD} bps, probing TLSRPGM...`);
+
+        if (!(await pgm.getVersion())) {
+          await pgm.close(false);
+          logMsg('No valid TLSRPGM GetVersion response on selected port.', 'err');
+          updateUiState();
+          return;
+        }
+
+        const ver = `${(pgm.pgmVersion[0] >> 4)}.${pgm.pgmVersion[0] & 0xF}.${(pgm.pgmVersion[1] >> 4)}.${pgm.pgmVersion[1] & 0xF}`;
+        logMsg(`PGM: ChipID 0x${hexN(pgm.pgmCid, 4)} (${pgm.pgmChip}), ver ${ver}, swdiv=${pgm.pgmSwdiv}, addrlen=${pgm.pgmSwaddrlen}, pwr=${pgm.pgmPwr ? 'On' : 'Off'}`, 'ok');
+
+        $('#sel-addrlen').value = String(pgm.pgmSwaddrlen);
+        $('#inp-swbuf').value = bytesToHex(pgm.pgmSwbuf, ' ');
+
+        const desiredBaud = Number.parseInt($('#sel-baud').value, 10);
+        if (desiredBaud !== DEFAULT_UART_BAUD) {
+          if (await pgm.setUartBaud(desiredBaud)) {
+            logMsg(`UART speed switched to ${desiredBaud} bps`, 'ok');
+          } else {
+            logMsg(`Failed switching to ${desiredBaud} bps; staying at ${pgm.baudRate} bps`, 'warn');
+            $('#sel-baud').value = String(pgm.baudRate);
+          }
+        }
+        updateUiState();
+      } catch (err) {
+        if (err && err.name === 'NotFoundError') return;
+        logMsg(`Connect error: ${err.message || err}`, 'err');
+        await pgm.close(false).catch(() => {});
+        updateUiState();
+      }
+    });
+
+    $('#btn-disconnect').addEventListener('click', async () => {
+      pgm.abortRequested = true;
+      await pgm.close(false);
+      swsActive = false;
+      logMsg('Disconnected from programmer.', 'muted');
+      $('#badge-target').className = 'badge';
+      $('#badge-target').textContent = 'Target: Unlocked';
+      updateUiState();
+    });
+
+    $('#btn-probe-pgm').addEventListener('click', () => runExclusive('GetVersion', async () => {
+      if (!(await pgm.getVersion())) throw new Error(pgm.errText());
+      logMsg(`GetVersion ok: ${pgm.pgmChip}, sws=${pgm.pgmSwsps.toFixed(4)} Mbit/s, PWR=${pgm.pgmPwr ? 'On' : 'Off'}`, 'ok');
+    }));
+
+    $('#btn-reboot-pgm').addEventListener('click', async () => {
+      const ok = await confirmModal('Reboot Programmer MCU?', 'This resets the TLSRPGM programmer board itself (USB CDC may temporarily re-enumerate).', 'Reboot PGM');
+      if (!ok) return;
+      await runExclusive('Reboot PGM', async () => {
+        await pgm.mcuReboot();
+        logMsg('Sent CMDF_MCU_REBOOT to programmer.', 'warn');
+      });
+    });
+
+    $('#btn-apply-cfg').addEventListener('click', () => runExclusive('Apply Config', async () => {
+      const addrlen = Number.parseInt($('#sel-addrlen').value, 10);
+      const swdivRaw = parseAutoInt($('#inp-swdiv').value, 0);
+      const swdiv = swdivRaw > 0 ? swdivRaw : Math.round(pgm.pgmClk / 4.8);
+      const swbuf = parseHexBytes($('#inp-swbuf').value);
+      if (swbuf.length !== 6) throw new Error('swbuf must be exactly 6 hex bytes');
+      if (!(await pgm.setSwireConfig(swdiv, addrlen, swbuf))) {
+        throw new Error(`CMDF_SWIRE_CFG failed: ${pgm.errText()}`);
+      }
+      logMsg(`SWire config applied: swdiv=${pgm.pgmSwdiv}, addrlen=${pgm.pgmSwaddrlen}, rate=${pgm.pgmSwsps.toFixed(4)} Mbit/s`, 'ok');
+
+      const desiredBaud = Number.parseInt($('#sel-baud').value, 10);
+      if (desiredBaud !== pgm.baudRate) {
+        if (await pgm.setUartBaud(desiredBaud)) {
+          logMsg(`UART speed switched to ${desiredBaud} bps`, 'ok');
+        } else {
+          logMsg(`UART baud switch failed, staying at ${pgm.baudRate} bps`, 'warn');
+        }
+      }
+    }));
+
+    $('#btn-pwr-on').addEventListener('click', () => runExclusive('PWR On', async () => {
+      if (!(await pgm.setPinPwr(1))) throw new Error(pgm.errText());
+      logMsg(`Target PWR -> ON (${pgm.pgmPwr})`, 'ok');
+    }));
+
+    $('#btn-pwr-off').addEventListener('click', () => runExclusive('PWR Off', async () => {
+      if (!(await pgm.setPinPwr(0))) throw new Error(pgm.errText());
+      logMsg(`Target PWR -> OFF (${pgm.pgmPwr})`, 'ok');
+    }));
+
+    $('#btn-pwr-toggle').addEventListener('click', () => runExclusive('Toggle PWR', async () => {
+      const prev = pgm.pgmPwr ? 1 : 0;
+      const next = prev ? 0 : 1;
+      if (!(await pgm.setPinPwr(next))) throw new Error(pgm.errText());
+      logMsg(`Target PWR toggled: ${prev ? 'ON' : 'OFF'} -> ${pgm.pgmPwr ? 'ON' : 'OFF'}`, 'ok');
+    }));
+
+    $('#btn-cancel-op').addEventListener('click', () => {
+      pgm.abortRequested = true;
+      logMsg('Cancellation requested...', 'warn');
+    });
+
+    // =========================================================================
+    // Target Acquisition & CPU Lifecycle Buttons
+    // =========================================================================
+    $('#btn-wait-lock').addEventListener('click', () => runExclusive('Acquire Target', async () => {
+      await waitForTargetLock(null);
+      await probeAndDisplaySpecs(null);
+      beep(1);
+    }));
+
+    $('#btn-oneshot-act').addEventListener('click', () => runExclusive('Hard Reset + Activate', async () => {
+      const trst = Math.max(5, parseAutoInt($('#inp-trst').value, 100));
+      const act = parseAutoInt($('#inp-act').value, 150);
+      await pgm.setPinPwr(0);
+      await sleep(trst);
+      if (act > 0) {
+        const pc = await pgm.activate(act);
+        if (pc === null) throw new Error(pgm.errText());
+        logMsg(`Hard reset ${trst}ms + Activate ${act}ms ok (PC=0x${hexN(pc, 8)})`, 'ok');
+      } else {
+        await pgm.setPinPwr(1);
+        await sleep(70);
+        logMsg(`Hard reset ${trst}ms -> PWR On ok`, 'ok');
+      }
+    }));
+
+    $('#btn-soft-act').addEventListener('click', () => runExclusive('Soft Reset + Act', async () => {
+      if (!(await pgm.swireWrite(0x6F, new Uint8Array([0x20])))) throw new Error('MCU Reboot write failed');
+      const pc = await pgm.activate(70);
+      if (pc === null) throw new Error(pgm.errText());
+      logMsg(`Soft reset + Activate 70ms ok (PC=0x${hexN(pc, 8)})`, 'ok');
+    }));
+
+    $('#btn-wait-cpu').addEventListener('click', () => runExclusive('Wait CPU (-z)', async () => {
+      const sec = Math.max(1, parseAutoInt($('#inp-wait-sec').value, 5));
+      logMsg(`Waiting up to ${sec}s for CPU wake/PC...`, 'muted');
+      const pc = await pgm.waitResp(0x6BC, sec * 1000);
+      if (pc === null) throw new Error('Timeout waiting for CPU');
+      logMsg(`CPU responded! PC=0x${hexN(pc, 8)}`, 'ok');
+    }));
+
+    $('#btn-cpu-stop').addEventListener('click', () => runExclusive('CPU Stop', async () => {
+      if (!(await pgm.swireWrite(0x602, new Uint8Array([0x05])))) throw new Error(pgm.errText());
+      logMsg('CPU Stopped ([0x0602] = 0x05)', 'ok');
+    }));
+    $('#btn-cpu-stall').addEventListener('click', () => runExclusive('CPU Stall', async () => {
+      if (!(await pgm.swireWrite(0x602, new Uint8Array([0x06])))) throw new Error(pgm.errText());
+      logMsg('CPU Stalled ([0x0602] = 0x06)', 'ok');
+    }));
+    $('#btn-cpu-run').addEventListener('click', () => runExclusive('CPU Run', async () => {
+      if (!(await pgm.swireWrite(0x602, new Uint8Array([0x88])))) throw new Error(pgm.errText());
+      logMsg('CPU Run ([0x0602] = 0x88)', 'ok');
+    }));
+    $('#btn-cpu-go').addEventListener('click', () => runExclusive('CPU Go', async () => {
+      if (!(await pgm.swireWrite(0x602, new Uint8Array([0x08])))) throw new Error(pgm.errText());
+      logMsg('CPU Go ([0x0602] = 0x08)', 'ok');
+    }));
+    $('#btn-mcu-reboot').addEventListener('click', () => runExclusive('MCU Reboot', async () => {
+      if (!(await pgm.swireWrite(0x6F, new Uint8Array([0x20])))) throw new Error(pgm.errText());
+      logMsg('Target MCU Reboot ([0x006F] = 0x20)', 'ok');
+    }));
+
+    // =========================================================================
+    // Tab 1: Overview & Full Inspect (i)
+    // =========================================================================
+    $('#btn-quick-specs').addEventListener('click', () => runExclusive('Probe Specs', async () => {
+      await ensureTargetReady(null);
+      await probeAndDisplaySpecs(null);
+      logMsg('Target specs refreshed.', 'ok');
+    }));
+
+    $('#btn-inspect-all').addEventListener('click', () => runExclusive('Inspect All (i)', async () => {
+      await ensureTargetReady(null);
+      const specs = await probeAndDisplaySpecs(null);
+      const flashHead = await pgm.readFlashChunk(0, 0x20);
+      const aregs = await pgm.analogRead(0, pgm.pgmSwaddrlen === 3 ? 0x100 : 0x80);
+      const sregs = await pgm.swireRead(0x60, 0x20);
+      if (flashHead) logMsg(`FLASH 0x00..0x20:\n${formatHexDump(0, flashHead)}`);
+      if (aregs) logMsg(`ANALOG REGISTERS:\n${formatHexDump(0, aregs)}`);
+      if (sregs) logMsg(`REGISTERS 0x60..0x80:\n${formatHexDump(0x60, sregs)}`);
+      if (flashHead) setHexViewer(0, flashHead, 'Flash Header', `${specs.chipMeta.short}_head.bin`);
+      if (specs.cid === 0x5591) {
+        const otp = await readOtpRange(0x3fc0, 0x40);
+        logMsg(`TLSR8208 OTP 0x3FC0..0x4000:\n${formatHexDump(0x3fc0, otp)}`);
+      }
+      logMsg('Full chip inspection (i) complete.', 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    // =========================================================================
+    // Tab 2: Flash Operations (dump, rf, df, we, wf, es, ea, fsr, fsw)
+    // =========================================================================
+    $('#btn-full-dump').addEventListener('click', () => runExclusive('Full Flash Dump', async () => {
+      const lock = await ensureTargetReady(null);
+      const sizeStr = $('#inp-dump-size').value.trim();
+      const override = sizeStr ? parseAutoInt(sizeStr) : null;
+      const specs = await probeAndDisplaySpecs(override);
+      beep(1);
+
+      const total = specs.flashSize;
+      const buf = new Uint8Array(total);
+      const useCrc = $('#chk-use-crc').checked && pgm.pgmVerInt >= 3;
+      const retryEnabled = $('#chk-retry-mode').checked;
+      const rdcrcState = { limit: MAX_BUF_READ_SIZE };
+
+      let offset = 0;
+      let retries = 0;
+      let slips = 0;
+      const t0 = performance.now();
+
+      $('#prog-dump').max = total;
+      $('#prog-dump').value = 0;
+      logMsg(`Dumping ${Math.round(total / 1024)} KB (${useCrc ? 'Hardware CRC16 verified' : 'No CRC'})...`);
+
+      while (offset < total) {
+        if (pgm.abortRequested) throw new Error('Dump cancelled by user');
+        const chunkLen = Math.min(MAX_BUF_READ_SIZE, total - offset);
+        let blk = null;
+
+        for (let t = 0; t < 3; t++) {
+          const raw = await pgm.readFlashChunk(offset, chunkLen);
+          if (!raw || raw.length !== chunkLen) {
+            retries++;
+            continue;
+          }
+          if (useCrc) {
+            const crcOk = await pgm.verifyFlashBlockCrc(offset, raw, rdcrcState);
+            if (!crcOk) {
+              retries++;
+              continue;
+            }
+          }
+          blk = raw;
+          break;
+        }
+
+        if (!blk) {
+          if (!retryEnabled) throw new Error(`Flash read/CRC error at 0x${hexN(offset, 6)}`);
+          slips++;
+          beep(1);
+          logMsg(`Link lost at 0x${hexN(offset, 6)} — re-acquiring target to resume...`, 'warn');
+          await waitForTargetLock({ cid: specs.cid, jedecId: specs.jedecId }, `Re-acquiring target at 0x${hexN(offset, 6)}...`);
+          continue;
+        }
+
+        buf.set(blk, offset);
+        offset += chunkLen;
+
+        const elapsedSec = Math.max((performance.now() - t0) / 1000, 0.001);
+        const speedKBs = (offset / 1024) / elapsedSec;
+        const etaSec = (total - offset) / 1024 / Math.max(speedKBs, 0.1);
+        const pct = (offset * 100 / total).toFixed(1);
+        $('#prog-dump').value = offset;
+        $('#meta-dump-status').textContent = `${pct}% (${Math.round(offset / 1024)} / ${Math.round(total / 1024)} KB) | retries=${retries}, slips=${slips}`;
+        $('#meta-dump-speed').textContent = `${speedKBs.toFixed(1)} KB/s | ETA ${etaSec.toFixed(1)}s`;
+      }
+
+      const sha = await sha256Hex(buf);
+      const mac = findMacInDump(buf);
+      const ts = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 15);
+      const customName = $('#inp-dump-name').value.trim();
+      lastDumpData = buf;
+      lastDumpFilename = customName || `dump_${specs.chipMeta.short}_${Math.round(total / 1024)}KB_${ts}.bin`;
+
+      $('#dump-sha256').textContent = sha;
+      $('#spec-ble-mac').textContent = mac;
+
+      let firstVal = buf[0];
+      let uniform = firstVal === 0xFF || firstVal === 0x00;
+      if (uniform) {
+        for (let i = 1; i < buf.length; i++) {
+          if (buf[i] !== firstVal) { uniform = false; break; }
+        }
+      }
+      if (uniform) logMsg(`Warning: entire dump is uniform 0x${hexN(firstVal, 2)}!`, 'warn');
+
+      await maybePowerOffOnDone();
+      beep(2);
+      logMsg(`Dump complete in ${((performance.now() - t0) / 1000).toFixed(2)}s! BLE MAC: ${mac} | SHA-256: ${sha.slice(0, 16)}...`, 'ok');
+      setHexViewer(0, buf.subarray(0, Math.min(buf.length, 65536)), 'Flash Dump (first 64KB preview)', lastDumpFilename);
+    }));
+
+    $('#btn-download-dump').addEventListener('click', () => {
+      if (lastDumpData) downloadBinary(lastDumpFilename, lastDumpData);
+    });
+
+    $('#btn-view-dump').addEventListener('click', () => {
+      if (!lastDumpData) return;
+      const slice = lastDumpData.length > 131072 ? lastDumpData.subarray(0, 131072) : lastDumpData;
+      setHexViewer(0, slice, lastDumpData.length > 131072 ? 'Flash Dump (first 128KB)' : 'Flash Dump', lastDumpFilename);
+    });
+
+    // Flash Write File Handling (Dropzone + Picker)
+    async function loadFirmwareFile(file) {
+      if (!file) return;
+      const ab = await file.arrayBuffer();
+      writeFileBytes = new Uint8Array(ab);
+      writeFileName = file.name;
+      const sha = await sha256Hex(writeFileBytes);
+      let knlt = false;
+      if (writeFileBytes.length >= 12) {
+        knlt = writeFileBytes[8] === 0x4B && writeFileBytes[9] === 0x4E && writeFileBytes[10] === 0x4C && writeFileBytes[11] === 0x54;
+      }
+      $('#flash-file-info').textContent = `${file.name} (${writeFileBytes.length} bytes / ${(writeFileBytes.length / 1024).toFixed(1)} KB${knlt ? ' · Valid KNLT Telink header' : ''}) · SHA256 ${sha.slice(0, 12)}...`;
+      logMsg(`Loaded firmware: ${file.name} (${writeFileBytes.length} bytes)`, 'ok');
+      updateUiState();
+    }
+
+    const dropzone = $('#flash-dropzone');
+    const fileInput = $('#inp-flash-file');
+    dropzone.addEventListener('click', () => fileInput.click());
+    dropzone.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+    });
+    fileInput.addEventListener('change', (e) => loadFirmwareFile(e.target.files[0]));
+    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      if (e.dataTransfer.files.length) loadFirmwareFile(e.dataTransfer.files[0]);
+    });
+
+    // Write Flash (we / wf)
+    $('#btn-flash-write').addEventListener('click', () => runExclusive('Write Flash', async () => {
+      if (!writeFileBytes || writeFileBytes.length === 0) throw new Error('No firmware file loaded');
+      const startAddr = parseAutoInt($('#inp-wr-addr').value, 0) & 0xFFFFFF;
+      const erase = $('#sel-wr-mode').value === 'we';
+      const useCrc = $('#chk-use-crc').checked && pgm.pgmVerInt >= 3;
+      const retryEnabled = $('#chk-retry-mode').checked;
+
+      const lock = await ensureTargetReady(null);
+      if (!(await pgm.flashUnlock())) throw new Error('FlashUnlock (write status 0) failed');
+
+      const total = writeFileBytes.length;
+      let offset = startAddr;
+      let pos = 0;
+      let erasedSector = (erase && (offset & (FLASH_SECTOR_SIZE - 1)) !== 0) ? (offset & ~(FLASH_SECTOR_SIZE - 1)) : -1;
+
+      $('#prog-write').max = total;
+      $('#prog-write').value = 0;
+      logMsg(`Flashing ${writeFileName} (${total} B) at 0x${hexN(startAddr, 6)} [${erase ? 'we' : 'wf'}]...`);
+
+      while (pos < total) {
+        if (pgm.abortRequested) throw new Error('Write cancelled by user');
+        const curAddr = offset & 0xFFFFFF;
+
+        if (erase) {
+          const sec = curAddr & ~(FLASH_SECTOR_SIZE - 1);
+          if (erasedSector !== sec) {
+            let secOk = false;
+            for (let t = 0; t < 3; t++) {
+              if (await pgm.eraseSectorFlash(sec)) { secOk = true; break; }
+            }
+            if (!secOk) {
+              if (!retryEnabled) throw new Error(`Sector erase failed at 0x${hexN(sec, 6)}`);
+              await waitForTargetLock({ cid: lock.cid, jedecId: lock.jedecId }, `Re-acquiring target to erase sector 0x${hexN(sec, 6)}...`);
+              if (!(await pgm.flashUnlock())) throw new Error('FlashUnlock failed after relock');
+              continue;
+            }
+            erasedSector = sec;
+          }
+        }
+
+        const chunkLen = Math.min(256, total - pos);
+        const chunk = writeFileBytes.subarray(pos, pos + chunkLen);
+        let nonFF = false;
+        for (let i = 0; i < chunk.length; i++) { if (chunk[i] !== 0xFF) { nonFF = true; break; } }
+
+        if (nonFF) {
+          let blkOk = false;
+          for (let t = 0; t < 3; t++) {
+            const wOk = await pgm.writeFlashChunk(curAddr, chunk);
+            if (!wOk || !(await pgm.waitFlashReady())) continue;
+            if (useCrc) {
+              const hwCrc = await pgm.readFlashCrc16(curAddr, chunk.length);
+              if (hwCrc === null || hwCrc !== crc16(chunk, chunk.length)) continue;
+            }
+            blkOk = true;
+            break;
+          }
+          if (!blkOk) {
+            if (!retryEnabled) throw new Error(`Flash write/CRC failed at 0x${hexN(curAddr, 6)}`);
+            await waitForTargetLock({ cid: lock.cid, jedecId: lock.jedecId }, `Re-acquiring target to resume write at 0x${hexN(curAddr, 6)}...`);
+            if (!(await pgm.flashUnlock())) throw new Error('FlashUnlock failed after relock');
+            continue;
+          }
+        }
+
+        pos += chunkLen;
+        offset += chunkLen;
+        $('#prog-write').value = pos;
+        $('#meta-write-status').textContent = `${(pos * 100 / total).toFixed(1)}% @ 0x${hexN(curAddr, 6)}`;
+        $('#meta-write-speed').textContent = `${Math.round(pos / 1024)} / ${Math.round(total / 1024)} KB`;
+      }
+
+      const post = $('#sel-wr-post').value;
+      if (post === 'run') await pgm.swireWrite(0x602, new Uint8Array([0x88]));
+      else if (post === 'go') await pgm.swireWrite(0x602, new Uint8Array([0x08]));
+      else if (post === 'mrst') await pgm.swireWrite(0x6F, new Uint8Array([0x20]));
+      else await maybePowerOffOnDone();
+
+      beep(2);
+      logMsg(`Flashing complete! ${total} bytes written & verified.`, 'ok');
+    }));
+
+    // Read Flash Region (df / rf)
+    async function readFlashRange(offset, size, saveFile) {
+      const lock = await ensureTargetReady(null);
+      const out = new Uint8Array(size);
+      const useCrc = $('#chk-use-crc').checked && pgm.pgmVerInt >= 3 && size >= 16;
+      const retryEnabled = $('#chk-retry-mode').checked;
+      const rdcrcState = { limit: MAX_BUF_READ_SIZE };
+      let pos = 0;
+
+      while (pos < size) {
+        if (pgm.abortRequested) throw new Error('Cancelled');
+        const chunkLen = Math.min(MAX_BUF_READ_SIZE, size - pos);
+        let blk = null;
+        for (let t = 0; t < (retryEnabled ? 3 : 1); t++) {
+          const raw = await pgm.readFlashChunk(offset + pos, chunkLen);
+          if (!raw) continue;
+          if (useCrc && !(await pgm.verifyFlashBlockCrc(offset + pos, raw, rdcrcState))) continue;
+          blk = raw;
+          break;
+        }
+        if (!blk) {
+          if (!retryEnabled) throw new Error(`Flash read failed at 0x${hexN(offset + pos, 6)}`);
+          await waitForTargetLock({ cid: lock.cid, jedecId: lock.jedecId });
+          continue;
+        }
+        out.set(blk, pos);
+        pos += chunkLen;
+      }
+
+      setHexViewer(offset, out, 'Flash Region', `flash_0x${hexN(offset, 6)}.bin`);
+      logMsg(`Read ${size} B from Flash @ 0x${hexN(offset, 6)}`, 'ok');
+      if (saveFile) downloadBinary(`flash_0x${hexN(offset, 6)}_${size}B.bin`, out);
+      await maybePowerOffOnDone();
+    }
+
+    $('#btn-df').addEventListener('click', () => runExclusive('df', () =>
+      readFlashRange(parseAutoInt($('#inp-rf-addr').value, 0), parseAutoInt($('#inp-rf-size').value, 0x100), false)));
+    $('#btn-rf').addEventListener('click', () => runExclusive('rf', () =>
+      readFlashRange(parseAutoInt($('#inp-rf-addr').value, 0), parseAutoInt($('#inp-rf-size').value, 0x1000), true)));
+
+    $('#btn-es').addEventListener('click', async () => {
+      const addr = parseAutoInt($('#inp-rf-addr').value, 0) & ~(FLASH_SECTOR_SIZE - 1);
+      const size = parseAutoInt($('#inp-rf-size').value, FLASH_SECTOR_SIZE);
+      const count = Math.ceil(size / FLASH_SECTOR_SIZE);
+      const ok = await confirmModal('Erase Flash Sectors?', `Erase ${count} sector(s) (${count * 4} KB) starting at 0x${hexN(addr, 6)}?`, 'Erase Sectors');
+      if (!ok) return;
+      await runExclusive('es', async () => {
+        await ensureTargetReady(null);
+        if (!(await pgm.flashUnlock())) throw new Error('FlashUnlock failed');
+        for (let i = 0; i < count; i++) {
+          const sec = addr + i * FLASH_SECTOR_SIZE;
+          if (!(await pgm.eraseSectorFlash(sec))) throw new Error(`Erase failed at 0x${hexN(sec, 6)}`);
+        }
+        logMsg(`Erased ${count} sector(s) starting 0x${hexN(addr, 6)}`, 'ok');
+        await maybePowerOffOnDone();
+      });
+    });
+
+    $('#btn-ea').addEventListener('click', async () => {
+      const ok = await confirmModal('Erase ENTIRE Flash?', 'This permanently erases the entire SPI flash memory (chip erase) on the connected target.', 'Erase All Flash');
+      if (!ok) return;
+      await runExclusive('ea', async () => {
+        await ensureTargetReady(null);
+        if (!(await pgm.flashUnlock())) throw new Error('FlashUnlock failed');
+        logMsg('Erasing entire flash chip...', 'warn');
+        if (!(await pgm.eraseAllFlash())) throw new Error('Erase All failed');
+        logMsg('Entire flash erased!', 'ok');
+        await maybePowerOffOnDone();
+      });
+    });
+
+    $('#btn-fsr').addEventListener('click', () => runExclusive('fsr', async () => {
+      await ensureTargetReady(null);
+      const st = await pgm.readFlashStatus();
+      if (st === null) throw new Error(pgm.errText());
+      $('#inp-fsr-val').value = `0x${hexN(st, 2)}`;
+      logMsg(`Flash Status Register: 0x${hexN(st, 2)}`, 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    $('#btn-fsw').addEventListener('click', async () => {
+      const val = parseAutoInt($('#inp-fsr-val').value, 0) & 0xFF;
+      const ok = await confirmModal('Write Flash Status Register?', `Write 0x${hexN(val, 2)} to SPI Flash Status Register? (Incorrect bits can enable write protection.)`, 'Write Status');
+      if (!ok) return;
+      await runExclusive('fsw', async () => {
+        await ensureTargetReady(null);
+        if (!(await pgm.writeFlashStatus(val))) throw new Error('WriteFlashStatus failed');
+        const check = await pgm.readFlashStatus();
+        logMsg(`Flash Status Register written: now 0x${hexN(check ?? val, 2)}`, 'ok');
+        await maybePowerOffOnDone();
+      });
+    });
+
+    // =========================================================================
+    // Tab 3: SWire, SRAM & Registers (ds / rs / ws / wsb / wsw / wsd / dc)
+    // =========================================================================
+    async function readSwireRange(offset, size, saveFile) {
+      await ensureTargetReady(null);
+      const out = new Uint8Array(size);
+      let pos = 0;
+      while (pos < size) {
+        const chunkLen = Math.min(MAX_BUF_READ_SIZE, size - pos);
+        const blk = await pgm.swireRead(offset + pos, chunkLen);
+        if (!blk) throw new Error(`SWire read failed at 0x${hexN(offset + pos, 6)}: ${pgm.errText()}`);
+        out.set(blk, pos);
+        pos += chunkLen;
+      }
+      setHexViewer(offset, out, 'SWire / SRAM', `swire_0x${hexN(offset, 6)}.bin`);
+      logMsg(`Read ${size} B from SWire @ 0x${hexN(offset, 6)}`, 'ok');
+      if (saveFile) downloadBinary(`swire_0x${hexN(offset, 6)}_${size}B.bin`, out);
+      await maybePowerOffOnDone();
+    }
+
+    $('#btn-ds').addEventListener('click', () => runExclusive('ds', () =>
+      readSwireRange(parseAutoInt($('#inp-sw-addr').value, 0x60), parseAutoInt($('#inp-sw-size').value, 0x20), false)));
+    $('#btn-rs').addEventListener('click', () => runExclusive('rs', () =>
+      readSwireRange(parseAutoInt($('#inp-sw-addr').value, 0x60), parseAutoInt($('#inp-sw-size').value, 0x100), true)));
+
+    $('#btn-ws').addEventListener('click', () => runExclusive('ws', async () => {
+      const f = $('#inp-ws-file').files[0];
+      if (!f) throw new Error('Choose a binary file first');
+      const offset = parseAutoInt($('#inp-sw-addr').value, 0x840000);
+      const bytes = new Uint8Array(await f.arrayBuffer());
+      await ensureTargetReady(null);
+      for (let pos = 0; pos < bytes.length; pos += MAX_BUF_READ_SIZE) {
+        const chunk = bytes.subarray(pos, Math.min(pos + MAX_BUF_READ_SIZE, bytes.length));
+        if (!(await pgm.swireWrite(offset + pos, chunk))) throw new Error(`SWire write failed at 0x${hexN(offset + pos, 6)}`);
+      }
+      logMsg(`Wrote ${bytes.length} B from ${f.name} to SWire 0x${hexN(offset, 6)}`, 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    $('#btn-write-scalar').addEventListener('click', () => runExclusive('Scalar Write', async () => {
+      const addr = parseAutoInt($('#inp-scalar-addr').value, 0x602);
+      const val = parseAutoInt($('#inp-scalar-val').value, 0) >>> 0;
+      const width = Number.parseInt($('#sel-scalar-width').value, 10);
+      const bytes = new Uint8Array(width);
+      for (let i = 0; i < width; i++) bytes[i] = (val >>> (8 * i)) & 0xFF;
+      if (!(await pgm.swireWrite(addr, bytes))) throw new Error(`SWire write failed: ${pgm.errText()}`);
+      const rb = await pgm.swireRead(addr, width);
+      let rbVal = 0;
+      if (rb) for (let i = 0; i < width; i++) rbVal |= rb[i] << (8 * i);
+      logMsg(`Wrote [0x${hexN(addr, 6)}] (${width * 8}-bit) = 0x${hexN(val, width * 2)}; readback = 0x${hexN(rbVal >>> 0, width * 2)}`, 'ok');
+    }));
+
+    $('#btn-dc-start').addEventListener('click', () => runExclusive('Watch uint32 (dc)', async () => {
+      const addr = parseAutoInt($('#inp-dc-addr').value, 0x6BC);
+      const sec = Math.max(1, parseAutoInt($('#inp-dc-sec').value, 5));
+      const deadline = performance.now() + sec * 1000;
+      const badge = $('#dc-readout');
+      logMsg(`Monitoring uint32 @ 0x${hexN(addr, 6)} for ${sec}s...`, 'muted');
+      while (performance.now() < deadline && !pgm.abortRequested) {
+        const raw = await pgm.swireRead(addr, 4);
+        if (raw) {
+          const v = (raw[0] | (raw[1] << 8) | (raw[2] << 16) | (raw[3] << 24)) >>> 0;
+          badge.className = 'badge ok';
+          badge.textContent = `0x${hexN(v, 8)}`;
+        } else {
+          badge.className = 'badge warn';
+          badge.textContent = 'CPU sleep / err';
+        }
+        await sleep(30);
+      }
+      logMsg(`Stopped monitoring 0x${hexN(addr, 6)}. Final: ${badge.textContent}`, 'ok');
+    }));
+
+    // =========================================================================
+    // Tab 4: Analog & OTP (da / ra / wa / do / ro)
+    // =========================================================================
+    $('#btn-da').addEventListener('click', () => runExclusive('da', async () => {
+      await ensureTargetReady(null);
+      const off = parseAutoInt($('#inp-ana-addr').value, 0) & 0xFF;
+      const sz = Math.min(256 - off, parseAutoInt($('#inp-ana-size').value, 256));
+      const data = await pgm.analogRead(off, sz);
+      if (!data) throw new Error(pgm.errText());
+      setHexViewer(off, data, 'Analog Registers', `aregs_0x${hexN(off, 2)}.bin`);
+      logMsg(`Read ${sz} analog regs from 0x${hexN(off, 2)}`, 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    $('#btn-ra').addEventListener('click', () => runExclusive('ra', async () => {
+      await ensureTargetReady(null);
+      const off = parseAutoInt($('#inp-ana-addr').value, 0) & 0xFF;
+      const sz = Math.min(256 - off, parseAutoInt($('#inp-ana-size').value, 256));
+      const data = await pgm.analogRead(off, sz);
+      if (!data) throw new Error(pgm.errText());
+      downloadBinary(`aregs_0x${hexN(off, 2)}_${sz}B.bin`, data);
+      logMsg(`Saved ${sz} analog regs to binary.`, 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    $('#btn-wa').addEventListener('click', () => runExclusive('wa', async () => {
+      const f = $('#inp-wa-file').files[0];
+      if (!f) throw new Error('Choose a binary file first');
+      const off = parseAutoInt($('#inp-ana-addr').value, 0) & 0xFF;
+      const bytes = new Uint8Array(await f.arrayBuffer());
+      const slice = bytes.subarray(0, Math.min(bytes.length, 256 - off));
+      await ensureTargetReady(null);
+      if (!(await pgm.analogWrite(off, slice))) throw new Error(pgm.errText());
+      logMsg(`Wrote ${slice.length} bytes to analog regs starting 0x${hexN(off, 2)}`, 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    $('#btn-ana-wr-one').addEventListener('click', () => runExclusive('Write Analog Byte', async () => {
+      const reg = parseAutoInt($('#inp-ana-byte-addr').value, 0) & 0xFF;
+      const val = parseAutoInt($('#inp-ana-byte-val').value, 0) & 0xFF;
+      if (!(await pgm.analogWrite(reg, new Uint8Array([val])))) throw new Error(pgm.errText());
+      const rb = await pgm.analogRead(reg, 1);
+      logMsg(`Analog[0x${hexN(reg, 2)}] = 0x${hexN(val, 2)} (readback 0x${hexN(rb ? rb[0] : 0, 2)})`, 'ok');
+    }));
+
+    async function readOtpRange(startAddr, totalSize) {
+      const idPair = await pgm.readChipId();
+      if (!idPair || idPair.cid !== 0x5591) {
+        throw new Error(`Read OTP only supported on TLSR8208 (0x5591); got 0x${hexN(idPair ? idPair.cid : 0, 4)}`);
+      }
+      const saved = await pgm.swireRead(0x80010, 2);
+      if (!saved) throw new Error('Failed reading OTP control reg 0x80010');
+      await pgm.swireWrite(0x80011, new Uint8Array([0x30]));
+      await sleep(10);
+      await pgm.swireWrite(0x80010, new Uint8Array([0x03]));
+      const tmp = await pgm.swireRead(0x80017, 1);
+      if (!tmp) throw new Error('Failed reading OTP status 0x80017');
+      const statusMask = (~tmp[0]) & 0xFF;
+
+      const out = new Uint8Array(totalSize);
+      let pos = 0;
+      let addr = startAddr & 0xFFFF;
+      while (pos < totalSize) {
+        if (pgm.abortRequested) break;
+        const step = Math.min(4, totalSize - pos);
+        await pgm.swireWrite(0x80014, new Uint8Array([addr & 0xFF, (addr >> 8) & 0xFF]));
+        await pgm.swireRead(0x8001C, 4);
+        const st = await pgm.swireRead(0x80017, 1);
+        if (!st || (st[0] & statusMask) !== 0) throw new Error(`OTP read error at 0x${hexN(addr, 4)}`);
+        const d = await pgm.swireRead(0x8001C, 4);
+        if (!d) throw new Error(`OTP data read failed at 0x${hexN(addr, 4)}`);
+        out.set(d.subarray(0, step), pos);
+        pos += step;
+        addr += step;
+      }
+      await pgm.swireWrite(0x80010, saved);
+      return out;
+    }
+
+    $('#btn-do').addEventListener('click', () => runExclusive('do', async () => {
+      await ensureTargetReady(null);
+      const off = parseAutoInt($('#inp-otp-addr').value, 0x3fc0) & 0xFFFF;
+      const sz = parseAutoInt($('#inp-otp-size').value, 0x40);
+      const data = await readOtpRange(off, sz);
+      setHexViewer(off, data, 'TLSR8208 OTP', `otp_0x${hexN(off, 4)}.bin`);
+      logMsg(`Dumped ${sz} OTP bytes from 0x${hexN(off, 4)}`, 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    $('#btn-ro').addEventListener('click', () => runExclusive('ro', async () => {
+      await ensureTargetReady(null);
+      const off = parseAutoInt($('#inp-otp-addr').value, 0) & 0xFFFF;
+      const sz = parseAutoInt($('#inp-otp-size').value, 0x4000);
+      const data = await readOtpRange(off, sz);
+      downloadBinary(`otp_0x${hexN(off, 4)}_${sz}B.bin`, data);
+      logMsg(`Saved ${sz} OTP bytes to binary.`, 'ok');
+      await maybePowerOffOnDone();
+    }));
+
+    // =========================================================================
+    // Tab 5: Debug (bkp / stp / DumpCPURegs / sws)
+    // =========================================================================
+    async function captureAndRenderCpuRegs() {
+      const raw = await pgm.swireRead(0x0680, 128);
+      if (!raw) throw new Error(`Failed reading CPU registers: ${pgm.errText()}`);
+      const dv = new DataView(raw.buffer, raw.byteOffset, raw.byteLength);
+      const regs = [];
+      for (let i = 0; i < 32; i++) regs.push(dv.getUint32(i * 4, true));
+
+      const labels = [];
+      labels.push({ name: 'psr (flg)', val: regs[16] });
+      for (let i = 0; i < 16; i++) {
+        let shadow = null;
+        if (i === 0) shadow = regs[17];
+        else if (i >= 3 && i <= 14) shadow = regs[16 + i];
+        else if (i === 15) shadow = regs[18];
+        const tag = i === 11 ? 'r11(fp)' : i === 12 ? 'r12(ip)' : i === 13 ? 'r13(sp)' : i === 14 ? 'r14(lr)' : i === 15 ? 'r15(pc)' : `r${String(i).padStart(2, '0')}`;
+        labels.push({ name: tag, val: regs[i], shadow });
+      }
+      labels.push({ name: 'm64', val: regs[31] });
+
+      const grid = $('#cpu-regs-grid');
+      grid.innerHTML = '';
+      labels.forEach((item, idx) => {
+        const cell = document.createElement('div');
+        const changed = prevCpuRegs && prevCpuRegs[idx] !== item.val;
+        cell.className = changed ? 'reg-cell changed' : 'reg-cell';
+        const valText = item.shadow !== undefined && item.shadow !== null
+          ? `0x${hexN(item.val, 8)} / s:0x${hexN(item.shadow, 8)}`
+          : `0x${hexN(item.val, 8)}`;
+        cell.innerHTML = `<span>${item.name}</span><strong>${valText}</strong>`;
+        grid.appendChild(cell);
+      });
+      prevCpuRegs = labels.map((l) => l.val);
+
+      const sp = regs[13] & 0xFFFFFF;
+      const stk = await pgm.swireRead(sp, 48);
+      $('#cpu-stack-dump').textContent = stk ? `SP 0x${hexN(sp, 6)}:\n${formatHexDump(sp, stk)}` : 'Stack read unavailable';
+      return regs;
+    }
+
+    $('#btn-read-cpuregs').addEventListener('click', () => runExclusive('DumpCPURegs', async () => {
+      await captureAndRenderCpuRegs();
+      logMsg('CPU registers captured.', 'ok');
+    }));
+
+    $('#btn-bkp').addEventListener('click', () => runExclusive('Breakpoint (bkp)', async () => {
+      const addr = parseAutoInt($('#inp-bkp-addr').value, 0) & 0xFFFFFF;
+      const bkpBuf = new Uint8Array(16);
+      const dv = new DataView(bkpBuf.buffer);
+      dv.setUint32(4, (addr | 0x01000000) >>> 0, true);
+      if (!(await pgm.swireWrite(0x610, bkpBuf))) throw new Error('Failed setting breakpoint @ 0x610');
+      if (!(await pgm.swireWrite(0x602, new Uint8Array([0x84])))) throw new Error('Failed CPU Go (0x84)');
+      logMsg(`Breakpoint armed at 0x${hexN(addr, 6)}, waiting up to 3s for hit...`);
+
+      const deadline = performance.now() + 3000;
+      let hit = false;
+      while (performance.now() < deadline && !pgm.abortRequested) {
+        const pcRaw = await pgm.swireRead(0x6BC, 4);
+        if (pcRaw) {
+          const pc = ((pcRaw[0] | (pcRaw[1] << 8) | (pcRaw[2] << 16) | (pcRaw[3] << 24)) & 0xFFFFFF) >>> 0;
+          if (pc === addr) { hit = true; break; }
+        }
+        await sleep(25);
+      }
+      await captureAndRenderCpuRegs();
+      logMsg(hit ? `Breakpoint hit at 0x${hexN(addr, 6)}!` : 'Wait timed out; current CPU registers captured.', hit ? 'ok' : 'warn');
+    }));
+
+    $('#btn-stp').addEventListener('click', () => runExclusive('CPU Step (stp)', async () => {
+      const count = Math.max(1, parseAutoInt($('#inp-stp-count').value, 1));
+      if (!(await pgm.swireWrite(0x602, new Uint8Array([0x06])))) throw new Error('CPU Stall failed');
+      await captureAndRenderCpuRegs();
+      for (let i = 0; i < count; i++) {
+        if (!(await pgm.swireWrite(0x613, new Uint8Array([0x80])))) throw new Error(`Step #${i + 1} failed`);
+      }
+      await captureAndRenderCpuRegs();
+      logMsg(`Executed ${count} CPU single-step(s); changed registers highlighted.`, 'ok');
+    }));
+
+    $('#btn-sws-start').addEventListener('click', async () => {
+      if (!pgm.isConnected || pgm.busy || swsActive) return;
+      if (pgm.pgmVerInt < 8) {
+        logMsg('Warning: Firmware < 0.0.0.8; SWS Printf may require 0.0.0.8+.', 'warn');
+      }
+      const sramAddr = parseAutoInt($('#inp-sws-addr').value, 0x84E700);
+      const term = $('#sws-terminal');
+      const decoder = new TextDecoder('ascii');
+      if (term.textContent.startsWith('Connect programmer')) term.textContent = '';
+
+      swsActive = true;
+      updateUiState();
+      const ok = await pgm.startSwsPrintf(sramAddr, (chunk) => {
+        term.textContent += decoder.decode(chunk);
+        if (term.textContent.length > 64000) term.textContent = term.textContent.slice(-48000);
+        term.scrollTop = term.scrollHeight;
+      });
+      if (!ok) {
+        swsActive = false;
+        logMsg(`Failed starting SWS Printf: ${pgm.errText()}`, 'err');
+        updateUiState();
+        return;
+      }
+      logMsg(`SWS Printf stream open at SRAM 0x${hexN(sramAddr, 6)}`, 'ok');
+    });
+
+    $('#btn-sws-stop').addEventListener('click', async () => {
+      if (!swsActive) return;
+      await pgm.stopSwsPrintf();
+      swsActive = false;
+      logMsg('SWS Printf stream closed.', 'muted');
+      updateUiState();
+    });
+
+    $('#btn-sws-clear').addEventListener('click', () => { $('#sws-terminal').textContent = ''; });
+
+    // =========================================================================
+    // Hex Find, Download & Log Clear
+    // =========================================================================
+    $('#btn-hex-download').addEventListener('click', () => {
+      if (currentHexBuffer) downloadBinary(currentHexName, currentHexBuffer);
+    });
+
+    $('#btn-hex-find').addEventListener('click', () => {
+      if (!currentHexBuffer) return;
+      const q = $('#inp-hex-find').value.trim();
+      if (!q) return;
+      let needle;
+      try {
+        needle = /^[0-9a-fA-F\s]+$/.test(q) && q.replace(/\s+/g, '').length >= 2 && q.replace(/\s+/g, '').length % 2 === 0
+          ? parseHexBytes(q)
+          : new TextEncoder().encode(q);
+      } catch {
+        needle = new TextEncoder().encode(q);
+      }
+      for (let i = 0; i <= currentHexBuffer.length - needle.length; i++) {
+        let match = true;
+        for (let j = 0; j < needle.length; j++) {
+          if (currentHexBuffer[i + j] !== needle[j]) { match = false; break; }
+        }
+        if (match) {
+          const line = Math.floor(i / 16);
+          const hv = $('#hex-view');
+          const lines = hv.textContent.split('\n');
+          hv.scrollTop = (hv.scrollHeight * line) / Math.max(1, lines.length);
+          logMsg(`Found match at 0x${hexN(currentHexBase + i, 6)}`, 'ok');
+          return;
+        }
+      }
+      logMsg(`Pattern "${q}" not found in current hex view.`, 'warn');
+    });
+
+    $('#btn-log-clear').addEventListener('click', () => { $('#log-view').innerHTML = ''; });
+
+    logMsg('TLSR82xx WebSerial Workbench initialized. Connect programmer to begin.', 'muted');
+    updateUiState();
+  })();
+  </script>
+</body>
+</html>

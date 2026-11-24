@@ -6,7 +6,7 @@ Compact single-sided USB-C SWire programmer/dumper for Telink `TLSR825x`, `TLSR8
 
 | Path | Contents | Documentation |
 | :--- | :--- | :--- |
-| **`./`** | Host CLI tools (`dump_firmware.py`, `TlsrPgm.py`) & browser UART-SWire recovery tool (`USBCOMFlashTx.html`) | This README |
+| **`./`** | Unified host CLI ([`TlsrPgm.py`](TlsrPgm.py)) & full WebSerial browser workbench ([`tlsr-flasher.html`](tlsr-flasher.html)) | This README |
 | [`pcb/`](pcb/) | Schematics, PCB layout/routing/DRC scripts, Gerber/BOM/PnP exports, `ibom.html`, renders, `.epro2` archive | [`pcb/README.md`](pcb/README.md) |
 | [`firmware/`](firmware/) | Custom `TLSR8269` (`pvvx/TLSRPGM` v0.0.0.8+ compatible) USB-CDC programmer firmware + host unit tests | [`firmware/README.md`](firmware/README.md) |
 
@@ -50,77 +50,57 @@ On Linux, ensure your user is in the `dialout` group (or pass `-p /dev/ttyACM0`)
 
 ---
 
-### 1. Dump Firmware (`dump_firmware.py`)
+### 1. Unified CLI (`TlsrPgm.py`)
 
-`dump_firmware.py` auto-detects the programmer, negotiates `1.5 Mbps` UART, polls until contact stabilizes, reads Chip ID + Flash JEDEC ID + UID, and dumps the full SPI flash with per-block hardware CRC16 verification.
+`TlsrPgm.py` auto-detects the connected USB programmer (or accepts `-p <port>`), supports immediate `PWR` toggling, provides an autonomous `dump` subcommand + `-R/--retry` slip-recovery mode for hand-held probes, and retains all classic `TLSRPGM` flash/SWire/register/debug commands. See the top of [`TlsrPgm.py`](TlsrPgm.py) or `python3 TlsrPgm.py --help` for full usage details.
 
-- **Target `TLSR825x` (`TLSR8258`, `TLSR8253`, etc. — 3-byte SWire addressing)**:
+- **Toggle or set target power (`PWR`) and exit immediately**:
   ```bash
-  python3 dump_firmware.py
-  ```
-- **Target `TLSR826x` (`TLSR8269`, `TLSR8266`, `TLSR8267` — add `-u` for 2-byte SWire addressing)**:
-  ```bash
-  python3 dump_firmware.py -u
-  ```
-- **Target `TLSR8269` / boards with large `3V3` bulk capacitance**:
-  ```bash
-  python3 dump_firmware.py -u --pwr-off-ms 1500 --act-ms 300
+  python3 TlsrPgm.py --pwr          # Toggle PWR ON <-> OFF
+  python3 TlsrPgm.py --pwr on       # Turn 3.3V PWR ON
+  python3 TlsrPgm.py --pwr off      # Turn 3.3V PWR OFF
   ```
 
-Useful `dump_firmware.py` options:
-- `-p <port>`: Specify serial port explicitly (e.g. `/dev/cu.usbmodem*` or `/dev/ttyACM0`)
-- `-o <file.bin>`: Output filename (default: `dump_<CHIP>_<SIZE>KB_<TIMESTAMP>.bin`)
-- `-d <div >`: Override SWire clock divider (try `-d 10` or `-d 12` for noisy wires or slow target RC clocks)
-- `--keep-power`: Keep `PWR` enabled after dumping completes
-
----
-
-### 2. Flash / Erase / Inspect (`TlsrPgm.py`)
-
-Replace `<PORT>` with your device path (e.g. `/dev/ttyACM0` or `/dev/cu.usbmodem*`; see `python3 TlsrPgm.py -h` for defaults).
-
-- **Inspect target Chip ID & Flash JEDEC ID**:
-  - `TLSR825x`:
-    ```bash
-    python3 TlsrPgm.py -p <PORT> -b 1500000 -t 100 -a 150 i
-    ```
-  - `TLSR826x` (`TLSR8269`, add `-u`):
-    ```bash
-    python3 TlsrPgm.py -p <PORT> -b 1500000 -u -t 1500 -a 300 i
-    ```
-
-- **Flash firmware (`we` = sector erase + write at address `0`)**:
-  - `TLSR825x` target:
-    ```bash
-    python3 TlsrPgm.py -p <PORT> -b 1500000 -t 100 -a 150 we 0 your_firmware.bin
-    ```
-  - `TLSR826x` (`TLSR8269`) target (e.g. flashing another `tlsr-flasher` board):
-    ```bash
-    python3 TlsrPgm.py -p <PORT> -b 1500000 -u -t 1500 -a 300 we 0 firmware/bin/tlsr_flasher_8269.bin
-    ```
-
-- **Full chip erase (`ea`)** before flashing (recommended if switching firmware families or clearing old NVM):
+- **Autonomous full flash dump (`dump` — hardware CRC16 verified, auto BLE MAC + SHA-256)**:
   ```bash
+  python3 TlsrPgm.py dump                                   # TLSR825x (auto port + 1.5 Mbps)
+  python3 TlsrPgm.py -u dump                                # TLSR826x (2-byte SWire address)
+  python3 TlsrPgm.py -u --pwr-off-ms 1500 --act-ms 300 dump # Boards with large 3V3 bulk caps
+  python3 TlsrPgm.py dump -o backup.bin -s 0x80000          # Custom filename & size override
+  ```
+
+- **Autonomous Retry Mode (`-R` / `--retry`) with any subcommand** *(keeps polling until stable chip/flash lock, and re-acquires + resumes automatically if probe pins slip)*:
+  ```bash
+  python3 TlsrPgm.py -R i                                   # Full chip & flash info
+  python3 TlsrPgm.py -R we 0x0 your_firmware.bin              # Erase sectors + flash TLSR825x
+  python3 TlsrPgm.py -R -u --pwr-off-ms 1500 --act-ms 300 we 0x0 firmware/bin/tlsr_flasher_8269.bin
+  python3 TlsrPgm.py -R rf 0 0x80000 backup.bin              # Read region to file
+  ```
+
+- **Classic Fixed-Timing Mode**:
+  ```bash
+  python3 TlsrPgm.py -p <PORT> -b 1500000 -t 100 -a 150 i
   python3 TlsrPgm.py -p <PORT> -b 1500000 -u -t 1500 -a 300 ea
   python3 TlsrPgm.py -p <PORT> -b 1500000 -u -t 1500 -a 300 we 0 firmware/bin/tlsr_flasher_8269.bin
   ```
 
-- **Read flash region (`rf <addr> <size> <out.bin>`)**:
-  ```bash
-  python3 TlsrPgm.py -p <PORT> -b 1500000 -t 100 -a 150 rf 0 0x80000 backup.bin
-  ```
+Useful options across modes:
+- `-p <port>`: Specify serial port explicitly (default: auto-discover USB programmer)
+- `-b <rate|auto>`: Set UART baud (`115200`..`3000000` or `auto`)
+- `-d <div>`: Override SWire clock divisor (try `-d 10` or `-d 12` for noisy wires or slow target RC clocks)
+- `--keep-power`: Keep `PWR` enabled after `dump` or `-R` completes
+- `--no-crc`: Skip per-block hardware CRC16 verification
 
-> **Note:** On `TLSR8269` (`TLSR826x`) targets, **always include `-u`** on both `dump_firmware.py` and `TlsrPgm.py`.
+> **Note:** On `TLSR8269` (`TLSR826x`) targets, **always include `-u`**!
 
 ---
 
-### 3. Bootstrap Without Another SWire Programmer (`USBCOMFlashTx.html`)
+### 2. Browser Workbench (`tlsr-flasher.html`)
 
-If you do not have a second SWire programmer to flash the initial firmware onto a blank `tlsr-flasher`, open [`USBCOMFlashTx.html`](USBCOMFlashTx.html) in a WebSerial-capable browser (Chrome/Edge) with a standard USB-UART adapter (with `RTS`) wired to `H2`:
-- `UART TX` → `H2.3 (SWS)`
-- `UART RTS` → `H2.4 (RST)`
-- `UART 3V3` → `H2.2 (3V3)` *(or power `tlsr-flasher` via USB-C and leave `3V3` disconnected)*
-- `UART GND` → `H2.1 (GND)`
+Open [`tlsr-flasher.html`](tlsr-flasher.html) in a WebSerial-capable Chromium browser (Chrome / Edge over `https://` or `http://localhost`) for a full graphical UI implementing all `TlsrPgm.py` features directly in the browser:
+- USB-CDC programmer connection, baud/SWire configuration (`swdiv`, `2B`/`3B` addr, `swbuf`), and live `PWR` ON/OFF/Toggle
+- Autonomous contact poller with slip recovery, hardware-CRC16 full flash dump, SHA-256 + BLE MAC detection, and drag-and-drop flashing (`we`/`wf`/`es`/`ea`)
+- Target chip/JEDEC/UID specs, Flash Status Register (`fsr`/`fsw`), SWire/SRAM/analog/TLSR8208-OTP hex dump & editor, live watch (`dc`), CPU breakpoint/single-step (`bkp`/`stp`), and `SWS Printf` streaming terminal
 
 ---
 
@@ -130,8 +110,7 @@ This project builds upon and adapts the following open-source projects and hardw
 
 | Project / Author | URL | Usage in This Repository |
 | :--- | :--- | :--- |
-| **`pvvx/TLSRPGM`** (Victor / pvvx) | https://github.com/pvvx/TLSRPGM | Upstream `TLSRPGM` USB-CDC SWire protocol implemented in [`firmware/`](firmware/), and upstream host utility [`TlsrPgm.py`](TlsrPgm.py) (with [`dump_firmware.py`](dump_firmware.py) implementing the same protocol). |
+| **`pvvx/TLSRPGM`** (Victor / pvvx) | https://github.com/pvvx/TLSRPGM | Upstream `TLSRPGM` USB-CDC SWire protocol implemented in [`firmware/`](firmware/), and upstream host utility [`TlsrPgm.py`](TlsrPgm.py) (extended here with USB auto-discovery, `--pwr`, `-R/--retry`, `dump`, and the [`tlsr-flasher.html`](tlsr-flasher.html) WebSerial UI). |
 | **`tsl0922` TLSR SWire Flasher** | https://oshwhub.com/tsl0922/project_rapqcvts | Original `E180-Z6907A` V1.1 schematic & pinout reference (`reference/TLSR_SWire_Flasher`), adapted into [`pcb/`](pcb/) with USB-C, ESD/PTC protection, and an `AP63203WU-7` `2 A` Buck converter. |
-| **`pvvx/TlsrComSwireWriter`** (Victor / pvvx) | https://github.com/pvvx/TlsrComSwireWriter | UART TX-SWS flashing concept and [`USBCOMFlashTx.html`](USBCOMFlashTx.html) browser recovery/bootstrap writer. |
 | **Telink `tl_zigbee_sdk` (`826x`)** | https://github.com/telink-semi (`firmware/sdk/`) | Telink `TLSR826x` startup (`cstartup_826x.S`), linker script, USB/hardware register headers, and `libdrivers_826x` bundled in [`firmware/sdk/`](firmware/sdk/) for standalone builds. |
 | **`InteractiveHtmlBom`** (`openscopeproject`) | https://github.com/openscopeproject/InteractiveHtmlBom | Front-end interactive BOM viewer used to generate [`pcb/ibom.html`](pcb/ibom.html). |
