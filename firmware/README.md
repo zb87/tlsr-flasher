@@ -11,6 +11,7 @@ Custom `TLSR8269` USB-CDC SWire programmer firmware tailored specifically for th
   - `CMDF_GET_VERSION` (reports `0x5327` `TLSR8269`, `v0.0.0.8`), `CMDF_MCU_REBOOT`, `CMDF_SWIRE_CFG` (`swdiv`, `addrlen` `2` or `3`, custom activate packet), `CMDF_EXT_POWER`, `CMDF_SWIRE_ACTIVATE` (returns target CPU `PC`), `CMDF_UART_BAUD` (no-op ACK over native USB-CDC), `CMDF_WAIT_RESP`.
   - SPI flash operations: `CMD_FLASH_READ`, `CMD_FLASH_WRITE`, `CMD_FLASH_SECT_ERASE`, `CMD_FLASH_ALL_ERASE`, `CMD_FLASH_GET_JEDEC_ID`, `CMD_FLASH_GET_STATUS`, `CMD_FLASH_WRRD`, and `CMD_FLASH_RDCRC` (hardware CRC-16).
   - SWire bus & debug: `CMD_SWIRE_READ` / `CMD_SWIRE_WRITE`, `CMD_SWIRE_AREAD` / `CMD_SWIRE_AWRITE`, `CMD_SWIRE_FIFO_READ` / `CMD_SWIRE_FIFO_FWRITE`, and `CMD_SWS_PRINTF` FIFO monitor.
+  - **Dual-Bank USB-CDC Self-Update (`CMD_SELF_OTA = 0x20`)**: Stages incoming firmware to the inactive hardware bank (`0x00000` / `0x40000`, `128 KB` max), clamps target `PWR_EN = 0` and `SWM = LOW` during update, verifies full flash read-back CRC-32 before flipping the `0x4B` boot flag, and soft-reboots into the new bank.
 - **`SW1` Hardware Reset Button State Machine** ([`src/board_tlsr_flasher.c`](src/board_tlsr_flasher.c)):
   - Tracks button resets across hardware `nRESET` via deep-sleep analog register `DEEP_ANA_REG0` (`0x3A`) while distinguishing MCU soft reboots (`CMDF_MCU_REBOOT`).
   - **Single press**: Resets the MCU cleanly with `PWR_EN = 0` (`OFF`) and re-enumerates USB-CDC.
@@ -57,6 +58,15 @@ Compiles [`tests/host_harness.c`](tests/host_harness.c) against stubbed Telink r
 
 ## Flashing onto `tlsr-flasher` (`H2`)
 
+### Subsequent Updates via USB-CDC Self-Update (No Second Programmer Needed)
+Once `tlsr-flasher` is running dual-bank firmware (`CMD_SELF_OTA`), plug it in over USB-C and run:
+```bash
+make -C firmware self-update
+# or directly:
+python3 ../TlsrPgm.py self-update bin/tlsr_flasher_8269.bin
+```
+
+### Initial Bootstrap / Recovery via `H2` (SWire)
 1. Wire an existing SWire programmer to `H2` (`GND`–`GND`, `PWR`–`3V3`, `SWM`–`SWS`; leave USB-C unplugged on the target `tlsr-flasher`).
 2. Flash from the parent directory (`tlsr-flasher/`):
    ```bash

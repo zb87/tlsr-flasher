@@ -7,6 +7,7 @@
 #include "string.h"
 #include "app_cfg.h"
 #include "driver_826x.h"
+#include "flash.h"
 #include "gpio_default.h"
 
 #endif

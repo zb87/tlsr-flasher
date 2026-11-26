@@ -109,6 +109,34 @@ u8 mock_target_fstatus = 0x00;
 u8 mock_target_pc[4] = {0x34, 0x12, 0x00, 0x00};
 u32 mock_wait_poll_until_ready = 0;
 u32 mock_wait_polls = 0;
+u8 mock_self_flash[512 * 1024];
+
+void flash_read_page(unsigned long addr, unsigned long len, unsigned char *buf)
+{
+    if (addr + len <= sizeof(mock_self_flash)) {
+        memcpy(buf, &mock_self_flash[addr], len);
+    }
+}
+
+void flash_write_page(unsigned long addr, unsigned long len, unsigned char *buf)
+{
+    for (unsigned long i = 0; i < len && (addr + i) < sizeof(mock_self_flash); i++) {
+        mock_self_flash[addr + i] &= buf[i];
+    }
+}
+
+void flash_erase_sector(unsigned long addr)
+{
+    unsigned long sec = addr & ~0xFFFUL;
+    if (sec + 4096UL <= sizeof(mock_self_flash)) {
+        memset(&mock_self_flash[sec], 0xFF, 4096UL);
+    }
+}
+
+void host_reset_self_flash(void)
+{
+    memset(mock_self_flash, 0xFF, sizeof(mock_self_flash));
+}
 
 void swm_init(void)
 {

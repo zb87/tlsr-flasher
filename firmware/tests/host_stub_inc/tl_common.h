@@ -52,5 +52,8 @@ u32  clock_time(void);
 u32  clock_time_exceed(u32 ref, u32 span_us);
 void sleep_us(u32 us);
 void mcu_reset(void);
+void flash_erase_sector(unsigned long addr);
+void flash_read_page(unsigned long addr, unsigned long len, unsigned char *buf);
+void flash_write_page(unsigned long addr, unsigned long len, unsigned char *buf);
 
 #endif

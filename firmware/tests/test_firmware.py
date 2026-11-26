@@ -111,6 +111,7 @@ class TestProtocolAndBoard(unittest.TestCase):
             os.path.join(FW_DIR, "tests", "host_harness.c"),
             os.path.join(FW_DIR, "src", "board_tlsr_flasher.c"),
             os.path.join(FW_DIR, "src", "tlsrpgm.c"),
+            os.path.join(FW_DIR, "src", "tlsr_ota.c"),
             "-o", so_path,
         ]
         subprocess.run(cmd, check=True)
@@ -121,10 +122,12 @@ class TestProtocolAndBoard(unittest.TestCase):
         cls.tmpdir.cleanup()
 
     def setUp(self):
+        self.lib.host_reset_self_flash()
         self.lib.host_boot(1)
         ctypes.c_uint8.in_dll(self.lib, "mock_target_fail").value = 0
         ctypes.c_uint32.in_dll(self.lib, "mock_wait_poll_until_ready").value = 0
         ctypes.c_uint32.in_dll(self.lib, "mock_wait_polls").value = 0
+        ctypes.c_int.in_dll(self.lib, "mock_reboot_count").value = 0
 
     def send(self, pkt: bytes, chunked: bool = False) -> bytes:
         self.lib.host_reset_usb()
@@ -316,6 +319,97 @@ class TestProtocolAndBoard(unittest.TestCase):
         tx_arr = (ctypes.c_uint8 * 4096).in_dll(self.lib, "tx_buf")
         self.assertEqual(bytes(tx_arr[:tx_len]), msg)
         self.assertEqual(sram[0xE701], 0)
+
+    def _ota_cmd(self, sub: int, payload: bytes = b"", chunked: bool = False) -> bytes:
+        pkt = wrap_pkt(struct.pack("<BBH", 0x20, sub, len(payload)) + payload)
+        resp = self.send(pkt, chunked=chunked)
+        self.assertTrue(check_pkt(resp))
+        self.assertEqual(resp[0], 0x20)
+        self.assertEqual(resp[1], 0)
+        return resp[4:-2]
+
+    def test_self_ota_dual_bank_with_real_firmware_bin(self):
+        with open(BIN_PATH, "rb") as f:
+            real_fw = bytearray(f.read())
+
+        self_flash = (ctypes.c_uint8 * (512 * 1024)).in_dll(self.lib, "mock_self_flash")
+        # Populate Bank 0 with real_fw
+        for i, b in enumerate(real_fw):
+            self_flash[i] = b
+
+        # 1. INFO reports Bank 0, chip_id 0x5327, image_type 0x8269, active_file_version
+        info = self._ota_cmd(0x01)
+        self.assertEqual(len(info), 24)
+        pver, bank, st, flags, cid, img_type, max_chunk, _, max_sz, active_ver, rx_bytes = struct.unpack("<BBBBHHHHI I I".replace(" ", ""), info)
+        self.assertEqual((pver, bank, st, flags, cid, img_type, max_chunk, max_sz, rx_bytes),
+                         (1, 0, 0, 1, 0x5327, 0x8269, 256, 0x20000, 0))
+        self.assertEqual(active_ver, struct.unpack("<I", real_fw[2:6])[0])
+
+        # 2. Build Bank 1 image with bumped FILE_VERSION and valid CRC-32
+        fw1 = bytearray(real_fw)
+        new_ver = active_ver + 1
+        fw1[2:6] = struct.pack("<I", new_ver)
+        crc1 = binascii.crc32(fw1[:-4]) ^ 0xFFFFFFFF
+        fw1[-4:] = struct.pack("<I", crc1)
+
+        # Turn target PWR ON first to verify BEGIN forces PWR OFF + SWM clamped LOW
+        self.send(wrap_pkt(struct.pack("<BBH", 0, 3, 1)))
+        self.assertEqual(self.lib.board_get_pwr_en(), 1)
+
+        # Reject wrong image_type without FORCE flag
+        bresp = self._ota_cmd(0x02, struct.pack("<IIHBB", len(fw1), crc1, 0x02F8, 0, 0))
+        self.assertEqual(bresp[0], 5)  # ERR_IMAGE_TYPE
+
+        # BEGIN Bank 0 -> Bank 1
+        bresp = self._ota_cmd(0x02, struct.pack("<IIHBB", len(fw1), crc1, 0x8269, 0, 0))
+        st_b, target_bank, chunk_sz, target_addr = struct.unpack("<BBHI", bresp)
+        self.assertEqual((st_b, target_bank, chunk_sz, target_addr), (0, 1, 256, 0x40000))
+        self.assertEqual(self.lib.board_get_pwr_en(), 0)
+        swm = MockGpio.in_dll(self.lib, "mock_swm_gpio")
+        self.assertEqual((swm.func, swm.oen, swm.out), (0, 1, 0))
+
+        # Stream chunks (using chunked=True for 64-byte USB bulk packets)
+        for off in range(0, len(fw1), chunk_sz):
+            piece = bytes(fw1[off:off + chunk_sz])
+            dresp = self._ota_cmd(0x03, struct.pack("<I", off) + piece, chunked=True)
+            dst, _, _, _, next_off = struct.unpack("<BBBBI", dresp)
+            self.assertEqual((dst, next_off), (0, off + len(piece)))
+
+        # Byte +8 in Bank 1 must still be deferred (0xFF) before COMMIT
+        self.assertEqual(self_flash[0x40008], 0xFF)
+
+        # COMMIT -> activates Bank 1, clears Bank 0, triggers soft reboot
+        cresp = self._ota_cmd(0x04, struct.pack("<I", crc1))
+        cst, new_bank, _, _, calc_crc = struct.unpack("<BBBBI", cresp)
+        self.assertEqual((cst, new_bank, calc_crc), (0, 1, crc1))
+        self.assertEqual(self_flash[0x40008], 0x4B)
+        self.assertEqual(self_flash[0x00008], 0x00)
+        self.assertEqual(ctypes.c_int.in_dll(self.lib, "mock_reboot_count").value, 1)
+
+        # Simulate reboot into Bank 1 -> INFO reports Bank 1 + new_ver, then ping-pong back to Bank 0
+        self.lib.host_boot(0)
+        info2 = self._ota_cmd(0x01)
+        _, bank2, _, _, _, _, _, _, _, ver2, _ = struct.unpack("<BBBBHHHHIII", info2)
+        self.assertEqual((bank2, ver2), (1, new_ver))
+
+        # Test ABORT mid-stream leaves Bank 1 intact
+        bresp2 = self._ota_cmd(0x02, struct.pack("<IIHBB", len(real_fw), binascii.crc32(real_fw[:-4]) ^ 0xFFFFFFFF, 0x8269, 0, 0))
+        self.assertEqual((bresp2[0], bresp2[1]), (0, 0))
+        self._ota_cmd(0x03, struct.pack("<I", 0) + bytes(real_fw[:256]), chunked=True)
+        self._ota_cmd(0x05)
+        self.assertEqual(self_flash[0x00008], 0xFF)
+        self.assertEqual(self_flash[0x40008], 0x4B)
+
+        # Complete Bank 1 -> Bank 0 ping-pong with FORCE flag
+        crc0 = binascii.crc32(real_fw[:-4]) ^ 0xFFFFFFFF
+        bresp3 = self._ota_cmd(0x02, struct.pack("<IIHBB", len(real_fw), crc0, 0x8269, 1, 0))
+        self.assertEqual((bresp3[0], bresp3[1]), (0, 0))
+        for off in range(0, len(real_fw), 256):
+            self._ota_cmd(0x03, struct.pack("<I", off) + bytes(real_fw[off:off + 256]), chunked=True)
+        cresp3 = self._ota_cmd(0x04, struct.pack("<I", crc0))
+        self.assertEqual((cresp3[0], cresp3[1]), (0, 0))
+        self.assertEqual(self_flash[0x00008], 0x4B)
+        self.assertEqual(self_flash[0x40008], 0x00)
 
 
 if __name__ == "__main__":

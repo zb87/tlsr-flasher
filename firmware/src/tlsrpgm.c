@@ -1,7 +1,9 @@
 #include "tlsrpgm.h"
 #include "board_tlsr_flasher.h"
 #include "swm.h"
+#include "tlsr_ota.h"
 #include "usb_cdc.h"
+#include "version_cfg.h"
 
 enum {
     CMD_FUNCS              = 0,
@@ -21,6 +23,7 @@ enum {
     CMD_FLASH_RDCRC        = 14,
     CMD_SWS_PRINTF         = 15,
     CMD_WAIT_RESP          = 16,
+    CMD_SELF_OTA           = 0x20,
 };
 
 enum {
@@ -56,6 +59,33 @@ static u32 s_wait_addr    = 0;
 static u32 s_wait_wr_addr = 0;
 static u8  s_wait_wr_data[64];
 static u16 s_wait_wr_len  = 0;
+
+/* Self-OTA state */
+static struct tlsr_ota_ctx s_ota;
+
+static void ota_flash_read(uint32_t addr, uint8_t *buf, size_t len)
+{
+    flash_read_page(addr, len, buf);
+}
+
+static void ota_flash_write(uint32_t addr, const uint8_t *buf, size_t len)
+{
+    flash_write_page(addr, len, (unsigned char *)buf);
+}
+
+static void ota_flash_erase(uint32_t addr)
+{
+    flash_erase_sector(addr);
+}
+
+static void ota_on_state_change(bool ota_active)
+{
+    if (ota_active) {
+        board_set_pwr_en(0);
+        board_set_ext_rst(0);
+        board_swm_clamp_low();
+    }
+}
 
 static u16 crc16_modbus(const u8 *data, u16 len)
 {
@@ -199,6 +229,83 @@ static void handle_funcs(const u8 *pkt, u16 len)
 
     default:
         send_response(CMD_FUNCS, PGM_ERR_FUNC, 0, 0);
+        break;
+    }
+}
+
+static void handle_self_ota(const u8 *pkt, u16 len)
+{
+    u8 sub = pkt[1];
+    u16 plen = unpack_u16(&pkt[2]);
+    if (len != (u16)(6 + plen)) {
+        send_response(CMD_SELF_OTA, PGM_ERR_LEN, 0, 0);
+        return;
+    }
+    const u8 *payload = &pkt[4];
+
+    switch (sub) {
+    case TLSR_OTA_CMD_INFO: {
+        if (plen != 0) {
+            send_response(CMD_SELF_OTA, PGM_ERR_LEN, 0, 0);
+            return;
+        }
+        struct tlsr_ota_info_resp resp;
+        tlsr_ota_handle_info(&s_ota, &resp);
+        memcpy(&s_tx_buf[4], &resp, sizeof(resp));
+        send_response(CMD_SELF_OTA, PGM_ERR_NONE, sizeof(resp), sizeof(resp));
+        break;
+    }
+    case TLSR_OTA_CMD_BEGIN: {
+        if (plen != sizeof(struct tlsr_ota_begin_req)) {
+            send_response(CMD_SELF_OTA, PGM_ERR_LEN, 0, 0);
+            return;
+        }
+        struct tlsr_ota_begin_resp resp;
+        tlsr_ota_handle_begin(&s_ota, (const struct tlsr_ota_begin_req *)payload, &resp);
+        memcpy(&s_tx_buf[4], &resp, sizeof(resp));
+        send_response(CMD_SELF_OTA, PGM_ERR_NONE, sizeof(resp), sizeof(resp));
+        break;
+    }
+    case TLSR_OTA_CMD_DATA: {
+        if (plen <= sizeof(struct tlsr_ota_data_req)) {
+            send_response(CMD_SELF_OTA, PGM_ERR_LEN, 0, 0);
+            return;
+        }
+        const struct tlsr_ota_data_req *dr = (const struct tlsr_ota_data_req *)payload;
+        struct tlsr_ota_data_resp resp;
+        tlsr_ota_handle_data(&s_ota, dr->offset, dr->bytes,
+                             (size_t)(plen - sizeof(struct tlsr_ota_data_req)), &resp);
+        memcpy(&s_tx_buf[4], &resp, sizeof(resp));
+        send_response(CMD_SELF_OTA, PGM_ERR_NONE, sizeof(resp), sizeof(resp));
+        break;
+    }
+    case TLSR_OTA_CMD_COMMIT: {
+        if (plen != sizeof(struct tlsr_ota_commit_req)) {
+            send_response(CMD_SELF_OTA, PGM_ERR_LEN, 0, 0);
+            return;
+        }
+        struct tlsr_ota_commit_resp resp;
+        tlsr_ota_handle_commit(&s_ota, (const struct tlsr_ota_commit_req *)payload, &resp);
+        memcpy(&s_tx_buf[4], &resp, sizeof(resp));
+        send_response(CMD_SELF_OTA, PGM_ERR_NONE, sizeof(resp), sizeof(resp));
+        if (tlsr_ota_reboot_pending(&s_ota)) {
+            sleep_us(15000);
+            board_mark_soft_reboot();
+            mcu_reset();
+        }
+        break;
+    }
+    case TLSR_OTA_CMD_ABORT: {
+        if (plen != 0) {
+            send_response(CMD_SELF_OTA, PGM_ERR_LEN, 0, 0);
+            return;
+        }
+        tlsr_ota_handle_abort(&s_ota);
+        send_response(CMD_SELF_OTA, PGM_ERR_NONE, 0, 0);
+        break;
+    }
+    default:
+        send_response(CMD_SELF_OTA, PGM_ERR_FUNC, 0, 0);
         break;
     }
 }
@@ -402,6 +509,10 @@ static void dispatch_packet(const u8 *pkt, u16 len)
         break;
     }
 
+    case CMD_SELF_OTA:
+        handle_self_ota(pkt, len);
+        break;
+
     default:
         send_response(cmd, PGM_ERR_FUNC, 0, 0);
         break;
@@ -432,6 +543,14 @@ static u16 expected_fixed_len(const u8 *buf, u16 len)
         return 6;
     case CMD_SWS_PRINTF:
         return 7;
+    case CMD_SELF_OTA:
+        if (len >= 4) {
+            u16 plen = (u16)(buf[2] | ((u16)buf[3] << 8));
+            if (plen <= 528) {
+                return (u16)(6 + plen);
+            }
+        }
+        return 0;
     default:
         return 0; /* Variable-length command */
     }
@@ -487,6 +606,18 @@ void tlsrpgm_init(void)
 {
     s_rx_len = 0;
     s_mode   = MODE_CMD;
+
+    const tlsr_ota_hal_t ota_hal = {
+        .flash_read = ota_flash_read,
+        .flash_write = ota_flash_write,
+        .flash_erase_sector = ota_flash_erase,
+        .wd_clear = NULL,
+        .on_state_change = ota_on_state_change,
+        .chip_id = PGM_CHIP_ID,
+        .image_type = IMAGE_TYPE,
+        .max_chunk_size = 256,
+    };
+    tlsr_ota_init(&s_ota, &ota_hal);
 }
 
 void tlsrpgm_poll(void)

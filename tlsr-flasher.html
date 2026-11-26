@@ -916,6 +916,20 @@
               </table>
             </div>
           </div>
+
+          <div class="subcard">
+            <div class="row" style="justify-content: space-between;">
+              <h3>Programmer Self-Update (Dual-Bank USB-CDC)</h3>
+              <span class="badge" id="badge-pgm-bank">Bank: —</span>
+            </div>
+            <div class="row" style="margin-top:8px;">
+              <input type="file" id="inp-self-ota-file" accept=".bin">
+              <label class="row" style="gap:4px;"><input type="checkbox" id="chk-self-ota-force"> Force image type</label>
+              <button type="button" id="btn-self-ota-update" class="primary" disabled>Update Flasher Firmware</button>
+            </div>
+            <div class="muted" id="self-ota-meta" style="margin-top:6px;">Select a tlsr_flasher_8269.bin image (Bank 0/1 ping-pong, CRC-32 verified).</div>
+            <progress id="self-ota-prog" value="0" max="100" style="width:100%;margin-top:8px;"></progress>
+          </div>
         </div>
       </div>
 
@@ -1297,7 +1311,28 @@
       FLASH_RDCRC: 14,
       SWS_PRINTF: 15,
       WAIT_RESP: 16,
+      SELF_OTA: 0x20,
     };
+
+    const OTA_CMD = {
+      INFO: 1,
+      BEGIN: 2,
+      DATA: 3,
+      COMMIT: 4,
+      ABORT: 5,
+    };
+
+    const OTA_ERR_TEXT = [
+      'OK',
+      'Invalid OTA state',
+      'Bad parameter',
+      'Invalid image size',
+      'Invalid Telink header/magic',
+      'IMAGE_TYPE mismatch',
+      'Unexpected offset',
+      'CRC-32 mismatch',
+      'Flash write/verify error',
+    ];
 
     const CMDF = {
       GET_VERSION: 0,
@@ -1712,6 +1747,7 @@
         this.extChip = null;
         this.extCid = 0;
         this.extCver = 0;
+        this.selfOta = null;
       }
 
       get isConnected() {
@@ -1960,6 +1996,90 @@
         return r.slice(4, 4 + size);
       }
 
+      async selfOtaCmd(subcmd, payload = new Uint8Array(0), respPayloadLen = 0, timeoutMs = 1500) {
+        const body = new Uint8Array(4 + payload.length);
+        body[0] = CMD.SELF_OTA;
+        body[1] = subcmd & 0xFF;
+        body[2] = payload.length & 0xFF;
+        body[3] = (payload.length >> 8) & 0xFF;
+        if (payload.length > 0) body.set(payload, 4);
+        const r = await this.commandRaw(body, 6 + respPayloadLen, timeoutMs);
+        if (!r) return null;
+        return r.slice(4, r.length - 2);
+      }
+
+      async selfOtaInfo() {
+        const p = await this.selfOtaCmd(OTA_CMD.INFO, new Uint8Array(0), 24, 500);
+        if (!p || p.length < 24) {
+          this.selfOta = null;
+          return null;
+        }
+        const dv = new DataView(p.buffer, p.byteOffset, p.byteLength);
+        this.selfOta = {
+          protoVer: p[0],
+          activeBank: p[1],
+          state: p[2],
+          flags: p[3],
+          chipId: dv.getUint16(4, true),
+          imageType: dv.getUint16(6, true),
+          maxChunkSize: dv.getUint16(8, true),
+          maxImageSize: dv.getUint32(12, true),
+          activeFileVersion: dv.getUint32(16, true),
+          bytesReceived: dv.getUint32(20, true),
+        };
+        return this.selfOta;
+      }
+
+      async selfOtaBegin(totalSize, expectedCrc32, imageType, force) {
+        const buf = new Uint8Array(12);
+        const dv = new DataView(buf.buffer);
+        dv.setUint32(0, totalSize >>> 0, true);
+        dv.setUint32(4, expectedCrc32 >>> 0, true);
+        dv.setUint16(8, imageType & 0xFFFF, true);
+        buf[10] = force ? 1 : 0;
+        buf[11] = 0;
+        const p = await this.selfOtaCmd(OTA_CMD.BEGIN, buf, 8, 1000);
+        if (!p || p.length < 8) return null;
+        const rdv = new DataView(p.buffer, p.byteOffset, p.byteLength);
+        return {
+          status: p[0],
+          targetBank: p[1],
+          maxChunkSize: rdv.getUint16(2, true),
+          targetAddr: rdv.getUint32(4, true),
+        };
+      }
+
+      async selfOtaData(offset, chunk) {
+        const buf = new Uint8Array(4 + chunk.length);
+        const dv = new DataView(buf.buffer);
+        dv.setUint32(0, offset >>> 0, true);
+        buf.set(chunk, 4);
+        const p = await this.selfOtaCmd(OTA_CMD.DATA, buf, 8, 1500);
+        if (!p || p.length < 8) return null;
+        const rdv = new DataView(p.buffer, p.byteOffset, p.byteLength);
+        return {
+          status: p[0],
+          nextOffset: rdv.getUint32(4, true),
+        };
+      }
+
+      async selfOtaCommit(expectedCrc32) {
+        const buf = new Uint8Array(4);
+        new DataView(buf.buffer).setUint32(0, expectedCrc32 >>> 0, true);
+        const p = await this.selfOtaCmd(OTA_CMD.COMMIT, buf, 8, 2500);
+        if (!p || p.length < 8) return null;
+        const rdv = new DataView(p.buffer, p.byteOffset, p.byteLength);
+        return {
+          status: p[0],
+          newBank: p[1],
+          calcCrc32: rdv.getUint32(4, true),
+        };
+      }
+
+      async selfOtaAbort() {
+        return this.selfOtaCmd(OTA_CMD.ABORT, new Uint8Array(0), 0, 500);
+      }
+
       async swireWrite(addr, bytes) {
         const a = addr & 0xFFFFFF;
         const body = new Uint8Array(4 + bytes.length);
@@ -2176,6 +2296,43 @@
     let lastSpecs = null;
     let prevCpuRegs = null;
     let swsActive = false;
+    let selfOtaBytes = null;
+    let selfOtaName = '';
+
+    function telinkCrc32(bytes, len) {
+      let crc = 0xFFFFFFFF;
+      for (let i = 0; i < len; i++) {
+        crc ^= bytes[i];
+        for (let b = 0; b < 8; b++) {
+          crc = (crc & 1) ? ((crc >>> 1) ^ 0xEDB88320) : (crc >>> 1);
+        }
+      }
+      return crc >>> 0;
+    }
+
+    function parseTelinkImage(bytes) {
+      if (!bytes || bytes.length < 64 || bytes.length > 0x20000 || (bytes.length % 16) !== 4) {
+        return { ok: false, error: 'Invalid size (must be 64..131072 B, size % 16 == 4)' };
+      }
+      if (bytes[6] !== 0x5D || bytes[7] !== 0x02 ||
+          bytes[8] !== 0x4B || bytes[9] !== 0x4E || bytes[10] !== 0x4C || bytes[11] !== 0x54) {
+        return { ok: false, error: 'Missing Telink 0x5d02 / TLNK header' };
+      }
+      const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+      const fileVersion = dv.getUint32(0x02, true);
+      const mfrCode = dv.getUint16(0x12, true);
+      const imageType = dv.getUint16(0x14, true);
+      const fwSize = dv.getUint32(0x18, true);
+      if (fwSize !== bytes.length || mfrCode !== 0x1141) {
+        return { ok: false, error: 'Header size or manufacturer code mismatch' };
+      }
+      const calcCrc = telinkCrc32(bytes, bytes.length - 4);
+      const fileCrc = dv.getUint32(bytes.length - 4, true);
+      if (calcCrc !== fileCrc) {
+        return { ok: false, error: `CRC-32 mismatch (0x${hexN(calcCrc, 8)} != 0x${hexN(fileCrc, 8)})` };
+      }
+      return { ok: true, fileVersion, imageType, fwSize, crc32: fileCrc };
+    }
 
     function updateUiState() {
       const conn = pgm.isConnected;
@@ -2191,6 +2348,19 @@
       $('#btn-download-dump').disabled = !lastDumpData;
       $('#btn-view-dump').disabled = !lastDumpData;
       $('#btn-flash-write').disabled = !conn || busy || !writeFileBytes;
+      $('#btn-self-ota-update').disabled = !conn || busy || !pgm.selfOta || !selfOtaBytes;
+
+      const bankBadge = $('#badge-pgm-bank');
+      if (!conn) {
+        bankBadge.className = 'badge';
+        bankBadge.textContent = 'Bank: —';
+      } else if (pgm.selfOta) {
+        bankBadge.className = 'badge ok';
+        bankBadge.textContent = `Bank ${pgm.selfOta.activeBank} | ver 0x${hexN(pgm.selfOta.activeFileVersion, 8)}`;
+      } else {
+        bankBadge.className = 'badge warn';
+        bankBadge.textContent = 'Self-OTA: Unsupported FW';
+      }
 
       const connBadge = $('#badge-conn');
       if (conn) {
@@ -2464,6 +2634,10 @@
             $('#sel-baud').value = String(pgm.baudRate);
           }
         }
+        const otaInfo = await pgm.selfOtaInfo();
+        if (otaInfo) {
+          logMsg(`Programmer Self-OTA: Bank ${otaInfo.activeBank}, FILE_VERSION 0x${hexN(otaInfo.activeFileVersion, 8)}, IMAGE_TYPE 0x${hexN(otaInfo.imageType, 4)}`, 'ok');
+        }
         updateUiState();
       } catch (err) {
         if (err && err.name === 'NotFoundError') return;
@@ -2476,12 +2650,120 @@
     $('#btn-disconnect').addEventListener('click', async () => {
       pgm.abortRequested = true;
       await pgm.close(false);
+      pgm.selfOta = null;
       swsActive = false;
       logMsg('Disconnected from programmer.', 'muted');
       $('#badge-target').className = 'badge';
       $('#badge-target').textContent = 'Target: Unlocked';
       updateUiState();
     });
+
+    $('#inp-self-ota-file').addEventListener('change', async (e) => {
+      const f = e.target.files && e.target.files[0];
+      if (!f) {
+        selfOtaBytes = null;
+        selfOtaName = '';
+        $('#self-ota-meta').textContent = 'Select a tlsr_flasher_8269.bin image (Bank 0/1 ping-pong, CRC-32 verified).';
+        updateUiState();
+        return;
+      }
+      const raw = new Uint8Array(await f.arrayBuffer());
+      const parsed = parseTelinkImage(raw);
+      if (!parsed.ok) {
+        selfOtaBytes = null;
+        selfOtaName = '';
+        $('#self-ota-meta').textContent = `Invalid firmware (${f.name}): ${parsed.error}`;
+        logMsg(`Self-OTA image rejected: ${parsed.error}`, 'err');
+      } else {
+        selfOtaBytes = raw;
+        selfOtaName = f.name;
+        $('#self-ota-meta').textContent =
+          `${f.name}: ${parsed.fwSize} B | IMAGE_TYPE 0x${hexN(parsed.imageType, 4)} | ver 0x${hexN(parsed.fileVersion, 8)} | CRC 0x${hexN(parsed.crc32, 8)}`;
+      }
+      updateUiState();
+    });
+
+    $('#btn-self-ota-update').addEventListener('click', () => runExclusive('Programmer Self-Update', async () => {
+      if (!selfOtaBytes) throw new Error('No valid firmware file selected');
+      const parsed = parseTelinkImage(selfOtaBytes);
+      if (!parsed.ok) throw new Error(parsed.error);
+      const force = $('#chk-self-ota-force').checked;
+      const info = await pgm.selfOtaInfo();
+      if (!info) throw new Error('Programmer does not support CMD_SELF_OTA');
+      if (!force && parsed.imageType !== info.imageType) {
+        throw new Error(`IMAGE_TYPE 0x${hexN(parsed.imageType, 4)} != programmer 0x${hexN(info.imageType, 4)} (check Force to override)`);
+      }
+
+      const prog = $('#self-ota-prog');
+      prog.max = parsed.fwSize;
+      prog.value = 0;
+
+      const b = await pgm.selfOtaBegin(parsed.fwSize, parsed.crc32, parsed.imageType, force);
+      if (!b || b.status !== 0) {
+        const msg = b ? (OTA_ERR_TEXT[b.status] || `status=${b.status}`) : pgm.errText();
+        throw new Error(`BEGIN failed: ${msg}`);
+      }
+      logMsg(`Self-OTA started: ${selfOtaName} -> Bank ${b.targetBank} (0x${hexN(b.targetAddr, 5)}), chunk=${b.maxChunkSize} B`, 'ok');
+
+      const chunkSize = Math.min(b.maxChunkSize || 256, 256);
+      try {
+        for (let off = 0; off < selfOtaBytes.length; off += chunkSize) {
+          if (pgm.abortRequested) throw new Error('Cancelled by user');
+          const piece = selfOtaBytes.subarray(off, Math.min(off + chunkSize, selfOtaBytes.length));
+          const d = await pgm.selfOtaData(off, piece);
+          if (!d || d.status !== 0) {
+            const msg = d ? (OTA_ERR_TEXT[d.status] || `status=${d.status}`) : pgm.errText();
+            throw new Error(`DATA @ 0x${hexN(off, 5)} failed: ${msg}`);
+          }
+          prog.value = d.nextOffset;
+        }
+      } catch (err) {
+        await pgm.selfOtaAbort().catch(() => {});
+        throw err;
+      }
+
+      const c = await pgm.selfOtaCommit(parsed.crc32);
+      if (!c || c.status !== 0) {
+        const msg = c ? (OTA_ERR_TEXT[c.status] || `status=${c.status}`) : pgm.errText();
+        throw new Error(`COMMIT failed: ${msg}`);
+      }
+      logMsg(`Self-OTA committed to Bank ${c.newBank} (CRC 0x${hexN(c.calcCrc32, 8)}). Waiting for USB-CDC reboot...`, 'ok');
+
+      await pgm.close(false);
+      pgm.selfOta = null;
+      updateUiState();
+
+      // Poll authorized WebSerial ports for re-enumerated TLSR8269 programmer
+      const deadline = performance.now() + 10000;
+      let reconnected = false;
+      while (performance.now() < deadline) {
+        await sleep(500);
+        const ports = await navigator.serial.getPorts();
+        for (const p of ports) {
+          const pinfo = p.getInfo ? p.getInfo() : {};
+          if (pinfo.usbVendorId && pinfo.usbVendorId !== 0x248A) continue;
+          try {
+            await pgm.openPort(p, DEFAULT_UART_BAUD);
+            if (await pgm.getVersion()) {
+              const newInfo = await pgm.selfOtaInfo();
+              if (newInfo) {
+                logMsg(`Reconnected! Active Bank ${newInfo.activeBank}, FILE_VERSION 0x${hexN(newInfo.activeFileVersion, 8)}`,
+                       newInfo.activeBank === b.targetBank ? 'ok' : 'warn');
+              }
+              reconnected = true;
+              break;
+            }
+            await pgm.close(false);
+          } catch {
+            await pgm.close(false).catch(() => {});
+          }
+        }
+        if (reconnected) break;
+      }
+      if (!reconnected) {
+        logMsg('Programmer rebooted; click Connect USB Programmer if browser did not auto-reattach.', 'warn');
+      }
+    }));
 
     $('#btn-probe-pgm').addEventListener('click', () => runExclusive('GetVersion', async () => {
       if (!(await pgm.getVersion())) throw new Error(pgm.errText());

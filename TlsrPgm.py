@@ -135,6 +135,7 @@ except ImportError:
 import platform
 import time
 import argparse
+import binascii
 import hashlib
 import os
 import io
@@ -353,6 +354,41 @@ def print_specs_report(specs):
 	print('  Flash Unique ID : %s' % uid_hex)
 	print('=' * 68)
 
+OTA_ERR_NAMES = {
+	0: 'OK',
+	1: 'ERR_STATE',
+	2: 'ERR_BAD_PARAM',
+	3: 'ERR_SIZE',
+	4: 'ERR_MAGIC',
+	5: 'ERR_IMAGE_TYPE',
+	6: 'ERR_OFFSET',
+	7: 'ERR_CRC',
+	8: 'ERR_FLASH',
+}
+
+def parse_and_validate_telink_fw(fw_bytes, expected_image_type=None, force=False):
+	if len(fw_bytes) < 64 or len(fw_bytes) > 0x20000 or (len(fw_bytes) % 16) != 4:
+		raise ValueError('Invalid firmware size (%d B; expected 64..131072 B and size %% 16 == 4)' % len(fw_bytes))
+	if fw_bytes[6:8] != b'\x5d\x02' or fw_bytes[8:12] != b'KNLT':
+		raise ValueError('Missing Telink 0x5d02 / TLNK header')
+	file_ver = struct.unpack('<I', fw_bytes[2:6])[0]
+	mfr_code, image_type = struct.unpack('<HH', fw_bytes[0x12:0x16])
+	fw_size = struct.unpack('<I', fw_bytes[0x18:0x1c])[0]
+	if fw_size != len(fw_bytes) or mfr_code != 0x1141:
+		raise ValueError('Header fw_size (0x%x) or mfr_code (0x%04x) mismatch' % (fw_size, mfr_code))
+	if not force and expected_image_type is not None and expected_image_type != 0 and image_type != expected_image_type:
+		raise ValueError('IMAGE_TYPE 0x%04X != programmer 0x%04X (pass --force to override)' % (image_type, expected_image_type))
+	calc_crc = binascii.crc32(fw_bytes[:-4]) ^ 0xFFFFFFFF
+	file_crc = struct.unpack('<I', fw_bytes[-4:])[0]
+	if calc_crc != file_crc:
+		raise ValueError('CRC-32 mismatch (calc 0x%08X != file 0x%08X)' % (calc_crc, file_crc))
+	return {
+		'file_version': file_ver,
+		'image_type': image_type,
+		'fw_size': fw_size,
+		'crc32': file_crc,
+	}
+
 class TLSRPGM:
 	MAX_BUF_READ_SIZE = 1024
 	MAX_RESPONSE_SIZE = 1026
@@ -377,6 +413,14 @@ class TLSRPGM:
 	CMD_FLASH_RDCRC = 14 # FW ver >= 0.0.0.3
 	CMD_SWS_PRINTF = 15 # FW ver >= 0.0.0.4
 	CMD_WAIT_RESP = 16 # FW ver >= 0.0.0.5
+	CMD_SELF_OTA = 0x20
+
+	OTA_CMD_INFO = 1
+	OTA_CMD_BEGIN = 2
+	OTA_CMD_DATA = 3
+	OTA_CMD_COMMIT = 4
+	OTA_CMD_ABORT = 5
+	OTA_FLAG_FORCE_TYPE = 0x01
 
 	CMDF_GET_VERSION = 0
 	CMDF_MCU_REBOOT = 1
@@ -630,6 +674,85 @@ class TLSRPGM:
 				print('pwr Off')
 			print('SWire bit rate: %.4f Mbits/s' % self.pgm_swsps)
 		return True
+	def self_ota_cmd(self, subcmd, payload=b'', resp_len=None, timeout=1.5):
+		if self._port is None:
+			return None
+		old_timeout = self._port.timeout
+		self._port.timeout = timeout
+		try:
+			wblk = struct.pack('<BBH', self.CMD_SELF_OTA, subcmd, len(payload)) + payload
+			rblk = self.command(wblk, resp_len)
+		finally:
+			self._port.timeout = old_timeout
+		if rblk is None:
+			return None
+		return rblk[4:-2]
+	def self_ota_info(self):
+		p = self.self_ota_cmd(self.OTA_CMD_INFO, b'', resp_len=30, timeout=0.5)
+		if p is None or len(p) < 24:
+			return None
+		vals = struct.unpack('<BBBBHHHHIII', p[:24])
+		return {
+			'proto_ver': vals[0],
+			'active_bank': vals[1],
+			'state': vals[2],
+			'flags': vals[3],
+			'chip_id': vals[4],
+			'image_type': vals[5],
+			'max_chunk_size': vals[6],
+			'max_image_size': vals[8],
+			'active_file_version': vals[9],
+			'bytes_received': vals[10],
+		}
+	def self_ota_update(self, fw_bytes, force=False):
+		info = self.self_ota_info()
+		if info is None:
+			print('Error: Programmer firmware does not support CMD_SELF_OTA (err=%d)' % self.err, file=sys.stderr)
+			return None
+		meta = parse_and_validate_telink_fw(fw_bytes, expected_image_type=info['image_type'], force=force)
+		print('Current: Bank %d | FILE_VERSION 0x%08X | IMAGE_TYPE 0x%04X' % (
+			info['active_bank'], info['active_file_version'], info['image_type']))
+		print('New FW : %d bytes | FILE_VERSION 0x%08X | IMAGE_TYPE 0x%04X | CRC 0x%08X' % (
+			meta['fw_size'], meta['file_version'], meta['image_type'], meta['crc32']))
+		flags = self.OTA_FLAG_FORCE_TYPE if force else 0
+		breq = struct.pack('<IIHBB', meta['fw_size'], meta['crc32'], meta['image_type'], flags, 0)
+		bp = self.self_ota_cmd(self.OTA_CMD_BEGIN, breq, resp_len=14, timeout=1.0)
+		if bp is None or len(bp) < 8:
+			print('Error: SELF_OTA BEGIN failed (err=%d)' % self.err, file=sys.stderr)
+			return None
+		st, target_bank, chunk_size, target_addr = struct.unpack('<BBHI', bp[:8])
+		if st != 0:
+			print('Error: SELF_OTA BEGIN rejected: %s (%d)' % (OTA_ERR_NAMES.get(st, '?'), st), file=sys.stderr)
+			return None
+		chunk_size = min(chunk_size or 256, 256)
+		print('Target : Bank %d (0x%05X), chunk %d B' % (target_bank, target_addr, chunk_size))
+		try:
+			for off in range(0, len(fw_bytes), chunk_size):
+				piece = fw_bytes[off:off + chunk_size]
+				dp = self.self_ota_cmd(self.OTA_CMD_DATA, struct.pack('<I', off) + piece, resp_len=14, timeout=1.5)
+				if dp is None or len(dp) < 8:
+					raise RuntimeError('DATA timeout/error @ 0x%05X (err=%d)' % (off, self.err))
+				dst, _, _, _, next_off = struct.unpack('<BBBBI', dp[:8])
+				if dst != 0:
+					raise RuntimeError('DATA rejected @ 0x%05X: %s (%d)' % (off, OTA_ERR_NAMES.get(dst, '?'), dst))
+				pct = (next_off * 100) // len(fw_bytes)
+				print('\rFlashing: %d / %d bytes (%d%%)' % (next_off, len(fw_bytes), pct), end='', flush=True)
+			print()
+		except Exception as exc:
+			print()
+			print('Error: %s — aborting...' % exc, file=sys.stderr)
+			self.self_ota_cmd(self.OTA_CMD_ABORT, b'', resp_len=6, timeout=0.5)
+			return None
+		cp = self.self_ota_cmd(self.OTA_CMD_COMMIT, struct.pack('<I', meta['crc32']), resp_len=14, timeout=2.5)
+		if cp is None or len(cp) < 8:
+			print('Error: SELF_OTA COMMIT failed (err=%d)' % self.err, file=sys.stderr)
+			return None
+		cst, new_bank, _, _, calc_crc = struct.unpack('<BBBBI', cp[:8])
+		if cst != 0:
+			print('Error: SELF_OTA COMMIT rejected: %s (%d)' % (OTA_ERR_NAMES.get(cst, '?'), cst), file=sys.stderr)
+			return None
+		print('Committed to Bank %d (CRC 0x%08X), programmer rebooting...' % (new_bank, calc_crc))
+		return {'info': info, 'meta': meta, 'target_bank': new_bank}
 	# Set ext addr  
 	def setextadr(self, eaddr = 0):
 		swbuf = struct.pack('<BBBBBB',0x5a,0,6,2,eaddr & 0xff,5)
@@ -2198,6 +2321,14 @@ OPERATION MODES:
 			'sws',
 			help='SWS Printf (PGM version >= 0.0.0.4 is used)')
 	parser_read_flash.add_argument('address', help='SRAM address, (Ctrl-C - exit)', type=arg_auto_int)
+	subparsers.add_parser(
+			'self-info',
+			help='Query programmer active dual-bank slot and FILE_VERSION')
+	parser_self_upd = subparsers.add_parser(
+			'self-update',
+			help='Self-update programmer firmware over USB-CDC (dual-bank)')
+	parser_self_upd.add_argument('filename', help='Path to tlsr_flasher_8269.bin')
+	parser_self_upd.add_argument('--force', action='store_true', help='Bypass IMAGE_TYPE check')
 
 	args = parser.parse_args()
 	if args.pwr is None and args.operation is None:
@@ -2229,6 +2360,63 @@ OPERATION MODES:
 		state_str = lambda v: 'On (3.3V)' if v else 'Off (0V)'
 		print('Target PWR (%s): %s -> %s' % (args.pwr, state_str(old_pwr), state_str(pgm.pgm_pwr)))
 		pgm.close(power_off=False)
+		sys.exit(0)
+
+	if args.operation == 'self-info':
+		info = pgm.self_ota_info()
+		pgm.close(power_off=False)
+		if info is None:
+			print('Error: Programmer does not support CMD_SELF_OTA', file=sys.stderr)
+			sys.exit(1)
+		print('Active Bank     : %d (0x%05X)' % (info['active_bank'], 0x40000 if info['active_bank'] else 0))
+		print('FILE_VERSION    : 0x%08X' % info['active_file_version'])
+		print('IMAGE_TYPE      : 0x%04X' % info['image_type'])
+		print('Chip ID         : 0x%04X' % info['chip_id'])
+		print('Max Chunk / Bank: %d B / %d KB' % (info['max_chunk_size'], info['max_image_size'] // 1024))
+		sys.exit(0)
+
+	if args.operation == 'self-update':
+		try:
+			with open(args.filename, 'rb') as f:
+				fw_bytes = f.read()
+			res = pgm.self_ota_update(fw_bytes, force=args.force)
+		except Exception as exc:
+			print('Error: %s' % exc, file=sys.stderr)
+			pgm.close(power_off=False)
+			sys.exit(1)
+		pgm.close(power_off=False)
+		if res is None:
+			sys.exit(1)
+		target_bank = res['target_bank']
+		expect_ver = res['meta']['file_version']
+		print('Waiting for USB-CDC re-enumeration...')
+		time.sleep(1.0)
+		deadline = time.time() + 8.0
+		new_info = None
+		while time.time() < deadline:
+			cands = [args.port] if args.port else list_candidate_ports()
+			for cand in cands:
+				client = TLSRPGM(cand, DEFAULT_UART_BAUD, quiet=True)
+				if client.port is None:
+					continue
+				if client.GetVersion(quiet=True):
+					new_info = client.self_ota_info()
+					client.close(power_off=False)
+					if new_info is not None:
+						break
+				client.close(power_off=False)
+			if new_info is not None:
+				break
+			time.sleep(0.4)
+		if new_info is None:
+			print('Error: Timed out waiting for programmer to re-enumerate after reboot', file=sys.stderr)
+			sys.exit(1)
+		print('Reconnected! Active Bank: %d | FILE_VERSION: 0x%08X' % (
+			new_info['active_bank'], new_info['active_file_version']))
+		if new_info['active_bank'] != target_bank or new_info['active_file_version'] != expect_ver:
+			print('Error: Post-reboot verification mismatch!', file=sys.stderr)
+			sys.exit(1)
+		print('Self-update verified successfully!')
 		sys.exit(0)
 
 	swd = int(round(pgm.pgm_clk/4.8,0))

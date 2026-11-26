@@ -47,6 +47,7 @@ C_SRCS := \
 	src/usb_cdc.c \
 	src/swm.c \
 	src/tlsrpgm.c \
+	src/tlsr_ota.c \
 	src/mem_util.c
 
 SDK_S_SRCS := \
@@ -55,6 +56,7 @@ SDK_S_SRCS := \
 
 OBJS := \
 	$(patsubst src/%.c,$(OUT_DIR)/%.o,$(C_SRCS)) \
+	$(OUT_DIR)/flash.o \
 	$(OUT_DIR)/link_cfg.o \
 	$(OUT_DIR)/cstartup_826x.o
 
@@ -62,7 +64,7 @@ ELF := $(OUT_DIR)/$(PROJECT_NAME).elf
 BIN := $(BIN_DIR)/$(PROJECT_NAME).bin
 LST := $(OUT_DIR)/$(PROJECT_NAME).lst
 
-.PHONY: all clean size
+.PHONY: all clean size self-update
 
 all: $(BIN) $(LST) size
 
@@ -70,6 +72,9 @@ $(OUT_DIR) $(BIN_DIR):
 	@mkdir -p $@
 
 $(OUT_DIR)/%.o: src/%.c | $(OUT_DIR)
+	$(CC) $(CFLAGS) -c -o "$@" "$<"
+
+$(OUT_DIR)/flash.o: $(SDK_PATH)/platform/chip_826x/flash.c | $(OUT_DIR)
 	$(CC) $(CFLAGS) -c -o "$@" "$<"
 
 $(OUT_DIR)/link_cfg.o: $(SDK_PATH)/platform/boot/link_cfg.S | $(OUT_DIR)
@@ -90,6 +95,9 @@ $(LST): $(ELF)
 
 size: $(ELF)
 	$(SIZE) -t "$<"
+
+self-update: $(BIN)
+	python3 ../TlsrPgm.py self-update $(BIN)
 
 clean:
 	rm -rf $(OUT_DIR) $(BIN_DIR)

@@ -77,6 +77,14 @@ On Linux, ensure your user is in the `dialout` group (or pass `-p /dev/ttyACM0`)
   python3 TlsrPgm.py -R rf 0 0x80000 backup.bin              # Read region to file
   ```
 
+- **Self-Update Programmer Firmware (Dual-Bank USB-CDC)** *(once bootstrapped with dual-bank firmware, updates `tlsr-flasher` itself over USB-C without a second SWire programmer)*:
+  ```bash
+  python3 TlsrPgm.py self-info                                         # Show active Bank (0/1) & FILE_VERSION
+  python3 TlsrPgm.py self-update firmware/bin/tlsr_flasher_8269.bin    # Flash alternate bank, CRC-32 verify, reboot & confirm
+  make -C firmware self-update                                         # Build + self-update in one step
+  ```
+  *(Pass `--force` to `self-update` to bypass the `IMAGE_TYPE` check.)*
+
 - **Classic Fixed-Timing Mode**:
   ```bash
   python3 TlsrPgm.py -p <PORT> -b 1500000 -t 100 -a 150 i
@@ -99,6 +107,7 @@ Useful options across modes:
 
 Open [`tlsr-flasher.html`](tlsr-flasher.html) in a WebSerial-capable Chromium browser (Chrome / Edge over `https://` or `http://localhost`) for a full graphical UI implementing all `TlsrPgm.py` features directly in the browser:
 - USB-CDC programmer connection, baud/SWire configuration (`swdiv`, `2B`/`3B` addr, `swbuf`), and live `PWR` ON/OFF/Toggle
+- **Programmer Self-Update (Dual-Bank USB-CDC)** card in the Overview tab showing active Bank `0`/`1` + `FILE_VERSION`, local Telink header & CRC-32 check, upload progress bar, and automatic WebSerial reconnect after reboot
 - Autonomous contact poller with slip recovery, hardware-CRC16 full flash dump, SHA-256 + BLE MAC detection, and drag-and-drop flashing (`we`/`wf`/`es`/`ea`)
 - Target chip/JEDEC/UID specs, Flash Status Register (`fsr`/`fsw`), SWire/SRAM/analog/TLSR8208-OTP hex dump & editor, live watch (`dc`), CPU breakpoint/single-step (`bkp`/`stp`), and `SWS Printf` streaming terminal
 
